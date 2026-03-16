@@ -1,21 +1,25 @@
+# scripts/generate_buggy.py
+
 import os
 import requests
+import time
 from PIL import Image
 from io import BytesIO
 
-# HuggingFace token from GitHub secrets
 HF_TOKEN = os.getenv("HF_TOKEN")
 
-API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
+if not HF_TOKEN:
+    raise ValueError("HF_TOKEN not set")
+
+API_URL = "https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0"
 
 headers = {
-    "Authorization": f"Bearer {HF_TOKEN}"
+    "Authorization": f"Bearer {HF_TOKEN}",
+    "Content-Type": "application/json"
 }
 
 OUTPUT_DIR = "site/assets/buggy"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-# -------- CHARACTER PROMPT --------
 
 prompt = """
 Buggy mascot character sheet, cute ladybird tech insect mascot,
@@ -32,21 +36,27 @@ detective, rocket riding, overheating,
 cool sunglasses, crying, pixel glitch
 """
 
-# -------- API CALL --------
-
 def generate_character_sheet():
-    response = requests.post(
-        API_URL,
-        headers=headers,
-        json={"inputs": prompt}
-    )
 
-    if response.status_code != 200:
+    for _ in range(10):
+
+        response = requests.post(
+            API_URL,
+            headers=headers,
+            json={"inputs": prompt}
+        )
+
+        if response.status_code == 200:
+            return Image.open(BytesIO(response.content))
+
+        if "loading" in response.text.lower():
+            print("Model loading... retrying")
+            time.sleep(10)
+            continue
+
         raise Exception(response.text)
 
-    return Image.open(BytesIO(response.content))
-
-# -------- SPLIT IMAGE INTO GRID --------
+    raise Exception("Model failed to load")
 
 def split_sheet(image, rows=4, cols=5):
 
@@ -73,9 +83,6 @@ def split_sheet(image, rows=4, cols=5):
 
             count += 1
 
-
-# -------- MAIN PIPELINE --------
-
 def main():
 
     print("Generating Buggy character sheet...")
@@ -92,7 +99,6 @@ def main():
     split_sheet(sheet)
 
     print("Done. 20 Buggy expressions generated.")
-
 
 if __name__ == "__main__":
     main()
