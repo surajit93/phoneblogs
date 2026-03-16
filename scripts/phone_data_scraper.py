@@ -42,7 +42,8 @@ def fetch(url, retries=3):
 
         time.sleep(2)
 
-    raise Exception(f"Request failed: {url}")
+    return None
+
 
 
 def extract_number(text):
@@ -200,9 +201,25 @@ def get_brand_phones(url):
         if page == 1:
             page_url = url
         else:
+        
+            # original pagination (kept for compatibility)
             page_url = url.replace(".php", f"-{page}.php")
+        
+            # GSMArena correct pagination
+            parts = url.split("/")[-1].replace(".php", "").split("-")
+        
+            if len(parts) >= 3:
+                brand_id = parts[-1]
+                brand_slug = "-".join(parts[:-1])
+        
+                page_url = f"{BASE}/{brand_slug}-f-{page}-{brand_id}.php"
+
 
         soup = fetch(page_url)
+        
+        if soup is None:
+            break
+
 
         items = soup.select(".makers li a")
 
