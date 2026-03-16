@@ -32,7 +32,7 @@ def fetch(url, retries=3):
         try:
             r = session.get(url, timeout=10)
 
-            print(r.text[:500])
+            print("FETCH:", url)
 
             if r.status_code == 200:
                 return BeautifulSoup(r.text, "html.parser")
@@ -225,7 +225,7 @@ def get_brand_phones(url):
 
         # fallback if mobile DOM breaks selector
         if not items:
-            items = soup.select("a[href$='.php']")
+            items = soup.select(".makers a")
 
         if not items:
             break
@@ -233,6 +233,8 @@ def get_brand_phones(url):
         for a in items:
 
             href = a.get("href")
+            
+            print("candidate:", href)
 
             if not href:
                 continue
