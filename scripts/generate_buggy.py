@@ -3,7 +3,7 @@
 import os
 import requests
 import time
-from PIL import Image
+from PIL import Image, ImageDraw
 from io import BytesIO
 
 HF_TOKEN = os.getenv("HF_TOKEN")
@@ -21,59 +21,55 @@ headers = {
 OUTPUT_DIR = "site/assets/buggy"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+BASE_FILE = os.path.join(OUTPUT_DIR, "buggy_base.png")
+
 prompt = """
-Buggy website mascot, cute small ladybug insect mascot,
-natural crawling pose on six legs, never standing upright,
-top-down or slight top angle like a real ladybug,
-round red shell with small black spots,
-small round head attached to body,
-two large white cartoon eyes with black pupils,
-one short antenna centered on head,
-friendly simple face,
-clean mascot design for tech website,
-minimal shapes, flat colors, simple vector style,
-white background, centered subject,
-full body visible, no cropping,
-same Buggy character repeated in a 4x5 grid with different facial expressions
+Buggy mascot for tech website, cute friendly ladybug mascot,
+simple round body with glossy red shell and small black spots,
+large expressive cartoon eyes on the front,
+small smiling face,
+one tiny antenna,
+six tiny legs underneath body,
+clean modern mascot design,
+flat vector illustration style,
+high contrast colors,
+minimal shapes, smooth lines,
+centered on canvas, full body visible,
+white background,
+professional brand mascot
 """
 
 negative_prompt = """
-mosquito, syringe, needle, robot, humanoid body,
-standing upright, human legs, wings spread,
-weird insect hybrid, horror insect,
-cropped body, half body, cut off legs,
-3d render, photorealistic bug
+mosquito, needle, syringe, scary insect,
+realistic bug texture, hairy insect,
+photorealistic insect,
+standing upright insect,
+humanoid bug,
+cropped body,
+half insect,
+macro photography
 """
 
-# semantic names for expressions
-EXPRESSIONS = [
-    "happy",
-    "sad",
-    "angry",
-    "shocked",
-    "thinking",
-    "laughing",
-    "sleepy",
-    "confused",
-    "celebrating",
-    "facepalm",
-    "dancing",
-    "excited",
-    "scared",
-    "victory",
-    "detective",
-    "rocket",
-    "overheated",
-    "cool",
-    "crying",
-    "glitch"
-]
+EXPRESSIONS = {
+    "happy": "smile",
+    "sad": "sad",
+    "angry": "angry",
+    "shocked": "shock",
+    "cool": "cool",
+    "sleepy": "sleepy",
+    "thinking": "thinking"
+}
 
-def generate_character_sheet():
+
+def generate_buggy():
+
+    if os.path.exists(BASE_FILE):
+        print("Buggy base already exists, skipping generation.")
+        return Image.open(BASE_FILE)
 
     for attempt in range(10):
 
-        print("Generating Buggy sheet (attempt)", attempt + 1)
+        print("Generating Buggy (attempt)", attempt + 1)
 
         response = requests.post(
             API_URL,
@@ -82,66 +78,87 @@ def generate_character_sheet():
                 "inputs": prompt,
                 "parameters": {
                     "negative_prompt": negative_prompt,
-                    "guidance_scale": 8.5
+                    "guidance_scale": 8.5,
+                    "width": 1024,
+                    "height": 1024
                 }
             }
         )
 
         if response.status_code == 200:
-            return Image.open(BytesIO(response.content))
+
+            image = Image.open(BytesIO(response.content))
+            image.save(BASE_FILE)
+
+            print("Buggy base saved:", BASE_FILE)
+            return image
 
         if "loading" in response.text.lower():
-            print("Model loading... retrying")
+            print("Model loading, retrying...")
             time.sleep(10)
             continue
 
         raise Exception(response.text)
 
-    raise Exception("Model failed to load")
+    raise Exception("Model failed to generate Buggy")
 
-def split_sheet(image, rows=4, cols=5):
 
-    width, height = image.size
-    cell_w = width // cols
-    cell_h = height // rows
+def draw_expression(canvas, mode):
 
-    index = 0
+    draw = ImageDraw.Draw(canvas)
 
-    for r in range(rows):
-        for c in range(cols):
+    w, h = canvas.size
 
-            left = c * cell_w
-            top = r * cell_h
-            right = left + cell_w
-            bottom = top + cell_h
+    eye_y = int(h * 0.35)
+    mouth_y = int(h * 0.55)
 
-            crop = image.crop((left, top, right, bottom))
+    if mode == "smile":
+        draw.arc((w*0.4, mouth_y, w*0.6, mouth_y+40), 0, 180, width=6)
 
-            name = EXPRESSIONS[index]
-            filename = os.path.join(OUTPUT_DIR, f"buggy_{name}.png")
+    elif mode == "sad":
+        draw.arc((w*0.4, mouth_y+20, w*0.6, mouth_y+60), 180, 360, width=6)
 
-            crop.save(filename)
+    elif mode == "angry":
+        draw.line((w*0.35, eye_y-20, w*0.45, eye_y-10), width=6)
+        draw.line((w*0.65, eye_y-20, w*0.55, eye_y-10), width=6)
 
-            print("saved", filename)
+    elif mode == "shock":
+        draw.ellipse((w*0.47, mouth_y, w*0.53, mouth_y+35), outline="black", width=6)
 
-            index += 1
+    elif mode == "cool":
+        draw.rectangle((w*0.35, eye_y-10, w*0.65, eye_y+10), fill="black")
+
+    elif mode == "sleepy":
+        draw.line((w*0.4, eye_y, w*0.45, eye_y), width=6)
+        draw.line((w*0.55, eye_y, w*0.6, eye_y), width=6)
+
+    elif mode == "thinking":
+        draw.arc((w*0.45, mouth_y, w*0.55, mouth_y+20), 0, 180, width=6)
+
+
+def build_expressions(base_img):
+
+    for name, mode in EXPRESSIONS.items():
+
+        canvas = base_img.copy()
+
+        draw_expression(canvas, mode)
+
+        filename = os.path.join(OUTPUT_DIR, f"buggy_{name}.png")
+
+        canvas.save(filename)
+
+        print("created", filename)
+
 
 def main():
 
-    print("Generating Buggy character sheet...")
+    base_img = generate_buggy()
 
-    sheet = generate_character_sheet()
+    build_expressions(base_img)
 
-    sheet_path = os.path.join(OUTPUT_DIR, "buggy_sheet.png")
-    sheet.save(sheet_path)
+    print("Buggy mascot generation complete.")
 
-    print("Character sheet saved:", sheet_path)
-
-    print("Splitting expressions...")
-
-    split_sheet(sheet)
-
-    print("Done. Buggy expressions generated.")
 
 if __name__ == "__main__":
     main()
