@@ -17,7 +17,7 @@ dirs = [
 "pages/features",
 "pages/launches",
 
-```
+
 "data/phones",
 "data/laptops",
 "data/gpus",
@@ -36,7 +36,7 @@ dirs = [
 "seo",
 "config",
 "logs"
-```
+
 
 ]
 
@@ -45,7 +45,7 @@ files = {
 "site/robots.txt": "User-agent: *\nAllow: /",
 "site/sitemap.xml": "",
 
-```
+
 "data/phones/phones.json": "[]",
 "data/benchmarks/cpu_scores.json": "{}",
 "data/benchmarks/gpu_scores.json": "{}",
@@ -76,7 +76,7 @@ files = {
 "config/niches.yaml": "",
 
 "README.md": "# PhoneBlogs\nProgrammatic SEO tech site"
-```
+
 
 }
 
@@ -91,10 +91,10 @@ for path, content in files.items():
 p = Path(path)
 p.parent.mkdir(parents=True, exist_ok=True)
 
-```
+
 if not p.exists():
     with open(p, "w") as f:
         f.write(content)
-```
+
 
 print("Repository structure created successfully.")
