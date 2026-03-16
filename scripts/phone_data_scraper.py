@@ -123,7 +123,7 @@ def save_dataset(data):
 
 
 # -----------------------
-# brand discovery
+# brand discovery (FIXED)
 # -----------------------
 
 def get_brands():
@@ -132,18 +132,26 @@ def get_brands():
 
     brands = []
 
-    for a in soup.select("td a"):
+    for a in soup.select(".st-text td a"):
 
         href = a.get("href")
 
-        if href and "php" in href:
-            brands.append(BASE + "/" + href)
+        if not href:
+            continue
+
+        if "search" in href:
+            continue
+
+        if not href.endswith(".php"):
+            continue
+
+        brands.append(BASE + "/" + href)
 
     return brands
 
 
 # -----------------------
-# phone list per brand
+# phone list per brand (FIXED PAGINATION)
 # -----------------------
 
 def get_brand_phones(url):
@@ -157,7 +165,10 @@ def get_brand_phones(url):
 
     while True:
 
-        page_url = url.replace(".php", f"-{page}.php")
+        if page == 1:
+            page_url = url
+        else:
+            page_url = url.replace(".php", f"-{page}.php")
 
         soup = fetch(page_url)
 
@@ -174,7 +185,6 @@ def get_brand_phones(url):
         time.sleep(0.6)
 
     return phones
-
 
 
 # -----------------------
