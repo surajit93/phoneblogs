@@ -132,7 +132,7 @@ def get_brands():
 
     brands = []
 
-    for a in soup.select(".st-text td a"):
+    for a in soup.select(".makers a"):
 
         href = a.get("href")
 
@@ -151,13 +151,10 @@ def get_brands():
 
 
 # -----------------------
-# phone list per brand (FIXED PAGINATION)
+# phone list per brand
 # -----------------------
 
 def get_brand_phones(url):
-
-    if "search" in url:
-        return []
 
     phones = []
 
@@ -237,28 +234,23 @@ def parse_phone(url):
         "slug": name.lower().replace(" ", "-"),
         "brand": name.split()[0],
 
-        # launch
         "announcement_date": specs.get("announced"),
         "release_date": specs.get("status"),
         "release_year": extract_number(specs.get("announced")),
 
-        # price
         "price_usd": extract_price(specs.get("price")),
 
-        # display
         "display_inches": extract_number(specs.get("size")),
         "display_resolution": specs.get("resolution"),
         "display_type": specs.get("type"),
         "refresh_hz": extract_number(specs.get("refresh rate")),
 
-        # battery
         "battery_mah": extract_number(specs.get("battery")),
         "battery_type": specs.get("battery"),
         "fast_charge_w": extract_number(charging),
         "wireless_charging": has_feature(charging, "wireless"),
         "reverse_charging": has_feature(charging, "reverse"),
 
-        # camera
         "camera_mp": extract_number(camera_text),
         "camera_features": specs.get("features"),
         "front_camera_mp": extract_number(specs.get("selfie camera")),
@@ -266,7 +258,6 @@ def parse_phone(url):
         "telephoto_camera": has_feature(camera_text, "telephoto"),
         "ultrawide_camera": has_feature(camera_text, "ultrawide"),
 
-        # hardware
         "chipset": specs.get("chipset"),
         "gpu": specs.get("gpu"),
         "cpu_score": None,
@@ -275,15 +266,12 @@ def parse_phone(url):
         "ram_gb": ram_gb,
         "storage_gb": storage_gb,
 
-        # software
         "os": specs.get("os"),
 
-        # build
         "weight_g": extract_number(specs.get("weight")),
         "ip_rating": protection,
         "fingerprint": specs.get("fingerprint"),
 
-        # connectivity
         "network": network,
         "network_5g": has_feature(network, "5g"),
         "wifi": wlan,
@@ -295,8 +283,7 @@ def parse_phone(url):
         "nfc": has_feature(sensors, "nfc"),
         "sd_card": has_feature(specs.get("memory"), "microSD"),
 
-        # audio
-        "audio_jack": has_feature(specs.get("loudspeaker"), "3.5mm") or has_feature(specs.get("sound"), "3.5mm"),
+        "audio_jack": has_feature(sound, "3.5mm"),
         "speaker_type": sound,
 
         "url": url
