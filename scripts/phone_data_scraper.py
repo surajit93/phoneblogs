@@ -221,7 +221,7 @@ def get_brand_phones(url):
             break
 
 
-        items = soup.select(".makers li a")
+        items = soup.select("#review-body a")
 
         # fallback if mobile DOM breaks selector
         if not items:
