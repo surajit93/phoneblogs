@@ -32,7 +32,6 @@ def fetch(url, retries=3):
         try:
             r = session.get(url, timeout=10)
 
-            #print(r.text[:500000])
             print(r.text[:500])
 
             if r.status_code == 200:
@@ -126,14 +125,11 @@ def save_dataset(data):
         json.dump(data, f, indent=2)
 
 
-# -----------------------
-# incremental writer (ADDED - no existing code removed)
-# -----------------------
+# incremental writer (added earlier)
 
 def append_phone(phone):
 
     if not os.path.exists(DATA_FILE):
-
         with open(DATA_FILE, "w") as f:
             json.dump([], f)
 
@@ -147,9 +143,7 @@ def append_phone(phone):
         data.append(phone)
 
         f.seek(0)
-
         json.dump(data, f, indent=2)
-
         f.truncate()
 
 
@@ -163,7 +157,6 @@ def get_brands():
 
     brands = []
 
-    # original selector
     for a in soup.select("#list-brands li a"):
 
         href = a.get("href")
@@ -175,7 +168,6 @@ def get_brands():
 
         brands.append(brand_url)
 
-    # fallback selector if mobile DOM breaks the first one
     if not brands:
 
         for a in soup.select("a[href*='-phones-']"):
@@ -214,11 +206,24 @@ def get_brand_phones(url):
 
         items = soup.select(".makers li a")
 
+        # fallback if mobile DOM breaks selector
+        if not items:
+            items = soup.select("a[href$='.php']")
+
         if not items:
             break
 
         for a in items:
-            phones.append(BASE + "/" + a.get("href"))
+
+            href = a.get("href")
+
+            if not href:
+                continue
+
+            if "-phones-" in href:
+                continue
+
+            phones.append(BASE + "/" + href)
 
         page += 1
 
@@ -368,7 +373,6 @@ def run():
                 dataset.append(phone)
                 known.add(phone["slug"])
 
-                # incremental write (ADDED)
                 append_phone(phone)
 
                 print("added:", phone["name"])
