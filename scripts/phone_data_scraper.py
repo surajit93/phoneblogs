@@ -32,7 +32,8 @@ def fetch(url, retries=3):
         try:
             r = session.get(url, timeout=10)
 
-            print(r.text[:500000])
+            #print(r.text[:500000])
+            print(r.text[:500])
 
             if r.status_code == 200:
                 return BeautifulSoup(r.text, "html.parser")
@@ -135,6 +136,7 @@ def get_brands():
 
     brands = []
 
+    # original selector
     for a in soup.select("#list-brands li a"):
 
         href = a.get("href")
@@ -145,6 +147,21 @@ def get_brands():
         brand_url = BASE + "/" + href
 
         brands.append(brand_url)
+
+    # fallback selector if mobile DOM breaks the first one
+    if not brands:
+
+        for a in soup.select("a[href*='-phones-']"):
+
+            href = a.get("href")
+
+            if not href:
+                continue
+
+            brand_url = BASE + "/" + href
+
+            if brand_url not in brands:
+                brands.append(brand_url)
 
     return brands
 
