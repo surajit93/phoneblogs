@@ -135,7 +135,7 @@ def get_brands():
 
     brands = []
 
-    for a in soup.select(".st-text li a"):
+    for a in soup.select("#list-brands li a"):
 
         href = a.get("href")
 
