@@ -45,10 +45,35 @@ cropped body, half body, cut off legs,
 3d render, photorealistic bug
 """
 
+# semantic names for expressions
+EXPRESSIONS = [
+    "happy",
+    "sad",
+    "angry",
+    "shocked",
+    "thinking",
+    "laughing",
+    "sleepy",
+    "confused",
+    "celebrating",
+    "facepalm",
+    "dancing",
+    "excited",
+    "scared",
+    "victory",
+    "detective",
+    "rocket",
+    "overheated",
+    "cool",
+    "crying",
+    "glitch"
+]
 
 def generate_character_sheet():
 
-    for _ in range(10):
+    for attempt in range(10):
+
+        print("Generating Buggy sheet (attempt)", attempt + 1)
 
         response = requests.post(
             API_URL,
@@ -80,7 +105,7 @@ def split_sheet(image, rows=4, cols=5):
     cell_w = width // cols
     cell_h = height // rows
 
-    count = 0
+    index = 0
 
     for r in range(rows):
         for c in range(cols):
@@ -92,12 +117,14 @@ def split_sheet(image, rows=4, cols=5):
 
             crop = image.crop((left, top, right, bottom))
 
-            filename = os.path.join(OUTPUT_DIR, f"buggy_{count}.png")
+            name = EXPRESSIONS[index]
+            filename = os.path.join(OUTPUT_DIR, f"buggy_{name}.png")
+
             crop.save(filename)
 
             print("saved", filename)
 
-            count += 1
+            index += 1
 
 def main():
 
@@ -114,7 +141,7 @@ def main():
 
     split_sheet(sheet)
 
-    print("Done. 20 Buggy expressions generated.")
+    print("Done. Buggy expressions generated.")
 
 if __name__ == "__main__":
     main()
