@@ -216,9 +216,22 @@ def get_brand_phones(url):
 
 
         soup = fetch(page_url)
-        
+
         if soup is None:
             break
+        
+        print("---- PAGE URL ----")
+        print(page_url)
+        
+        print("---- PAGE TITLE ----")
+        print(soup.title)
+        
+        print("---- FIRST 2000 HTML ----")
+        print(soup.prettify()[:2000])
+
+        items = soup.find_all("a")
+
+        print("TOTAL A TAGS:", len(items))
 
 
         items = soup.select("#review-body li a")
