@@ -148,6 +148,9 @@ def get_brands():
 
 def get_brand_phones(url):
 
+    if "search" in url:
+        return []
+
     phones = []
 
     page = 1
@@ -167,9 +170,11 @@ def get_brand_phones(url):
             phones.append(BASE + "/" + a.get("href"))
 
         page += 1
+
         time.sleep(0.6)
 
     return phones
+
 
 
 # -----------------------
