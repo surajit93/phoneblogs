@@ -32,7 +32,7 @@ def fetch(url, retries=3):
         try:
             r = session.get(url, timeout=10)
 
-            print(r.text[:500])
+            print(r.text[:500000])
 
             if r.status_code == 200:
                 return BeautifulSoup(r.text, "html.parser")
