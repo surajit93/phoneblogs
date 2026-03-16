@@ -22,19 +22,29 @@ OUTPUT_DIR = "site/assets/buggy"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 prompt = """
-Buggy mascot character sheet, cute ladybird tech insect mascot,
-round head, two big white eyes with black pupils,
-one antenna, six legs, red shell with black dots,
-simple cartoon vector style, flat colors,
-white background, brand mascot style,
-character sheet showing 20 different expressions,
-grid layout, same mascot repeated,
-happy, sad, angry, shocked, thinking, laughing,
-sleepy, confused, celebrating, facepalm,
-dancing, excited, scared, victory,
-detective, rocket riding, overheating,
-cool sunglasses, crying, pixel glitch
+Buggy website mascot, cute small ladybug insect mascot,
+natural crawling pose on six legs, never standing upright,
+top-down or slight top angle like a real ladybug,
+round red shell with small black spots,
+small round head attached to body,
+two large white cartoon eyes with black pupils,
+one short antenna centered on head,
+friendly simple face,
+clean mascot design for tech website,
+minimal shapes, flat colors, simple vector style,
+white background, centered subject,
+full body visible, no cropping,
+same Buggy character repeated in a 4x5 grid with different facial expressions
 """
+
+negative_prompt = """
+mosquito, syringe, needle, robot, humanoid body,
+standing upright, human legs, wings spread,
+weird insect hybrid, horror insect,
+cropped body, half body, cut off legs,
+3d render, photorealistic bug
+"""
+
 
 def generate_character_sheet():
 
@@ -43,7 +53,13 @@ def generate_character_sheet():
         response = requests.post(
             API_URL,
             headers=headers,
-            json={"inputs": prompt}
+            json={
+                "inputs": prompt,
+                "parameters": {
+                    "negative_prompt": negative_prompt,
+                    "guidance_scale": 8.5
+                }
+            }
         )
 
         if response.status_code == 200:
