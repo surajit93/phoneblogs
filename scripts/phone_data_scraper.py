@@ -221,7 +221,7 @@ def get_brand_phones(url):
             break
 
 
-        items = soup.select("#review-body a")
+        items = soup.select(".makers ul li a")
 
         # fallback if mobile DOM breaks selector
         if not items:
@@ -233,7 +233,7 @@ def get_brand_phones(url):
         for a in items:
 
             href = a.get("href")
-            
+            print("PHONE LINK:", href)
             print("candidate:", href)
 
             if not href:
