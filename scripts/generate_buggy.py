@@ -1,0 +1,98 @@
+import os
+import requests
+from PIL import Image
+from io import BytesIO
+
+# HuggingFace token from GitHub secrets
+HF_TOKEN = os.getenv("HF_TOKEN")
+
+API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
+
+headers = {
+    "Authorization": f"Bearer {HF_TOKEN}"
+}
+
+OUTPUT_DIR = "site/assets/buggy"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# -------- CHARACTER PROMPT --------
+
+prompt = """
+Buggy mascot character sheet, cute ladybird tech insect mascot,
+round head, two big white eyes with black pupils,
+one antenna, six legs, red shell with black dots,
+simple cartoon vector style, flat colors,
+white background, brand mascot style,
+character sheet showing 20 different expressions,
+grid layout, same mascot repeated,
+happy, sad, angry, shocked, thinking, laughing,
+sleepy, confused, celebrating, facepalm,
+dancing, excited, scared, victory,
+detective, rocket riding, overheating,
+cool sunglasses, crying, pixel glitch
+"""
+
+# -------- API CALL --------
+
+def generate_character_sheet():
+    response = requests.post(
+        API_URL,
+        headers=headers,
+        json={"inputs": prompt}
+    )
+
+    if response.status_code != 200:
+        raise Exception(response.text)
+
+    return Image.open(BytesIO(response.content))
+
+# -------- SPLIT IMAGE INTO GRID --------
+
+def split_sheet(image, rows=4, cols=5):
+
+    width, height = image.size
+    cell_w = width // cols
+    cell_h = height // rows
+
+    count = 0
+
+    for r in range(rows):
+        for c in range(cols):
+
+            left = c * cell_w
+            top = r * cell_h
+            right = left + cell_w
+            bottom = top + cell_h
+
+            crop = image.crop((left, top, right, bottom))
+
+            filename = os.path.join(OUTPUT_DIR, f"buggy_{count}.png")
+            crop.save(filename)
+
+            print("saved", filename)
+
+            count += 1
+
+
+# -------- MAIN PIPELINE --------
+
+def main():
+
+    print("Generating Buggy character sheet...")
+
+    sheet = generate_character_sheet()
+
+    sheet_path = os.path.join(OUTPUT_DIR, "buggy_sheet.png")
+    sheet.save(sheet_path)
+
+    print("Character sheet saved:", sheet_path)
+
+    print("Splitting expressions...")
+
+    split_sheet(sheet)
+
+    print("Done. 20 Buggy expressions generated.")
+
+
+if __name__ == "__main__":
+    main()
