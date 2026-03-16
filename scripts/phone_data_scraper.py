@@ -127,6 +127,33 @@ def save_dataset(data):
 
 
 # -----------------------
+# incremental writer (ADDED - no existing code removed)
+# -----------------------
+
+def append_phone(phone):
+
+    if not os.path.exists(DATA_FILE):
+
+        with open(DATA_FILE, "w") as f:
+            json.dump([], f)
+
+    with open(DATA_FILE, "r+") as f:
+
+        try:
+            data = json.load(f)
+        except:
+            data = []
+
+        data.append(phone)
+
+        f.seek(0)
+
+        json.dump(data, f, indent=2)
+
+        f.truncate()
+
+
+# -----------------------
 # brand discovery
 # -----------------------
 
@@ -340,6 +367,9 @@ def run():
 
                 dataset.append(phone)
                 known.add(phone["slug"])
+
+                # incremental write (ADDED)
+                append_phone(phone)
 
                 print("added:", phone["name"])
 
