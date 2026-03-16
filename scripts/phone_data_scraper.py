@@ -132,20 +132,16 @@ def get_brands():
 
     brands = []
 
-    for a in soup.select(".makers a"):
+    for a in soup.select(".st-text table td a"):
 
         href = a.get("href")
 
         if not href:
             continue
 
-        if "search" in href:
-            continue
+        brand_url = BASE + "/" + href
 
-        if not href.endswith(".php"):
-            continue
-
-        brands.append(BASE + "/" + href)
+        brands.append(brand_url)
 
     return brands
 
