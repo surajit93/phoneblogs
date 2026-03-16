@@ -233,13 +233,17 @@ def get_brand_phones(url):
 
         print("TOTAL A TAGS:", len(items))
 
+        items = []
+        
+        for a in soup.find_all("a", href=True):
+        
+            href = a["href"]
+        
+            if href.endswith(".php") and "-phones-" not in href and "_" in href:
+                items.append(a)
 
-        items = soup.select("#review-body li a")
-
-        # fallback if mobile DOM breaks selector
-        if not items:
-            items = soup.select(".makers ul li a")
-
+        print("PHONE LINKS FOUND:", len(items)) 
+        
         if not items:
             break
 
