@@ -1,4 +1,5 @@
 import requests
+import cloudscraper
 from bs4 import BeautifulSoup
 import json
 import os
@@ -14,7 +15,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PhoneBlogsBot/1.0)"
 }
 
-session = requests.Session()
+session = cloudscraper.create_scraper()
 session.headers.update(HEADERS)
 
 os.makedirs("data/phones", exist_ok=True)
@@ -30,6 +31,8 @@ def fetch(url, retries=3):
 
         try:
             r = session.get(url, timeout=10)
+
+            print(r.text[:500])
 
             if r.status_code == 200:
                 return BeautifulSoup(r.text, "html.parser")
@@ -123,7 +126,7 @@ def save_dataset(data):
 
 
 # -----------------------
-# brand discovery (FIXED)
+# brand discovery
 # -----------------------
 
 def get_brands():
@@ -132,7 +135,6 @@ def get_brands():
 
     brands = []
 
-    # FIX: selector updated
     for a in soup.select(".st-text li a"):
 
         href = a.get("href")
@@ -166,7 +168,6 @@ def get_brand_phones(url):
 
         soup = fetch(page_url)
 
-        # FIX: selector updated
         items = soup.select(".makers li a")
 
         if not items:
