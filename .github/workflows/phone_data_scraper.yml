@@ -1,0 +1,38 @@
+name: phone-dataset-builder
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+    - cron: "0 10 * * *"
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run scraper
+        run: |
+          python scripts/scrape/phone_data_scraper.py
+
+      - name: Commit dataset updates
+        run: |
+          git config --global user.name "phoneblogs-bot"
+          git config --global user.email "bot@users.noreply.github.com"
+
+          git add data/phones/phones.json
+          git commit -m "update phone dataset" || echo "no changes"
+          git push
