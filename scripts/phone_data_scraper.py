@@ -132,7 +132,8 @@ def get_brands():
 
     brands = []
 
-    for a in soup.select(".st-text table td a"):
+    # FIX: selector updated
+    for a in soup.select(".st-text li a"):
 
         href = a.get("href")
 
@@ -165,7 +166,8 @@ def get_brand_phones(url):
 
         soup = fetch(page_url)
 
-        items = soup.select(".makers ul li a")
+        # FIX: selector updated
+        items = soup.select(".makers li a")
 
         if not items:
             break
