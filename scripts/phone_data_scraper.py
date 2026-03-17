@@ -9,7 +9,9 @@ import re
 BASE = "https://www.gsmarena.com"
 MAKERS_URL = f"{BASE}/makers.php3"
 
-DATA_FILE = "data/phones/phones.json"
+# ✅ absolute path fix
+DATA_FILE = os.path.abspath("data/phones/phones.json")
+print("WRITING TO:", DATA_FILE)
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PhoneBlogsBot/1.0)"
@@ -20,7 +22,7 @@ session.headers.update(HEADERS)
 
 os.makedirs("data/phones", exist_ok=True)
 
-# ✅ ensure file exists (critical fix)
+# ✅ ensure file exists
 if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, "w") as f:
         json.dump([], f)
@@ -131,26 +133,28 @@ def save_dataset(data):
 
 
 # -----------------------
-# FIXED incremental writer (atomic + safe)
+# 🔥 FIXED append (atomic + debug)
 # -----------------------
 
 def append_phone(phone):
 
-    # read once
-    with open(DATA_FILE, "r") as f:
-        try:
+    try:
+        with open(DATA_FILE, "r") as f:
             data = json.load(f)
-        except:
-            data = []
+    except:
+        data = []
 
     data.append(phone)
 
-    # write safely
-    tmp_file = DATA_FILE + ".tmp"
-    with open(tmp_file, "w") as f:
+    tmp = DATA_FILE + ".tmp"
+
+    with open(tmp, "w") as f:
         json.dump(data, f, indent=2)
 
-    os.replace(tmp_file, DATA_FILE)
+    os.replace(tmp, DATA_FILE)
+
+    # ✅ debug proof
+    print("FILE SIZE AFTER WRITE:", len(data))
 
 
 # -----------------------
@@ -239,7 +243,6 @@ def get_brand_phones(url):
             href = a.get("href")
 
             print("PHONE LINK:", href)
-            print("candidate:", href)
 
             if not href:
                 continue
@@ -249,7 +252,6 @@ def get_brand_phones(url):
 
             phones.append(BASE + "/" + href)
 
-        # dynamic pagination
         next_page = None
 
         for a in soup.find_all("a", href=True):
@@ -413,6 +415,17 @@ def run():
 
             except Exception as e:
                 print("error:", e)
+
+    # ✅ final verification
+    print("---- FINAL FILE CHECK ----")
+    with open(DATA_FILE) as f:
+        data = json.load(f)
+
+    print("TOTAL IN FILE:", len(data))
+    print(data[:2])
+
+    # ✅ show directory
+    os.system(f"ls -lah {os.path.dirname(DATA_FILE)}")
 
     print("phones stored:", len(dataset))
 
