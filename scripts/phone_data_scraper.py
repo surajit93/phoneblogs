@@ -20,6 +20,11 @@ session.headers.update(HEADERS)
 
 os.makedirs("data/phones", exist_ok=True)
 
+# ✅ ensure file exists (critical fix)
+if not os.path.exists(DATA_FILE):
+    with open(DATA_FILE, "w") as f:
+        json.dump([], f)
+
 
 # -----------------------
 # helpers
@@ -43,7 +48,6 @@ def fetch(url, retries=3):
         time.sleep(2)
 
     return None
-
 
 
 def extract_number(text):
@@ -126,26 +130,27 @@ def save_dataset(data):
         json.dump(data, f, indent=2)
 
 
-# incremental writer (kept unchanged)
+# -----------------------
+# FIXED incremental writer (atomic + safe)
+# -----------------------
 
 def append_phone(phone):
 
-    if not os.path.exists(DATA_FILE):
-        with open(DATA_FILE, "w") as f:
-            json.dump([], f)
-
-    with open(DATA_FILE, "r+") as f:
-
+    # read once
+    with open(DATA_FILE, "r") as f:
         try:
             data = json.load(f)
         except:
             data = []
 
-        data.append(phone)
+    data.append(phone)
 
-        f.seek(0)
+    # write safely
+    tmp_file = DATA_FILE + ".tmp"
+    with open(tmp_file, "w") as f:
         json.dump(data, f, indent=2)
-        f.truncate()
+
+    os.replace(tmp_file, DATA_FILE)
 
 
 # -----------------------
@@ -187,7 +192,7 @@ def get_brands():
 
 
 # -----------------------
-# phone list per brand (FIXED)
+# phone list per brand
 # -----------------------
 
 def get_brand_phones(url):
@@ -244,9 +249,7 @@ def get_brand_phones(url):
 
             phones.append(BASE + "/" + href)
 
-        # -----------------------
-        # FIX: dynamic pagination
-        # -----------------------
+        # dynamic pagination
         next_page = None
 
         for a in soup.find_all("a", href=True):
@@ -410,8 +413,6 @@ def run():
 
             except Exception as e:
                 print("error:", e)
-
-    save_dataset(dataset)
 
     print("phones stored:", len(dataset))
 
