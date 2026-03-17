@@ -9,7 +9,6 @@ import re
 BASE = "https://www.gsmarena.com"
 MAKERS_URL = f"{BASE}/makers.php3"
 
-# ✅ absolute path fix
 DATA_FILE = os.path.abspath("data/phones/phones.json")
 print("WRITING TO:", DATA_FILE)
 
@@ -22,10 +21,16 @@ session.headers.update(HEADERS)
 
 os.makedirs("data/phones", exist_ok=True)
 
-# ✅ ensure file exists
+# ensure file exists
 if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, "w") as f:
         json.dump([], f)
+
+# -----------------------
+# 🔥 NEW BUFFER SYSTEM
+# -----------------------
+BUFFER = []
+FLUSH_SIZE = 20
 
 
 # -----------------------
@@ -133,28 +138,33 @@ def save_dataset(data):
 
 
 # -----------------------
-# 🔥 FIXED append (atomic + debug)
+# 🔥 FIXED append with BUFFER
 # -----------------------
 
 def append_phone(phone):
 
-    try:
-        with open(DATA_FILE, "r") as f:
-            data = json.load(f)
-    except:
-        data = []
+    BUFFER.append(phone)
 
-    data.append(phone)
+    if len(BUFFER) >= FLUSH_SIZE:
 
-    tmp = DATA_FILE + ".tmp"
+        try:
+            with open(DATA_FILE, "r") as f:
+                data = json.load(f)
+        except:
+            data = []
 
-    with open(tmp, "w") as f:
-        json.dump(data, f, indent=2)
+        data.extend(BUFFER)
 
-    os.replace(tmp, DATA_FILE)
+        tmp = DATA_FILE + ".tmp"
 
-    # ✅ debug proof
-    print("FILE SIZE AFTER WRITE:", len(data))
+        with open(tmp, "w") as f:
+            json.dump(data, f, indent=2)
+
+        os.replace(tmp, DATA_FILE)
+
+        print(f"FLUSHED {len(BUFFER)} → TOTAL: {len(data)}")
+
+        BUFFER.clear()
 
 
 # -----------------------
@@ -416,16 +426,20 @@ def run():
             except Exception as e:
                 print("error:", e)
 
-    # ✅ final verification
-    print("---- FINAL FILE CHECK ----")
-    with open(DATA_FILE) as f:
-        data = json.load(f)
+    # 🔥 FINAL FLUSH
+    if BUFFER:
+        try:
+            with open(DATA_FILE, "r") as f:
+                data = json.load(f)
+        except:
+            data = []
 
-    print("TOTAL IN FILE:", len(data))
-    print(data[:2])
+        data.extend(BUFFER)
 
-    # ✅ show directory
-    os.system(f"ls -lah {os.path.dirname(DATA_FILE)}")
+        with open(DATA_FILE, "w") as f:
+            json.dump(data, f, indent=2)
+
+        print(f"FINAL FLUSH → TOTAL: {len(data)}")
 
     print("phones stored:", len(dataset))
 
