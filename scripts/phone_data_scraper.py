@@ -126,7 +126,7 @@ def save_dataset(data):
         json.dump(data, f, indent=2)
 
 
-# incremental writer (added earlier)
+# incremental writer (kept unchanged)
 
 def append_phone(phone):
 
@@ -187,33 +187,16 @@ def get_brands():
 
 
 # -----------------------
-# phone list per brand
+# phone list per brand (FIXED)
 # -----------------------
 
 def get_brand_phones(url):
 
     phones = []
 
-    page = 1
+    page_url = url
 
-    while True:
-
-        if page == 1:
-            page_url = url
-        else:
-        
-            # original pagination (kept for compatibility)
-            page_url = url.replace(".php", f"-{page}.php")
-        
-            # GSMArena correct pagination
-            parts = url.split("/")[-1].replace(".php", "").split("-")
-        
-            if len(parts) >= 3:
-                brand_id = parts[-1]
-                brand_slug = "-".join(parts[:-1])
-        
-                page_url = f"{BASE}/{brand_slug}-f-{page}-{brand_id}.php"
-
+    while page_url:
 
         soup = fetch(page_url)
 
@@ -229,9 +212,8 @@ def get_brand_phones(url):
         print("---- FIRST 2000 HTML ----")
         print(soup.prettify()[:2000])
 
-        items = soup.find_all("a")
-
-        print("TOTAL A TAGS:", len(items))
+        all_links = soup.find_all("a")
+        print("TOTAL A TAGS:", len(all_links))
 
         items = []
         
@@ -239,7 +221,7 @@ def get_brand_phones(url):
         
             href = a["href"]
         
-            if href.endswith(".php") and "-phones-" not in href and "_" in href:
+            if re.search(r"-\d+\.php$", href) and "-phones-" not in href:
                 items.append(a)
 
         print("PHONE LINKS FOUND:", len(items)) 
@@ -250,14 +232,10 @@ def get_brand_phones(url):
         for a in items:
 
             href = a.get("href")
-            if not re.search(r"-\d+\.php$", href):
-                continue
+
             print("PHONE LINK:", href)
             print("candidate:", href)
-            
-            if not re.search(r"-\d+\.php$", href):
-                continue
-                
+
             if not href:
                 continue
 
@@ -266,7 +244,17 @@ def get_brand_phones(url):
 
             phones.append(BASE + "/" + href)
 
-        page += 1
+        # -----------------------
+        # FIX: dynamic pagination
+        # -----------------------
+        next_page = None
+
+        for a in soup.find_all("a", href=True):
+            if a.text and "Next" in a.text:
+                next_page = BASE + "/" + a["href"]
+                break
+
+        page_url = next_page
 
         time.sleep(0.6)
 
