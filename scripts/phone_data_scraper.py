@@ -151,12 +151,16 @@ def save_dataset(data):
 
 def append_phone(phone):
 
+    # 🔥 Safe load
     try:
-        with open(DATA_FILE, "r") as f:
-            data = json.load(f)
-    except:
-        print("⚠️ JSON LOAD FAILED - preserving existing file")
-        return
+        if os.path.getsize(DATA_FILE) == 0:
+            data = []
+        else:
+            with open(DATA_FILE, "r") as f:
+                data = json.load(f)
+    except Exception as e:
+        print("⚠️ JSON LOAD FAILED - recovering:", e)
+        data = []   # 🔥 fallback, NOT return
 
     data.append(phone)
 
