@@ -459,7 +459,7 @@ def run():
     # 🔥 Load existing dataset safely
     dataset = load_dataset()
 
-    # 🔥 Initialize global dedupe set (works for empty + existing file)
+    # 🔥 Initialize dedupe set (safe for empty + existing)
     KNOWN_SLUGS = set()
     for p in dataset:
         slug = p.get("slug")
@@ -471,8 +471,9 @@ def run():
         print("INITIAL KNOWN SLUGS:", len(KNOWN_SLUGS))
 
     brands = get_brands()
-
     print("brands:", len(brands))
+
+    total_added = 0
 
     for brand in brands:
 
@@ -481,7 +482,6 @@ def run():
         for url in phones:
 
             try:
-
                 phone = parse_phone(url)
 
                 if not phone:
@@ -494,19 +494,20 @@ def run():
                         print("SKIPPED (no slug):", phone.get("name"))
                     continue
 
-                # 🔥 Single source of truth (no dual dedupe)
+                # 🔥 Single source of truth
                 if slug in KNOWN_SLUGS:
                     if DEBUG:
                         print("SKIPPED (duplicate):", phone["name"])
                     continue
 
-                # 🔥 Update in-memory state FIRST
+                # 🔥 Update state FIRST
                 KNOWN_SLUGS.add(slug)
                 dataset.append(phone)
 
-                # 🔥 Persist immediately
+                # 🔥 Persist immediately (critical)
                 append_phone(phone)
 
+                total_added += 1
                 print("added:", phone["name"])
 
                 time.sleep(0.6)
@@ -514,22 +515,21 @@ def run():
             except Exception as e:
                 print("error:", e)
 
-    # 🔥 Keep original buffer logic (no regression)
-    if BUFFER:
-        try:
+    # 🔥 FINAL STATE LOG (no overwrite, no regression)
+    print("phones stored (session):", len(dataset))
+    print("new phones added:", total_added)
+
+    # 🔥 DEBUG FINAL FILE (critical for CI visibility)
+    try:
+        size = os.path.getsize(DATA_FILE)
+        print("FINAL FILE SIZE:", size)
+
+        if DEBUG:
             with open(DATA_FILE, "r") as f:
-                data = json.load(f)
-        except:
-            data = []
+                print("FINAL SAMPLE:", f.read()[:500])
 
-        data.extend(BUFFER)
-
-        with open(DATA_FILE, "w") as f:
-            json.dump(data, f, indent=2)
-
-        print(f"FINAL FLUSH → TOTAL: {len(data)}")
-
-    print("phones stored:", len(dataset))
+    except Exception as e:
+        print("FINAL FILE CHECK FAILED:", e)
 
 
 if __name__ == "__main__":
