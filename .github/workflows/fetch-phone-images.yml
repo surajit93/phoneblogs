@@ -53,14 +53,16 @@ jobs:
           echo "---- BEFORE ADD ----"
           git status
       
-          # 🔥 FORCE add everything
+          # 🔥 FORCE ADD EVERYTHING INCLUDING NEW DIRS
           git add -A
+          git add -f data/images || true
       
           echo "---- AFTER ADD ----"
           git status
       
-          # 🔥 ALWAYS TRY COMMIT (no early exit)
+          # 🔥 DEBUG - ensure files are detected
+          git ls-files | grep data/images || echo "NO FILES TRACKED"
+      
           git commit -m "update phone images + metadata" || echo "nothing to commit"
       
-          # 🔥 SIMPLE PUSH (no rebase nonsense)
-          git push
+          git push origin HEAD:${{ github.ref_name }}
