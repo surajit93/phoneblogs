@@ -7,67 +7,130 @@ import re
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
+# ✅ NEW: cloudscraper fallback
+import cloudscraper
+
 BASE = "https://www.gsmarena.com"
 
 DATA_FILE = "data/phones/phones.json"
 IMAGE_ROOT = "data/images"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (PhoneImageBot/2.0)"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
 }
 
 session = requests.Session()
 session.headers.update(HEADERS)
 
+# ✅ fallback session
+scraper = cloudscraper.create_scraper()
+scraper.headers.update(HEADERS)
+
 MAX_PER_TYPE = 5
 
 
 # -----------------------
-# 🔥 INIT FIX (YOUR ISSUE 1)
+# INIT
 # -----------------------
 os.makedirs("data", exist_ok=True)
 os.makedirs("data/phones", exist_ok=True)
 os.makedirs(IMAGE_ROOT, exist_ok=True)
 
-# ensure phones.json exists
 if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, "w") as f:
         json.dump([], f)
 
 
 # -----------------------
-# helpers
+# DEBUG HELPERS
 # -----------------------
 
-def fetch(url, retries=3):
-    for _ in range(retries):
-        try:
-            r = session.get(url, timeout=10)
-            if r.status_code == 200:
-                return BeautifulSoup(r.text, "html.parser")
-        except Exception as e:
-            print("fetch error:", e)
+def detect_block(text):
+    t = text.lower()
 
-        time.sleep(2)
+    if "cloudflare" in t:
+        return "CLOUDFLARE"
+    if "attention required" in t:
+        return "BLOCKED_PAGE"
+    if "captcha" in t:
+        return "CAPTCHA"
+
     return None
 
 
-def download(url, path, retries=3):
-    for _ in range(retries):
+# -----------------------
+# FETCH (UPGRADED)
+# -----------------------
+
+def fetch(url, retries=3):
+    for attempt in range(retries):
         try:
+            print(f"\n[FETCH] Attempt {attempt+1}: {url}")
+
             r = session.get(url, timeout=10)
 
-            if r.status_code == 200 and len(r.content) > 5000:
+            print("[STATUS]", r.status_code)
+            print("[LENGTH]", len(r.text))
+
+            block = detect_block(r.text)
+
+            if block:
+                print("[BLOCK DETECTED]", block)
+                print("[SWITCHING TO CLOUDSCRAPER]")
+
+                r = scraper.get(url, timeout=15)
+
+                print("[CLOUDSCRAPER STATUS]", r.status_code)
+                print("[CLOUDSCRAPER LENGTH]", len(r.text))
+
+            if r.status_code == 200:
+
+                soup = BeautifulSoup(r.text, "html.parser")
+
+                title = soup.title.string if soup.title else "NO TITLE"
+                print("[TITLE]", title)
+
+                return soup
+
+        except Exception as e:
+            print("[FETCH ERROR]", e)
+
+        time.sleep(2)
+
+    print("[FETCH FAILED]", url)
+    return None
+
+
+# -----------------------
+# DOWNLOAD (LOGGING)
+# -----------------------
+
+def download(url, path, retries=3):
+    for attempt in range(retries):
+        try:
+            print(f"[DOWNLOAD] Attempt {attempt+1}: {url}")
+
+            r = session.get(url, timeout=10)
+
+            if r.status_code == 200:
+                size = len(r.content)
+                print("[SIZE]", size)
+
+                if size < 5000:
+                    print("[SKIP SMALL IMAGE]")
+                    return False
+
                 with open(path, "wb") as f:
                     f.write(r.content)
 
-                print("DOWNLOADED:", path)
+                print("[SAVED]", path)
                 return True
+
             else:
-                print("SKIPPED (small/bad):", url)
+                print("[BAD STATUS]", r.status_code)
 
         except Exception as e:
-            print("download error:", e)
+            print("[DOWNLOAD ERROR]", e)
 
         time.sleep(1)
 
@@ -88,19 +151,17 @@ def classify(text, url=None):
         return "back"
     if "side" in t or "profile" in t:
         return "side"
-    if "angle" in t or "perspective" in t:
+    if "angle" in t:
         return "angle"
     if "camera" in t:
         return "camera"
-    if "display" in t or "screen" in t:
+    if "display" in t:
         return "display"
-    if "color" in t or "variant" in t:
+    if "color" in t:
         return "variant"
 
     if "back" in u:
         return "back"
-    if "side" in u:
-        return "side"
 
     return "misc"
 
@@ -126,7 +187,7 @@ def is_bad_image(url):
 
 
 # -----------------------
-# core logic
+# CORE
 # -----------------------
 
 def process_phone(phone):
@@ -137,11 +198,13 @@ def process_phone(phone):
     if not url or not slug:
         return
 
-    print("\nProcessing:", slug)
+    print("\n==============================")
+    print("PROCESSING:", slug)
 
     soup = fetch(url)
+
     if not soup:
-        print("FAILED FETCH:", url)
+        print("[NO SOUP]")
         return
 
     folder = os.path.join(IMAGE_ROOT, slug)
@@ -163,23 +226,29 @@ def process_phone(phone):
     hero_image = None
 
     # -----------------------
-    # MAIN IMAGE
+    # MAIN IMAGE DEBUG
     # -----------------------
     main = soup.select_one(".specs-photo-main img")
 
-    if main:
+    if not main:
+        print("[NO MAIN IMAGE SELECTOR FOUND]")
+    else:
         src = main.get("src")
+
+        print("[MAIN RAW SRC]", src)
 
         if src:
             img_url = urljoin(BASE, src)
             img_url = img_url.replace("/thumb/", "/bigpic/")
 
-            print("MAIN IMG:", img_url)
+            print("[MAIN IMG URL]", img_url)
 
             if not is_bad_image(img_url):
+
                 h = hash_url(img_url)
 
                 if h not in seen_hashes:
+
                     filename = get_next_filename(folder, "front")
                     path = os.path.join(folder, filename)
 
@@ -189,21 +258,24 @@ def process_phone(phone):
                         hero_image = filename
 
     # -----------------------
-    # GALLERY
+    # GALLERY DEBUG
     # -----------------------
     gallery_link = soup.find("a", string=lambda x: x and "Pictures" in x)
 
-    if gallery_link and gallery_link.get("href"):
-
-        gallery_url = urljoin(BASE, gallery_link["href"])
-        print("GALLERY:", gallery_url)
+    if not gallery_link:
+        print("[NO GALLERY LINK FOUND]")
+    else:
+        gallery_url = urljoin(BASE, gallery_link.get("href"))
+        print("[GALLERY URL]", gallery_url)
 
         gallery = fetch(gallery_url)
 
-        if gallery:
+        if not gallery:
+            print("[GALLERY FETCH FAILED]")
+        else:
             imgs = gallery.select("img")
 
-            print("GALLERY IMAGES FOUND:", len(imgs))
+            print("[GALLERY IMG COUNT]", len(imgs))
 
             for img in imgs:
 
@@ -245,7 +317,7 @@ def process_phone(phone):
                 break
 
     # -----------------------
-    # METADATA JSON
+    # METADATA
     # -----------------------
     meta = {
         "slug": slug,
@@ -258,13 +330,13 @@ def process_phone(phone):
     with open(meta_path, "w") as f:
         json.dump(meta, f, indent=2)
 
-    print("METADATA SAVED:", slug)
+    print("[METADATA SAVED]", slug)
 
     time.sleep(0.5)
 
 
 # -----------------------
-# pipeline
+# PIPELINE
 # -----------------------
 
 def run():
@@ -278,7 +350,7 @@ def run():
         try:
             process_phone(phone)
         except Exception as e:
-            print("error:", e)
+            print("[ERROR]", e)
 
     print("DONE")
 
