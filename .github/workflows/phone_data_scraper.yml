@@ -58,4 +58,4 @@ jobs:
 
           git commit -m "update phone dataset"
 
-          git push
+          git push origin HEAD:main
