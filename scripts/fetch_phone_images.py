@@ -455,20 +455,38 @@ def process_phone(phone):
 # PIPELINE
 # -----------------------
 
-def run():
+BATCH_SIZE = 50
 
+def run():
     with open(DATA_FILE) as f:
         phones = json.load(f)
 
     print("TOTAL PHONES:", len(phones))
-    phones = phones[:20]
-    for phone in phones:
+
+    # 🔥 track progress
+    progress_file = os.path.join(BASE_DIR, "data/progress.txt")
+
+    start = 0
+    if os.path.exists(progress_file):
+        with open(progress_file) as f:
+            start = int(f.read().strip())
+
+    end = start + BATCH_SIZE
+    batch = phones[start:end]
+
+    print(f"[BATCH] {start} → {end}")
+
+    for phone in batch:
         try:
             process_phone(phone)
         except Exception as e:
             print("[ERROR]", e)
 
-    print("DONE")
+    # 🔥 save progress
+    with open(progress_file, "w") as f:
+        f.write(str(end))
+
+    print("DONE BATCH")
 
 
 if __name__ == "__main__":
