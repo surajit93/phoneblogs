@@ -461,7 +461,7 @@ def run():
         phones = json.load(f)
 
     print("TOTAL PHONES:", len(phones))
-
+    phones = phones[:20]
     for phone in phones:
         try:
             process_phone(phone)
