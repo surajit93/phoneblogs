@@ -35,6 +35,8 @@ jobs:
         run: |
           echo "---- IMAGE COUNT ----"
           find data/images -type f | wc -l || true
+          echo "---- SAMPLE ----"
+          find data/images | head -n 20 || true
 
       - name: Commit
         run: |
