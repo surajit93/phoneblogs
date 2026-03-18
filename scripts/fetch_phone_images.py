@@ -4,6 +4,7 @@ import time
 import requests
 import hashlib
 import re
+import random
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
@@ -30,11 +31,11 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
 }
 
-# ✅ CHANGED: use cloudscraper as PRIMARY (no removal, just override)
+# ✅ CHANGED: use cloudscraper as PRIMARY
 session = cloudscraper.create_scraper()
 session.headers.update(HEADERS)
 
-# ✅ fallback session (kept as-is)
+# ✅ fallback session
 scraper = cloudscraper.create_scraper()
 scraper.headers.update(HEADERS)
 
@@ -44,7 +45,6 @@ MAX_PER_TYPE = 5
 # -----------------------
 # INIT
 # -----------------------
-# 🔥 UPDATED: use BASE_DIR paths (NO removal, only replacement with absolute-safe)
 os.makedirs(os.path.join(BASE_DIR, "data"), exist_ok=True)
 os.makedirs(os.path.join(BASE_DIR, "data/phones"), exist_ok=True)
 os.makedirs(IMAGE_ROOT, exist_ok=True)
@@ -75,7 +75,7 @@ def detect_block(text):
 
 
 # -----------------------
-# FETCH (UPGRADED)
+# FETCH (UPGRADED + 429 FIX)
 # -----------------------
 
 def fetch(url, retries=3):
@@ -87,6 +87,12 @@ def fetch(url, retries=3):
 
             print("[STATUS]", r.status_code)
             print("[LENGTH]", len(r.text))
+
+            # 🔥 429 HANDLING
+            if r.status_code == 429:
+                print("[RATE LIMITED - WAITING]")
+                time.sleep(5)
+                continue
 
             block = detect_block(r.text)
 
@@ -117,7 +123,7 @@ def fetch(url, retries=3):
 
 
 # -----------------------
-# DOWNLOAD (LOGGING)
+# DOWNLOAD
 # -----------------------
 
 def download(url, path, retries=3):
@@ -135,7 +141,6 @@ def download(url, path, retries=3):
                     print("[SKIP SMALL IMAGE]")
                     return False
 
-                # 🔥 NEW: ensure parent dir exists before write
                 os.makedirs(os.path.dirname(path), exist_ok=True)
 
                 with open(path, "wb") as f:
@@ -205,7 +210,7 @@ def is_bad_image(url):
 
 
 # -----------------------
-# 🔥 NEW: extract from main anchor
+# 🔥 MAIN IMAGE PAGE EXTRACTION (FIXED FILTERING)
 # -----------------------
 
 def extract_from_main_anchor(soup, folder, image_map, seen_hashes):
@@ -217,7 +222,6 @@ def extract_from_main_anchor(soup, folder, image_map, seen_hashes):
         return
 
     href = main_a.get("href")
-
     if not href:
         return
 
@@ -226,7 +230,6 @@ def extract_from_main_anchor(soup, folder, image_map, seen_hashes):
     print("[MAIN IMAGE PAGE]", img_page_url)
 
     img_page = fetch(img_page_url)
-
     if not img_page:
         return
 
@@ -234,16 +237,27 @@ def extract_from_main_anchor(soup, folder, image_map, seen_hashes):
 
     print("[MAIN PAGE IMG COUNT]", len(imgs))
 
+    slug_base = os.path.basename(folder).split("(")[0].lower().replace("-", "")
+
     for img in imgs:
         src = img.get("src")
-
         if not src:
             continue
 
         img_url = urljoin(BASE, src)
 
+        # 🔥 STRICT FILTER
+        if "/vv/pics/" not in img_url and "/bigpic/" not in img_url:
+            continue
+
+        if slug_base not in img_url.lower().replace("-", ""):
+            continue
+
         if is_bad_image(img_url):
             continue
+
+        if len(image_map["angle"]) >= MAX_PER_TYPE:
+            break
 
         h = hash_url(img_url)
         if h in seen_hashes:
@@ -258,7 +272,7 @@ def extract_from_main_anchor(soup, folder, image_map, seen_hashes):
 
 
 # -----------------------
-# 🔥 NEW: fallback guess
+# FALLBACK
 # -----------------------
 
 def fallback_guess_images(base_url, folder, image_map, seen_hashes):
@@ -307,8 +321,6 @@ def process_phone(phone):
         return
 
     folder = os.path.join(IMAGE_ROOT, slug)
-
-    # 🔥 EXTRA SAFETY (ADDED, not replacing)
     os.makedirs(folder, exist_ok=True)
     print("[FOLDER PATH]", folder)
 
@@ -327,30 +339,18 @@ def process_phone(phone):
 
     hero_image = None
 
-    # -----------------------
-    # MAIN IMAGE
-    # -----------------------
     main = soup.select_one(".specs-photo-main img")
 
-    if not main:
-        print("[NO MAIN IMAGE SELECTOR FOUND]")
-    else:
+    if main:
         src = main.get("src")
 
-        print("[MAIN RAW SRC]", src)
-
         if src:
-            img_url = urljoin(BASE, src)
-            img_url = img_url.replace("/thumb/", "/bigpic/")
-
-            print("[MAIN IMG URL]", img_url)
+            img_url = urljoin(BASE, src).replace("/thumb/", "/bigpic/")
 
             if not is_bad_image(img_url):
-
                 h = hash_url(img_url)
 
                 if h not in seen_hashes:
-
                     filename = get_next_filename(folder, "front")
                     path = os.path.join(folder, filename)
 
@@ -359,96 +359,33 @@ def process_phone(phone):
                         seen_hashes.add(h)
                         hero_image = filename
 
-    # -----------------------
-    # EXTRA MAIN PAGE
-    # -----------------------
     extract_from_main_anchor(soup, folder, image_map, seen_hashes)
 
-    # -----------------------
-    # GALLERY
-    # -----------------------
-    gallery_link = soup.find("a", string=lambda x: x and "Pictures" in x)
-
-    if not gallery_link:
-        print("[NO GALLERY LINK FOUND]")
-    else:
-        gallery_url = urljoin(BASE, gallery_link.get("href"))
-        print("[GALLERY URL]", gallery_url)
-
-        gallery = fetch(gallery_url)
-
-        if not gallery:
-            print("[GALLERY FETCH FAILED]")
-        else:
-            imgs = gallery.select("img")
-
-            print("[GALLERY IMG COUNT]", len(imgs))
-
-            for img in imgs:
-
-                src = img.get("src")
-                alt = img.get("alt", "")
-
-                if not src:
-                    continue
-
-                img_url = urljoin(BASE, src)
-                img_url = img_url.replace("/thumb/", "/bigpic/")
-
-                if is_bad_image(img_url):
-                    continue
-
-                h = hash_url(img_url)
-                if h in seen_hashes:
-                    continue
-
-                img_type = classify(alt, img_url)
-
-                if len(image_map[img_type]) >= MAX_PER_TYPE:
-                    continue
-
-                filename = get_next_filename(folder, img_type)
-                path = os.path.join(folder, filename)
-
-                if download(img_url, path):
-                    image_map[img_type].append(filename)
-                    seen_hashes.add(h)
-
-    # -----------------------
-    # FALLBACK
-    # -----------------------
     total_images = sum(len(v) for v in image_map.values())
 
     if total_images <= 1:
         print("[USING FALLBACK IMAGE GUESS]")
         fallback_guess_images(url, folder, image_map, seen_hashes)
 
-    # -----------------------
-    # HERO
-    # -----------------------
     if not hero_image:
         for t in ["front", "angle", "back"]:
             if image_map[t]:
                 hero_image = image_map[t][0]
                 break
 
-    # -----------------------
-    # METADATA
-    # -----------------------
     meta = {
         "slug": slug,
         "hero": hero_image,
         "images": image_map
     }
 
-    meta_path = os.path.join(folder, "images.json")
-
-    with open(meta_path, "w") as f:
+    with open(os.path.join(folder, "images.json"), "w") as f:
         json.dump(meta, f, indent=2)
 
     print("[METADATA SAVED]", slug)
 
-    time.sleep(0.5)
+    # 🔥 RATE CONTROL
+    time.sleep(random.uniform(1.5, 3.5))
 
 
 # -----------------------
@@ -463,7 +400,6 @@ def run():
 
     print("TOTAL PHONES:", len(phones))
 
-    # 🔥 track progress
     progress_file = os.path.join(BASE_DIR, "data/progress.txt")
 
     start = 0
@@ -482,7 +418,6 @@ def run():
         except Exception as e:
             print("[ERROR]", e)
 
-    # 🔥 save progress
     with open(progress_file, "w") as f:
         f.write(str(end))
 
