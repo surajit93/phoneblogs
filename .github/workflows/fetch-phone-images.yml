@@ -31,19 +31,33 @@ jobs:
         run: |
           python scripts/fetch_phone_images.py
 
+      # 🔥 ENHANCED DEBUG (ADDED, not replacing)
       - name: Debug
         run: |
+          echo "---- IMAGE ROOT ----"
+          ls -lah data || true
+          ls -lah data/images || true
+
           echo "---- IMAGE COUNT ----"
           find data/images -type f | wc -l || true
+
           echo "---- SAMPLE ----"
           find data/images | head -n 20 || true
 
+      # 🔥 IMPROVED COMMIT (SAFE UPGRADE)
       - name: Commit
         run: |
           git config --global user.name "phoneblogs-bot"
           git config --global user.email "bot@users.noreply.github.com"
 
-          git add data/images
+          # 🔥 FORCE ADD (fixes your issue)
+          git add -A data/images
+
+          # 🔥 extra safety (no removal)
+          git add data || true
+
+          echo "---- STAGED FILES ----"
+          git status
 
           git diff --cached --quiet && echo "no changes" && exit 0
 
