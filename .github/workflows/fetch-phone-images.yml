@@ -50,10 +50,10 @@ jobs:
           git config --global user.name "phoneblogs-bot"
           git config --global user.email "bot@users.noreply.github.com"
 
-          # 🔥 FORCE ADD (fixes your issue)
-          git add -A data/images
+          # 🔥 FORCE TRACK EVEN IF IGNORED
+          git add -f data/images
 
-          # 🔥 extra safety (no removal)
+          # keep existing behavior
           git add data || true
 
           echo "---- STAGED FILES ----"
@@ -64,4 +64,4 @@ jobs:
           git commit -m "update phone images + metadata"
 
           git pull --rebase origin ${{ github.ref_name }} || true
-          git push
+          git push  
