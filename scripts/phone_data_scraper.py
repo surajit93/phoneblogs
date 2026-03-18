@@ -27,7 +27,8 @@ if not os.path.exists(DATA_FILE):
 
 BUFFER = []
 FLUSH_SIZE = 20
-
+DEBUG = False
+KNOWN_SLUGS = set()
 
 def fetch(url, retries=3):
 
@@ -109,13 +110,18 @@ def extract_price(text):
 
 
 def extract_wifi_version(text):
-
     if not text:
         return None
 
-    m = re.search(r"Wi[- ]?Fi\s*(\d)", text, re.I)
+    m = re.search(r"Wi[- ]?Fi\s*(\d+)", text, re.I)
+    if m:
+        return m.group(1)
 
-    return m.group(1) if m else None
+    m2 = re.search(r"/(\d+)\b", text)
+    if m2:
+        return m2.group(1)
+
+    return None
 
 
 def extract_bluetooth_version(text):
@@ -145,28 +151,30 @@ def save_dataset(data):
 
 def append_phone(phone):
 
-    BUFFER.append(phone)
+    global KNOWN_SLUGS
 
-    if len(BUFFER) >= FLUSH_SIZE:
+    if phone["slug"] in KNOWN_SLUGS:
+        return
 
-        try:
-            with open(DATA_FILE, "r") as f:
-                data = json.load(f)
-        except:
-            data = []
+    KNOWN_SLUGS.add(phone["slug"])
 
-        data.extend(BUFFER)
+    try:
+        with open(DATA_FILE, "r") as f:
+            data = json.load(f)
+    except:
+        data = []
 
-        tmp = DATA_FILE + ".tmp"
+    data.append(phone)
 
-        with open(tmp, "w") as f:
-            json.dump(data, f, indent=2)
+    tmp = DATA_FILE + ".tmp"
 
-        os.replace(tmp, DATA_FILE)
+    with open(tmp, "w") as f:
+        json.dump(data, f, indent=2)
 
-        print(f"FLUSHED {len(BUFFER)} → TOTAL: {len(data)}")
+    os.replace(tmp, DATA_FILE)
 
-        BUFFER.clear()
+    if DEBUG:
+        print(f"WRITE: {phone['name']} → TOTAL: {len(data)}")
 
 
 def get_brands():
@@ -216,17 +224,18 @@ def get_brand_phones(url):
         if soup is None:
             break
         
-        print("---- PAGE URL ----")
-        print(page_url)
-        
-        print("---- PAGE TITLE ----")
-        print(soup.title)
-        
-        print("---- FIRST 2000 HTML ----")
-        print(soup.prettify()[:2000])
+        if DEBUG:
+            print("---- PAGE URL ----")
+            print(page_url)
+            print("---- PAGE TITLE ----")
+            print(soup.title)
+            print("---- FIRST 2000 HTML ----")
+            print(soup.prettify()[:2000])
 
         all_links = soup.find_all("a")
-        print("TOTAL A TAGS:", len(all_links))
+        
+        if DEBUG:
+            print("TOTAL A TAGS:", len(all_links))
 
         items = []
         
@@ -237,7 +246,8 @@ def get_brand_phones(url):
             if re.search(r"-\d+\.php$", href) and "-phones-" not in href:
                 items.append(a)
 
-        print("PHONE LINKS FOUND:", len(items)) 
+        if DEBUG:
+            print("PHONE LINKS FOUND:", len(items)) 
         
         if not items:
             break
@@ -246,7 +256,8 @@ def get_brand_phones(url):
 
             href = a.get("href")
 
-            print("PHONE LINK:", href)
+            if DEBUG:
+                print("PHONE LINK:", href)
 
             if not href:
                 continue
@@ -281,9 +292,10 @@ def parse_phone(url):
 
     name = name_tag.text.strip()
 
-    print("\n==============================")
-    print("PARSING:", name)
-    print("==============================")
+    if DEBUG:
+        print("\n==============================")
+        print("PARSING:", name)
+        print("==============================")
 
     specs = {}
 
@@ -300,7 +312,6 @@ def parse_phone(url):
 
         specs[key] = val
 
-    # 🔥 ADDITION: SECTION PARSE (NO REMOVAL)
     section_specs = {}
     current_section = None
 
@@ -317,16 +328,17 @@ def parse_phone(url):
             key = f"{current_section}_{k.text.strip().lower()}"
             section_specs[key] = v.text.strip()
 
-    print("\n--- ALL SPEC KEYS ---")
-    print(sorted(specs.keys()))
+    if DEBUG:
+        print("\n--- ALL SPEC KEYS ---")
+        print(sorted(specs.keys()))
 
-    print("\n--- IMPORTANT RAW VALUES ---")
-    print("battery:", specs.get("battery"))
-    print("type:", specs.get("type"))
-    print("camera:", specs.get("camera"))
-    print("selfie camera:", specs.get("selfie camera"))
-    print("network:", specs.get("network"))
-    print("charging:", specs.get("charging"))
+        print("\n--- IMPORTANT RAW VALUES ---")
+        print("battery:", specs.get("battery"))
+        print("type:", specs.get("type"))
+        print("camera:", specs.get("camera"))
+        print("selfie camera:", specs.get("selfie camera"))
+        print("network:", specs.get("network"))
+        print("charging:", specs.get("charging"))
 
     ram_gb, storage_gb = parse_ram_storage(specs.get("internal"))
 
@@ -340,8 +352,6 @@ def parse_phone(url):
     sensors = specs.get("sensors")
     camera_text = specs.get("camera")
     sound = specs.get("loudspeaker")
-
-    # 🔥 OVERRIDE LOGIC (ADDED ONLY)
 
     raw_type = specs.get("type")
 
@@ -435,15 +445,19 @@ def parse_phone(url):
         "url": url
     }
 
-    print("\n--- FINAL OUTPUT SNAPSHOT ---")
-    print(json.dumps(phone, indent=2))
+    if DEBUG:
+        print("\n--- FINAL OUTPUT SNAPSHOT ---")
+        print(json.dumps(phone, indent=2))
 
     return phone
 
 
 def run():
 
+    global KNOWN_SLUGS
+
     dataset = load_dataset()
+    KNOWN_SLUGS = {p["slug"] for p in dataset}
 
     known = {p["slug"] for p in dataset}
 
