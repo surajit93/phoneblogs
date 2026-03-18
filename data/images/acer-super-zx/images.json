@@ -1,0 +1,25 @@
+{
+  "slug": "acer-super-zx",
+  "hero": "front_1.jpg",
+  "images": {
+    "front": [
+      "front_1.jpg"
+    ],
+    "back": [],
+    "side": [],
+    "angle": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "angle_3.jpg",
+      "angle_4.jpg",
+      "angle_5.jpg",
+      "angle_6.jpg",
+      "angle_7.jpg",
+      "angle_8.jpg"
+    ],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}
