@@ -49,19 +49,18 @@ jobs:
         run: |
           git config --global user.name "phoneblogs-bot"
           git config --global user.email "bot@users.noreply.github.com"
-
-          # 🔥 FORCE TRACK EVEN IF IGNORED
-          git add -f data/images
-
-          # keep existing behavior
-          git add data || true
-
-          echo "---- STAGED FILES ----"
+      
+          echo "---- BEFORE ADD ----"
           git status
-
-          git diff --cached --quiet && echo "no changes" && exit 0
-
-          git commit -m "update phone images + metadata"
-
-          git pull --rebase origin ${{ github.ref_name }} || true
-          git push  
+      
+          # 🔥 FORCE add everything
+          git add -A
+      
+          echo "---- AFTER ADD ----"
+          git status
+      
+          # 🔥 ALWAYS TRY COMMIT (no early exit)
+          git commit -m "update phone images + metadata" || echo "nothing to commit"
+      
+          # 🔥 SIMPLE PUSH (no rebase nonsense)
+          git push
