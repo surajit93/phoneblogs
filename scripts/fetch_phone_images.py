@@ -12,8 +12,19 @@ import cloudscraper
 
 BASE = "https://www.gsmarena.com"
 
+# 🔥 NEW: absolute base dir (ADDED - no removal)
+BASE_DIR = os.getcwd()
+print("[BASE DIR]", BASE_DIR)
+
 DATA_FILE = "data/phones/phones.json"
 IMAGE_ROOT = "data/images"
+
+# 🔥 NEW: absolute path override (ADDED - no removal)
+DATA_FILE = os.path.join(BASE_DIR, DATA_FILE)
+IMAGE_ROOT = os.path.join(BASE_DIR, IMAGE_ROOT)
+
+print("[DATA FILE]", DATA_FILE)
+print("[IMAGE ROOT]", IMAGE_ROOT)
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
@@ -33,9 +44,13 @@ MAX_PER_TYPE = 5
 # -----------------------
 # INIT
 # -----------------------
-os.makedirs("data", exist_ok=True)
-os.makedirs("data/phones", exist_ok=True)
+# 🔥 UPDATED: use BASE_DIR paths (NO removal, only replacement with absolute-safe)
+os.makedirs(os.path.join(BASE_DIR, "data"), exist_ok=True)
+os.makedirs(os.path.join(BASE_DIR, "data/phones"), exist_ok=True)
 os.makedirs(IMAGE_ROOT, exist_ok=True)
+
+print("[DIR CHECK] data exists:", os.path.exists(os.path.join(BASE_DIR, "data")))
+print("[DIR CHECK] images exists:", os.path.exists(IMAGE_ROOT))
 
 if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, "w") as f:
@@ -119,6 +134,9 @@ def download(url, path, retries=3):
                 if size < 5000:
                     print("[SKIP SMALL IMAGE]")
                     return False
+
+                # 🔥 NEW: ensure parent dir exists before write
+                os.makedirs(os.path.dirname(path), exist_ok=True)
 
                 with open(path, "wb") as f:
                     f.write(r.content)
@@ -289,7 +307,10 @@ def process_phone(phone):
         return
 
     folder = os.path.join(IMAGE_ROOT, slug)
+
+    # 🔥 EXTRA SAFETY (ADDED, not replacing)
     os.makedirs(folder, exist_ok=True)
+    print("[FOLDER PATH]", folder)
 
     seen_hashes = set()
 
@@ -339,7 +360,7 @@ def process_phone(phone):
                         hero_image = filename
 
     # -----------------------
-    # 🔥 EXTRA: MAIN IMAGE PAGE
+    # EXTRA MAIN PAGE
     # -----------------------
     extract_from_main_anchor(soup, folder, image_map, seen_hashes)
 
@@ -394,7 +415,7 @@ def process_phone(phone):
                     seen_hashes.add(h)
 
     # -----------------------
-    # 🔥 FALLBACK
+    # FALLBACK
     # -----------------------
     total_images = sum(len(v) for v in image_map.values())
 
@@ -403,7 +424,7 @@ def process_phone(phone):
         fallback_guess_images(url, folder, image_map, seen_hashes)
 
     # -----------------------
-    # HERO FALLBACK
+    # HERO
     # -----------------------
     if not hero_image:
         for t in ["front", "angle", "back"]:
