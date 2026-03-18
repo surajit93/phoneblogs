@@ -19,8 +19,20 @@ HEADERS = {
 session = requests.Session()
 session.headers.update(HEADERS)
 
-# ✅ NEW: limit per type
 MAX_PER_TYPE = 5
+
+
+# -----------------------
+# 🔥 INIT FIX (YOUR ISSUE 1)
+# -----------------------
+os.makedirs("data", exist_ok=True)
+os.makedirs("data/phones", exist_ok=True)
+os.makedirs(IMAGE_ROOT, exist_ok=True)
+
+# ensure phones.json exists
+if not os.path.exists(DATA_FILE):
+    with open(DATA_FILE, "w") as f:
+        json.dump([], f)
 
 
 # -----------------------
@@ -33,24 +45,32 @@ def fetch(url, retries=3):
             r = session.get(url, timeout=10)
             if r.status_code == 200:
                 return BeautifulSoup(r.text, "html.parser")
-        except:
-            pass
+        except Exception as e:
+            print("fetch error:", e)
+
         time.sleep(2)
     return None
 
 
-# ✅ UPDATED: retry support
 def download(url, path, retries=3):
     for _ in range(retries):
         try:
             r = session.get(url, timeout=10)
+
             if r.status_code == 200 and len(r.content) > 5000:
                 with open(path, "wb") as f:
                     f.write(r.content)
+
+                print("DOWNLOADED:", path)
                 return True
-        except:
-            pass
+            else:
+                print("SKIPPED (small/bad):", url)
+
+        except Exception as e:
+            print("download error:", e)
+
         time.sleep(1)
+
     return False
 
 
@@ -58,7 +78,6 @@ def hash_url(url):
     return hashlib.md5(url.encode()).hexdigest()
 
 
-# ✅ UPDATED: stronger classification (text + url)
 def classify(text, url=None):
     t = (text or "").lower()
     u = (url or "").lower()
@@ -78,7 +97,6 @@ def classify(text, url=None):
     if "color" in t or "variant" in t:
         return "variant"
 
-    # fallback using URL
     if "back" in u:
         return "back"
     if "side" in u:
@@ -92,7 +110,6 @@ def get_next_filename(folder, img_type):
     return f"{img_type}_{len(existing)+1}.jpg"
 
 
-# ✅ UPDATED: stronger filtering
 def is_bad_image(url):
     url = url.lower()
 
@@ -120,10 +137,11 @@ def process_phone(phone):
     if not url or not slug:
         return
 
-    print("Processing:", slug)
+    print("\nProcessing:", slug)
 
     soup = fetch(url)
     if not soup:
+        print("FAILED FETCH:", url)
         return
 
     folder = os.path.join(IMAGE_ROOT, slug)
@@ -151,11 +169,12 @@ def process_phone(phone):
 
     if main:
         src = main.get("src")
+
         if src:
             img_url = urljoin(BASE, src)
-
-            # ✅ NEW: force high-res
             img_url = img_url.replace("/thumb/", "/bigpic/")
+
+            print("MAIN IMG:", img_url)
 
             if not is_bad_image(img_url):
                 h = hash_url(img_url)
@@ -167,9 +186,7 @@ def process_phone(phone):
                     if download(img_url, path):
                         image_map["front"].append(filename)
                         seen_hashes.add(h)
-
                         hero_image = filename
-                        print(" saved front main")
 
     # -----------------------
     # GALLERY
@@ -179,10 +196,14 @@ def process_phone(phone):
     if gallery_link and gallery_link.get("href"):
 
         gallery_url = urljoin(BASE, gallery_link["href"])
+        print("GALLERY:", gallery_url)
+
         gallery = fetch(gallery_url)
 
         if gallery:
             imgs = gallery.select("img")
+
+            print("GALLERY IMAGES FOUND:", len(imgs))
 
             for img in imgs:
 
@@ -193,8 +214,6 @@ def process_phone(phone):
                     continue
 
                 img_url = urljoin(BASE, src)
-
-                # ✅ NEW: force high-res
                 img_url = img_url.replace("/thumb/", "/bigpic/")
 
                 if is_bad_image(img_url):
@@ -206,7 +225,6 @@ def process_phone(phone):
 
                 img_type = classify(alt, img_url)
 
-                # ✅ NEW: limit per type
                 if len(image_map[img_type]) >= MAX_PER_TYPE:
                     continue
 
@@ -216,7 +234,6 @@ def process_phone(phone):
                 if download(img_url, path):
                     image_map[img_type].append(filename)
                     seen_hashes.add(h)
-                    print(" saved", filename)
 
     # -----------------------
     # HERO FALLBACK
@@ -241,7 +258,7 @@ def process_phone(phone):
     with open(meta_path, "w") as f:
         json.dump(meta, f, indent=2)
 
-    print(" metadata saved")
+    print("METADATA SAVED:", slug)
 
     time.sleep(0.5)
 
@@ -252,14 +269,10 @@ def process_phone(phone):
 
 def run():
 
-    if not os.path.exists(DATA_FILE):
-        print("phones.json missing")
-        return
-
     with open(DATA_FILE) as f:
         phones = json.load(f)
 
-    print("TOTAL:", len(phones))
+    print("TOTAL PHONES:", len(phones))
 
     for phone in phones:
         try:
