@@ -151,7 +151,8 @@ def save_dataset(data):
 
 def append_phone(phone):
 
-    # 🔥 Safe load
+    print(">>> APPEND START:", phone["name"])
+
     try:
         if os.path.getsize(DATA_FILE) == 0:
             data = []
@@ -159,10 +160,12 @@ def append_phone(phone):
             with open(DATA_FILE, "r") as f:
                 data = json.load(f)
     except Exception as e:
-        print("⚠️ JSON LOAD FAILED - recovering:", e)
-        data = []   # 🔥 fallback, NOT return
+        print("❌ LOAD FAILED:", e)
+        data = []
 
     data.append(phone)
+
+    print(">>> BEFORE WRITE COUNT:", len(data))
 
     tmp = DATA_FILE + ".tmp"
 
@@ -171,8 +174,7 @@ def append_phone(phone):
 
     os.replace(tmp, DATA_FILE)
 
-    if DEBUG:
-        print(f"WRITE: {phone['name']} → TOTAL: {len(data)}")
+    print(">>> WRITE DONE")
 
 
 def get_brands():
