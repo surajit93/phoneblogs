@@ -14,9 +14,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Pull latest changes
-        run: git pull || true
+        with:
+          fetch-depth: 0   # 🔥 important for push
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -31,29 +30,20 @@ jobs:
         run: |
           python scripts/phone_data_scraper.py
 
-      # 🔥 HARD DEBUG (no guessing anymore)
       - name: Debug file output
         run: |
-          echo "---- FILE PATH ----"
-          realpath data/phones/phones.json || true
-
-          echo "---- FILE LIST ----"
-          ls -lah data/phones || true
-
           echo "---- FILE SIZE ----"
           wc -c data/phones/phones.json || true
 
-          echo "---- FILE HEAD ----"
-          head -n 20 data/phones/phones.json || true
+          echo "---- FIRST 10 LINES ----"
+          head -n 10 data/phones/phones.json || true
 
-      # 🔥 CRITICAL: persist output
       - name: Upload phones.json artifact
         uses: actions/upload-artifact@v4
         with:
           name: phones-dataset
           path: data/phones/phones.json
 
-      # 🔥 Commit only if changed
       - name: Commit dataset updates
         run: |
           git config --global user.name "phoneblogs-bot"
@@ -68,5 +58,4 @@ jobs:
 
           git commit -m "update phone dataset"
 
-          git pull --rebase origin ${{ github.ref_name }} || true
           git push
