@@ -151,18 +151,12 @@ def save_dataset(data):
 
 def append_phone(phone):
 
-    global KNOWN_SLUGS
-
-    if phone["slug"] in KNOWN_SLUGS:
-        return
-
-    KNOWN_SLUGS.add(phone["slug"])
-
     try:
         with open(DATA_FILE, "r") as f:
             data = json.load(f)
     except:
-        data = []
+        print("⚠️ JSON LOAD FAILED - preserving existing file")
+        return
 
     data.append(phone)
 
@@ -456,10 +450,19 @@ def run():
 
     global KNOWN_SLUGS
 
+    # 🔥 Load existing dataset safely
     dataset = load_dataset()
-    KNOWN_SLUGS = {p["slug"] for p in dataset}
 
-    known = {p["slug"] for p in dataset}
+    # 🔥 Initialize global dedupe set (works for empty + existing file)
+    KNOWN_SLUGS = set()
+    for p in dataset:
+        slug = p.get("slug")
+        if slug:
+            KNOWN_SLUGS.add(slug)
+
+    if DEBUG:
+        print("INITIAL DATASET SIZE:", len(dataset))
+        print("INITIAL KNOWN SLUGS:", len(KNOWN_SLUGS))
 
     brands = get_brands()
 
@@ -478,12 +481,24 @@ def run():
                 if not phone:
                     continue
 
-                if phone["slug"] in known:
+                slug = phone.get("slug")
+
+                if not slug:
+                    if DEBUG:
+                        print("SKIPPED (no slug):", phone.get("name"))
                     continue
 
-                dataset.append(phone)
-                known.add(phone["slug"])
+                # 🔥 Single source of truth (no dual dedupe)
+                if slug in KNOWN_SLUGS:
+                    if DEBUG:
+                        print("SKIPPED (duplicate):", phone["name"])
+                    continue
 
+                # 🔥 Update in-memory state FIRST
+                KNOWN_SLUGS.add(slug)
+                dataset.append(phone)
+
+                # 🔥 Persist immediately
                 append_phone(phone)
 
                 print("added:", phone["name"])
@@ -493,6 +508,7 @@ def run():
             except Exception as e:
                 print("error:", e)
 
+    # 🔥 Keep original buffer logic (no regression)
     if BUFFER:
         try:
             with open(DATA_FILE, "r") as f:
