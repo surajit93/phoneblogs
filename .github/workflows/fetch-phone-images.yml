@@ -7,6 +7,10 @@ on:
     - cron: "0 19 * * *"
   workflow_dispatch:
 
+# 🔥 CRITICAL FIX (without this push won't work)
+permissions:
+  contents: write
+
 jobs:
   fetch-images:
     runs-on: ubuntu-latest
@@ -15,8 +19,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Pull latest
-        run: git pull || true
+      # ❌ REMOVED git pull (causes issues in CI)
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -31,7 +34,7 @@ jobs:
         run: |
           python scripts/fetch_phone_images.py
 
-      # 🔥 ENHANCED DEBUG (ADDED, not replacing)
+      # 🔥 DEBUG (unchanged)
       - name: Debug
         run: |
           echo "---- IMAGE ROOT ----"
@@ -44,25 +47,26 @@ jobs:
           echo "---- SAMPLE ----"
           find data/images | head -n 20 || true
 
-      # 🔥 IMPROVED COMMIT (SAFE UPGRADE)
+      # 🔥 FINAL COMMIT FIX
       - name: Commit
         run: |
           git config --global user.name "phoneblogs-bot"
           git config --global user.email "bot@users.noreply.github.com"
-      
+
           echo "---- BEFORE ADD ----"
           git status
-      
-          # 🔥 FORCE ADD EVERYTHING INCLUDING NEW DIRS
+
+          # 🔥 add everything
           git add -A
           git add -f data/images || true
-      
+
           echo "---- AFTER ADD ----"
           git status
-      
-          # 🔥 DEBUG - ensure files are detected
+
+          echo "---- TRACKED FILE CHECK ----"
           git ls-files | grep data/images || echo "NO FILES TRACKED"
-      
+
           git commit -m "update phone images + metadata" || echo "nothing to commit"
-      
+
+          # 🔥 clean push (no rebase issues)
           git push origin HEAD:${{ github.ref_name }}
