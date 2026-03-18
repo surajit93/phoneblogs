@@ -59,6 +59,20 @@ def extract_number(text):
     return float(m.group()) if m else None
 
 
+def extract_battery(text):
+    if not text:
+        return None
+    m = re.search(r"(\d{3,5})\s?mAh", text, re.I)
+    return int(m.group(1)) if m else None
+
+
+def extract_refresh(text):
+    if not text:
+        return None
+    m = re.search(r"(\d{2,3})\s?Hz", text)
+    return int(m.group(1)) if m else None
+
+
 def parse_ram_storage(text):
 
     if not text:
@@ -286,6 +300,23 @@ def parse_phone(url):
 
         specs[key] = val
 
+    # 🔥 ADDITION: SECTION PARSE (NO REMOVAL)
+    section_specs = {}
+    current_section = None
+
+    for row in soup.select("#specs-list tr"):
+        header = row.select_one("th")
+        if header:
+            current_section = header.text.strip().lower()
+            continue
+
+        k = row.select_one(".ttl")
+        v = row.select_one(".nfo")
+
+        if k and v and current_section:
+            key = f"{current_section}_{k.text.strip().lower()}"
+            section_specs[key] = v.text.strip()
+
     print("\n--- ALL SPEC KEYS ---")
     print(sorted(specs.keys()))
 
@@ -310,6 +341,39 @@ def parse_phone(url):
     camera_text = specs.get("camera")
     sound = specs.get("loudspeaker")
 
+    # 🔥 OVERRIDE LOGIC (ADDED ONLY)
+
+    raw_type = specs.get("type")
+
+    display_type = section_specs.get("display_type") or (
+        raw_type if raw_type and "mah" not in raw_type.lower() else specs.get("type")
+    )
+
+    battery_text = section_specs.get("battery_type") or (
+        raw_type if raw_type and "mah" in raw_type.lower() else specs.get("battery")
+    )
+
+    network = section_specs.get("network_technology") or specs.get("technology") or network
+
+    main_cam = (
+        section_specs.get("main camera_single")
+        or section_specs.get("main camera_dual")
+        or section_specs.get("main camera_triple")
+        or section_specs.get("main camera_quad")
+        or specs.get("single")
+        or specs.get("dual")
+        or specs.get("triple")
+        or specs.get("quad")
+        or camera_text
+    )
+
+    selfie_cam = (
+        section_specs.get("selfie camera_single")
+        or specs.get("selfie camera")
+    )
+
+    charging = section_specs.get("battery_charging") or charging
+
     phone = {
 
         "name": name,
@@ -324,21 +388,21 @@ def parse_phone(url):
 
         "display_inches": extract_number(specs.get("size")),
         "display_resolution": specs.get("resolution"),
-        "display_type": specs.get("type"),
-        "refresh_hz": extract_number(specs.get("refresh rate")),
+        "display_type": display_type,
+        "refresh_hz": extract_refresh(display_type),
 
-        "battery_mah": extract_number(specs.get("battery")),
-        "battery_type": specs.get("battery"),
+        "battery_mah": extract_battery(battery_text),
+        "battery_type": battery_text,
         "fast_charge_w": extract_number(charging),
         "wireless_charging": has_feature(charging, "wireless"),
         "reverse_charging": has_feature(charging, "reverse"),
 
-        "camera_mp": extract_number(camera_text),
-        "camera_features": specs.get("features"),
-        "front_camera_mp": extract_number(specs.get("selfie camera")),
-        "camera_count": camera_text.count("MP") if camera_text else None,
-        "telephoto_camera": has_feature(camera_text, "telephoto"),
-        "ultrawide_camera": has_feature(camera_text, "ultrawide"),
+        "camera_mp": extract_number(main_cam),
+        "camera_features": section_specs.get("main camera_features") or specs.get("features"),
+        "front_camera_mp": extract_number(selfie_cam),
+        "camera_count": main_cam.count("MP") if main_cam else None,
+        "telephoto_camera": has_feature(main_cam, "telephoto"),
+        "ultrawide_camera": has_feature(main_cam, "ultrawide"),
 
         "chipset": specs.get("chipset"),
         "gpu": specs.get("gpu"),
