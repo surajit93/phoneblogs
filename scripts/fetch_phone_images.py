@@ -19,10 +19,11 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
 }
 
-session = requests.Session()
+# ✅ CHANGED: use cloudscraper as PRIMARY (no removal, just override)
+session = cloudscraper.create_scraper()
 session.headers.update(HEADERS)
 
-# ✅ fallback session
+# ✅ fallback session (kept as-is)
 scraper = cloudscraper.create_scraper()
 scraper.headers.update(HEADERS)
 
@@ -84,7 +85,6 @@ def fetch(url, retries=3):
                 print("[CLOUDSCRAPER LENGTH]", len(r.text))
 
             if r.status_code == 200:
-
                 soup = BeautifulSoup(r.text, "html.parser")
 
                 title = soup.title.string if soup.title else "NO TITLE"
@@ -187,6 +187,87 @@ def is_bad_image(url):
 
 
 # -----------------------
+# 🔥 NEW: extract from main anchor
+# -----------------------
+
+def extract_from_main_anchor(soup, folder, image_map, seen_hashes):
+
+    main_a = soup.select_one(".specs-photo-main a")
+
+    if not main_a:
+        print("[NO MAIN ANCHOR]")
+        return
+
+    href = main_a.get("href")
+
+    if not href:
+        return
+
+    img_page_url = urljoin(BASE, href)
+
+    print("[MAIN IMAGE PAGE]", img_page_url)
+
+    img_page = fetch(img_page_url)
+
+    if not img_page:
+        return
+
+    imgs = img_page.select("img")
+
+    print("[MAIN PAGE IMG COUNT]", len(imgs))
+
+    for img in imgs:
+        src = img.get("src")
+
+        if not src:
+            continue
+
+        img_url = urljoin(BASE, src)
+
+        if is_bad_image(img_url):
+            continue
+
+        h = hash_url(img_url)
+        if h in seen_hashes:
+            continue
+
+        filename = get_next_filename(folder, "angle")
+        path = os.path.join(folder, filename)
+
+        if download(img_url, path):
+            image_map["angle"].append(filename)
+            seen_hashes.add(h)
+
+
+# -----------------------
+# 🔥 NEW: fallback guess
+# -----------------------
+
+def fallback_guess_images(base_url, folder, image_map, seen_hashes):
+
+    print("[FALLBACK IMAGE GUESS]")
+
+    base = base_url.split("/")[-1].replace(".php", "")
+
+    for i in range(1, 6):
+        guess = f"https://fdn2.gsmarena.com/vv/bigpic/{base}-{i}.jpg"
+
+        if is_bad_image(guess):
+            continue
+
+        h = hash_url(guess)
+        if h in seen_hashes:
+            continue
+
+        filename = get_next_filename(folder, "angle")
+        path = os.path.join(folder, filename)
+
+        if download(guess, path):
+            image_map["angle"].append(filename)
+            seen_hashes.add(h)
+
+
+# -----------------------
 # CORE
 # -----------------------
 
@@ -226,7 +307,7 @@ def process_phone(phone):
     hero_image = None
 
     # -----------------------
-    # MAIN IMAGE DEBUG
+    # MAIN IMAGE
     # -----------------------
     main = soup.select_one(".specs-photo-main img")
 
@@ -258,7 +339,12 @@ def process_phone(phone):
                         hero_image = filename
 
     # -----------------------
-    # GALLERY DEBUG
+    # 🔥 EXTRA: MAIN IMAGE PAGE
+    # -----------------------
+    extract_from_main_anchor(soup, folder, image_map, seen_hashes)
+
+    # -----------------------
+    # GALLERY
     # -----------------------
     gallery_link = soup.find("a", string=lambda x: x and "Pictures" in x)
 
@@ -306,6 +392,15 @@ def process_phone(phone):
                 if download(img_url, path):
                     image_map[img_type].append(filename)
                     seen_hashes.add(h)
+
+    # -----------------------
+    # 🔥 FALLBACK
+    # -----------------------
+    total_images = sum(len(v) for v in image_map.values())
+
+    if total_images <= 1:
+        print("[USING FALLBACK IMAGE GUESS]")
+        fallback_guess_images(url, folder, image_map, seen_hashes)
 
     # -----------------------
     # HERO FALLBACK
