@@ -21,21 +21,13 @@ session.headers.update(HEADERS)
 
 os.makedirs("data/phones", exist_ok=True)
 
-# ensure file exists
 if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, "w") as f:
         json.dump([], f)
 
-# -----------------------
-# 🔥 NEW BUFFER SYSTEM
-# -----------------------
 BUFFER = []
 FLUSH_SIZE = 20
 
-
-# -----------------------
-# helpers
-# -----------------------
 
 def fetch(url, retries=3):
 
@@ -137,10 +129,6 @@ def save_dataset(data):
         json.dump(data, f, indent=2)
 
 
-# -----------------------
-# 🔥 FIXED append with BUFFER
-# -----------------------
-
 def append_phone(phone):
 
     BUFFER.append(phone)
@@ -166,10 +154,6 @@ def append_phone(phone):
 
         BUFFER.clear()
 
-
-# -----------------------
-# brand discovery
-# -----------------------
 
 def get_brands():
 
@@ -204,10 +188,6 @@ def get_brands():
 
     return brands
 
-
-# -----------------------
-# phone list per brand
-# -----------------------
 
 def get_brand_phones(url):
 
@@ -276,10 +256,6 @@ def get_brand_phones(url):
     return phones
 
 
-# -----------------------
-# parse phone page
-# -----------------------
-
 def parse_phone(url):
 
     soup = fetch(url)
@@ -290,6 +266,10 @@ def parse_phone(url):
         return None
 
     name = name_tag.text.strip()
+
+    print("\n==============================")
+    print("PARSING:", name)
+    print("==============================")
 
     specs = {}
 
@@ -306,6 +286,16 @@ def parse_phone(url):
 
         specs[key] = val
 
+    print("\n--- ALL SPEC KEYS ---")
+    print(sorted(specs.keys()))
+
+    print("\n--- IMPORTANT RAW VALUES ---")
+    print("battery:", specs.get("battery"))
+    print("type:", specs.get("type"))
+    print("camera:", specs.get("camera"))
+    print("selfie camera:", specs.get("selfie camera"))
+    print("network:", specs.get("network"))
+    print("charging:", specs.get("charging"))
 
     ram_gb, storage_gb = parse_ram_storage(specs.get("internal"))
 
@@ -381,12 +371,11 @@ def parse_phone(url):
         "url": url
     }
 
+    print("\n--- FINAL OUTPUT SNAPSHOT ---")
+    print(json.dumps(phone, indent=2))
+
     return phone
 
-
-# -----------------------
-# pipeline
-# -----------------------
 
 def run():
 
@@ -426,7 +415,6 @@ def run():
             except Exception as e:
                 print("error:", e)
 
-    # 🔥 FINAL FLUSH
     if BUFFER:
         try:
             with open(DATA_FILE, "r") as f:
