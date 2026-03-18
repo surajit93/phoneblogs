@@ -403,9 +403,21 @@ def run():
     progress_file = os.path.join(BASE_DIR, "data/progress.txt")
 
     start = 0
+    
     if os.path.exists(progress_file):
-        with open(progress_file) as f:
-            start = int(f.read().strip())
+        try:
+            with open(progress_file) as f:
+                content = f.read().strip()
+    
+                if content.isdigit():
+                    start = int(content)
+                else:
+                    print("[INVALID PROGRESS FILE - RESETTING]")
+                    start = 0
+    
+        except Exception as e:
+            print("[PROGRESS READ ERROR]", e)
+            start = 0
 
     end = start + BATCH_SIZE
     batch = phones[start:end]
