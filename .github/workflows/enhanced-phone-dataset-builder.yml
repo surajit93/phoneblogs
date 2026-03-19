@@ -40,23 +40,23 @@ jobs:
       - name: Debug file output
         run: |
           echo "---- FILE SIZE ----"
-          wc -c data/phones/phones.json || true
+          wc -c data/phones/phones_updated.json || true
 
           echo "---- FIRST 10 LINES ----"
-          head -n 10 data/phones/phones.json || true
+          head -n 10 data/phones/phones_updated.json || true
 
-      - name: Upload phones.json artifact
+      - name: Upload phones_updated.json artifact
         uses: actions/upload-artifact@v4
         with:
           name: phones-dataset
-          path: data/phones/phones.json
+          path: data/phones/phones_updated.json
 
       - name: Commit dataset updates
         run: |
           git config user.name "phoneblogs-bot"
           git config user.email "bot@users.noreply.github.com"
       
-          git add data/phones/phones.json
+          git add data/phones/phones_updated.json
       
           echo "---- GIT STATUS ----"
           git status
