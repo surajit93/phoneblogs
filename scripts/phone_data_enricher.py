@@ -2,7 +2,7 @@ import json
 import os
 import re
 
-INPUT_FILE = "data/phones/phones.json"
+INPUT_FILE = "data/phones/phones_updated.json"
 OUTPUT_FILE = "data/phones/phones_enriched.json"
 IMAGE_BASE = "data/images"
 
