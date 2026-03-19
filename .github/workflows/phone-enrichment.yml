@@ -28,7 +28,7 @@ jobs:
 
       - name: Run enrichment
         run: |
-          python scripts/enrich.py
+          python scripts/phone_data_enricher.py
 
       - name: Debug output
         run: |
