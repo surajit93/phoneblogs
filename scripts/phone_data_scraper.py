@@ -125,8 +125,13 @@ def load_dataset():
     if not os.path.exists(DATA_FILE):
         return []
 
-    with open(DATA_FILE) as f:
-        return json.load(f)
+    try:
+        with open(DATA_FILE) as f:
+            return json.load(f)
+
+    except Exception as e:
+        print("⚠️ JSON CORRUPTED, RESETTING:", e)
+        return []
 
 
 def save_dataset(data):
