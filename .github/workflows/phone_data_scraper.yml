@@ -63,4 +63,4 @@ jobs:
       
           git commit -m "update phone dataset" || echo "no commit"
       
-          git push
+          echo "Skipping push — handled in script"
