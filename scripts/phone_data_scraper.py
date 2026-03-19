@@ -110,9 +110,13 @@ def extract_wifi_version(text):
 
 
 def extract_bluetooth_version(text):
+
     if not text:
         return None
+
     m = re.search(r"(\d\.\d)", text)
+
+    return m.group(1) if m else None
 
 
 
