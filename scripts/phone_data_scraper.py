@@ -173,10 +173,12 @@ def append_phone(phone, dataset):
 
         print(f"FLUSHED {len(BUFFER)} → TOTAL: {len(dataset)}")
 
-        # 🔥 NEW: commit mid-run
+        # 🔥 SAFE incremental push
+        os.system("git config user.name 'phoneblogs-bot'")
+        os.system("git config user.email 'bot@users.noreply.github.com'")
         os.system("git add data/phones/phones.json")
-        os.system('git commit -m "incremental update" || echo "no commit"')
-        os.system("git push origin HEAD:main")
+        os.system("git commit -m 'incremental update' || true")
+        os.system("git push origin HEAD:main || true")
 
         BUFFER.clear()
 
