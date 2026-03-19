@@ -59,68 +59,61 @@ def fetch(url, retries=3):
 
 
 def extract_number(text):
-
     if not text:
         return None
-
     m = re.search(r"\d+\.?\d*", text)
-
     return float(m.group()) if m else None
+
+def extract_battery(text):
+    if not text:
+        return None
+    m = re.search(r"(\d{3,5})\s?mAh", text, re.I)
+    return int(m.group(1)) if m else None
+
+def extract_refresh(text):
+    if not text:
+        return None
+    m = re.search(r"(\d{2,3})\s?Hz", text)
+    return int(m.group(1)) if m else None
 
 
 def parse_ram_storage(text):
-
     if not text:
         return None, None
-
-    ram = re.search(r"(\d+)\s*GB\s*RAM", text)
-    storage = re.search(r"(\d+)\s*GB", text)
-
-    ram_gb = int(ram.group(1)) if ram else None
-    storage_gb = int(storage.group(1)) if storage else None
-
+    ram = re.findall(r"(\d+)\s*GB\s*RAM", text, re.I)
+    storage = re.findall(r"(\d+)\s*GB", text)
+    ram_gb = max(map(int, ram)) if ram else None
+    storage_gb = max(map(int, storage)) if storage else None
     return ram_gb, storage_gb
 
 
 def has_feature(text, keyword):
-
     if not text:
         return False
-
     return keyword.lower() in text.lower()
 
 
 def extract_price(text):
-
     if not text:
         return None
-
     m = re.search(r"\$?\d{2,4}", text)
-
     if m:
         return float(m.group().replace("$", ""))
-
     return None
 
 
 def extract_wifi_version(text):
-
     if not text:
         return None
-
     m = re.search(r"Wi[- ]?Fi\s*(\d)", text, re.I)
-
     return m.group(1) if m else None
 
 
 def extract_bluetooth_version(text):
-
     if not text:
         return None
-
     m = re.search(r"(\d\.\d)", text)
 
-    return m.group(1) if m else None
 
 
 def load_dataset():
@@ -267,59 +260,6 @@ def get_brand_phones(url):
         time.sleep(0.6)
 
     return phones
-
-
-def extract_number(text):
-    if not text:
-        return None
-    m = re.search(r"\d+\.?\d*", text)
-    return float(m.group()) if m else None
-
-
-def extract_refresh(text):
-    if not text:
-        return None
-    m = re.search(r"(\d{2,3})\s?Hz", text)
-    return int(m.group(1)) if m else None
-
-
-def parse_ram_storage(text):
-    if not text:
-        return None, None
-    ram = re.findall(r"(\d+)\s*GB\s*RAM", text, re.I)
-    storage = re.findall(r"(\d+)\s*GB", text)
-    ram_gb = max(map(int, ram)) if ram else None
-    storage_gb = max(map(int, storage)) if storage else None
-    return ram_gb, storage_gb
-
-
-def has_feature(text, keyword):
-    if not text:
-        return False
-    return keyword.lower() in text.lower()
-
-
-def extract_price(text):
-    if not text:
-        return None
-    m = re.search(r"\$?\d{2,4}", text)
-    if m:
-        return float(m.group().replace("$", ""))
-    return None
-
-
-def extract_wifi_version(text):
-    if not text:
-        return None
-    m = re.search(r"Wi[- ]?Fi\s*(\d)", text, re.I)
-    return m.group(1) if m else None
-
-
-def extract_bluetooth_version(text):
-    if not text:
-        return None
-    m = re.search(r"(\d\.\d)", text)
-
 
 # -----------------------
 # parse phone page
