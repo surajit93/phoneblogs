@@ -10,6 +10,10 @@ on:
 permissions:
   contents: write  
 
+concurrency:
+  group: phone-dataset
+  cancel-in-progress: false
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
