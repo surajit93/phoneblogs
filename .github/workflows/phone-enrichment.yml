@@ -36,7 +36,7 @@ jobs:
           wc -c data/phones/phones_enriched.json || true
 
           echo "---- SAMPLE ----"
-          head -n 10 data/phones/phones_enriched.json || true
+          head -n 1000 data/phones/phones_enriched.json || true
 
       - name: Upload enriched dataset
         uses: actions/upload-artifact@v4
