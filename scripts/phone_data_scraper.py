@@ -1,3 +1,4 @@
+
 import requests
 import cloudscraper
 from bs4 import BeautifulSoup
@@ -21,14 +22,21 @@ session.headers.update(HEADERS)
 
 os.makedirs("data/phones", exist_ok=True)
 
+# ensure file exists
 if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, "w") as f:
         json.dump([], f)
 
+# -----------------------
+# 🔥 NEW BUFFER SYSTEM
+# -----------------------
 BUFFER = []
 FLUSH_SIZE = 20
-DEBUG = False
-KNOWN_SLUGS = set()
+
+
+# -----------------------
+# helpers
+# -----------------------
 
 def fetch(url, retries=3):
 
@@ -58,20 +66,6 @@ def extract_number(text):
     m = re.search(r"\d+\.?\d*", text)
 
     return float(m.group()) if m else None
-
-
-def extract_battery(text):
-    if not text:
-        return None
-    m = re.search(r"(\d{3,5})\s?mAh", text, re.I)
-    return int(m.group(1)) if m else None
-
-
-def extract_refresh(text):
-    if not text:
-        return None
-    m = re.search(r"(\d{2,3})\s?Hz", text)
-    return int(m.group(1)) if m else None
 
 
 def parse_ram_storage(text):
@@ -110,18 +104,13 @@ def extract_price(text):
 
 
 def extract_wifi_version(text):
+
     if not text:
         return None
 
-    m = re.search(r"Wi[- ]?Fi\s*(\d+)", text, re.I)
-    if m:
-        return m.group(1)
+    m = re.search(r"Wi[- ]?Fi\s*(\d)", text, re.I)
 
-    m2 = re.search(r"/(\d+)\b", text)
-    if m2:
-        return m2.group(1)
-
-    return None
+    return m.group(1) if m else None
 
 
 def extract_bluetooth_version(text):
@@ -149,33 +138,39 @@ def save_dataset(data):
         json.dump(data, f, indent=2)
 
 
+# -----------------------
+# 🔥 FIXED append with BUFFER
+# -----------------------
+
 def append_phone(phone):
 
-    print(">>> APPEND START:", phone["name"])
+    BUFFER.append(phone)
 
-    try:
-        if os.path.getsize(DATA_FILE) == 0:
-            data = []
-        else:
+    if len(BUFFER) >= FLUSH_SIZE:
+
+        try:
             with open(DATA_FILE, "r") as f:
                 data = json.load(f)
-    except Exception as e:
-        print("❌ LOAD FAILED:", e)
-        data = []
+        except:
+            data = []
 
-    data.append(phone)
+        data.extend(BUFFER)
 
-    print(">>> BEFORE WRITE COUNT:", len(data))
+        tmp = DATA_FILE + ".tmp"
 
-    tmp = DATA_FILE + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(data, f, indent=2)
 
-    with open(tmp, "w") as f:
-        json.dump(data, f, indent=2)
+        os.replace(tmp, DATA_FILE)
 
-    os.replace(tmp, DATA_FILE)
+        print(f"FLUSHED {len(BUFFER)} → TOTAL: {len(data)}")
 
-    print(">>> WRITE DONE")
+        BUFFER.clear()
 
+
+# -----------------------
+# brand discovery
+# -----------------------
 
 def get_brands():
 
@@ -211,6 +206,10 @@ def get_brands():
     return brands
 
 
+# -----------------------
+# phone list per brand
+# -----------------------
+
 def get_brand_phones(url):
 
     phones = []
@@ -224,18 +223,17 @@ def get_brand_phones(url):
         if soup is None:
             break
         
-        if DEBUG:
-            print("---- PAGE URL ----")
-            print(page_url)
-            print("---- PAGE TITLE ----")
-            print(soup.title)
-            print("---- FIRST 2000 HTML ----")
-            print(soup.prettify()[:2000])
+        print("---- PAGE URL ----")
+        print(page_url)
+        
+        print("---- PAGE TITLE ----")
+        print(soup.title)
+        
+        print("---- FIRST 2000 HTML ----")
+        print(soup.prettify()[:2000])
 
         all_links = soup.find_all("a")
-        
-        if DEBUG:
-            print("TOTAL A TAGS:", len(all_links))
+        print("TOTAL A TAGS:", len(all_links))
 
         items = []
         
@@ -246,8 +244,7 @@ def get_brand_phones(url):
             if re.search(r"-\d+\.php$", href) and "-phones-" not in href:
                 items.append(a)
 
-        if DEBUG:
-            print("PHONE LINKS FOUND:", len(items)) 
+        print("PHONE LINKS FOUND:", len(items)) 
         
         if not items:
             break
@@ -256,8 +253,7 @@ def get_brand_phones(url):
 
             href = a.get("href")
 
-            if DEBUG:
-                print("PHONE LINK:", href)
+            print("PHONE LINK:", href)
 
             if not href:
                 continue
@@ -281,9 +277,16 @@ def get_brand_phones(url):
     return phones
 
 
+# -----------------------
+# parse phone page
+# -----------------------
+
 def parse_phone(url):
 
     soup = fetch(url)
+
+    if soup is None:
+        return None
 
     name_tag = soup.select_one("h1")
 
@@ -452,28 +455,19 @@ def parse_phone(url):
     return phone
 
 
+# -----------------------
+# pipeline
+# -----------------------
+
 def run():
 
-    global KNOWN_SLUGS
-
-    # 🔥 Load existing dataset safely
     dataset = load_dataset()
 
-    # 🔥 Initialize dedupe set (safe for empty + existing)
-    KNOWN_SLUGS = set()
-    for p in dataset:
-        slug = p.get("slug")
-        if slug:
-            KNOWN_SLUGS.add(slug)
-
-    if DEBUG:
-        print("INITIAL DATASET SIZE:", len(dataset))
-        print("INITIAL KNOWN SLUGS:", len(KNOWN_SLUGS))
+    known = {p["slug"] for p in dataset}
 
     brands = get_brands()
-    print("brands:", len(brands))
 
-    total_added = 0
+    print("brands:", len(brands))
 
     for brand in brands:
 
@@ -482,32 +476,20 @@ def run():
         for url in phones:
 
             try:
+
                 phone = parse_phone(url)
 
                 if not phone:
                     continue
 
-                slug = phone.get("slug")
-
-                if not slug:
-                    if DEBUG:
-                        print("SKIPPED (no slug):", phone.get("name"))
+                if phone["slug"] in known:
                     continue
 
-                # 🔥 Single source of truth
-                if slug in KNOWN_SLUGS:
-                    if DEBUG:
-                        print("SKIPPED (duplicate):", phone["name"])
-                    continue
-
-                # 🔥 Update state FIRST
-                KNOWN_SLUGS.add(slug)
                 dataset.append(phone)
+                known.add(phone["slug"])
 
-                # 🔥 Persist immediately (critical)
                 append_phone(phone)
 
-                total_added += 1
                 print("added:", phone["name"])
 
                 time.sleep(0.6)
@@ -515,22 +497,24 @@ def run():
             except Exception as e:
                 print("error:", e)
 
-    # 🔥 FINAL STATE LOG (no overwrite, no regression)
-    print("phones stored (session):", len(dataset))
-    print("new phones added:", total_added)
-
-    # 🔥 DEBUG FINAL FILE (critical for CI visibility)
-    try:
-        size = os.path.getsize(DATA_FILE)
-        print("FINAL FILE SIZE:", size)
-
-        if DEBUG:
+    # 🔥 FINAL FLUSH
+    if BUFFER:
+        try:
             with open(DATA_FILE, "r") as f:
-                print("FINAL SAMPLE:", f.read()[:500])
+                data = json.load(f)
+        except:
+            data = []
 
-    except Exception as e:
-        print("FINAL FILE CHECK FAILED:", e)
+        data.extend(BUFFER)
+
+        with open(DATA_FILE, "w") as f:
+            json.dump(data, f, indent=2)
+
+        print(f"FINAL FLUSH → TOTAL: {len(data)}")
+
+    print("phones stored:", len(dataset))
 
 
 if __name__ == "__main__":
     run()
+	
