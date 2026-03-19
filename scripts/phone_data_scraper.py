@@ -32,7 +32,7 @@ if not os.path.exists(DATA_FILE):
 # -----------------------
 BUFFER = []
 FLUSH_SIZE = 20
-DEBUG = False
+DEBUG = True
 
 # -----------------------
 # helpers
@@ -496,7 +496,11 @@ def run():
 
         print(f"FINAL FLUSH → TOTAL: {len(dataset)}")
 
-        print(f"FINAL FLUSH → TOTAL: {len(data)}")
+	print("---- VERIFY WRITE ----")
+	with open(DATA_FILE, "r") as f:
+	    content = f.read()
+	    print("FILE LENGTH:", len(content))
+	    print("FILE SAMPLE:", content[:200])
 
     print("phones stored:", len(dataset))
 
