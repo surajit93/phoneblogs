@@ -174,11 +174,17 @@ def append_phone(phone, dataset):
         print(f"FLUSHED {len(BUFFER)} → TOTAL: {len(dataset)}")
 
         # 🔥 SAFE incremental push
-        os.system("git config user.name 'phoneblogs-bot'")
-        os.system("git config user.email 'bot@users.noreply.github.com'")
-        os.system("git add data/phones/phones.json")
-        os.system("git commit -m 'incremental update' || true")
-        os.system("git push origin HEAD:main || true")
+		os.system("git config user.name 'phoneblogs-bot'")
+		os.system("git config user.email 'bot@users.noreply.github.com'")
+		
+		# 🔥 CRITICAL STEP
+		os.system("git pull --rebase origin main || true")
+		
+		os.system("git add data/phones/phones.json")
+		os.system("git commit -m 'incremental update' || true")
+		
+		# retry push (handles race conditions)
+		os.system("git push origin HEAD:main || git pull --rebase origin main && git push origin HEAD:main")
 
         BUFFER.clear()
 
