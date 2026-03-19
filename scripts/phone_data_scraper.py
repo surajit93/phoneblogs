@@ -32,7 +32,7 @@ if not os.path.exists(DATA_FILE):
 # -----------------------
 BUFFER = []
 FLUSH_SIZE = 20
-DEBUG = True
+DEBUG = False
 
 # -----------------------
 # helpers
@@ -138,7 +138,7 @@ def save_dataset(data):
 # -----------------------
 # 🔥 FIXED append with BUFFER
 # -----------------------
-
+"""
 def append_phone(phone, dataset):
 
     BUFFER.append(phone)
@@ -155,7 +155,30 @@ def append_phone(phone, dataset):
         print(f"FLUSHED {len(BUFFER)} → TOTAL: {len(dataset)}")
 
         BUFFER.clear()
+"""
 
+
+def append_phone(phone, dataset):
+
+    BUFFER.append(phone)
+
+    if len(BUFFER) >= FLUSH_SIZE:
+
+        tmp = DATA_FILE + ".tmp"
+
+        with open(tmp, "w") as f:
+            json.dump(dataset, f, indent=2)
+
+        os.replace(tmp, DATA_FILE)
+
+        print(f"FLUSHED {len(BUFFER)} → TOTAL: {len(dataset)}")
+
+        # 🔥 NEW: commit mid-run
+        os.system("git add data/phones/phones.json")
+        os.system('git commit -m "incremental update" || echo "no commit"')
+        os.system("git push origin HEAD:main")
+
+        BUFFER.clear()
 
 # -----------------------
 # brand discovery
