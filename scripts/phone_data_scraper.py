@@ -32,7 +32,7 @@ if not os.path.exists(DATA_FILE):
 # -----------------------
 BUFFER = []
 FLUSH_SIZE = 20
-
+DEBUG = False
 
 # -----------------------
 # helpers
