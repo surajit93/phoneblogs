@@ -61,6 +61,6 @@ jobs:
           echo "---- GIT STATUS ----"
           git status
       
-          git commit -m "update phone dataset" || echo "no commit"
+          echo "Git handled inside script" || echo "no commit"
       
           echo "Skipping push — handled in script"
