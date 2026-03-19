@@ -31,7 +31,7 @@ if not os.path.exists(DATA_FILE):
 # 🔥 NEW BUFFER SYSTEM
 # -----------------------
 BUFFER = []
-FLUSH_SIZE = 20
+FLUSH_SIZE = 50
 DEBUG = False
 
 # -----------------------
@@ -482,45 +482,56 @@ def run():
 
     dataset = load_dataset()
 
-    # safe slug extraction (avoid KeyError)
+    # existing slugs (dedup protection)
     known = {p.get("slug") for p in dataset if p.get("slug")}
 
     brands = get_brands()
+    print(f"brands found: {len(brands)}")
 
-    print("brands:", len(brands))
+    total_added = 0
+    total_skipped = 0
+    total_errors = 0
 
     for brand in brands:
+
+        print(f"\n===== BRAND: {brand} =====")
 
         phones = get_brand_phones(brand)
 
         for url in phones:
 
             try:
-
                 phone = parse_phone(url)
 
                 if not phone:
+                    total_skipped += 1
                     continue
 
                 slug = phone.get("slug")
 
                 if not slug or slug in known:
+                    total_skipped += 1
                     continue
 
                 dataset.append(phone)
                 known.add(slug)
+                total_added += 1
 
                 append_phone(phone, dataset)
 
-                print("added:", phone["name"])
+                print(f"✅ added: {phone['name']}")
 
                 time.sleep(0.6)
 
             except Exception as e:
-                print("error:", e)
+                total_errors += 1
+                print(f"❌ error parsing {url}: {e}")
 
-    # 🔥 FINAL FLUSH
+    # -----------------------
+    # 🔥 FINAL FLUSH + PUSH
+    # -----------------------
     if BUFFER:
+
         tmp = DATA_FILE + ".tmp"
 
         with open(tmp, "w") as f:
@@ -528,19 +539,27 @@ def run():
 
         os.replace(tmp, DATA_FILE)
 
-        print(f"FINAL FLUSH → TOTAL: {len(dataset)}")
+        print(f"\n🔥 FINAL FLUSH → TOTAL: {len(dataset)}")
 
-        # 🔥 VERIFY WRITE
-        print("---- VERIFY WRITE ----")
-        try:
-            with open(DATA_FILE, "r") as f:
-                content = f.read()
-                print("FILE LENGTH:", len(content))
-                print("FILE SAMPLE:", content[:200])
-        except Exception as e:
-            print("VERIFY FAILED:", e)
+        # 🔥 FINAL PUSH (CRITICAL)
+        os.system("git config user.name 'phoneblogs-bot'")
+        os.system("git config user.email 'bot@users.noreply.github.com'")
 
-    print("phones stored:", len(dataset))
+        os.system("git pull --rebase origin main || true")
+        os.system("git add data/phones/phones.json")
+        os.system("git commit -m 'final incremental update' || true")
+        os.system("git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)")
+
+        BUFFER.clear()
+
+    # -----------------------
+    # 🔍 FINAL SUMMARY
+    # -----------------------
+    print("\n===== RUN SUMMARY =====")
+    print(f"Total phones stored: {len(dataset)}")
+    print(f"Added: {total_added}")
+    print(f"Skipped: {total_skipped}")
+    print(f"Errors: {total_errors}")
 
 
 if __name__ == "__main__":
