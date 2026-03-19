@@ -142,28 +142,20 @@ def save_dataset(data):
 # 🔥 FIXED append with BUFFER
 # -----------------------
 
-def append_phone(phone):
+def append_phone(phone, dataset):
 
     BUFFER.append(phone)
 
     if len(BUFFER) >= FLUSH_SIZE:
 
-        try:
-            with open(DATA_FILE, "r") as f:
-                data = json.load(f)
-        except:
-            data = []
-
-        data.extend(BUFFER)
-
         tmp = DATA_FILE + ".tmp"
 
         with open(tmp, "w") as f:
-            json.dump(data, f, indent=2)
+            json.dump(dataset, f, indent=2)
 
         os.replace(tmp, DATA_FILE)
 
-        print(f"FLUSHED {len(BUFFER)} → TOTAL: {len(data)}")
+        print(f"FLUSHED {len(BUFFER)} → TOTAL: {len(dataset)}")
 
         BUFFER.clear()
 
@@ -275,6 +267,58 @@ def get_brand_phones(url):
         time.sleep(0.6)
 
     return phones
+
+
+def extract_number(text):
+    if not text:
+        return None
+    m = re.search(r"\d+\.?\d*", text)
+    return float(m.group()) if m else None
+
+
+def extract_refresh(text):
+    if not text:
+        return None
+    m = re.search(r"(\d{2,3})\s?Hz", text)
+    return int(m.group(1)) if m else None
+
+
+def parse_ram_storage(text):
+    if not text:
+        return None, None
+    ram = re.findall(r"(\d+)\s*GB\s*RAM", text, re.I)
+    storage = re.findall(r"(\d+)\s*GB", text)
+    ram_gb = max(map(int, ram)) if ram else None
+    storage_gb = max(map(int, storage)) if storage else None
+    return ram_gb, storage_gb
+
+
+def has_feature(text, keyword):
+    if not text:
+        return False
+    return keyword.lower() in text.lower()
+
+
+def extract_price(text):
+    if not text:
+        return None
+    m = re.search(r"\$?\d{2,4}", text)
+    if m:
+        return float(m.group().replace("$", ""))
+    return None
+
+
+def extract_wifi_version(text):
+    if not text:
+        return None
+    m = re.search(r"Wi[- ]?Fi\s*(\d)", text, re.I)
+    return m.group(1) if m else None
+
+
+def extract_bluetooth_version(text):
+    if not text:
+        return None
+    m = re.search(r"(\d\.\d)", text)
 
 
 # -----------------------
@@ -488,7 +532,7 @@ def run():
                 dataset.append(phone)
                 known.add(phone["slug"])
 
-                append_phone(phone)
+                append_phone(phone, dataset)
 
                 print("added:", phone["name"])
 
@@ -499,16 +543,14 @@ def run():
 
     # 🔥 FINAL FLUSH
     if BUFFER:
-        try:
-            with open(DATA_FILE, "r") as f:
-                data = json.load(f)
-        except:
-            data = []
+        tmp = DATA_FILE + ".tmp"
 
-        data.extend(BUFFER)
+        with open(tmp, "w") as f:
+            json.dump(dataset, f, indent=2)
 
-        with open(DATA_FILE, "w") as f:
-            json.dump(data, f, indent=2)
+        os.replace(tmp, DATA_FILE)
+
+        print(f"FINAL FLUSH → TOTAL: {len(dataset)}")
 
         print(f"FINAL FLUSH → TOTAL: {len(data)}")
 
