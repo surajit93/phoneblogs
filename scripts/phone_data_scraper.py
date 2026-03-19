@@ -451,7 +451,8 @@ def run():
 
     dataset = load_dataset()
 
-    known = {p["slug"] for p in dataset}
+    # safe slug extraction (avoid KeyError)
+    known = {p.get("slug") for p in dataset if p.get("slug")}
 
     brands = get_brands()
 
@@ -470,11 +471,13 @@ def run():
                 if not phone:
                     continue
 
-                if phone["slug"] in known:
+                slug = phone.get("slug")
+
+                if not slug or slug in known:
                     continue
 
                 dataset.append(phone)
-                known.add(phone["slug"])
+                known.add(slug)
 
                 append_phone(phone, dataset)
 
@@ -495,11 +498,16 @@ def run():
         os.replace(tmp, DATA_FILE)
 
         print(f"FINAL FLUSH → TOTAL: {len(dataset)}")
-		print("---- VERIFY WRITE ----")
-		with open(DATA_FILE, "r") as f:
-		    content = f.read()
-		    print("FILE LENGTH:", len(content))
-		    print("FILE SAMPLE:", content[:200])
+
+        # 🔥 VERIFY WRITE
+        print("---- VERIFY WRITE ----")
+        try:
+            with open(DATA_FILE, "r") as f:
+                content = f.read()
+                print("FILE LENGTH:", len(content))
+                print("FILE SAMPLE:", content[:200])
+        except Exception as e:
+            print("VERIFY FAILED:", e)
 
     print("phones stored:", len(dataset))
 
