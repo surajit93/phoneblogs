@@ -17,7 +17,7 @@ BASE = "https://www.gsmarena.com"
 BASE_DIR = os.getcwd()
 print("[BASE DIR]", BASE_DIR)
 
-DATA_FILE = "data/phones/phones.json"
+DATA_FILE = "data/phones/phones_enriched.json"
 IMAGE_ROOT = "data/images"
 
 # 🔥 NEW: absolute path override (ADDED - no removal)
