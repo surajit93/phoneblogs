@@ -540,7 +540,7 @@ def process_phone(phone):
 # PIPELINE
 # -----------------------
 
-BATCH_SIZE = 50
+BATCH_SIZE = 500
 
 def run():
     with open(DATA_FILE) as f:
