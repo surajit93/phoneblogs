@@ -1,0 +1,3694 @@
+{
+  "benq-m300": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-al26": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-z2": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-series-8-aluminum": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-c81": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-5-ze620kl": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-c32": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-air-(2022)": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-sl91": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-fire-hd-6": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1b-(2020)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-7": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-15-pro-max": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benefon-track": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-ca8": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-el71": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-s680c": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-fire-7": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-m32": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-m315": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-acerone-liquid-s162e4": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-z330": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "archos-45-titanium": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-pro-11-(2022)": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-4-ze554kl": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "archos-50-titanium": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-6-batman-edition": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-kindle-fire-hd-8.9-lte": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "allview-a10-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-6d": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-pro-13-(2025)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-17-pro": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3l": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-m650": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-f5": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-m220": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s890": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-series-10-aluminum": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-m08": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-m360": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-5s": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-8-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-fire-hd-8-(2022)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-14-pro": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "at&t-smt5700": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-tab-p10-(2025)": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-e600": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "allview-viva-803g": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-go-flip-4": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-go-flip-3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-e76": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-go-flip-v": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-ultra": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-15-plus": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-17-pro-max": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3c": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-t51": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-fire-hd-10": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-m81": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s768": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-7-ultimate": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-8": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3x-(2019)": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-v11": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-e78": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-z410": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-v3-ultra": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-el71": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-d720": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s798": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1x": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-d716": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3t-10": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-x12": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-17": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-e61": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-13-pro-max": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-air-11-(2025)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-a520": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-5-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benefon-twin": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-acerone-liquid-s262f5": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-v12": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-jade-2": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-b502": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-wma8508": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-a200": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-talk-s": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-16-plus": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s296": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-v3-classic": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benefon-io": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-series-9": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-max-plus-(m2)-zb634kl": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1-(2021)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-9-fe": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1b-(2022)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-6": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-a203": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-d660": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-7": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-d611": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-m29": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-a58": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-max-shot-zb634kl": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-one-8-b1-820": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-tab-a3-a20": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s661": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "allview-soul-x7-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-tab-7-a1-713": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-p51": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-4-selfie-lite-zb553kl": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1x-(2019)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-zest-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "allview-p10-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-12-ultra": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benefon-vega": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-z320": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-cs6": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-5": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-kindle-fire-hd-8.9": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-e72": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-live-(l2)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-e700": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-11-ultra": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-a500": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-x1": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3v": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-v810": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3l-(2021)": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-e81": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1s-(2021)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-f99b": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-t3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-m350": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-series-11-aluminum": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-ultra-3": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-kindle-fire-hdx-8.9": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-fire-hd-8-(2017)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-m636": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-kindle-fire-hd": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-f3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-series-10": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-m330": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "allview-a10-lite-2019": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-z530s": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-tab-a3-a20fhd": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-ef51": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "archos-40-titanium": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-a320": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-fire-phone": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-m775c": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-tab-10-a3-a30": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-zest": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1c-(2019)": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-z530": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-14": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-se-(2022)": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-a210": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-15-pro": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-wma8701a": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-series-9-aluminum": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-f52": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-zs600kl": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-s88": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-ef71": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-sf71": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-m220": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-air-13-(2025)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-m100": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-d706": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s1130": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "allview-p8-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1se-(2020)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1l-(2021)": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-z6-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-9-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3x-(2020)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benefon-twig-discovery": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3t10-2020": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-se-2": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-t60": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-5s-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-max-pro-(m2)-zb631kl": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-e71": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-14-plus": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-cma8170": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benefon-twin+": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-a90": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-mini-(2024)": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s667": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benefon-twig-discovery-pro": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-pro-12.9-(2022)": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-6-zs630kl": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-u700": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-p30": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s663": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-6-diablo-immortal-edition": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-e72": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-h80": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3-(2019)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-fire-hd-7": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-a102": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-x14": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-d636": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-s670c": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-m580": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-a310": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-air": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-m630": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benefon-esc!": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-2560": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-s700": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-5": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1v-(2019)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1l-pro-(2021)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-7-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-tab-p11-(2025)": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-5v": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-max-pro-(m1)-zb601kl": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1s-(2020)": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-series-11": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-m33": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-tab-10-a3-a40": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-14-pro-max": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-(2025)": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-h801": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-h812": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-jade": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "at&t-quickfire": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-f320": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-tetra": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-a10": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-jade-primo": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benefon-q": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-t33": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-z200": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-m7": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-e52": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-a53": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-m11": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-9": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3-(2025)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-pro-11-(2025)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-cl71": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-z500": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-a16": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-pro-11-(2024)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-8-flip": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-s80": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-d680": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-7": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-jade-z": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-predator-8": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-v5518+": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-super-zx": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-series-8": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-sl80": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-smartphone-for-snapdragon-insiders": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-e55": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-kindle-fire": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-a211": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-h8": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-16": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3088": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-e850": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-m320": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-8": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-v3-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "allview-x5-soul": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-s68": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-wma8703": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-air-11-(2024)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1v-(2020)": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-pro-13-(2024)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-fire-hdx-8.9-(2014)": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-watch-ultra-2": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-ef81": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-cf61": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-f620": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s296+": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-16-pro-max": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-kindle-fire-hdx": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-fire-7-(2017)": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-5-ultimate": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-ii-zs660kl": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "allview-p10-style": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-fire-hd-10-(2017)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1s": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-live-(l1)-za550kl": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-a100": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s668": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-6d-ultimate": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1v-(2021)": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1t-7": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-2561": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-e53": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-z520": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-a38": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-max-(m1)-zb556kl": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-d515": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-1t-10": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-m01": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s618": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-lite-(l1)-za551kl": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s758": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-5-lite-zc600kl": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-c30": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "at&t-mustang": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-ef91": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-z630s": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-jade-s": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-iconia-a14": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-16-pro": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-10": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-a62": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-c36": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3t-8": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-h815": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3l-(2020)": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-acerone-liquid-s272e4": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-c31": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-3-strix": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-x2": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-chromebook-tab-10": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-a3": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-9": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-air-13-(2024)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3x-(2018)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-zenfone-5z-zs620kl": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amazon-kindle-fire-hd-(2013)": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-s81": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-siemens-ef61": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-h810": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-d612": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s669": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-ipad-(2022)": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "alcatel-3v-(2019)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-liquid-z220": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-m07": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "amoi-a9b": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-d736": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "asus-rog-phone-6-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "benq-s660c": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-16e": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "apple-iphone-15": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "acer-super-zx-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [],
+    "needs_hashing": true
+  },
+  "bird-s698": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "f62ec2c3997c2b9c6c17d706be994bae"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-s198": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "28a9ccd2d8c87c4e5f78b4d35fa3d642"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-s299": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "f16b78335bf75e6ea34c7a3c4b808b43"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-mp300": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-m19": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "bed9c0d754c9baa70c74fd6d33335665"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-v109": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "e58fb4f69f5f521378959d00cddec6be"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-s799": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "29cd9c497367c3994d0ef83dee9f66a3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-s699": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "a7596f8202f0eda655d4f222d51ab1a2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-v79": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "8d61b0562337f3d72764531f0a8f9be0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-s1186": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1a725381117a46baff442bacf7b7642d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-s199": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "e2c7b130f0bb57760ac3c792efe3eff7"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-s789": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1bc30ee97cd4d7b8f94c1e13754a6302"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-v5510": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "82e776e098637033ca8b874d1ca26e33"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-dv10": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d71d0782e228e9895616955af1856187",
+      "951bd2a942fda72d30219f399c6fb4b1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-s590": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-s580": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "fc13dddac24065b49ae64e4b63bb6870"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-a150": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-a130": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "e379e4e42adb0c1a00e43f7db01567e6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "bird-a120": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "727ced41eafefa7e367d16408414637f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-key2-le": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "34124b8ca52996e3bae9189f46534d5d",
+      "bc0040146ddf26ca626d673f08ec654a",
+      "79950b03a0b6cf3e19f2bd29b93f75d1",
+      "dde9bfd02f3851f4d1535503cc9b3e33"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-evolve-x": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bd7c0ab5e59534a85c25170b1aff78b7"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-evolve": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e5a4855ec08a860711644df93db4886d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-key2": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "34124b8ca52996e3bae9189f46534d5d",
+      "6bc5f42e00a69c1445ad3108ba9725cf",
+      "a16c36b54aae41b96e3c7a7c4d0089b4",
+      "7855cb6fe887fbb912eb387aca85db3f",
+      "f545fae885e764b1a51290ea03b74f7b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-dtek60": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "14eb845f84717a84804d47863e6d01bb"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-dtek50": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "95803c356e51b9849086cd1a622cef9a",
+      "a569b8ed3dbd00234ea15c50cab74c80",
+      "4ac2a1b0bc3ae91fbb3d15540ddf380e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-priv": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "343170289649f6716c89424fec0f52f7",
+      "96f353cff4d9cd02d16b5b45bacac1ef",
+      "6ff84d17270e220066bc50a2a14c4d40",
+      "11562403289daeba8ee1fca1379f05d5",
+      "e1ba7535b592973ba9a410dbe35a7ad3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-leap": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c1db8970289afa2dca2927b7790cf24d",
+      "d55f7dd5a8ce50adb48afa9692e62a9a",
+      "75a1b9bda18df0d3f69e8160054e002e",
+      "a06e93a6aae94919d99fb8f43b37a5b4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-classic-non-camera": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5fe8a0dc72f3c3d973a172e0b0795915"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-passport": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2f4a78633b7d9626bff3a935d88e89b4",
+      "8caa159fe70d64020c604fd52b38d9da",
+      "c1f9db00410656d9014f53e9abe0a67b",
+      "5cafdd17edd848924071440393f43fb9",
+      "902c1dd1343cb6c3dbbf560b44e1c0d0",
+      "be3a4b905ffb6a521b156de714358c80"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-classic": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9710051a03c254971515a4265964a68f",
+      "2dfbb77c4f666944dc1449641a3373fe",
+      "2fab67675dff5300a3dfcf1b0532eb6a",
+      "4ab7dd6e13e6e4ab731a8d04b554fbca",
+      "ad8b38824552ed4afa4f0514a51c174b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-z3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2e734e6c8b5ae1f636ba6cc6629ff83c",
+      "4be54ad8bc17ecebbdec112155774bfe",
+      "d3cd70bb8d25ec95aac80c6d353e1ee5"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-porsche-design-p'9982": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2e5448172cac0df6d769b148f39f5512"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-z30": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2e734e6c8b5ae1f636ba6cc6629ff83c",
+      "be40df19e211fe468a775c2d5884566c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-9720": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "abf3c03eba61436e27c847b21284ecdd",
+      "a851f836a17779269aae827b651b0e43",
+      "f6cd100c812339da7bdc1ce39c06babb"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-q5": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "738f11102a87fd8bd832e7b24535a3fc",
+      "b3a895493c5ac66b8fee9d04296238b0",
+      "51aef6893abeba11707fedd0cc6a6d1c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-z10": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "31ba3e5813401fa6132a1388f555a3f7",
+      "ab5f6fb54499318739af768df5df0881",
+      "f73bd43d9ddc420c0002f994b82e9d56",
+      "6dea4e8dda069a216801905ea41a7630"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-q10": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "900b274fa61019b77b3b3bb0a5b774e6",
+      "273880c15495785c63c995f144690d0b",
+      "9c74bf14f6a56bcd8ffdaac0916717c3",
+      "72b15cc71610a5e1b20215c872e23521"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-4g-lte-playbook": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "16845d29615cc12a26f5ef932a22715a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-curve-9320": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e997dcb2432ca105f7f8a0c746f2ce90",
+      "10c2051df16e456fc9e6b6f879390875",
+      "ba80f992461518ffb53c820c6c5c5f3d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-curve-9220": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "878966ccf3c5743ceeac1a086c569433",
+      "09f3a596b2993a80756c7b77b5cbf453"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-curve-9380": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d90f7ab3d52f595f23c5dc171ff584e8",
+      "f91229749375d1353a79222e75e3322f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-bold-9790": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "aa1797d768727fcf43f7fc526c42df01",
+      "4c0d7add9b2396f552ed02b46e7a88e3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-porsche-design-p'9981": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "caa2a072554ab3b8777f6e0ce6fcc661"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-curve-9370": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d0625c6d44855890c1f24b05084b6a0e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-curve-9360": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d0625c6d44855890c1f24b05084b6a0e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-curve-9350": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d0625c6d44855890c1f24b05084b6a0e",
+      "e9b166e872690c39f3554c880868aac8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-torch-9810": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "698b6da785f907e7f48b343091438087"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-torch-9850": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7948e3dc981bdae1b54a34d58e2ce932"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-bold-touch-9900": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "cd72a9436305bf44d44cd39762367842",
+      "01065ca146338827ceb0e7ba856eb128",
+      "260e5d297ee61e940e0a8e6fb583aab1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "blackberry-bold-touch-9930": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "260e5d297ee61e940e0a8e6fb583aab1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  }
+}
