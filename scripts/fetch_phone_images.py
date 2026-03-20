@@ -308,48 +308,46 @@ def extract_from_main_anchor(soup, folder, image_map, seen_hashes):
 # -----------------------
 
 def fallback_guess_images(base_url, folder, image_map, seen_hashes):
-    print("[FALLBACK - ROBUST EXTRACTION]")
+    print("[FALLBACK - FINAL ROBUST]")
 
-    # 🔥 STEP 1: Try picture gallery page (most reliable)
     gallery_url = base_url.replace(".php", "-pictures.php")
-    soup = fetch(gallery_url)
-
-    if not soup:
-        soup = fetch(base_url)
+    soup = fetch(gallery_url) or fetch(base_url)
 
     if not soup:
         return
 
-    collected = set()
+    collected = []
 
-    # 🔥 STEP 2: Extract ALL possible image sources
     for img in soup.find_all("img"):
-        for attr in ["src", "data-src"]:
-            src = img.get(attr)
-            if not src:
-                continue
+        src = img.get("src") or img.get("data-src")
+        if not src:
+            continue
 
-            img_url = urljoin(BASE, src)
+        img_url = urljoin(BASE, src)
 
-            # accept all gsmarena image formats
-            if not any(x in img_url for x in ["/vv/pics/", "/bigpic/", "/gallery/"]):
-                continue
+        # strict allow
+        if not any(x in img_url for x in ["/vv/pics/", "/bigpic/"]):
+            continue
 
-            if is_bad_image(img_url):
-                continue
+        if is_bad_image(img_url):
+            continue
 
-            collected.add(img_url)
+        # 🔥 reject broken URLs like trailing dash
+        if re.search(r"-\.jpg$", img_url):
+            continue
 
-    # 🔥 STEP 3: Normalize URLs (handle thumb → full)
-    normalized = set()
-    for url in collected:
-        url = url.replace("/thumb/", "/bigpic/")
-        url = url.replace("/small/", "/bigpic/")
-        normalized.add(url)
+        collected.append(img_url)
 
-    # 🔥 STEP 4: Download safely (no guessing → no 404 spam)
-    for img_url in normalized:
+    # remove duplicates but keep order
+    seen = set()
+    final_urls = []
+    for u in collected:
+        if u not in seen:
+            seen.add(u)
+            final_urls.append(u)
 
+    # 🔥 download
+    for img_url in final_urls:
         if len(image_map["angle"]) >= MAX_PER_TYPE:
             break
 
@@ -470,7 +468,15 @@ def process_phone(phone):
         src = main.get("src")
 
         if src:
-            img_url = urljoin(BASE, src).replace("/thumb/", "/bigpic/")
+            img_url = urljoin(BASE, src)
+
+            # normalize only if valid
+            if "/thumb/" in img_url:
+                img_url = img_url.replace("/thumb/", "/bigpic/")
+
+            # 🔥 reject malformed
+            if re.search(r"-\.jpg$", img_url):
+                img_url = None
 
             if not is_bad_image(img_url):
                 h = hash_url(img_url)
