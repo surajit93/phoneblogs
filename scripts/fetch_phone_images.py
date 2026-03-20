@@ -122,8 +122,8 @@ def fetch(url, retries=3):
 
             # 🔥 429 HANDLING
             if r.status_code == 429:
-                print("[RATE LIMITED - WAITING]")
-                time.sleep(5)
+                print("[RATE LIMITED - BACKOFF]")
+                time.sleep(random.uniform(10, 20))
                 continue
 
             block = detect_block(r.text)
@@ -137,7 +137,7 @@ def fetch(url, retries=3):
                 print("[CLOUDSCRAPER STATUS]", r.status_code)
                 print("[CLOUDSCRAPER LENGTH]", len(r.text))
 
-            if r.status_code == 200:
+            if r.status_code == 200 and len(r.text) > 1000:
                 soup = BeautifulSoup(r.text, "html.parser")
 
                 title = soup.title.string if soup.title else "NO TITLE"
@@ -148,7 +148,7 @@ def fetch(url, retries=3):
         except Exception as e:
             print("[FETCH ERROR]", e)
 
-        time.sleep(2)
+        time.sleep(random.uniform(3, 6))
 
     print("[FETCH FAILED]", url)
     return None
@@ -478,7 +478,7 @@ def process_phone(phone):
             if re.search(r"-\.jpg$", img_url):
                 img_url = None
 
-            if not is_bad_image(img_url):
+            if img_url and not is_bad_image(img_url):
                 h = hash_url(img_url)
 
                 if h not in seen_hashes:
