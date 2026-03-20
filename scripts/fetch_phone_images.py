@@ -308,25 +308,59 @@ def extract_from_main_anchor(soup, folder, image_map, seen_hashes):
 # -----------------------
 
 def fallback_guess_images(base_url, folder, image_map, seen_hashes):
+    print("[FALLBACK - ROBUST EXTRACTION]")
 
-    print("[FALLBACK IMAGE GUESS]")
+    # 🔥 STEP 1: Try picture gallery page (most reliable)
+    gallery_url = base_url.replace(".php", "-pictures.php")
+    soup = fetch(gallery_url)
 
-    base = base_url.split("/")[-1].replace(".php", "")
+    if not soup:
+        soup = fetch(base_url)
 
-    for i in range(1, 6):
-        guess = f"https://fdn2.gsmarena.com/vv/bigpic/{base}-{i}.jpg"
+    if not soup:
+        return
 
-        if is_bad_image(guess):
-            continue
+    collected = set()
 
-        h = hash_url(guess)
+    # 🔥 STEP 2: Extract ALL possible image sources
+    for img in soup.find_all("img"):
+        for attr in ["src", "data-src"]:
+            src = img.get(attr)
+            if not src:
+                continue
+
+            img_url = urljoin(BASE, src)
+
+            # accept all gsmarena image formats
+            if not any(x in img_url for x in ["/vv/pics/", "/bigpic/", "/gallery/"]):
+                continue
+
+            if is_bad_image(img_url):
+                continue
+
+            collected.add(img_url)
+
+    # 🔥 STEP 3: Normalize URLs (handle thumb → full)
+    normalized = set()
+    for url in collected:
+        url = url.replace("/thumb/", "/bigpic/")
+        url = url.replace("/small/", "/bigpic/")
+        normalized.add(url)
+
+    # 🔥 STEP 4: Download safely (no guessing → no 404 spam)
+    for img_url in normalized:
+
+        if len(image_map["angle"]) >= MAX_PER_TYPE:
+            break
+
+        h = hash_url(img_url)
         if h in seen_hashes:
             continue
 
         filename = get_next_filename(folder, "angle")
         path = os.path.join(folder, filename)
 
-        if download(guess, path):
+        if download(img_url, path):
             image_map["angle"].append(filename)
             seen_hashes.add(h)
 
@@ -454,7 +488,7 @@ def process_phone(phone):
 
     total_images = sum(len(v) for v in image_map.values())
 
-    if total_images <= 1:
+    if total_images == 0:
         print("[USING FALLBACK IMAGE GUESS]")
         fallback_guess_images(url, folder, image_map, seen_hashes)
 
