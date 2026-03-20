@@ -2,9 +2,7 @@ name: phone-image-fetcher
 
 on:
   schedule:
-    - cron: "0 3 * * *"
-    - cron: "0 11 * * *"
-    - cron: "0 19 * * *"
+  - cron: "0 */2 * * *"
   workflow_dispatch:
 
 # 🔥 CRITICAL FIX (without this push won't work)
