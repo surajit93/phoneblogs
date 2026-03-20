@@ -1,0 +1,17 @@
+{
+  "slug": "haier-m1000",
+  "hero": "angle_1.jpg",
+  "images": {
+    "front": [],
+    "back": [],
+    "side": [],
+    "angle": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}

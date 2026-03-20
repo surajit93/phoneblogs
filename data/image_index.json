@@ -10146,5 +10146,7241 @@
     ],
     "last_updated": "2026-03-20",
     "needs_hashing": false
+  },
+  "eten-m600": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "a2a3353fa3c16585c6f048de407e25ae"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "eten-m500": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1c550c37e6a8c57c5362b8647eeb9157"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "eten-p300b": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "13a047b04cef0ceac0559781c931bcb4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "eten-p700": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "e2f25f5176d200db85577599c681a6a8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "eten-p300": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "a7a3ad80f4e1b9e2f44579c52e840771"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "fairphone-6": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6606fb0a1325996707eacd2c3f6006f8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "fairphone-5": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "61bda6f3583bfe38cddd53b06f65b17d",
+      "d85b51e5b3b70d4eaeeea27682f24226",
+      "3de807b3c088264f9c6055cce357fc78"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "fairphone-3+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "87f98f86917e97c5568d467221e911b3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "fairphone-3": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a9da34bcc8108e8149a80e11f7dd0f2b",
+      "ebbb447e82cd5fb82cf1c341f157db70",
+      "87f98f86917e97c5568d467221e911b3",
+      "44802469f52074cddfdad19272b92f4c",
+      "ab3f92d91a8abe7933f6f36f5303c970"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "fujitsu-siemens-t830": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "fujitsu-siemens-t810": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "garmin-asus-a10": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0f4e779222b7a58a6d4857f51609939e",
+      "73003e7931be84e99a9add66a39b5682"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "garmin-asus-nuvifone-a50": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b8e95a08f83fba949233ba70ef238e0b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "garmin-asus-nuvifone-m10": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ed8a75471a7b722a8f8dd0fd379f78be",
+      "241548271553cf3573e174f4a23926d3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "garmin-asus-nuvifone-g60": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6e63de216a5d6470f56239e0dbf3681d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "garmin-asus-nuvifone-m20": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d3273cc42c840729bdee5e1c8a6fa499"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-essence-4": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "72f7397acb1e04f9170f617de0f08a99"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-classic-lite": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8eed898961defe4f001a4224d8c659ed"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-essence": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f1fad96f935d109da767434c741e1b63"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-classic": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4da344c4a4e96ab06c7b2db5dcadbb16"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-guru-gx": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e992f427e19ea13ade3456315fc02c85",
+      "930bfd4eae4251aebf65550375a19688"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-mika-mx": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "050d4b8781156b9b6124d40463da1732"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-roma-rx": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7b4fd2b7592215daa34c5bd0e40b0cf8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-akta-a4": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c9dcf4542738fbbb838f1b7b7203725b",
+      "79822e60a50f443cd6217131033a82c8",
+      "7362d3570caeb5558059ed8dffda9f65"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-mika-m3": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9acedec131302fb4031ee101d662482a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-gx2": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8496b03d22cbb4ef6fad2bbeffefe98a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-guru-(white-edition)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2aa9a79c5a68a21087a71d2764456059",
+      "f66e316bb29365a4b12a58b20dea6f49",
+      "6b6fcac97b341bfd9b0ec0556c654337"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-t4-(lite-edition)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "446e57f6e071f12ddaa338bbf4e1753f",
+      "0f06ac8499f598255b55a8fe44d3c036",
+      "a10fa19f902c764c4a248add26101361"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-arty-a3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "72c28c9431435eacfa062725448a9e28",
+      "6dd49a8b0e645e82b32281919b8ab5a8",
+      "82240505a25e589923e05815b52985c2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-mika-m2": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f99d4699b8326fe129ecd03dfac47158",
+      "1df80c9ff289011a45cd07779cd3c9c3",
+      "0601ea90072860d9b1660d919279ff79"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-t4": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e3dca287dd9e770c9dcc62a44ca9b4e0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-saga-s3": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "cdf59a148ba382830ae8896183090446"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-rey-r3": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ad061b0a6c4b4ad80b4a8ad105f0755b",
+      "4d1c8191b4cf1323d3379bb85fc7a038"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-guru": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "56bb16c37e62ed904f03cb01d3e44a5b",
+      "3bb09240d0845a623aaa7dce9980b114"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-alto-a2": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b1e8cb2c23c71356d77ab6d0b1658490",
+      "1566a313161a297800a7e6b3e3619e95",
+      "f400ddfbdc8305cfb3f7abb2e966be10"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-roma-r2": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e76d449af719d1bf4f574fcd30cf5816",
+      "9da8f589bbd89085a0fc08e8ca709252",
+      "49112c028087f094eb6f1ba01a4425a6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-aku-a1": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "12302259423fb260cd997f980c0c9251",
+      "75cb9eaed72ff7ea64fc160ebede844f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-tuku-t2": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2b99f12107c1b699e4bfb5499e2f2cd7",
+      "7615d41e456e966d10e68b421937f1df"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-maya-m1-v2": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d327510ad1d9e6581e08d035a87e60a5",
+      "4a74a847e5d3fb40a108aa437dcaf6de"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-sierra-s1": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "94c6d93470916ab6903a6dacbb1bab49"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-simba-sx1": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e859125ac6ad2de7cfe6a67ad8dadb6f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-maya-m1": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9807d75547c9808191db7dcedf768e18",
+      "a6283eaf57c8056d1399d9df10799188",
+      "a513fdce26b2fde6d95171a7515cbfb7"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-rio-r1": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "51b1cd368c1aaa3710350f0a34699d1d",
+      "0edd4510dcb2694cb58147e214be81fa",
+      "3dabcfd1e194d7c6656c1a6235dc8751"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-gs202": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5788279bdd76e57ecd76e621cd8f69b4",
+      "9b0063aa40e7582af1c8f642f49978a5",
+      "3788d141260ebc65df4fcf76a252ba0d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-g1362": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2f1bfd221a91f4523477016a0412d4fd",
+      "6a3c0e5fc1a2d570b95ef430cf59641d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-g1355": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "24fc6dd3bb5c96186d98bfe5cb424769"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-g1345": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "c13ccd3596eb91cf1f3beadd2fd9cff4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-g1342-houston": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "e992f427e19ea13ade3456315fc02c85",
+      "8eed898961defe4f001a4224d8c659ed",
+      "f1fad96f935d109da767434c741e1b63",
+      "72f7397acb1e04f9170f617de0f08a99",
+      "d327510ad1d9e6581e08d035a87e60a5"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-m3447": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "60b4cc186777c5bd8076493f79131498",
+      "608be7afd307a5ad751ac7e4540da905"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-g1310": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "caf7fd8973a39d61f519d1453bb01f32"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-g1317-rola": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0a2b7e89ed5298e6e5c93c62d95c40b0",
+      "081e978de63628abcbf084fc95d019bd"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-g1315-skate": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5d886f265cf4272ae061eb9a131196bb"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-s1205": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ce8f253b5e157b159116dd53f070da5a",
+      "30f328ad75397da2243de60ab685cb85",
+      "971f65e2da2dbe6471024ddbb808486f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-g1305-boston": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bdb5f5ef11096d7c1f79172a48aa7612"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-mw702": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fcf6a15733e13c7aee823fab671fb4fe",
+      "3c9e25b55be204128605b1c4893d8297"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-s1200": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ce9faee681c4be63830c3adf8704cd99",
+      "7e54716d052bce74d94efc12b301916c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-ms820": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d45b08e3cc7eaf180e29491d11f58ec7"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-ms800": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "45fb13a5da7701be6b59d64153f12094"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-mw998": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4fe053e1be3f3e84fd873c205cec3ea2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-mw700": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7c9e94a7342225969156e23b3278e954"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0a1c91547df137a203844f0659077fec"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-i350": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "e992f427e19ea13ade3456315fc02c85",
+      "8eed898961defe4f001a4224d8c659ed",
+      "f1fad96f935d109da767434c741e1b63",
+      "72f7397acb1e04f9170f617de0f08a99",
+      "d327510ad1d9e6581e08d035a87e60a5"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-q60": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "e992f427e19ea13ade3456315fc02c85",
+      "8eed898961defe4f001a4224d8c659ed",
+      "f1fad96f935d109da767434c741e1b63",
+      "72f7397acb1e04f9170f617de0f08a99",
+      "d327510ad1d9e6581e08d035a87e60a5"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-t600": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "e992f427e19ea13ade3456315fc02c85",
+      "8eed898961defe4f001a4224d8c659ed",
+      "f1fad96f935d109da767434c741e1b63",
+      "72f7397acb1e04f9170f617de0f08a99",
+      "d327510ad1d9e6581e08d035a87e60a5"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gigabyte-gsmart-i300": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "e992f427e19ea13ade3456315fc02c85",
+      "8eed898961defe4f001a4224d8c659ed",
+      "f1fad96f935d109da767434c741e1b63",
+      "72f7397acb1e04f9170f617de0f08a99",
+      "d327510ad1d9e6581e08d035a87e60a5"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-g13-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0a0fced6574e25f158f2a19b41964f78",
+      "c1dba792f623fb58a26dd0fc02eb5aa0",
+      "15ff165f08f5524a786fe29887d268c7",
+      "1e4fc03b06522575c2ddcf2a0393ffca"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-p15": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "be05bdb9de136a8a13647c8e4d7f6057",
+      "639cbdd713ecd16587c09c2162fd8e1d",
+      "70fcb9689443b286e6760bb2ff65dba7"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-smartwatch-7": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2a06944c8aa1924984f1df17c670ac62",
+      "994f3b53ff4df229cf9023dd1da32c2f",
+      "1052fe98d68ef74ce1140231c68509a0",
+      "53e53be45af7de897c8032216be6d866"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-m15": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c5a4af646964a034e0825e5c12400f74",
+      "f7407069959235f5aee0840a3087776f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-m3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "66c0ba4b00f781a3e853a7f88010485f",
+      "eabf7fb1bb8b5e0f55f10da69b0d51b3",
+      "7d5fdc9da07e44250d518b46e1552ac5"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-p15-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "aaa876c01fad8668802551a022354ce4",
+      "66020568b2f9932e74bf7f151cf7448c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-max-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3fb91d71c7b6805426e849195caab7bf",
+      "f84defd172d139ff489ef5ec71a0352a",
+      "f032a195cfcb6bb3087828d951a7635b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-k30-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "64f61a70094ae1883de5d2ef21a4d071",
+      "7d932eacbe1f97f57c343225ecc3c9e2",
+      "1d2c7b622f19fecdd97123d8c3e5d3f2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-p12": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0a4dac4774c5f498ca7a5c27622e3330",
+      "281b72d3b58a656747c282eee4abb666",
+      "66587bb17ee768370c54d69aa48835c9"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-m12": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d612b04f86e22639c534569b6a20a922",
+      "82d3dc5d3216f66aa8b84c48b15f314a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s12-lite": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a52061c8c5103b6abf6bec6537cca3f1",
+      "c5931eec9661738c52e86dfbeb671d70",
+      "b753dc10ac024ec7677b5bdca3bfe584"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s12": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d2d05a528a65bb2cf455a3a159a0ea47",
+      "30d259e287f534b287a576f3ed8d6bcd",
+      "be6e0570bbb0a23590a3c5336f1369d9"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-m30": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "54f3bab7ccbef4b870307a06262e1639",
+      "351b0ae48b3c493e742d1398ab609040",
+      "62c81a833206c45a3a8f230eae6c4e16"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-max": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "899b6ecaf601995156447a62e64acf11",
+      "3fd8a6f6f115b67e68b48600df836fa8",
+      "b8b963cb2fe5af64ea12cb10367ea0d2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-k3-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "34d2b22bfd4dc797eb30c511d62c64fc",
+      "5a57e688e75244ab1a33bfdbf418537c",
+      "f7e9abb5825915d92bb8f94e95facf4f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-k6": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b0534cf7f977bacbca88c4c3f31144b2",
+      "8c352d97cfdf0408ff548b91c1cc8059",
+      "94ea514ed673b6d445912fb59404ad2c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-f205": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "781b0376a2b9b75808fc6c910900c9fb",
+      "540065f77487738ba41909067c7ef03a",
+      "8b0131542f295cf7873e3966812e09a3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s11s": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "70b387e9dddfc30a2ec436f13ee4d458",
+      "1f20310ee2e9e7a9f29ec58081a7c005"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s11": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ec90f365920e70c550df86346a997e61",
+      "e71c6fdc5d7929d8356145af3d71c5d3",
+      "acadae9d471a0b88fba5df7b7fff16df"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s11-lite": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "2b6ee7bcb2ccc3309aab422f5cbe49d3",
+      "8d0a52f1ffa123b4f376030a5fc73105"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-m7-plus": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6670ec278c367918c8ced1132d50a88c",
+      "0e54d323c2c0718b136ba6a37674c92b",
+      "f34b431dd0d20e3c6ae3dd89aedddb2b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-m7-power": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "efdd80dc7168c46561308deec413ee50",
+      "bd71d1b2f6562fbd23402a6b62f08127",
+      "7732edc0be9a93ae1922a22422a792e2",
+      "0bbf7e143b295fdfb35d24b5269bdc9a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-m7": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ff0a4b1afd189c0ab19dd0017b3affc6",
+      "efdd80dc7168c46561308deec413ee50",
+      "d9224dee7bc5de3c72fc0d2b1ca9c80b",
+      "8e43181752cd7651bd9ca1ae068e7476"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-x1s": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e9fb3a2fd6db71dbc146af614ad797d8",
+      "432979ac456cfadb2967caa679a42373",
+      "0b7c7d6343ea60dd27b2939d09c386fc"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-x1": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6d8dffee88998115773c77f88ad56598",
+      "7cab421e3726826026b5c58b684158e8",
+      "2b4b177e2b97c01ed6ae0a5494626db8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-p8-max": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "52e799029bdabe4d2b0cb0987a6e57ad",
+      "858dedcb5122872e1ca3c374b7d282f8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s10": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a445a489aa109d5c7590cbe4a10a9d32",
+      "9c02fa9ffc875c519724a159ec2aafdc",
+      "629d35ea2ccd5b84d4774894f7286f8c",
+      "87f2d01f4fb6f2749a7d3cae0116391a",
+      "311c4b302e441a2b45ce16d14e2ee13d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s10b": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d007e7a62ae33a854648cc8558bb0e49",
+      "46b81d7e81de3983dbcc599c735b3e54",
+      "fc613402ce535d0c52e9fd7d4e6a4c30"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s10c": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "953d4ee580a2f5ec824a4a78867b8661",
+      "ad5427d829902e6491c221dbf708feb0",
+      "133eaefb0a18c8557ef5ea2cbb1fb53c",
+      "e0bc4e9a14d1d1ed157e991ed9cf7f32"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-m6s-plus": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2a9b3f6b1917e0cd6beafa9d6891a785",
+      "0f7833c46980b63f249f6b1526b156f2",
+      "31b54b67cee778c71f10d4f71aa40267"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-a1-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "78cb7c79a56d827e8349c62bd30de137",
+      "6898be304947edfd82bfc3147bd47185"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-a1": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "de47b77a168558c678128995de69d372",
+      "bbcba5fd471f4201e8373143b5667e19",
+      "55766347af44f80e7af518f1b65e4531",
+      "92bf4d6ada1e3c260e62aa650d80a074"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-f5": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "52ecefe81dad8802f4deccd39ffcf842",
+      "84c1289bd594ba3f753a35fb9b54b731",
+      "5dde53df7abc7eaa676bb05ba726c0e1",
+      "09bd35dfbe50e0bbdf9bf3bec11892f8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-m2017": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "699f7cf1aeb61777b6993d0650eb3c0b",
+      "9b126d34c82ea566576a65a4b096861e",
+      "d315ba3200dd4d7e1c54127ce32e315b",
+      "7db8efd3df6ea3d7ca9e41a5af70113f",
+      "fbfdf03c76ac06a5798f27420d9ced66"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-steel-2": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "85238edfadeae437eac5fa5fde32e597",
+      "10e95d98b6e404f655f9bd620a49829b",
+      "edb0ebb297a0fcfe1292185a51e02680"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s9": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a91342e59f59d0ea083878ee498eb850",
+      "7a17c4bc7241f039085e926144566bfd",
+      "f445d4f77bdd22d7663b4dce716d462f",
+      "284cd4a0dae9639095b0d17478a72c4f",
+      "44a37975776b60da04617abecf05467e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-p7": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a340b5911385d4d12f2ccdb373436eb5",
+      "4e9aa0566089b659456388514e210e9b",
+      "563b3659f0a937e0a225efb90e82cbfe",
+      "7f4536645ab72b2ad77628b0c1a4ab94"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-p7-max": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "5d1479ccdfcddb99613d3d42a4374fb0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-f103-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6b05fdb87072816a44cfaf63b7472af2",
+      "108a8761a87c00ca64c522d673f41538"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s6s": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d46b3d33458cebee1b2de0c1703dbda1",
+      "eaa3c4251518c6084bcd7a23bd650f68",
+      "c32fec28794f7b31bcbcbb5edb93fe33",
+      "f2afdc747ef2c87adbb1791d74bbb248"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-m6-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7238d74545cfabe19c1611aac0889dc5",
+      "d5caa636252d5553e20bfb3189eca1f5"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-m6": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f9d5678b963be08a09e90754524f3550",
+      "ba2bfab4fb38eb8a1bcdc59ddcbc56d9"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s6-pro": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "967475b59ee333b28e4c82b7c2156c10",
+      "8dc2dab701b5aeca6281dcd354ff091c",
+      "27e577bb966f1d77205b22006cab20f5",
+      "b1fc116219072170fd779cf85882b552",
+      "eb191a2647801f66c58fcd08a66c2f65"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-p5-mini": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "7e142ea394b862554b8be0936ba47ed6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-w909": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "e93578fd193c9158889091693a7cac3d",
+      "c995aa77053823592ae09f1618c088b2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-s8": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "45d0cc768eb701333c34762dc8dacbb0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-marathon-m5-enjoy": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4f848f8595b4ff760cd565d97339f03a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "gionee-marathon-m5-plus": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "36be994aa4a8d719b5350f34f7001179"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-10a": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4814ac6a6684fbc522265d479dfb4b74",
+      "8872767f95e38859c4169bc840830426",
+      "0403edf75493903a82d433db73793380",
+      "69e46ca8e5aa2b46fee4023cb9c0cf8c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-10-pro-fold": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "49cc580b6e57c151bff773bdc3089c50",
+      "ddcd60877f644d8ea699e8d5295222ee",
+      "555cbf9b95f67bfa7c7dc35e09eded74",
+      "6c015ec9c98e43490cabe15de34c49a3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-10-pro-xl": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "4892c8ded8e9dd75d238a2d984ebf393",
+      "0a8458fcc6d8eb3ac9578953f8c95bb5",
+      "f1981921de1b90574faea84978ac60cb"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-10-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "3821a834feddd718b9b279c37fd3f32f",
+      "4252bb583628f32bfb9a1c80559ba990",
+      "f2cf37d33f9b1d9fbc83a149a9cfc330",
+      "f1981921de1b90574faea84978ac60cb"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-10": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "da093e35d3269e762aa0fc4f16a5b92d",
+      "4252bb583628f32bfb9a1c80559ba990",
+      "728d32d79389e0dc1b6c356fd46a309c",
+      "ea18801bef69ca7a00786279a99b73f5",
+      "4814ac6a6684fbc522265d479dfb4b74"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-watch-4": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6612b528fdf93b6e3238a887fed43ca9",
+      "dc55e2177b75803e926b7a4f4ce5229b",
+      "b92d429f7aa4b43cbf6dc83fb0441cb0",
+      "1540280a6062306e2deb468e97b502cf"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-9a": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b92dfc5aef4cfe27df3f8c7be0170017",
+      "4850afcf69ba8be4366b71089708479f",
+      "beaf9fcee7d7abf96793e08e3f5ed79b",
+      "a6e4e02bd9da9f0cf9513c5a3f4af82d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-9-pro-xl": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "68a6eed61e5ada50846f6850ee0ad3bf",
+      "6e0c986d4946962df0fb70c43717ccb2",
+      "b86a8e6b13dd121b86f495738d854ea7"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-9-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "6e0c986d4946962df0fb70c43717ccb2",
+      "506baf52262da7c325a0c6e7bda36b59",
+      "4310f710b9d58518db3737b8a58689d9",
+      "e402d9377d5a44b2519b2d77bffb1c91"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-9": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "64907ea38fad293b4f053bef65080e0b",
+      "e402d9377d5a44b2519b2d77bffb1c91",
+      "c095dc92213e51b325bab7943e196103",
+      "a6e4e02bd9da9f0cf9513c5a3f4af82d",
+      "08299300b1eae6427862c4f3b8bb7086"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-9-pro-fold": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "ca5d8a88e6f67861daf9fcdbc2358605",
+      "a6e393090dca3bc6d11793882928f9d3",
+      "eab3acb087acb50ff6d5252b9922fad7",
+      "0e763fa5577384b819d0488d710bc124",
+      "348aa49255e62e2848b43522b5335c99"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-watch-3": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "0de86cc74b3b780d2833f71cdab3d609",
+      "de3397d9fcda737bc068713506eaf5d6",
+      "557b1282925fdc92b7b119b10c28e8ac",
+      "e9ccf969db4127a0b17fcef07ec9df97",
+      "f54c51c094fb3b0a6b3ed0d200ec8eb8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-8a": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b55b9accd7233ab6c92b950c153eb30d",
+      "9232aa863c6b10816564962e4d22cbc6",
+      "b02df5c3a9f2105e8e2e59f08ebccaaa",
+      "f0dc707271b87f3dc2310380db52a851"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-8-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c0c7ae57d34dbdc2bbd10bdc4df32693",
+      "098b97ce39ecb64d05264051b026f6cb",
+      "876556ac12e7bcf4794c0d6b44abee3e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-8": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0494bb0effd86358d1fc7bb2bee9f651",
+      "b55b9accd7233ab6c92b950c153eb30d",
+      "df5c46327d0f46ee4759d0b6ee6ffc18",
+      "098b97ce39ecb64d05264051b026f6cb",
+      "c91cf248ae3d72d6951b650ccc02c90c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-watch-2": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ef7b7bc54de251034e273b845906d08a",
+      "7dbd185c24808f4f8fed429950f07b8b",
+      "3ee8a4e07c2f9cfc158155841a4f8934",
+      "b7ef4b357202d47bc48a52022a938437",
+      "b4aa964d9788ac6d0f76f9003e278101",
+      "610b1a76b4b3bb7884ed8ad144c962e4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-fold": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c9b366845c3362b19864e3d45c195be4",
+      "6536287a90535a48659f8e879b2e983d",
+      "7d2fe27af220a19248422f391f21a18e",
+      "d3e9ecc1210486c12361bef735eceacf",
+      "61e53ccce5492c636b3706496d4cb52c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-tablet": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "673aa2e7c473a94e1216c751e15b9d65",
+      "57e6ed17a82c7d4860568f806919050b",
+      "8f18d57a27be4bb3d1f415ad2bf1d04a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-7a": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1544c7569bbce9d48d2b0ece69fec61c",
+      "3c4c3e53eeee2af3c9490da926b86d44",
+      "7acd41e1ade578f573e05ee0a7bf7a03",
+      "ff98c96d634730afb337de3713ae7df0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-7-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "62941a55f1b8b31d76caf824b4f7d919",
+      "60ca6b3ad986ddbcdfcb50f46cdb8ffc",
+      "b33ce0cc0a0156c1a66758bc6e12659e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-7": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bf043ae7cb4dea578331ca6ceba32202",
+      "06a5403f7ee497d140a6b7eed4fa3ada",
+      "62941a55f1b8b31d76caf824b4f7d919",
+      "b3d6e306f2011904cfbc1153e09f016d",
+      "3c4c3e53eeee2af3c9490da926b86d44"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-watch": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "7dbd185c24808f4f8fed429950f07b8b",
+      "5a0849f12f1d53846899117f2bd2c876",
+      "66eeff031971f18dcc5909e7bce52476",
+      "d56e81d68ddac5427b91788c042d3102",
+      "b4e2e08c10f246187a53ebaf51732ba9"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-6a": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "70108740294d416f73f6a755a4532aaf",
+      "36676f125ee732ea422c0810c3bf90c7",
+      "061d91dc04ba044c0a9154252f0de6a4",
+      "8e90d4a34564573c2aa5fd057b48c3fa"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-6-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e1e6aab3e9c932d10c8fb62deef734df",
+      "2975a7af90e81c56763d09aa9f7c7286",
+      "ef037c8d2dd543058ae0d3685c75a250",
+      "00f8c40e5459849ca80c91bcc0db613f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-6": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2975a7af90e81c56763d09aa9f7c7286",
+      "c69c9b5aae76d75e37183a4be0525d1d",
+      "36676f125ee732ea422c0810c3bf90c7",
+      "a57328e9d359dfd2a8eddb7cca2f5026",
+      "91375e7ba1748b334684739a09056a53",
+      "6369c0f4609e3b49762fb12c9957d586"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-5a-5g": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "be5e7d7756d04d1fe55425ad37254e25",
+      "31e45abdda317d7daa57eb901d54b59b",
+      "115173d4847eb315cd6d3ad6dd6216e3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-5": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5066562ad31098d8fad9aac63463388d",
+      "31e45abdda317d7daa57eb901d54b59b",
+      "d2bd800580fe8430f15f130288d0ce83",
+      "64af5fc334bf621cf8156258b0abd6e0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-4a-5g": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c6397132f5db131cd66f44da70aa4a33",
+      "488537723b6be2fd20d4d52e185c31d3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-4a": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7ec2feb8e7a099836a37a4e935fbc16f",
+      "3d959f6c0bde18b92e3a4af5f65be186",
+      "c6397132f5db131cd66f44da70aa4a33",
+      "d84e6423381915312407952df4e679dd",
+      "06095aa33ade768d51d4d353e845e9f2",
+      "960da0d6d4ade9a95e1b592c599d783a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-4-xl": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ac254dd911d3a6ad9853a1b0e2aacbfe",
+      "3c93bf2da8819d550eb94f926a68746d",
+      "bd7e90daab2bcff49bc31e163f67dd98",
+      "bd34d4182a2aa429e91c4a0efba23ad2",
+      "db5f36847ad8e9edb4b95b56ab50009d",
+      "ad477feaf9bcadb02d99d9bb81f6aba2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-4": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ac254dd911d3a6ad9853a1b0e2aacbfe",
+      "bd34d4182a2aa429e91c4a0efba23ad2",
+      "b9ad2dbb9a0e439d9571ff64a6c8915c",
+      "db5f36847ad8e9edb4b95b56ab50009d",
+      "26371d71467da980a48c9246f5f8ca3f",
+      "ad477feaf9bcadb02d99d9bb81f6aba2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-3a-xl": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "7d57fee949eb9e46df08a2386c934e7c",
+      "310c2c234ba1ab387d8b857ef96c1c4b",
+      "093194b66769c37ec0590edcdba8bf49"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-3a": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c1760dc51fbf5938661bdd819c2cb7ec",
+      "5b171678780307b29772506183b83879",
+      "7d57fee949eb9e46df08a2386c934e7c",
+      "0378b2d6460f150009ea85770a8a6f6a",
+      "760e4a090d61e8b06182b93813ca735f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-3-xl": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "130a31f80021d7ecb013a6337fda96dd",
+      "cecc16601b0693f6cb1830ddb092370c",
+      "21362cb43c1983a068a6748b9af5ba28",
+      "26079313ef42767b6b2d620f506110cb",
+      "dbcd2167396a8ca01bdbd8e167a5b732"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-3": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "c1760dc51fbf5938661bdd819c2cb7ec",
+      "6a1f7c3ded6d4b429eed41040c18f4ce",
+      "cecc16601b0693f6cb1830ddb092370c",
+      "3b95728c3cddae36ea916ad953a2b813",
+      "e2adbfe36430a3314f538fe3f2b43892"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-2": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "af9acc16f9c47b09e5c90c47f70b8602",
+      "ddd99aeac5b9f486b3881af0bf00c530",
+      "4d0f6645dd158fa63ce323ac3d488228",
+      "785bd192ce28e70c5d173a4c22036be4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-2-xl": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "b3d6e306f2011904cfbc1153e09f016d",
+      "4d0f6645dd158fa63ce323ac3d488228",
+      "77dc353e0e52e0fa3cde80bfb6a709e3",
+      "4814ac6a6684fbc522265d479dfb4b74",
+      "325214908b2f3275a7c420e07eb04ba1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-xl": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a97941548fd6f357cb1e0725fcdec1b3",
+      "77dc353e0e52e0fa3cde80bfb6a709e3",
+      "6d1027fba21b6d7ff617ae6a0fe6f378",
+      "87accfe387da46b6bb19b200fe33909f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "16ddcb02949b7c2b15126d9e89ea9079",
+      "5d1b4584a51d3f97ed6b765e666078fc",
+      "6a4c4eaa505d1d2c45a5e9d7ea8ec45c",
+      "77dc353e0e52e0fa3cde80bfb6a709e3",
+      "cc2c280e7e0dbf849562056a06b59112"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "google-pixel-c": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "140d519e3bf6ad7bf0fd7800e4dd74bb",
+      "f1daec385d06848f82143afcbd80e6e1",
+      "6c7e50a85bfc4d9d92a6f52f8d9d8038",
+      "9be0899c14e394eb985639593d837254"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-c300": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f0af9f371149e6e1a3edb39dec487697",
+      "47b8654bd422fcb046a15f3fc2d5a819",
+      "d0bbdf6c7054a0716d0496f73d99d38e",
+      "96a57540ac7b602ce8ad39f9c71468a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-hurricane": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "39c8c9ce0748e3bda5906acd4c322083",
+      "070d22c9eeb56c9e1a74b790a575c2e3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-g8": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8387c89428cd5608cc23ba7f8fccd937",
+      "8561f9d6ab68a034f91a1e27bbbcab14"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-l8": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d92cf31e9ad35bcf131d3d5a84251401",
+      "f9fda97829975198724741137b2a0bbc"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-i6": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e03fe4fec048b2039e977397525ba8a2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-l7": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2a4ca80b1389060f486bc30aef8e343f",
+      "064e2a9de871d62c2010380c13a66bfa",
+      "b4a13ded7a1908331b7b9d4e7384da25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-g7": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "164332a3808c2fc24496d7820076d1ed",
+      "6b2ff03c0eedc00c936dbef297a9b144"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-g51": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "062dbe8bfbb3f5b856d9246c6431dd15",
+      "d399e1717c9276e4a6a811873de7c18f",
+      "88afb9d59cf97648600edca338cb8be9"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-u60": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "99064628e6e24527a8fdc0df14d70654"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-u56": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "131a63d5f70e8d609036d27aac1bc313",
+      "c6494c8df57d009b4150569927f3a787"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-u53": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b32f2f1bc4182e5757d6b433004e8d86",
+      "7f733b0edcb2c697d19f8d6a541b263e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-k3": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "4904f44590941e838c3ff00a6aa8bf59"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-a66": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "070d22c9eeb56c9e1a74b790a575c2e3",
+      "d0bbdf6c7054a0716d0496f73d99d38e",
+      "8387c89428cd5608cc23ba7f8fccd937",
+      "6b2ff03c0eedc00c936dbef297a9b144",
+      "b4a13ded7a1908331b7b9d4e7384da25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-v730": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9ccd71daebcff3e971a90bf8c58a7491",
+      "55f457670781c28a40a87c17d377e84a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-v700": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8c3153271972cd980ff23ca6a554c073"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m320+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "09bd0cf6169d3b93ee349f2bdbf4b134"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m306": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2c902d6aebfd644c8ed706298011407e",
+      "90373f67208fa5b5cd23c9e817678c4b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m300": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6de4831ff30b68f5b9205d3574bbad1c",
+      "14ad7fed20b30078f90fe153c3d68924"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m180": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "28f85e413892fcaf5f5a5614a59c03c2",
+      "812feafd7a2d54755f85326287b2021e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m160": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3bf9aa2d76317fe16477474be9d7d25d",
+      "afe5f8b2b87eaaea6ab92d018b863fc0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m150": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "cbd837668d4e5bd084d38d21a4b491b0",
+      "3b865ba0ac4f43354edac42876af69e1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-a7": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "070d22c9eeb56c9e1a74b790a575c2e3",
+      "d0bbdf6c7054a0716d0496f73d99d38e",
+      "8387c89428cd5608cc23ba7f8fccd937",
+      "6b2ff03c0eedc00c936dbef297a9b144",
+      "b4a13ded7a1908331b7b9d4e7384da25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m600-black-pearl": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "070d22c9eeb56c9e1a74b790a575c2e3",
+      "d0bbdf6c7054a0716d0496f73d99d38e",
+      "8387c89428cd5608cc23ba7f8fccd937",
+      "6b2ff03c0eedc00c936dbef297a9b144",
+      "b4a13ded7a1908331b7b9d4e7384da25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-p8": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "3843e9459bfe89cc95b72beb82181bd8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-a600": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "7ab2951ce12234e6b3080f53498b4ad0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m2000": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "3d7acbe456dd66ec40557a00b30cdb78"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m1200": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "ca9cafca50f13cbb98dbbc01c88bc5f2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m1100": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "b6896a6112847f29db0f5fe9923f9d25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m1000": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "772102e0d40f8570b0a728dbd64a11ad",
+      "c7935fd988ece7528d2c734aca50dd29"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m80": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "2e94042380ac1f4fa99b7708f08ba567"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-m260": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "e3db57579fad91eb6630880f743c5c88"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-n70": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "20619e93424ee3b5c35bb641ee236c98"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-n60": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "d1bb8504c50e2f090cb539ec73329891"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-t3000": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "c6045a0f115f987fead19c70c18266e4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-v280": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "4d66cbb85a3adfd0595351a87b97ff7a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-f1100": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "6eb411a38de49593a57faf63c3e348f6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-l1000": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "eeb5a2abff5d2163cf6bfb3e16c8ae85"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-v6200": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "070d22c9eeb56c9e1a74b790a575c2e3",
+      "d0bbdf6c7054a0716d0496f73d99d38e",
+      "8387c89428cd5608cc23ba7f8fccd937",
+      "6b2ff03c0eedc00c936dbef297a9b144",
+      "b4a13ded7a1908331b7b9d4e7384da25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-v6000": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "070d22c9eeb56c9e1a74b790a575c2e3",
+      "d0bbdf6c7054a0716d0496f73d99d38e",
+      "8387c89428cd5608cc23ba7f8fccd937",
+      "6b2ff03c0eedc00c936dbef297a9b144",
+      "b4a13ded7a1908331b7b9d4e7384da25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-p6": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "070d22c9eeb56c9e1a74b790a575c2e3",
+      "d0bbdf6c7054a0716d0496f73d99d38e",
+      "8387c89428cd5608cc23ba7f8fccd937",
+      "6b2ff03c0eedc00c936dbef297a9b144",
+      "b4a13ded7a1908331b7b9d4e7384da25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-v200": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "070d22c9eeb56c9e1a74b790a575c2e3",
+      "d0bbdf6c7054a0716d0496f73d99d38e",
+      "8387c89428cd5608cc23ba7f8fccd937",
+      "6b2ff03c0eedc00c936dbef297a9b144",
+      "b4a13ded7a1908331b7b9d4e7384da25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-v190": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "070d22c9eeb56c9e1a74b790a575c2e3",
+      "d0bbdf6c7054a0716d0496f73d99d38e",
+      "8387c89428cd5608cc23ba7f8fccd937",
+      "6b2ff03c0eedc00c936dbef297a9b144",
+      "b4a13ded7a1908331b7b9d4e7384da25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-v160": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "070d22c9eeb56c9e1a74b790a575c2e3",
+      "d0bbdf6c7054a0716d0496f73d99d38e",
+      "8387c89428cd5608cc23ba7f8fccd937",
+      "6b2ff03c0eedc00c936dbef297a9b144",
+      "b4a13ded7a1908331b7b9d4e7384da25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "haier-v100": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "070d22c9eeb56c9e1a74b790a575c2e3",
+      "d0bbdf6c7054a0716d0496f73d99d38e",
+      "8387c89428cd5608cc23ba7f8fccd937",
+      "6b2ff03c0eedc00c936dbef297a9b144",
+      "b4a13ded7a1908331b7b9d4e7384da25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-luma": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c269a984d39ad8d4c372e18b5955bfc7",
+      "84f07fc13871ceff67058a8f71b1edc7",
+      "b5417ffddb4561e46169a80532d9dc1b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-terra-m": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d4def04861a55531cbc69e02572da24e",
+      "02b90971816732bf7b44ec4d9d2ad743",
+      "f113d68f99d0e91a01fbb2fd6a4e0f17",
+      "0d06b8b751334d360c7b81eab9612112",
+      "242e130ab095e3229512dba1321fcc25"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-watch-x1": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1f54cd08541fd358a2fe1316b6f27fa1",
+      "26a49f42c13e1808c85e7f8dabe66f73",
+      "546c776b6464f4b2c8127284ba23e1f8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-watch-p1": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b527948914b802ec773a342f180d766d",
+      "0047ca3da484de0bdbefa7ca353b65d9",
+      "f4f0188b40393acce5dcb08ff8092674"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-101": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fba9ca46fd72d8885c9e2bcf336b3f2b",
+      "901400a6f50539504dca46fe13c11622",
+      "991387ddb99badbbc1c002654361b111"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-100": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "18a255564fc301458f39ac318fab6d53",
+      "19dd785c8d8a21d74d1b12c2b618dfdc",
+      "7eebf0d668ad9894768935012bf521c2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-touch-4g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "09a292a852539b229b85ee765ee676f8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-vibe": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d655e118ee56b13954c0a348bd79bc09",
+      "b4cca7c032fdb30d8688a7fe4d739109",
+      "65bed7310977da760d74d3bfb0908c7f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-102-4g": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "44672e0ac3a497ee70362735646f9360",
+      "a60b19ff14a3ad09aeed73a6d9e6d12f",
+      "f6351bdf2ba19014c397832c45fbc256"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-101-4g": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "325c3f4eccce7c12c6fa85579b016810",
+      "447e1e517b44b2d7a0a930ddf3b258fa",
+      "48734a06c502e0264da3c48f412c223d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-pulse-2-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c6eb124c89b3f8a347dcc6e5d29a2166",
+      "08c55777c69f829b8d119f651a1cc5eb"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-3210": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "dcba3f21fce14e27af46e5df19fb7528"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-2660-flip": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e247710031ef45d43984a7359330a6f7",
+      "7e2a5abe2ef83d2ec2e3a077725d6eaa",
+      "2646a749d52364a29ea481c4050590e4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-150-music": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2c2bc95839fd11b0c6a4ff6a89c23594",
+      "779b9f6fc31c949720e398acc98712f6",
+      "c42e58b56c34990bfc3c21f770696ac6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-130-music": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4d64202a72207cd6d0ba14e805cf06fa",
+      "28639a0db3cee84c5ac917d158b2cf02"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-key": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "96f2346e0aecc3dd74a523e5afd1afd9",
+      "a1298012cc152c33e3e385ed4c161844",
+      "a3de501df7e2600a75b1f7bfd96b4936"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-arc": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c5601ca9044c70981cc1096b98cdb500",
+      "a6205c144305bf49b1e3ea251f73adc4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-105-4g": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f9a6ba35c4f3247ff743f51c15d48bf9",
+      "bb934ce8365446147cddc94aff59e670",
+      "3ec81a48fb11674859e970e25c448331",
+      "1ff31dfe66069faaf9238f83904c1f7e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-110-4g": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "575976dfbfb9e736c9b27d207261027d",
+      "93d98a66acd4bddb232037b4412dacb0",
+      "f710472044b8f0f30846c6f71a80db09",
+      "875fd349df022549404e88d5f262bbbc"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-fusion": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d943b6d5a734df12909cec2434a1e01f",
+      "5c367d5df98645e1ada7414aa007eb29",
+      "415da8fb87389292ff80e08caf19dfb6",
+      "a1818cab375e6751a83f7f88a557a405"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-barbie": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e0710506a96ba8672e7d0cf1b82ebd0a",
+      "4f855b3bbb2442f35e649f27ad48b38b",
+      "ab5bf419e3d6c05e57fe320af698350b",
+      "401cc322ecaab4f4aff49f82c32c054b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-crest-max": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d5b39ff97b678061dd9251a362598314",
+      "750d1ed24ca0402b0769c3db933d11e1",
+      "47d776a8f2a361c0633ad6ccca3b5745"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-crest": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "1caeeb6a4a0372e7032a48fef98b43a2",
+      "cc45ac67ece8289e351b978bec24ad15",
+      "750d1ed24ca0402b0769c3db933d11e1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-skyline": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "61bd7d69f3db620d660075456c64b883",
+      "e7cf99aec638343d4913cba2dab303e0",
+      "09ffbf25dbef559b345927a5917a2ff1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-110": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0eaf0908991171a4b483bcffb5b16584",
+      "8696479c71f5c138aad762097c3c42c9",
+      "df97041a3ea80def0e37e08200ae5783",
+      "1b088251a7cfdc08b40b1384a42b8524"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-105": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bb934ce8365446147cddc94aff59e670",
+      "6dd8670c445c5034a16c83d21e513c88",
+      "82b38cf359d4b89cfbaf11043e6703fc",
+      "3160cc653aedc45f51e310b53f61b748",
+      "e6439329f2555c816fb77db72fdd40c3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-aura": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a06f55dcb510046071316cf77934c1ff",
+      "cf8c683a19247224dacfdd377cfe8910",
+      "e210de77375a24e687306f6d1fcbf7c0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-t21": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1c09d174f4f5aab322e6c6e8832b6a1a",
+      "5ff4037e533ac6ffb8da54dc66035d0e",
+      "09588151a5eda04b79206494d0c71403"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-xr21": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "42fc582d6b7d451efc313caf2b2b4747",
+      "d68bed174aecb1d8d18d64a2eaeb9335",
+      "939f1b00009fc2be24aecc75b0201648"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-vibe-4g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bc611ac9133c6cbc76e37fba8fda3d9e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-pulse-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d1f76118f33974230556b5743653e55f",
+      "f26d1e4228c169e3324cc562c60cbef2",
+      "a228e32d7279890f3b5ed1e26c8073fd"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hmd-pulse+": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d4def04861a55531cbc69e02572da24e",
+      "09ffbf25dbef559b345927a5917a2ff1",
+      "a228e32d7279890f3b5ed1e26c8073fd",
+      "09a292a852539b229b85ee765ee676f8",
+      "f6fde668155fee60eb4e68b6318c50e8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-600-lite": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "46b5d4cb4c19b6bf38073afd08373602",
+      "ff593d59aea955735ef6f4048aa42d6e",
+      "5ceec3d4fed5b5a5237b01073a6dc90b",
+      "ba5edb4610ccc43c4147ee0d4991b5fa"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-magic-v6": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d4cb8492824a0689be9aa8e65a37077c",
+      "ceab5e27d0ede935953b778df0e02df0",
+      "75683edc034b1366471ed275bd0d8979",
+      "13b2137497454ecab948934234deea32",
+      "043e8fe462ed5a4af1b8b1974edef4a8",
+      "67afe3694270d1bbd152814cd196dc01"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-magicpad4": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3ff5b1ecfa3c7f71f50fd4a7e0af49f1",
+      "dbe92234346452613aa6252e2a404aa5",
+      "8cb2db989522fe30d6b8c0bd3b2499de",
+      "e22f4ca54e84aa62c3c52cbd52b9a2c7"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-pad-x8b": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "44533ed0551d4f8c598396b3f025ffe3",
+      "d4e445513064b696116b04fff8c7766d",
+      "7102d8471e99c390ecd3499dcc4b1b40"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x6d": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b4d96c043be1753ea1e2b31e01cb37e5",
+      "e1089e42b3a8fc6f785ee79efbc81c89"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-magic8-rsr-porsche-design": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "803cc8621fc956b7eef588d17b9abe90",
+      "3d72931a644c4fb57b27454ee3098982",
+      "ddff4ff9db84cf2640e050db9566296a",
+      "879746f633676f69563023ce61f964cd"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-magic8-pro-air": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b795a87f36f493fa72deb257aefd37b0",
+      "6a2db5aafa1f691cbbda5b79b014b95e",
+      "f1e395938786d9a211540e42043a9076"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-watch-gs-5": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "82edf851901a6ce3d64a7604e1a42f82",
+      "3b64941a48ac55b1bbbde136e41c4c21",
+      "7ee0c2f7764a19fbfb8b7e29219837c3",
+      "365b03d285bc8837b2353ee8a91c9aad",
+      "28e32111bb75d36dcbd0e425871fc9f2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-power2": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7e828ad78b227fd06f1455cad0d66a5c",
+      "19b3d21ec8ecf4c7319809c7909f95fd",
+      "41a1cb7aabf57562b76a93ca14c123f2",
+      "f7a15fe9ec9b774df75701240346c34e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-win": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fb9f75e8c30d585776f185852f1ac7cd",
+      "670af404c03b2ed5b7e1fa82c38d60a2",
+      "be943cb9c24e9278a53a10ed9ba525ef",
+      "c5c0583d138610f38693367e3accde17"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-win-rt": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f4bbff201631376c86d756d8f1d7e058",
+      "fb9f75e8c30d585776f185852f1ac7cd",
+      "3448ebfb452992c603ff35c90b848a89"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-play-60a": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fab0eefc50eaf025353a8b75f113f2dc",
+      "8328fabffaa02f87867a4ba46d93b737",
+      "e1089e42b3a8fc6f785ee79efbc81c89"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x8d": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "966070518954879226bb6499ab915abb",
+      "b78b613c6483421e5d5a19d0c504438c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-magic8-lite": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ba1187f9b9219c703135d8df0019e57f",
+      "e618282e007aeb58e75580773e97601c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-watch-x5": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ff5e5603c482563081ca5927f3b9a6ec",
+      "3c679f05984bed436e0eaabbbaa32128",
+      "255e46508143e7b58272c66aa738d411",
+      "1b0d5341c227c10c32cc5c70056ceada",
+      "698ea8ee6deab6c609c6fdb3ddc51b96",
+      "56c5cd4109d024b7f8d7b958be66f6b3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-500-pro-(china)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bcbbdc966d07ed4ca8b6301cba27f0dd",
+      "83481e5ec2c957be75d61d4b61fa8241",
+      "28a7de9fec98812b78797df3f5e76bb9",
+      "259b87cc6a0a908f251b599c7f4da9f9"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-500": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "476c42ca947d495179af7727dbf3e5f3",
+      "28a7de9fec98812b78797df3f5e76bb9",
+      "ffd058af44729b717b4038a84c3aaec3",
+      "f0f414fde9dbe7edf398c18a4ded01c2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-magic8-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d42c68b7039b17fa8212626c28807585",
+      "deb2c64aa459fa9653c07a90ecda3fbf",
+      "ccc925c90e715b88d62c53be1a0aaf19",
+      "82584203d9188153b265b8bda9ec9e96"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-magic8": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fe58a041d5bf95c47b9231c16792c881",
+      "deb2c64aa459fa9653c07a90ecda3fbf",
+      "74e80098a43088742ba1dff265a1c064",
+      "2f6b4181006fdd812cf20643cbd1f086",
+      "6a2db5aafa1f691cbbda5b79b014b95e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-watch-5-pro": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "104940dac58cbba391def9453b7cc931",
+      "c014c9878058a66ae6463082a083d285",
+      "8e41afc0a199772ea86b8e39bc187c05",
+      "9e968eef7d2c0f09fabee3e2feb28db7",
+      "8e548d0b22e828b2110badf7f63bca55"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-magicpad-3-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "19c9b389c07263532c990bc27efe2947",
+      "919fba6974f4ffb0e3da4a5a2168d9a8",
+      "c4befd83ae1803c58f82dc1b30c94c7d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-play10a": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1c64a707dc4d6ae13b652bfd534aebfd",
+      "2d90156c13d6eac225a4854526ef3381"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x5c": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1565c523c70d2648a4901d59c21d905f",
+      "06361d1457cdd070428237fef66665cc",
+      "ab4a668d7c0fd0a5ce7cf69ca5c63b3d",
+      "9b4ab8eb1153645936a9def9487a2a20"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x5c-plus": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "06361d1457cdd070428237fef66665cc",
+      "ab4a668d7c0fd0a5ce7cf69ca5c63b3d",
+      "9b4ab8eb1153645936a9def9487a2a20"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x6b": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1e0f4526cf17560cfbcc49eef0e4d52f",
+      "3a8a3f4cc9c702ed54e574ea2abdaf0a",
+      "c3e66d2c476d42686263df55e5278f16",
+      "92a512b25e430125afc42b6d2a2db3ff"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x9d": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "64c9e1c1e7bcac7780a7955c1bbef066",
+      "e618282e007aeb58e75580773e97601c",
+      "48cbf7bb13ea05b95350274812738632"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x7d": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e45acaf984344dc00912883997c050c8",
+      "094d0f2a10c8173e3c6ed71fcb4aa3d3",
+      "a25cfbf70adb4684a84e3b3069208994"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-400-smart-4g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9348e33fec87dec19188e1edc21f3a12"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-play10": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "41f610808c6f8a3d228e347a25c3562c",
+      "d005ddad0ea447b59920b131c9a1c0a1",
+      "46f040da635d88ccba73372ef086fbc9",
+      "e9742c1e8695c584357e41defac64f05",
+      "120eba3aad7841f86303b1770d22e2ea"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x7d-4g": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e45acaf984344dc00912883997c050c8",
+      "ec80871144cbe1fcc47ba87d9b8a590c",
+      "b3499c7b7882a60c56e42933ea6a33cf"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-magic-v-flip-2": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "541f56b1abfdadc42de6fa18ec80775e",
+      "6e9a427bb17628db9016157a5314591f",
+      "c60d5f3dc3fac62c6dde028fad783e78"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x7c": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9bba93ba651335176acd83651eac9699",
+      "7184c8359a5b02aa9798297879115d3d",
+      "4df5b6bfb4924875adcf46a57d704f83"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x6c": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5fc66439cca34ab765dfd4c42413414d",
+      "32726100b3dcaf2f04ef8b77b15b978f",
+      "1ffc6663b804a82aa35dd7c8268f694c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-400-pro-(china)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a4257b86ce69e99b69b15696c3c40432",
+      "b81d981450f7ee7027638517df3d9873",
+      "01ad005183d386230f255e803859c75a",
+      "0b0d094a36687d166643ff2ecfb68c0b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-400": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b81d981450f7ee7027638517df3d9873",
+      "5c4cda0cabb3e2da83ba589d1c012742",
+      "6b771bd5ab3916d41c5d6e1fe22d283c",
+      "897e7ad196b3b1dc008b0288892766a9",
+      "922f4e806b37d6c80c88320912dd2800",
+      "245dc1df2590c09ca7989f5f8f4f7fa8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-pad-10": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "cc325e069077b1c4b56fdb413b54e0bc",
+      "4aa8643940a43c36145a94b349f51b12",
+      "e9c7219ef76911f7e071e36b0767ac9a",
+      "8160bb51e5152794688d8813a86c6da7"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x70i": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0b898f8b926af459a5615afb56f8edb1",
+      "e9578c0861b1de039344a6ffca86163a",
+      "c542db511c0797fac3dbb165a6707ab6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-gt-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "958a44f939a7722f235c490668bae81d",
+      "63bd67f5346f5550dd962448036ad298",
+      "fdcab9da115cf238ec23b95816eec355"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-pad-gt": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "dab46a85432ceb3fc0b303984ea1de13"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-x60-gt": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3b487d263ee419523307ef7776b8b298",
+      "edfec6fbff38c12baf3ad583b9a01798",
+      "3130f67714032ecb5941ca5b621df713"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "honor-power": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4a71dd460a623562f9c7c4f13699db13",
+      "41a1cb7aabf57562b76a93ca14c123f2",
+      "7678ad74966c10f874417efef31519a3",
+      "81bc24e6e9686c2decaf1d1f9856068e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-elite-x3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ddb59f3a26293c9981badca2ed762e84",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "822017e2c2e841ae8478b1fa0e7fa5f3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-slate-17": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2b848e8931d4fe86afdc164f2452c2b5",
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "2548b26a80a072bb0b5a33ec69f51f2e",
+      "c2e3b714b04da6bf7f0f4dfcd47c0d9a",
+      "e5b0e4ef740d9f10414ab051395cec67"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-pro-slate-12": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a9d9c4a44dcd7c252bd56c4fa6cefeec",
+      "ac219927349f36da0475a066880de23a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-pro-slate-10-ee-g1": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "145d074e9125de91f20fce482845f325"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-slate6-voicetab-ii": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6691a56c933505ccc5be75a53f4ad835",
+      "c52df5a8755658862aee54782b588e74"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-10-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2c7598405f46db52f30dccf1cb5f84fa",
+      "a94ecb6c83f6f332c995574657d603d0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-7-voicetab": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "87adb5c97324ab17b5fc7155c89462a1",
+      "1cff1df1ef04b5a6c8a611b5a30d8fd8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-7-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fc8d4acbbff2ab2854ee5a615e73f9ef",
+      "72948ba94be21047ee57e522b5ae50e6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-8": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "859da75587197b79ef44232986d82cc4",
+      "4d911e86e86554b701062f7f7bc05192"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-slate7-voicetab": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8ccf090d9142903c9d0230e4c09c34b3",
+      "6e1082e3751289a6794e445fb174c21d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-slate6-voicetab": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5e6535b31b6d3d9d1eec7fdaafe55778",
+      "86ec708dff5bdf7faac6c3c4b47a9fac",
+      "1c85bafec985abef64377d048c3757ae",
+      "c50c7dea019869b3fb3f9e554359df6b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-slate8-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7cf606395d8cdf3e87049fc69602f038",
+      "a8f5465275c2f8cffdc626f73eb536fb"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-slate10-hd": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "850a3d09e89db7eca1cce212d0fe6c2b",
+      "ce361a66112f093105950f78cbe2514d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-slate7-extreme": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5f762bcd02252d614b3a8b130ab0f5ef",
+      "655c85c29176e9be32b526c26065f0c4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-slate7-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9e5fc41b1e04dae5a066fcb601dfedf7",
+      "a5da853b0199168ebc17598df3162717"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-slate-7": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ef42b28284b13d4a3cc35a47908d6527",
+      "01d9b596e22d0ac2f32fe0a319b24382",
+      "6eaefdc8d641f8937c0ae7d677b17f9a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-touchpad-4g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ff77b9c238a224d729683e157b8d2b26"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-veer-4g": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "be913a6ff1eb2aecf659530fd2599746",
+      "8697577101c52e3f6a7633e458654d81"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-veer": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3036006fbe56219705878f55518d5988",
+      "1ebd1f27de4435c6cfd64265d8fcb47d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-pre-3-cdma": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "83368a91a5c36dd336aeb5df51f7981e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-pre-3": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "83368a91a5c36dd336aeb5df51f7981e",
+      "7f62f9a24ab0d27a6ee6e2d36e8717c5"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-touchpad": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3dfd21f982339ed8a000fa09187fa52e",
+      "351421d19a1e1c9ca8494cf3ea325c9f",
+      "2016ea36c0c0dcaf37e04ac86ce9b02c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-glisten": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "97f3058a5ce892f67e68bd1da8175f6a",
+      "ffe49924e4f593d21c24820246d38a92",
+      "e9e15eb7ad49b6022f38c6bcc37b6f97"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-voice-messenger": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "43437e8a91db0845aa31eb4d0a1b5673",
+      "45e0ca2148b8168152fb1331b81ce09b",
+      "1041236bb886f29d29b6470814bf4812"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-data-messenger": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c72673e41e1c8151c42d2191edff41a1",
+      "10c1c414603dd4ae8256ffc449060e3f",
+      "49137fdf6f9e38e73fb2260645220d9b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-910c": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d8f5fe81beb5512d96d5577ef2455094"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-610c": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-514": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-rw6815": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-rw6828": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-rw6818": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-hw6915": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-hw6910": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-hw6515": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-h6325": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-h6320": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-h6315": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "hp-ipaq-h6310": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d34eca6b961bdb704d64daa8eae1c18e",
+      "859da75587197b79ef44232986d82cc4",
+      "ac219927349f36da0475a066880de23a",
+      "93e8b0a8c4e5e1ba957188c6c8860ac3",
+      "87adb5c97324ab17b5fc7155c89462a1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e5-life": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b0d2a331aaf3253e7cb7babc3498f07c",
+      "e4957d27469eeeb2c4ddc637dc975c71"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e6": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "242026881ed739c0cc1352cb26f1919b",
+      "329c85082e5a442cc7da61a03d3423bb"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e6-star": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "315c58e469549874ef3dc11cccc9a3a9",
+      "b570add4dfa06a99f0381d0e5ed85e03"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e4-plus": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fd22f93a3bd3d5f8690281381f77ab1e",
+      "52f8567144d47da65d3bac4cb7f56804",
+      "6342801dbf3dfd853100be881bd180a9"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e5": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d3bba56a4a41456d5c02002b7afebbbb",
+      "b33295bc933aa6e02bf079f75a393497",
+      "6c95a993a72428d5ce147b7432e64a31"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e5-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "70e045e88cbb9d6498f81ed385da1c47",
+      "ee5a3e8c1af9f15ff9c5f1250ab9a996"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-u24-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5ba6a0b59420ad165fa9b17959e3e8d2",
+      "29d93e42a8100a069ccfa8af4217f25e",
+      "69e46f9b125be78a611faf4e95f27a6d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-a101-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "eab30b3834ca647d1ccd88cc5a48b71a",
+      "f679b03c21189e9659836181a67c1218"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-a104": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bcee83a060415d33253bd9cebc0ca8b1",
+      "ff568ea25b71826f2a7ef51063fe3ebd",
+      "90f094a7562ce998e362bfa6089a10c2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e-star": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "10b76e790d08f2f13b0a4e39dc1c2895",
+      "7a3c3360f21d5826b2ae3f0636401106"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-u23": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fcba1b1cd09d6b282c95312bada4bc4b",
+      "b91dda74d89baa2e5eaed6d4b6c06e3d",
+      "e933ea407d9ceb3541f6161984a6df73",
+      "33c284f7e135d4392437f05effdd7fbc"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-u23-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "596d2d79e4ee56908f2bdb7906eb96b8",
+      "afa46caf6cd71aa6a9b15640634482cb",
+      "e34009f10396d926944d0aae2c21d228",
+      "e933ea407d9ceb3541f6161984a6df73"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-a103-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "38959b489f26456655a6dc5d12066877",
+      "04adc4381346a8f1da1d00db4bdff37a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-a103": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "eaa5ae9ed4f62077e6d09245ac470671",
+      "fb6e6d7227031cc5c09f097f4d969b0b",
+      "12ecf01984834e6938437bd50e4323df"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-a101": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "cf508b6915fd6b9bfb012d6ac8f6dfed"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e2-play": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2eb1936eb0315bd04c52e7372e9de64a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e3-lite": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4eeb0e52a073ac1f1030c6cb2c42ee5e",
+      "232dcd2c30fb1876b9fd5cfa468e2677",
+      "3afcc99ce39666eb88ba5291a2813310"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4cce085a967068bb7ccbdcb4bc700444",
+      "6356ef7802614b161d9a0554c3b7ceed"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-desire-22-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "625a8b37743671db2c0cfdbbf19b47eb",
+      "59d3c8db0ef4865eac776d73152e74fe"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e2-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2eb1936eb0315bd04c52e7372e9de64a",
+      "1390f0e533ac33f0046f4c68db2c6cd6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d23af4e39a7ce35d7f667614c5da0c44",
+      "901d0b657514dd606828ef212a67649d",
+      "bfdf8ca5acddba80341d0fd081ac628e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-desire-21-pro-5g": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "81f2c3adb898b465cd1f32673b7cf350",
+      "184f9b19e9243abc9d0f19eef1f8e520",
+      "14387a7ef265c11ccc3fd501e7e38383"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-desire-20+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b9f7023e606c8219cb4ad6c1a832ca87"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e1-lite": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "10aa3756f022b08c2d632f18dbb8bf71",
+      "020b088a138b059ad0e4c6c97b6b8aaf"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e2": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "66ef2cd158a1eb5fb81206db24a6d407",
+      "343d1cb51e55c9da7c0e242952dd359d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e1-plus": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7414c03aad1ca23ac14c11ad4596c8d1",
+      "3ce78773742af1864256c664611309cd",
+      "52bbad81d9c70fe3182d957d148b613b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e1": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9f32d6de93d6cc7ffd278f8845a9a78d",
+      "8caa999fe8bcf02dec9a25c4e391142e",
+      "22a175e6144b726401f06c08e8b50f40"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-e": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5bb834f8eff5cd50c08c7f6b7b1ce14a",
+      "71bb99bf0ab45e18e42e03e2859251c9"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-u20-5g": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9b9dbe4799b59d0f0b47deb7a8702462",
+      "7b6f34d3e21094e11174d1d815955619"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-desire-20-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "57db011303897330429e7e662ab8394a",
+      "57cb5646ec4b8a8b7ca335652e4620ce"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-desire-19s": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f3d8d4cf5dd3a5c583ff421763c344d7",
+      "5456c449125a23ea81987788193af29a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-exodus-1s": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "08def2fdcc27366d908a088c582520d7",
+      "4a0f87d2579a4660eda9892dc17ecf91"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-wildfire-x": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "0ea0a911ff29e9b7d3edf234fe216e83",
+      "71331264770ca84143bd8e64cb1a3dd4",
+      "ab2b0197a8e70313fb01586a74f2a372"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-u19e": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6e0388862feed9870c6f9c63f691c17b",
+      "f9dcef6fa7a54fae085a152095fd6d1b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-desire-19+": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "29d93e42a8100a069ccfa8af4217f25e",
+      "e4957d27469eeeb2c4ddc637dc975c71",
+      "e933ea407d9ceb3541f6161984a6df73",
+      "242026881ed739c0cc1352cb26f1919b",
+      "39ca15e483e7e7234141b3d4ee9cd662"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-desire-12s": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "6b2495b73d75331fbe4607809de95a02",
+      "f3af0b0f239f2ea06048beb82c0dfb6b",
+      "365679ac64ca827570e740cadaf1d644"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-exodus-1": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "03a525e4e3b505389461c80456fe5fa0",
+      "9fd4288e3b965d0c20c3e9f8862d12ff"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-u12-life": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a9358abff1efe37dd7e5fc5dca48148c",
+      "8b538069dae786ba3021b517f248d461",
+      "7eaccf6e5cd033aca7ef04830ede6506"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-u12+": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "29d93e42a8100a069ccfa8af4217f25e",
+      "e4957d27469eeeb2c4ddc637dc975c71",
+      "328ebcbe72977db801be8d800c5d3dd5",
+      "fa1e7c750d9cd6b9f3c5e9d7a469b792",
+      "242026881ed739c0cc1352cb26f1919b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-desire-12+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c64bc3c784b2232895a4b991a2754497"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-desire-12": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b2ba2c607a5db5d6de17f5a5f714d4c6",
+      "d4374902bb3b89837378a849d483454a",
+      "8ebdb90aa51e9bdd09f38e264cd5190b",
+      "068e81ad19affe1da38aa29fcfab38f7"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-u11-eyes": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "5e63522a55e4bf9f9102586a4f223483",
+      "74cc4a11c6c268b6f3bf59dbda5fa598",
+      "2e60f9115cc496d38e2a5cd978eacee3",
+      "584e938f86c89095a458627da13f992b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-u11+": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "29d93e42a8100a069ccfa8af4217f25e",
+      "e4957d27469eeeb2c4ddc637dc975c71",
+      "e933ea407d9ceb3541f6161984a6df73",
+      "1cb1cda5d4a985f9bbaeada065fa521f",
+      "242026881ed739c0cc1352cb26f1919b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-u11-life": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7accae28e7a05f1d390f49ae2ec53832",
+      "dfda639de9d67007da6d38a90f8d86cd",
+      "f1e243a8e86d9112af30538e1b117df8",
+      "336d9850c8e53e3fe551f3d6b87f981e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-one-x10": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "490b4d847671c4c458117ac563052899",
+      "1816de7f447c0d9a4861ceb64ca8f508",
+      "b423a6730785345a2f1e3a2ddc56e12d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-u-play": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "29339f5a3ffa11dea718be953cac2516",
+      "8c2947b453de656639df5c1f6e69566e",
+      "271cf88fb306681c67a300c4b1f2e4f7",
+      "d58eccb1479d55c0b55fe8731d401ce2",
+      "31740974f3832b56a86036051aca165c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "htc-10-evo": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "55204583d41fc5eadbdc1771dc06af15"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-watch-gt-runner-2": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f0ac0fa368d330c84d3f01e50ac8fbe5"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-15-ultra": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d9d163dfdc3c66dba3e46828497ae025",
+      "f037199ecca0d59d26840807c537da39",
+      "02ecef3bdd03caf1221da75a419ebd43"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-15-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "95ecec6040adfc4bc62b3d81fb87aeeb",
+      "bbf8c5b47a792e3f208a0447d5425917",
+      "42a716edce69c611a6d2fb25df75d83c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-15": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d9d163dfdc3c66dba3e46828497ae025",
+      "95ecec6040adfc4bc62b3d81fb87aeeb",
+      "2b1bfcfa66a4d48b50ccd07ae2cd74d1",
+      "22feb8bea6455c735cf80b9bd4f18a9f",
+      "5357cbcc558ee738fe7456be2ad0133d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-matepad-11.5-(2026)": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "00587ef1e4cd701d2e67f52ec895609e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-mate-x7": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c139c3c167a2d0188f8f689348ce682c",
+      "1ac2c3feb5bccb7424a11c3841c7b125",
+      "c8aae5f848501fbd92bae1078f856e05",
+      "d74dc252211c22fccaabc34c126c6ad0",
+      "44b4f7733ab977df2da505b47c0ed9f4",
+      "8f3f9f168a8e625d91996698009003a7"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-mate-80-rs-ultimate": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9e83a36aed63831f7b0ea57392199480",
+      "7a7edf04a15e5e420b248431c89fe339",
+      "d4df27f968cf31309b6c869349f2dd31",
+      "68e8d8a7d2d900189479b0c578162892"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-mate-80-pro-max": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "34faafda84e8bbfad40817385d84d1d8",
+      "5f835f9ca144a693843c5313541ccec1",
+      "7d40359ae185daffa35d131f90b8934f",
+      "c97605a3f3ee51edc69fe20333408346"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-mate-80-pro": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5c041605e09999eb5e4dd5779e67c7ca",
+      "51ade9f52cdd790d1c73833614b61658",
+      "7d40359ae185daffa35d131f90b8934f",
+      "7a35b6a560b8103394e461cf5f59f882",
+      "f3acc084a08522f2202c0b2d4fcf7aae"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-mate-80": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7d40359ae185daffa35d131f90b8934f",
+      "f3acc084a08522f2202c0b2d4fcf7aae",
+      "b60b79a4ff1bca74a6f46eb68704817e",
+      "d8db2eef33d2e70ca27fc40f9e2fc0d8",
+      "10f69abea898fe360d6130985341d482",
+      "518283a144a3c386c8f5fb26a3f5bb0f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-matepad-edge": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9cb49bb0b6fd184da7dc737aa68f0a1d",
+      "89c21f94279e4dbd88415d27b6aaf175",
+      "b3496d9d224676f1c55fc1dcdf423042",
+      "76242292c805848f8fe72051e080c095",
+      "de6ea160d203644797ffe06a6e522a9f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-mate-70-air": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a991289dcbecee03f78eb31430dafc69",
+      "e6d849d9c7e5f848734f4d175bf0be67",
+      "be73d7c90252ef0a359d6ab7a41d3d49",
+      "1cb2f4f8fca0b84e90c6c58a88025ec6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-14-lite": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "7d40359ae185daffa35d131f90b8934f",
+      "ca00195676664279406570c31df67731",
+      "f3acc084a08522f2202c0b2d4fcf7aae",
+      "8c802485362407d724e2df19b948cae9",
+      "03877941ddb3fed56166280c7285edc6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-flip-s": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "834fc4f82bdacf5a1f691c7ea578a036"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-14i": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0b070da397804be0a6e3c74fb35cad4e",
+      "8c26928bcb42a46f5dca2e452c700241",
+      "83e58f5130b6262c11db024e152999ed",
+      "ca00195676664279406570c31df67731"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-watch-ultimate-2": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a3c1ad08360479cec31ecf5859c4f205",
+      "1557198c5b9260957be8826838cb76fe",
+      "060e52f7a078c93e50a6fa8c328df745",
+      "959e40efa1165c6763e58cff0dc9ee5b",
+      "d710429fc0f88ff95f72c659b67bb9f2",
+      "39d069905027a861ac556050549de362"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-watch-gt-6-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "acf721b952b7e755fce7342684f65c6b",
+      "2f3835cd4db8467cc834f19ad6d73ac0",
+      "703e3d384e98ea0cb2e148310cd5127b",
+      "9dfc99e22eee2870ed0ddd20fa2939f3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-watch-gt-6": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a2bdc479caf9558721256e76a0dd67ea",
+      "feeab4caa0838adc1cf18f8bfcb87aad",
+      "10e197157cf9813f140bf0b79849c70b",
+      "9f488ab0457169a61ea114eb9e1194ba",
+      "f465720e7ca4d8752afbb910142bc06a",
+      "b2b61fb26ce45f3d50e22e11a8e93c55"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-matepad-12-x-(2025)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "085afef19d616aea96258a8d2be22002",
+      "7a249900d02b7f36e56fccfa17540cdb",
+      "f91f5cbfeca042845d5e5fc911eaa54c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-mate-xts-ultimate": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "10bb81728afdfc49c9de069fbb38c327",
+      "c04862a74e82fb6f6e0b60afec0c1f8c",
+      "20b3b9a49542a4c2a79d99d6b1af10f6",
+      "da38f2a2be0e6e63aee45ac50fae0b81"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-matepad-mini": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "080c7e8b284676e8befd582959b5fbb3",
+      "a88b99e4e5b3523afab5f2da6ffe8529",
+      "bcd397dcdd8db91a53f7809286e3b9c8",
+      "53a7e01da96d86f3bcc8ddb3211113c1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-matepad-air-(2025)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a22eb59178e55ffbd722df36c13182f2",
+      "60555351fdf8bf498e49303aeae8d4f5",
+      "1c94c8b2e46d9e61cdf21682bb5aeb55"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-matepad-11.5-s-(2025)": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "843fc8c5aca540c45981345f1c102331"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-matepad-11.5-(2025)": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "00587ef1e4cd701d2e67f52ec895609e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-pura-80-ultra": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d12035d070180fd8a7887c5053f34b81",
+      "123dc121df87ce0ff3befeb7b481cdb3",
+      "6fed5d3bf382d6a728b13920ddd19e9b",
+      "7a46f461dff298b0dc1e957307ad9866",
+      "0ea65a3e7794cee5d562d0540ab2b58c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-pura-80-pro+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "41663b1bcad2e6d87aab6fc45e2c4af0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-pura-80-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f315891a6fb7278c55c92e904c8c8e98",
+      "72fdd0557a82f8b5ed5a90e84c2ab4fe",
+      "3741f1f4e0b12ee22bbec94a77d201ca"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-y73": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "846d65279af954737af24d690b43e8e7",
+      "4026e2dda39e89e28ece9b35ef98c7a8",
+      "ca36ca3d5060ef38b2cfc241eb3a56ad",
+      "aa3adcff3f9229ecf81bcf4bc197a682"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-14-ultra": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e3cd775097063174ccccde476171c849",
+      "a9c4ecb2c4cd745edc43f6fa67d49f18",
+      "e41c57fad4000215a2a75b6df382cc59",
+      "f574bd3b19b1fc3e9a78ccae5bcaf442"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-14-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5260edb9770932d46e2f641a70de6b17",
+      "16746c81734a0762bb6936cbaae5ebc2",
+      "b63a75fd08ffb23653e95f03f58b454c",
+      "5c53aeb11b1f0e65eee5a81f82eda141"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-14": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ca00195676664279406570c31df67731",
+      "24a5230a5f305497d5dca25ead1b8dda",
+      "8c802485362407d724e2df19b948cae9",
+      "b61891ab47a170b74465a958fc647305",
+      "b63a75fd08ffb23653e95f03f58b454c",
+      "9b053d89cadce4511981d627beceeb40"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-watch-5": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b2439fd00315a0aa0ffb96db0689c169",
+      "0ead4e4d589262f1bdd29de0b95b1f35",
+      "6145b54a67003399d4004e1cc0057090",
+      "d8098833a4070417c69ea4704e1426d8",
+      "d623e999dea78f31f04dcc9448ce13b0"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-watch-fit-4-pro": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f8654827636e91080049f70a3d692434",
+      "ca7022f4ccf37eca3e7b6436ad9ee51c",
+      "825a5290d431b2ba3945cf3a2c630502",
+      "ba7866a6adc9afcb4bbd0b83fd990096",
+      "2270e9c3bb0fa878dc96fe00fdfa908d",
+      "357298b1fdcf2535eafe1d2951713c15"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-watch-fit-4": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0814806c2b817d0f5b9aa2e398a2b207",
+      "825a5290d431b2ba3945cf3a2c630502",
+      "082d101f6d00d0654d3de8508cb13fad",
+      "2bbc6d8cc6fe947ceeb7cd38c3abd98f",
+      "1e407cd2ab4097df55a3c5a7c2c81e17",
+      "ea741aa1b6d8abffb853729a83b65867"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-matepad-pro-12.2-(2025)": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c32ee8d26bc1f8b903c9b39b47041e78"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-y63": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "75ad8889a12ae7c3dde43ff9172c377b",
+      "9c972ec8243888edaaaae31a15f7de61"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-enjoy-80": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5bf0374a3924019fa73f16c8c34bb498",
+      "d27eb83959ef5d9fcebce82eb4546bb7",
+      "bf731bbc97c92014e5dc90eedc3fadb1",
+      "742e7e729483b9d6532784ba1d73f64f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-pura-x": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f1aab42bf1e33494082de01715e71042",
+      "43ed9206873a96f98ee55b575bf681dd",
+      "7a86055bf042618560024c9adda9f660",
+      "5801117ca4e187429859503dff732485",
+      "0acb33b176bba25befa102a37885c608"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-nova-13i": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7c68e23e3aaf8fb1009563f6f4cf2217",
+      "5cd8394df2f95ba28861426a1f1fdd76",
+      "d123105b6f0b7895bf9a0882ba75658b",
+      "c5ddf35807778b9e91e1e30a8d51d1e6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-enjoy-70x-energy": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c99a89169b7fe38c4f89282c0913ca96",
+      "dab9f03c00ccfb80419882b4b79d779a",
+      "2459e9e6ec7f27dc71df83bd03ff3b3c",
+      "2fabe40c7f9857b68f7d5ebb7d2d6cf4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-enjoy-70x": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "01a886ef94ea55f3dc2311d43f98c75b",
+      "911e6422d4d0b6d1e400bceb5f019c9b",
+      "918044a3ba053d98697eea710bfb7d66",
+      "7999d81216d647cee657b917bc27bb0b",
+      "5e3d545ea3fde9848ad9298792b0b953"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-mate-70-rs-ultimate": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3daf33514646572e33c07f1209ac1cd7",
+      "ec84015f5b61bf037e0680cf50a32462",
+      "714e3e00f9f4aee1d9ae33e162fb5eae"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-mate-70-pro+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e150777e8b9dfc23edcdb6bc4031ec93"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-mate-70-pro": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "63624c6a09d5bf5fd81a2d2b6326ac35",
+      "3212427323a8083fa603b2059a1f6bfe",
+      "738c41ef499b4edf1c40efcbb5ee81f2",
+      "e150777e8b9dfc23edcdb6bc4031ec93",
+      "fb0ed831ff6f05305fc3d2f459b98ba9"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-mate-70": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d31d569488817c18e0adc6971c836398",
+      "e6d849d9c7e5f848734f4d175bf0be67",
+      "cb69e571e05d381300f8bc7f25458a49",
+      "a052a2b838a934b89ddf063eba7f3608",
+      "ec22536b35a127fb9f26add27468abbf",
+      "fb0ed831ff6f05305fc3d2f459b98ba9"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "huawei-matepad-pro-13.2-(2025)": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "aa59b0ebef960fa31a42520d9cec696f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-810-f": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1d8fce51eb8bf400cecda107b16b1a15",
+      "35d71652ada1df1548c1d045f3fd2ccb",
+      "04fcba45607c1bd68121d18fd4b3d6c4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-ultimate-9502": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1d8fce51eb8bf400cecda107b16b1a15"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-ultimate-8502": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1d8fce51eb8bf400cecda107b16b1a15"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-jama-201": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "cd13604ca0360cc2eab5d9712405d527"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-jama-101": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "cb5c8f39a92d3af75596951b76c43bcf"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-jama": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "4c6c1fb7c31823be88a9e893a7173800"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-ultimate-9150": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1d8fce51eb8bf400cecda107b16b1a15"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-ultimate-8150": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6924e2d168889e352accb674e99eee8e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-ultimate-7150": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1d8fce51eb8bf400cecda107b16b1a15"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-ultimate-6150": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8b89c4e3adfaeecf5a57cdf0746bd9fa"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-ultimate-5150": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1d8fce51eb8bf400cecda107b16b1a15"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-jaq4": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "dec32da1c8280011e70cf3b230b6ae4d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-pdal": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "547c19593e8eb3fcf664925fbe02a464"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-jaq3": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "b5f319371a25bf5d53d297747245eda6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-spl": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "7c00473571ec7570532b1b3623fd33fd"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-jaq": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "2d9ff37974fecd7b3d486e898ba8d693"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-jasjam": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "6403261f26a0b65d0a67f4bd54df0f49"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-spjas": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "fa83b21e6c41e322fd5b5685d55b6ec1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-smartflip": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "34ddc8c3446c5a3a58286dc080333068",
+      "8689929da386499bf50c24dd30bd91e3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-jamin": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "55c1e681844806e8e33d263f9584d521"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-jasjar": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "cd8910649ef532fb7f9559e1dbe8780f",
+      "f16d065671740f058e3fb5129d231259"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-k-jam": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "895f8098142d74d94b6ce56ee49f2f1f",
+      "e1898bb18bec9e79f657f8d08158a280"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-sp5": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "6433998966e4e4d8052ffe90475db00e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-sp5m": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "2630db4a0c07b82a19bd0698a04f7d05"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-sp4m": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "5b1f663dfe36c982a8ddb943bf69d023"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-jam-black": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "7a8b19728388d7fcdc1b9e535f6c1705"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-jam": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1d8fce51eb8bf400cecda107b16b1a15"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-pda2": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "4e09e98d999ddd3b03518129e3c7152e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-pda2k": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1d8fce51eb8bf400cecda107b16b1a15"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-sp3i": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1d8fce51eb8bf400cecda107b16b1a15"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-sp3": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "bcf44963de34f0b76ee0d519cbdbf99d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-pocket-pc": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "421112feea4458f2ef1a1ba7d60749ff"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-smartphone2": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "1d8fce51eb8bf400cecda107b16b1a15"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mate-smartphone": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "e4e1a3ea9e7fdbdef7f0f9201a58f1e4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-i858": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "35ed6118d414e0042a9f7ceae0353a81"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-8500": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e45a13815babfc6f516e0e9c886d3f39",
+      "4c9583332d73cacf30193725265b2887"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-5230": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "90ac9cf2221116cb515df6704cb7c520"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-hitz-2206": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d242f415e8dd31aa6850f0e17a8204ed",
+      "41a9f79aa363e2c9123b8fdfb795e361"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-5220": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c3773e5f135999a0039bba3742a20422"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-tv658-touch&move": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5a0c6ebba666a89783f23d4e27466eb8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-hitz-212": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "dd65deb80b70c2b42df1e1b4edcc66f5",
+      "420bb2a4a713b741a741d4f4770392be"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-hitz-210": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c3e02645618e95f70796ad6a56d7046c",
+      "f3f54cea20e9958d80313adbc7679d52"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-tv650-touch": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "a1351d634b887afec5e0cd6263a3601b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-tv550-touch": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a040a347898d0eb86ebec43f04ead84d",
+      "772da6d1983763aae76f341778ef3f9b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-tv-630": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e03cc7f8f87d9d15a526f46ca07cd453"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-tv-628": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7cf4a1c66d94d6cfc94347225e3c9d6f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-tv-536": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5f5fbe032ada0cec2194c3b3f0c17297"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-638cg": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "11afa7a04b6b7b883cf38289d3f46266",
+      "e959965c4a87edde2edc83fbfc47172f"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-hitz-232cg": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e8ced47f76778b7d1b85ad65a049c023"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-tv-535": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9a05bd4daee88b66384a43f185129917"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-627": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "03416265b7270db237c971ca887d6261",
+      "d01b01855fe746d52ad690cea514738b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-tv-533": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "adfad0b73e8b5f0faec429df87238c03"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-tv-530": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c8b54fe42dce5b831746882740f02c3e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-tv-523": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "220c2dbc04c9e61168a3a8d6ac9a9be6"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-522": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "62e80e63a79083713c19dd606d2fb1f5",
+      "9d60cf9fd5df2998d001d17ceaaf8702"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-320": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f4e0845a9943c90bed5a941697fad3f4",
+      "ddc9fb7c7c7313bbbd63a44d5e31e388"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-319": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6dc43f39d0ee4ae43dbd818db30c316c",
+      "6f23b6c793c0a35c8775cf846657f58c",
+      "0d32c86f724a4c37d77705b8d1855d7e"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-tv-626": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9bae1cd36417d19901b6431215fbc227"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-902": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "05cc9a5d186c34d7d5891f880e040558",
+      "26cb1f572ed9fb157f2a50d4f14eb6c7",
+      "0a03b321acf87583a8d7e5a1fd571ff4"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-625": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f23c3ee37ab9f1470d48064744089991",
+      "249abd77c7e74bc1d7d088c2a5fc1953"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-903": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "269f862ac43212993f0b5ccbf241a42a",
+      "269e73ff111c6c87c890e8483ae8e64c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-613": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e8cb98857689311b2bbec8a81695e365",
+      "48399a1ae4a95a1e6062d0563c1adbab"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-520": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0cce9f9ca26e06d53622ed4ec6ce3b7a",
+      "8e8d60887fef089bc2676229866dc657"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-518": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c25262d896c8fba596c1700487dd4b85",
+      "7bb2897e383fa23cc4a45a238ceb6e00"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-510": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4fe18672b75fb543b056dc59a130ad7b",
+      "e1f55b796ff3e8d392851c70ccd8a52d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-318": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "48d26ea74149483d8bbe6ab1b0ea9515",
+      "d0d163994fe6efa0c9a18864d804eec1"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-315": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bf67ae0c1f3c49a1a945353d4c3fc421",
+      "21d3d6a6fc7b2f6f33911923cd6827cf"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-202": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b10f6230f9c2a25c6f6ba49daf86ebf1",
+      "1afd6aa2d1a4d9f3de371c29c3795254"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-201": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b55c343b036254b03c29cf16a73d424e",
+      "a81f64cc5396afede75f39fa79687aae"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "i-mobile-101": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f531ee26acce6b6611e01e4dd10e1b02",
+      "217e602a2dc14cacb48641ce5f83d844"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-g8-lte": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "a71fde04e0f32c245a7107c3a37fa875",
+      "4ec93534609f90a02058708604b56acc",
+      "3ebf40ae7f6b679bed7a70b5a07f41b2",
+      "ab43cc745f5dd607458543b01b13417d",
+      "07a846de0f812f9aca6a40cde66d9d9c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-mash": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "30a55744df880afaff21f57fee02ee01",
+      "0c5fc9de50560666b5099e2e9f2e5cf4",
+      "ab43cc745f5dd607458543b01b13417d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-g8": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "af72a7785b4dd352463dad8efb012930",
+      "4d0e77d0d8abfb4e6fdd568db76c3a0b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-prime-5.0-plus": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "35662c666a8c5d62023cb40a85ea7ead"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-prime-5.0": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ce4ad5144f6d37e6bb0678e87ce2c98d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-prime-4.0-plus": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c9214a073e2b7bb112f7759e837ff44c"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-gravity-4.0": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "16947ce2721c4fa797a00da9cca2cd76"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-prime-4.0": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a37779929c634534ca8b251fca6949bb"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-apollo-touch-3g": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2fcd3fb12fb05c50e0ae069138cdcb7e",
+      "8dac954f34bf73579650d22c1b36e444",
+      "5841acc3963edf57bb295b6da0639200",
+      "8b779cb0b24a4995533dbcaf6f26efd3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-apollo-3g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "036a17cc0c380ccece421739219ba195"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-g7-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ed2142a34a22403e4720f42a1b9af6eb",
+      "c065c2611a27145c9fb359b61d2414b8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-g3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "58629322be7bd46064484ff8f732ada6",
+      "0e5f8459a38b40095053b639222053ad",
+      "cb15751188442c0d48c6512e640bf3cd"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-prime-4.5": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "571b487359da446ec849c6108c9c1b47"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-charm-ii": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "02febb5113c38be6588e8cfd4b349085"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-g10": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "675e620c3bbe3adfb7fb723f15d68a23",
+      "18faa821efc6dd5ae2c4dccd8b792994",
+      "a9dc3f57efc263b4fa7b34360c4e149a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-gravity-pro": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3ad1d3bfa60220d9e8653edfca45c204",
+      "c4c2791bf7df13d48a712b35e39dbc71",
+      "2267f376510244635a3608dc277b85b5",
+      "f472c3f561fc8f5c5468f53b8ff06575",
+      "c545ac8da7ff6bbb96dc517fe7d78759"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-sol-iii": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4b43bf64fed9d76c1059cd3747ac1e0d"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-hydro": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "494d3adcf8db185ee08764d12f99e2a8"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-rock-bold": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "95fdcfe38eaa873384ede650468ffc5f",
+      "791dd61f803f5ec2e7b3b6a65baccf6f",
+      "cf2cfdc7b3d99a42131b05381046503b"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-g2": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2fc8e132cf4161449e84485dde6db6a4",
+      "a0fd7a26cf6f40eea4b017d8e11f95d0",
+      "b19440802ae1d1c95a368228cae2a810",
+      "d45959097437092b38d6592f060f9fbf"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-gprime-extreme": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ee12de6df8349245ae0bcb4042b0013b",
+      "f0c2f39fe0c33d148207d2e8fb87d80c",
+      "e6dc18234a7a932c59082aeede4d68c6",
+      "5500399c4e4005ffa59e2d59b9775484"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-g7": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bd0277929288d3f694be83bde732ca3d",
+      "e66cd54c94604e7c47578dfc16ce32b5",
+      "a8c02212ad9ed25452fdcd9a7aeb1e98",
+      "223f9e58bd8922ebf03df7083f059042"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-g5": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2908d8c37dc244f0cdf2e5456d336ce8",
+      "41d7e78d56186009bcae01b2bbc2a6af"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-tropical-3": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e76c930e9cd810577a5ac6fec3eea16b",
+      "410c6faa29b43c06cf6cf177986d1ed3"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-quattro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2895b1c816b3ea1c78af3ae1617005eb",
+      "fa534621a4c342336b663fcff7c765b2"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-prime-plus": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "af1dd04cfaf0a2cb616d732b96cc9924"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-submarine": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "273d0b2146c76383a737e376cab2a55d",
+      "792cfd5e3134668f2cc54b78505798f6",
+      "3375c0b6fbd7da1e2b47911ee4bfec69"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-charm": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c9a97457327e5b8f6dddde032818d3c1",
+      "db883a142f68735813c8f1651331e9af",
+      "a0c3a64843a09db8cc694e453d399a48"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
+  },
+  "icemobile-apollo-touch": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "39ab83f8fccf1bb8b8e4951e2bd0f8fc",
+      "4ec93534609f90a02058708604b56acc",
+      "f9a3e72f2d4fbcb9762f1eca282f433a"
+    ],
+    "last_updated": "2026-03-20",
+    "needs_hashing": false
   }
 }
