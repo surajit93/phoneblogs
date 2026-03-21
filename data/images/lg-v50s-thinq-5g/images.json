@@ -1,0 +1,16 @@
+{
+  "slug": "lg-v50s-thinq-5g",
+  "hero": "front_1.jpg",
+  "images": {
+    "front": [
+      "front_1.jpg"
+    ],
+    "back": [],
+    "side": [],
+    "angle": [],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}

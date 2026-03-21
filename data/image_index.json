@@ -17382,5 +17382,6811 @@
     ],
     "last_updated": "2026-03-20",
     "needs_hashing": false
+  },
+  "icemobile-apollo": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ce4567ccb74fb05b5ac2b21f42682ab5",
+      "00519bc8074531e5d304c22842247eb8",
+      "07a846de0f812f9aca6a40cde66d9d9c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-sol-ii": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a08e1a1b540e7cb73c559d7c647ca2f6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-diamond-dust": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bda7719072e71061ee0c632d03fa328f",
+      "853105462bcf983a37d6a545ec8f5b7d",
+      "8a4d8e6fc5a4d1a72fd5bd0f5456313e"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-blizzard": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4fa52fd94d6d5f94b5c7cbc003987fa7",
+      "640c133813193287795de66ef013956c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-rock-lite": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c635a748bda01b548cd31aa79817a783",
+      "d37d90b864240c10f58f12461ebd9934"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-cenior": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2b3d49c2ead41328f9c5500c299627ee",
+      "250b80f9306028b1a04aa0874a0609d1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-prime": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "002ef3351d44d07658a3148f37eb013a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-twilight-ii": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4418dc11163cfcd43f5b3220c94001e6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-fuego": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f38f624fc09d4f30c7bf4e77c19db63c",
+      "b86cb40f0bb2a794e3dc01e3cc6444fa"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-hurricane-ii": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a2f5ed4c105bbea811ffe3ee24308d1f",
+      "6266cb34f5cd78975769bf38b76ea79e",
+      "fa4b5ee5eccfa646a208e8ea53d810c3"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-twister": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a71fde04e0f32c245a7107c3a37fa875",
+      "79c741e0b4b03435cfb2445fd8a6299d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-tornado-ii": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "eb080909ca90a80269190ae5574aed49",
+      "4ab4e74d79f2fe73db6e8faa607555de"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-storm": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3c959892e60e4c064b6e9acfc694b231",
+      "d9d19aba334d03c904ac742608f61f9a",
+      "ee0ee9664f0ffa1ecddd548d4942fd7c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "icemobile-clima-ii": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "45d0f9dcf631eb30b9a7979559bf9489",
+      "093f508c2616f4de1da188982c2aa450"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-60-ultra": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b1aae68bda29e72fd7d77ff29c9707fc",
+      "a9ec66931dbfa249314a0ccf2c3f35dd",
+      "967d528afe335ad9011f2152f34e92c2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-60-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "22773e690a70b0888dc6319be5f6a58c",
+      "d95125376158c1d9514be0c501e46394",
+      "0d856e80475371030d5674da9d700889",
+      "faea62f8934bde134f0aa70b80dfdf59"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-60": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5d3513d57972c3311c6e01547affd0ee",
+      "0d856e80475371030d5674da9d700889",
+      "7cd8c07ffdd2433b50bf1570a4f7994a",
+      "f53f495f0a1bf6ebafb4beb722a976ab",
+      "bb60115a29ce06b02107c823acb6aaae"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-smart-20": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f3968e3709b583be66ed96370f8e5e17",
+      "9a1df9cdc933614158d9847b3e3c396c",
+      "2c8e41ddcb266df50ae49691225915d3",
+      "c7fdba33da545ef11d7d906fc354dd5d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-edge": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0d2c18a8365bc7e06c2260a49d352315",
+      "88cfd7c92161a8d68f3427f6bc41b6c3",
+      "322d34077f692755b0b40d9192572905",
+      "330697eca2955c0ff4ee59dbc70af312"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-xpad-20-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5994d5675e560637e1ddb27898fd8e91",
+      "1d5383dff88a01186159cca8ad211196",
+      "937b249e2df55a711e8a70666171b7d7"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-hot-60i": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "65f92faf333c65a59c1e1c80612fac55",
+      "4846df5401ab5b804eeae13c32b76cd1",
+      "212a81bf654be6d85dffd907935a8894",
+      "b5cbb00df03fdb84f50a341b99ca7a95"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-gt-30": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5ef2813b959e41ad9210308aa92b82c0",
+      "248011f04deb30d47c502dae9278d430",
+      "3b331fba13d119c342208b596c22f740",
+      "c906ec43f68b1165fb31242233b0398b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-hot-60-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ef3282a1be42c32739eb6473aa60a3bc",
+      "8580b75127d90327539b4525f7d1079c",
+      "4687ad417fd8a5233799ee5d6166be52"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-hot-60i-4g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4846df5401ab5b804eeae13c32b76cd1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-smart-10-hd": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "54c737d406312638a3c34e7c0024d6bc",
+      "0aea85b10ad5647ba366b1254d85de99",
+      "04896659d3be23a791ae4d052e4c7126"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-smart-10": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8882284b43a57cd2dc786302f3590dca",
+      "dcd487690386eebcf5dd7481a99ad4a3",
+      "d535917fecbf05a45f8c4dce9c348a89",
+      "f7337d355d752a3537fd22fbf79e7f3a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-xpad-20": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "df01067a03a779f8143de5a50db177ea",
+      "1d5383dff88a01186159cca8ad211196",
+      "f3fe1230f3ca8a5fb9213f96d1db4bfb",
+      "eb6fe2ebddfc8db32c5f9ad63c75e8d7"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-gt-30-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3b331fba13d119c342208b596c22f740",
+      "51e57484e5c6314686858d993ba5d875",
+      "2a49bf3814393d95c74a59570b626eba"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-xpad-gt": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "97c2aa5b470b9dfe644d9ce5e86b9c3b",
+      "5c1db4d9e5dbf800f2e3e66f8122f2a1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-50s": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "17da0b006a37855fdf9436927a1679fe",
+      "3ea9d8d0d1585f7fecc52da207dd623e",
+      "ee3ff093cfb1b1456678cd0166a1a213",
+      "6eb034e57ebcc160d98e762edbf32041"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-50-pro+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "56ae30312bd26a7a20a7afb0fcad7fed"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-50-pro-4g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "af87f79346b08af8f202d59c4c263d31"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-50-4g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "850d3cbcb3bd61d72e02d387c919c99f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-smart-9-hd": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bbe833b6a38d99e46c29d524117210df",
+      "71dc50294ca04c2638114f1c8a4b86b1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-hot-50-pro-4g": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "17229a7893ac6b09d2a12cf3ad16952d",
+      "508feff14cbc810430352b7b6080166e",
+      "db39830c4e77029a5716d86444c0bc80"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-hot-50-pro+-4g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "db56d0d1aa8fd7776baad84964fc7bf1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-40s": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1ee44a84b7a6cf26169d49df79bcc7e9",
+      "407676279e0c05d3f938eefae6e8c2f0",
+      "38d287b363ca8f9d7f429e65119f9a16"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-smart-9": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "38fca28f5bb6b52e84a77b56662c4171",
+      "5fc78290357fb554eeb37707b412cd85",
+      "971e4c9b1443ef54efa3385f5b45ccd0",
+      "71dc50294ca04c2638114f1c8a4b86b1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-hot-50-4g": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9f76e9167bccb3f40fe6f6d5f26e79ec",
+      "a89c2db9975c1bfd2c40097e34575fa9",
+      "a6e45b2f2e29be830b10fad11e1a54b0"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-hot-50": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "feb1b3000f448be4f5d9c32f53f811e8",
+      "03844e0456b4c37e0543072030fc8b71",
+      "c952788c99dc8ffe8c29c90417f74375",
+      "90201e28c596289dfd0b145f2eb3c9a2",
+      "508feff14cbc810430352b7b6080166e"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-zero-40": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "a19eeebb9bc78199168a77088c146bd3",
+      "3af6d1c9cc386bded2e360b1657a0ad5",
+      "95c8767d8939d7d88c7500ea819c8754",
+      "377ab2a6e60696303fe2ceb18dbb8891"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-zero-40-4g": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "3af6d1c9cc386bded2e360b1657a0ad5",
+      "3b427b8fef5bd04d02d2d1825445f284",
+      "9ddc1a46a99af66a7bcebe2e6c5a4ec6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-xpad": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1d5383dff88a01186159cca8ad211196",
+      "f3fe1230f3ca8a5fb9213f96d1db4bfb",
+      "844fe5dc3e9b9e2e59189eb949418044"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-40x-5g": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "98c5c3935173a77b97e36eefc0a69c4e",
+      "4c85038d64e01530b1b60baa1bff710b",
+      "6ea6e6df1e5491fc40574a7a86adb438",
+      "94fc2d289c35808d1ee584f512d66362"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-40-5g": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "2bc4e6633eb4e70228d156c2d2e449c6",
+      "7c4069084d86a3d56d27a5e1c3ab580d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-gt-20-pro": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7430929a99aefe5d0579839d5a1e80eb",
+      "99bf2fabc2c20a47ce48ff4534361e32",
+      "639ee505a384dde0ff5c4834855594f1",
+      "765074faf3f32313c4d54e6ce053da1c",
+      "98ac2d131f6c6f7c07bf72204f612319"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-40-pro+": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "3b331fba13d119c342208b596c22f740",
+      "0d856e80475371030d5674da9d700889",
+      "420a95cb3221301a993e934f96f56c4b",
+      "56ae30312bd26a7a20a7afb0fcad7fed",
+      "af87f79346b08af8f202d59c4c263d31"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-40-pro": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "52dcddd717a9de7983e13b0929d42f85",
+      "b5fe8e9b9a5a4bf8fb0525dd41113f60",
+      "cddcd223effd2e2037f762343f67283b",
+      "a3da6f67b9d29ace6a59e5b35dcfc505",
+      "f2cb6598216d1cf3e3735668c1b366a2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-40-pro-4g": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "2e59c6492b1241d85d3702ed2e889c10",
+      "79d3e6a399ed442ffefc2b8714c47cfa",
+      "f39a75c3da57ad162c922aded8c0618a",
+      "e795c23fd3229538704e01058d9814fb",
+      "16f8557ab232593ee0c6dd31273077a6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-note-40": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "52dcddd717a9de7983e13b0929d42f85",
+      "7aff5ab7c1cf6e721a0c632b02c2f972",
+      "3e8ad6b3fcf967291d8bb47c03954de6",
+      "a294861f8927438afb4fa0aa28e4ffef",
+      "1ecb34b6914302b901007c111302736a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-smart-8-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "56fb953591685a2f7c2c2d67bbcfce4d",
+      "d2eb87bc5e16008b262e8a4a6d7b8f1b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-smart-8-pro": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "cf6ff115596d25530000f0e5d92df259"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-smart-8-(india)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5832320e9c4f4c5a854569dfa32ac55a",
+      "b141da170b44c5389a51b555973d1849",
+      "19ddffd1bc1c74b3dfa063b23b4be962"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-smart-8-hd": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6c113aefbd1b515d9b739258fcf54efc",
+      "81041b14cf2051eeb64ca1a75f7207df",
+      "8da7edd1d22af902dd0ff698cbf6492f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-hot-40-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2ca3d89c41f384ce8c0c596d99985272",
+      "8c3d59a7513c6d5751895ff4c3e40f68",
+      "c6ad7489adf24456ddcc1d7a3dbf10f0",
+      "4d60bca3c03a35d1f6ad813bfab258ec"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-hot-40": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d6066ff37bdda436e7810389eab68954",
+      "931eb3a14584fea34157e6a2a7bb8a9e",
+      "c6ad7489adf24456ddcc1d7a3dbf10f0",
+      "bd0ae65239a6f8fd87b52562b48d1874",
+      "698ff5fd60377869643a247e2362f5b1",
+      "09b4d14cad45977826c8b700c30c7a24"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "infinix-hot-40i": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "42311270c7827722b50e7f05dd8fa301",
+      "953c2508427535ddf1876022f64b08bc",
+      "931eb3a14584fea34157e6a2a7bb8a9e"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-a20": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-p10": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-a10": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-75": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-50": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-36": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-79": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-78": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-30": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-55": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-70": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-99": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-90": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-89": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-80": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-120": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "innostream-inno-100": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "inq-cloud-touch": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d366336a2daf75eaa39815f4df41cdad",
+      "2a2ca4586a9354328ee179685d3c5dd7",
+      "a7be142ea48c0868086cbabb983730b7"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "inq-cloud-q": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8b2e2c9f00a9babf8f039339801c3215"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "inq-mini-3g": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "96de90d95fea189d534c7ef46403da02",
+      "5d13d0cb333892f6e5429fc95f1379e6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "inq-inq1": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f000da0496aa7c981ef95ac3d82f026b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-craze": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2b9f1eda935a6c87d8c272d9e09bca08",
+      "82389f517f7596625fa8f409a4d7cd97"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-genx": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "82c3744bd2027d3ca3ac4348102b3b7b",
+      "8650d1f21822c491455816aa67a24bbe"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-ace": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "70c193cd21052c4ac0055ee486ad763e",
+      "f3360f0b1d5a44dfdd3e793be8cff3fd",
+      "8b0a451cfe0f87cd059f155a9e716ef0"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-trend": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c1757b394b425b892356664145f76e0f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-irist-smartwatch": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3eff7d08e3fc219e96b04049e55d3d1f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-4g+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0d10de69ecdfdbd3f14873ae73db37bc"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-xtreme-ii": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "86cbed7279aa6c83ebe429149212705c",
+      "c1654d4408741df470bbd78d28394ba0",
+      "c373e4bc46c154f84dee864f4b984e69"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-y2-remote": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bf337da72ac734b5d451221ac963f671",
+      "305a934992e94d907bdd9fe06f2b5973"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-xtreme": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f781ee23a73d828aed957a8d3feafff7"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-star-l": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "03f6fff2183100b6211d8e56a6106635"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-star-2": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e67bd95598916ff781ac8de8d51509b6",
+      "90a5e7c2ff3a6d5c3d0a0c31bb35fb19",
+      "9f553e8adda74041f6da248745d9f123"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-speed": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "49177ed5c8aaacaa5c94b3ea259b70b3",
+      "0ad51a19596951b56905136419efc1be"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-power-+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "aea7d1ef7c88e0a559e8bd9edfccf204"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "intex-aqua-4.5e": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "02aac5dd0c9adaf82e1b785d46f85c51"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-zeno-100": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f9fc2652a81439ebeac31a56a245398d",
+      "cb13d143a7d85c14576ac678b8bd0025"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-a200+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5f4974e35c7e40c4508a1cac58d477a4"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-a200": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5f4974e35c7e40c4508a1cac58d477a4",
+      "673b4b4f96ad6630f4ab28b0408f54e2",
+      "7c4905c68840db300e818edcd6219b66",
+      "3ff35456f9e08f6564ad6065c595b197"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-city-200": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "006342b98fa68187cb5c1c3e9f974f0a",
+      "41f6efab6f70b9c88fb539f3fa64a608"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-zeno-20-max": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "199a1bbd736f1f7434c66ad8c493f663",
+      "971ff6425759d5fc58b18983903d01fc",
+      "55d026e981e850372c19d532b2b5bed0",
+      "c56a7389d25269760592b0ee6983a2d1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-vistatab-10-mini": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5789c278b08e1d80efa9b427e66a63e1",
+      "496330225b01652d7f2f64a8ac9da14d",
+      "59a08d4927cfc36e3509bb40ac89e479"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-vistatab-30gt": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f8be8d94014d31f65dcd30d038fa675d",
+      "dcc5dc434df15665b28aa39f363494cc"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-vistatab-30-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ff9da7cb6b2ad3b09db165cc2c3ddb5e",
+      "84d93a781a85e40b4e4e1b9916a61579",
+      "2ef2d4e05841d4c454ba8bb75ab3b9b9",
+      "90d8b2b946353e4e42a21b47f44f521f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-a95": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "efb12ff9f4a688b60243f5ba7cf9fad7",
+      "64eca73a9defe2a68899a8c376e7bb98",
+      "3250944e288f887befc427093f68807b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-super-26-ultra": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fcbb0276967bcbb0f899a3cb9b99d2d2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-zeno-20": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1cdc2c2cee6ee51d46f3a8e489ff3468",
+      "d5fd2a0a29afb8b111b426644b31f549",
+      "1cacc60da5352ac562a5c24142935e58"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-a90": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "69bcc7bea2c39cb06278f01c9aad2674",
+      "256c4064e886ddcfe0c7e2c4580494ec",
+      "65506f38a30beabd9ae846ab82dc4e50"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-power-70": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1a416218fbc8dad11fd65d1a435713b1",
+      "f89f700d70c04550f959c605cf62c5b3",
+      "f1d00436e7aa4df6cbd34cf228a7333c",
+      "ec37147fc616baceb2efd1e75564b2f1",
+      "5a542382f7a2adc473208a1ac670e4ce"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-zeno-10": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8ef69b61c22eebbe76716d1beaf5ec75",
+      "0889fc2a908311fa5b15d494a6e54bc8",
+      "2167e08f0b2c73e06d6df84ccd961488"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-s25-ultra": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ccf3fa077999c095630e8d885b8e8209",
+      "68d8abc8bd8d75bcd94476d8404c2912",
+      "d47af3c9db70f55f3d3802b951f28d09",
+      "8488b15f4cd07f810d87ce021281b420"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-s25": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5e8dbc47e8ba95157995e89e420ceeae",
+      "db16d40cef344c48425333db9eed1f6b",
+      "97c8a9f240a08d0397b26eb3711d8422",
+      "d47af3c9db70f55f3d3802b951f28d09"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-vistatab-30": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "dcc5dc434df15665b28aa39f363494cc",
+      "9447fd1c3623c802f0e4da725bcdd6f2",
+      "20efbcb9c65c1d8b22c79ad824e302d5",
+      "84d93a781a85e40b4e4e1b9916a61579",
+      "69cc3696005058d49f146edd0c9d3b29",
+      "117c53c325086b3405cb01d34a634be5"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-a80": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "59c5c512ece8bdc1e48a49051db4ce30",
+      "78eaaa7f75ba9a862203ae6afbe09d9b",
+      "bb220182c287d747893915a70b84f375"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-a50c": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "83cbdedeff3889f1b777ea96f06ecc2e",
+      "ba0c0378456a403ca80cf3d12cd17d4f",
+      "4daf60a82f13bc0ef4625622c190f4da"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-p65": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3ded92e881abf35a1bbaf5e5a5911a72",
+      "835ea0bfe5107b629ffdc8358491ccca",
+      "f39232614c84f534fc3cc9f6f472feda"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-color-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "efb2a339d3aa03835550854a19da539c",
+      "0cc159a4b5ebe18fd28c574ca250934c",
+      "b8f679604eaa96280d1dc0fff58683a9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-a50": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2494c8375e285e08193a36275e783e4a",
+      "83cbdedeff3889f1b777ea96f06ecc2e",
+      "2d3eef6f4e79bd66e86d33912da09462"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-rs4": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "98a36a75f1708142bd49b63c8cea6bf8",
+      "f2748e5b9acc1fd4b72e71d4ba60cfaf",
+      "a07b96716c70bb81b8af5fbd9bfbe695"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-s24": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "45cc1f1cbab5e3df075b1603822532a0",
+      "a24bbef7ccb58729e6aa601a426a44e9",
+      "7576e1d7270c3727205bd59d4144c23d",
+      "a96d0f3cb4e80c8b3a7edd4157725cb8"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-p55+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "456f8f069d5eb8a907b451dba547238b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-p55": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9f30e30c69bcc169fb058793d5d5beb1",
+      "3ea97dec74d9145fee9903cc45b6260e",
+      "456f8f069d5eb8a907b451dba547238b",
+      "08f2c982ad5394fe1be46ee1aabb9936"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-a70": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0e683f98bb68d0fb03aaa860e7866ffd",
+      "3b9a704d5a2e213cf6db5e513ed77e96",
+      "df9ffa0d2cda2a268301aa2c24e6cf68"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-p55-5g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e39677da51a7e9e2d9d3ae3ad94be95f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-s23+": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "236aa2829e820c10b01704f346cda0ef",
+      "d47af3c9db70f55f3d3802b951f28d09",
+      "fcbb0276967bcbb0f899a3cb9b99d2d2",
+      "8580b75127d90327539b4525f7d1079c",
+      "79bc2a9d80bef8d962a944f98b80eed3"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-s23": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "236aa2829e820c10b01704f346cda0ef",
+      "1945be2b2b2ffbcfbd2300d9128d0f7e",
+      "957d4a8869ed0581f7fbf87e996b16c8",
+      "ea53a88f995a26e5043aaebd7c69b45b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-s18-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a77d83fcbdd073e27de743b3727c5ecb",
+      "3309ccc251ac372fd4d8d6db7a005639",
+      "52aaa9b2f1747a6e3ce609a805179d29"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-p40+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3db94233547982acc8bb38230b0cced9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-pad-one": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8f13ce5ffe8081a5ea9c4b2457dd74a1",
+      "dda7d6585966a4de454ad735116d1de7",
+      "fa68a5f4ba446e2c92e3c23c50726a67"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-smartwatch-2es": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d48303560a3808559a0d4d6a6d9a9227",
+      "811c677fd95e6b922e807c4a3d3c7b5d",
+      "099feef483cea9688186e0737106e541"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-smart-watch-2": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d175c8ab047de3f632a3d65c5a159479",
+      "276f58b543b0fdff353266b951acaf44"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-p40": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "838e2afb87440114147116fc0527e96f",
+      "b22ca188d011e052d534a5453e3b1724",
+      "770694b33a46112002d0d5b9a09eb119",
+      "3db94233547982acc8bb38230b0cced9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-a60s": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "27cdc66430a3ce79059a5d85ccf42dc3",
+      "b60c2dcfc2df9723f20475aa7e3962cf",
+      "32f6c6409658d6ac4ae9e92c8d7b21ac"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-a05s": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a3d498116f7f4d6c80020aa1e5c0741f",
+      "233a300a26bd5db611f74f32fb4d1d40",
+      "9a51c3098212cb6950a50d6429bd10a5"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-s18": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ea978577231665eaa8d202cc0fbaac38",
+      "7eb29e0abf11d089a003f47adda64375",
+      "057d3f1b7845a568afb805676fb4daad"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-p38-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "230145efa75cdba53bd96def078fa47e",
+      "ecb055184df81bc690164019a7ee4854",
+      "050322f3ff6bb7b23c9893c1880b53a6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-p38": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bb85a2e22de069d8e3401715aa4468a1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-a04": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "14174748a130289bfabe9f9c13a7884d",
+      "35d8ec5f1b0ddcedaeeb7ed0e1c0b62b",
+      "f8a07679a16797e88769457682ba05ce"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-vision-3-turbo": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a3dc1ee0ad92dcad115ab36607d2c33c",
+      "fbacc7418d81c68bd21ac01634a45cda"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "itel-vision-3": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "468bae68b27d1304185743175f4dea2a",
+      "438886f73228f884032aa8eb97e6e281"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "jolla-c2": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e5cf07b19c0ef08f9ea4bd34f2720cd7",
+      "775b06d94562daa8097e31afb13149eb"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "jolla-jolla-c": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4b198eda7605dbb5648523e009bfe43d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "jolla-tablet": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5ce01976ce9a8e2cef8063cf84192835",
+      "767f51e1344e9b2fb08181a430c802a0",
+      "a8718b80101d37d4e783a8fc803e05fb"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "jolla-jolla": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1a3db39c13c74124079c501d39ea8c35",
+      "95cf7366b9159f1d390276a4641d97e2",
+      "75a2d4e086590800d447d1668c9dac34",
+      "992aa3de878b8d27bc8ba1a12b773d1b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-titanium-mach-two-s360": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b2a5e0cbf08370f1adbf04f279e3b25c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-titanium-wind-w4": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "50fd00fe44e5b8686d83e79c1d033a85"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-titanium-s99": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8c5879820cc51610a0e953f18a1359bd"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-sparkle-v": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5c5a9b5968d077dd207c216beb4b979c",
+      "62a681f1ebaffb40b5c0c9013db399b6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-titanium-s19": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bb3dd338ebc1ffbfa39a56eaf3eaa35f",
+      "bc7b46d65b7ae37283684145d601e906",
+      "4964179e7d3150b3d430fbde2da7e902"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-smart-a12-star": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "cdf44f47fb8e581bb15c234aff364cf0",
+      "306bc1f3791f51f3af065761e811c67a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-titanium-s1-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e922a27507646193d15a36adafa6dce0",
+      "49812871a1ff000e94f41e26e0826f4c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-titanium-hexa": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e0c2d8756806399aede30aab49c086c0",
+      "5595d7e455d17778a19af054df8320df",
+      "027574a54e0450a1b63ace53a3940a3a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-titanium-octane": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c69a2b5a4ed5458c32a8b3ccd42363ee",
+      "f2332d4eca8e0e8642fe902c33de397d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-titanium-x": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "25600c76c3e96e3bbce24dad15aab9b0",
+      "540e21c5687337c89cb995d6fc0e87c2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a16": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "d174008bbcb96d62ea8a68a942b6ee07"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a12+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0767445d1e5f67927c4891c743ede2b0"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-titanium-s5-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d7f5a4ed2c2847435f937acf0f876830",
+      "42b92d7e30973a7b1a763715eabf8747"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-s7-titanium": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1d022185334fb9cb49395b9afa2c047b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-s9-titanium": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bb2959563fec9b6b549dcf97c7263791"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a10": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "334224685fbcc0bed1bf74230c2d92e9",
+      "e6cf2205f7c5b4cebe5500fc761b8ac8"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a5": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b4e0caf9e81a15ed012645d351ab3503",
+      "923a2998d7e951ace88c306bd7f7bbad"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a37": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "caac18924054c92e6549007e846f9e1a",
+      "2078b73732ca7ff9eeb21deae1ea1a33"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a34": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "420fc8bf9d9b7b83d6ad3891f15804c6",
+      "a139dcef7442bcc22147d79e48f1ee32"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a25": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "757aa182186a1d532b017ab8610ae511",
+      "6e8af05f6148ec01b0d3db459e615ffe"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a7-star": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c471ef0cdd0cba1bc5961435f6d7dd74"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a4+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e81ffcf7236071a287a4b1e7083b36d7"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a2+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2f4d069ca64b09c49447760f1d4b9977"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a27-retina": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d9488efc5903173dc943c27c779e3d12",
+      "dcdd4fff338abc4fc1ba1503cc23f7e6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a111": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a3b191cdf916d0bb49bb6f5890a9c80a",
+      "c44520a69f36e8141b1a0df046ee75ff"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a6": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "aa1e9267154963bd5b80751d5e78326e",
+      "09e918f3c8e93d22444343bd18588a7b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a4": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4435ae507af36827cc3d2435619b5a07",
+      "46cc7d4497af9f3a4bfa35d68ce471b8"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a3": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b569ae102b2bc57f5226501cb7566fdc",
+      "c653951f603512a7d78bc6dc5b37a108"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a2": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "939ddb867efee3eba322dcd80bc5bfe4",
+      "dc8e0b2294591333b32bdb410dd6b4dc"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-s5-titanium": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f49bc8d8af22ea6a33455c385c592130",
+      "68500bfc30924b3f3b49a562058b15c9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-s1-titanium": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4e087ee87bfbd089f4e5a3f2a4f349ef"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-smart-tab-9": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "304d94a1e01c20a8ac9655acf7307866"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-smart-tab-8": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0fcdf04ff7ae4287311ba355597d5a5f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-smart-tab-10": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b3a8b57441f8ab726c4465bee3bd531e"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-smart-tab2": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c78b2c01bb301226376dfcc5ed674f9b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-smart-tab-7": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9177848f31c52e5ccaea5da5dc125180"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-kt21-express": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6ee4cfd2c29c85e0ecafc9ad09238afa"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-k65-buzz": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c52c400963c258675c7933f50d758cb1",
+      "4407961cc408330684f61f03bf790ff9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-k9-jumbo": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5ecb9236776c42e006b0cbff2b0d3040"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-a9": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e35a85bacfb264386680bce67b3dad5e",
+      "c880af2e5b0886705f1d08fff98cd704"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-kt62": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0f30d4d9dfd99a9d64a1d80447cef96c",
+      "57792d2facdc0ed965026a6b5aa478d6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-k52-groovster": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4b658eda4bec46eeff320ce59263f22d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-k309-boombastic": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "877402c233244b91c20f12371c6623c0"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-k4+-titan": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "39fe7d8086875a7ca91de81dd99b35c2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-k707-spy-ii": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4016e8e1559989e3160dd58be054c22d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-k451+-sound-wave": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8b7d441877853a4238289de47e1f0733"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-k102+-flair": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c9ad5e40141fea4a864665324d639b53"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-kc540-blaze": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2fac9baf4bf0f4a871df004d0c3842c9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "karbonn-k1+-stereo": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "509ffcc1118d1be7451d496be44814f2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-duraforce-pro-3": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c336af6c8b344cc09b5e03130f0cafe7",
+      "222ce0e7bd29be27ce26de121d0b0638"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-durasport-uw": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "24fbbf14b33657143e0096a25e34a8ff",
+      "09ee7974bc6b50af6819875ef8636d3f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-duraslate": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "235190d1c2b69a86cbf411c768ae9146"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-duraforce-ultra": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "afa79a5ce1e3fd5b43b148db5e67ef28",
+      "6e1def0335b7474ddb96dd3de1c5183a",
+      "a41530353575d93b1bbae9f557650049"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-duraforce-pro-2": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2f24a84f208bdee8807c1099034afdb2",
+      "f0c2de30ad206e0e2edcd78b637c383d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-duraforce-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7abe2cd8d2175c7d02c755ffa68e15c5",
+      "2f24a84f208bdee8807c1099034afdb2",
+      "7f0ba2b959cd18195558f5c763a902b6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-duraforce-xd": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "409dc3d6034c273c05b578084cd2e632",
+      "6c55b66197c4ff06567b8e63466d6e13"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-duraforce": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "177a1a95189fc746d2e09734ded03750",
+      "da8e3a0ab09a196e7de676be3ec5a63c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-hydro-life": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1b4626bd571ae835acf3b1404fece065",
+      "e1fc79c04c68b2a64af252b7228de3d4",
+      "2350bf3a2e485ba0b8c50db53eccdc1d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-brigadier": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1a7168e13ee921d14349e130ee485a8f",
+      "2fca42c4c01c34a42dabeec946d68db6",
+      "3eeafc7bd8ca14a428e55db6ab1c379b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-hydro-elite": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f9e16692f2eaf540bcbecede323b189b",
+      "4424df4eade0d110ab85b4c6a9696689"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-hydro-xtrm": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bf399ba7f9beccad1b432239bbe28cbd"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-torque-e6710": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "64459702720f29c8b7831b00e0498f28",
+      "e4c27dba7c0f226d9c7d0170731540c5",
+      "a2fffbb51f8e5aa4edb1bbc82d30c2e8"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-hydro-c5170": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "52c0719c1892efe0f69d421acbfccf5b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-rise-c5155": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d42ab5e883aee4bcbc82e53d759ed582",
+      "295cafce83d938cb1d961e728c55c676",
+      "637a29d742bc735b88a1e1bc949feda4"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-milano-c5121": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8a909c606c0f4e86f5c2feeb56051115",
+      "c6c4b40071633a6d879ec4d69d01b5a4",
+      "e6b6b59c9769f01bc0e6e343befe9e7a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-milano-c5120": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ad16d57312797a69b242c439e942ba19"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-presto-s1350": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4a1898ae7b7d427e333424d167a64348",
+      "bcbfd78b4e87ffc9579d488297ab9aeb"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-brio": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d1547ec8169e7ef3d20564410fcf9a56",
+      "1b1fbd2ec51a0cbe2dcdfa53ce065ce7"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-echo": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "60df58e83a1c3b50be25fc9a644471f1",
+      "65047dd84b57476089520245db33f916"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-duracore-e4210": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0ab27037c89aa2b3fa47cb0730f3f4e8",
+      "194928361533a90991dac71c5bcca0f2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-duramax": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "631abe43644b3aae4b1c189b4d078690",
+      "6c713914a74caa6fb8f66716a3efb073",
+      "dfdb26e247d12a77def6713721ceb5b2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-e4600": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "26021c631e763419a0492b099e680aec",
+      "8e80ee17d84b76a469a2172187c02f06"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-solo-e4000": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "dbcd9dad6c172be8a6e0dea3fe4a727e",
+      "4aefb4854499342c854811b69e755595"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-e3500": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9742120044ab52d0b8b43ad9fc5b234b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "kyocera-s1600": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e3a24168d2e75b283ced346dc7b2ca78",
+      "b1721efe3038913fb08b8511c60dc5ce"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-yuva-star-3": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "737b5862f22440b75c64bd8c2d60a33b",
+      "d1742ee73956388aa71b644cdaa1f1a1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-duo-3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "34c5d6d7592150d9f1bd1d7449c51b45",
+      "395c5db4e13c0d9f35926ef9e46a386a",
+      "44f2ad8c3d2089696e9ab6bc2e21624f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-agni-4": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bcf9a3e1d86db1444101164549023912",
+      "5e44ba93a3c34b14a082dc79e84a7c42",
+      "fc1f211314b76bfdb3c4a2eb986281eb",
+      "8ee2931c73c55b0a8f8003056ace49f2",
+      "60d19024b582b2e02c2d153e607e139b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-bold-n1": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c7a4abed1f52cc09d526b11925115b49",
+      "c9dad7b6c5d3fb1814c9919bfe8fc9df"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-play-ultra": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "50af5fd77090a4c345bdfa80de9cf411",
+      "dc3ffbab6f9ac52e3c4078da57db2328",
+      "5b8f7c2175a96392d71c31063e765116"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-dragon": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bcbea5ff511770ba620e90ca0c16496b",
+      "189fc16a2a5ae53b06042fc07fbada2a",
+      "5ae48cae597d91bbf87fbf71e73ec7f6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-storm-play": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "de7960801bdc6fa17764a9bb407bdf88",
+      "7e20c4690e21fa1ebbeec446a8fac295",
+      "f3bc5da898a1f9b147d8964343fbe708",
+      "8e0196c70429530fe8e8abc77bb758cb"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-storm-lite": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e83a136feecd32dff39bff7a5dc22e68",
+      "5ccba125544da9667fabcdb47a8bd6cc",
+      "8fcb6f629ae07ebf5194e1e762a4b550",
+      "ea474dc02c463beabb60688ede848361"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-bold-n1-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f925cedd77d154b62e25dccc2c200542",
+      "394ab1fe8566757d04f132c8be0166ab",
+      "617e28cdeb732e3b23b27263f8c10c3f",
+      "3bd97efda8b6118eb4e8041336a2010a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-bold-n1-4g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "04212fb4bda25fee71dafa6b4656eaea"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-shark": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d29000d7c220c1c6ae4c313fec5f0d2f",
+      "28ac8e37d0e7fc6c8a8785e04cce51bd",
+      "e27ef30008df918ee501379152bf6788"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-yuva-star-2": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b2b5a4969c92e20fa38a8fe766246a8d",
+      "a2fbe451152fba0ca0f990b0e04377fa"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-bold": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d8b9d8f8fb3b08f7b1af65d521a01859",
+      "29be5bc09cf745b82d8f0ea5f73ccd74",
+      "e6f1533ef13b5ebcd668e33ba61fa2fb"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-prowatch-v1": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1a02bf06619c8bcc0a74ab4ba16d586e",
+      "0cf4a3af4c43e282ffbeaa33f4c66d91",
+      "2421be2a94351161ae7d9cc06aee507e",
+      "c4fab6f5459324b2e6f176f81b65abdd",
+      "1f1944cfb96ba2f49989f28e821afd14"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-yuva-2-5g": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "335367f68aac3d6af428c4ae8690b01d",
+      "9ede3244399131ee9549700f4b28943d",
+      "e3725c10201e0031fe39ec8d3e5cba62",
+      "e52ac66497d545beec8570b8d098c806",
+      "580f8fb27005cc6b688164a1c86b279e"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-duo": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c7c189d8abe95dfb8ab5c71ae7c6d013",
+      "9d23682c47be3448119b2967b781daa4",
+      "c2a286b972a6cbc5abfc475496e5b966",
+      "c7aea17dd5600a5cb422627cb7c5d46f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-yuva-4": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "19a4330a93bee94ffad0aca9eac0852c",
+      "3d426858ae61266466c65dc534201321"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-agni-3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "40a2a330f2f12d019cf717710f862bf1",
+      "49baf65c5a497dfa5e093af56cb48a0e",
+      "54d5787dabab7156298cd6dc57fb9456"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-3-5g": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6f04d8f12a9ef36e0216c03fa03bb74b",
+      "e0eb699a45e2bb16dd26ec2aa190a8fe",
+      "0225ae43f71b83b6f067c36b5bf436a2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-prowatch-zn": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "fa6cb292c227cfd51dbb9012b6306691",
+      "2e776c7aff32b1249c9cccda375688e7"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-prowatch-vn": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d13e77136ba8e804f3c2ef5c958c577c",
+      "a18e70d95d6e16f2fea256b0dc149e2f",
+      "6f67c758d236eb99374184f5a9c5ca03"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-o2": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b46ba915bad0eb9f55e673d77a30f7b2",
+      "25beed5a6ef97c582787f133e811fdff",
+      "b9bd5faa3bddeeca23a30efe1253ef50"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-curve": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7e6abf32ebd505d06db77aa6517a72c7",
+      "97e15f04bddd46262a22c6e45770b278",
+      "9cabf0f8ea00b6591e1960a48e0ce61a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-yuva-3": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "46ba4bdd0c7cf356780469014e289a7d",
+      "3d7be3e7ddeb5ae9f4f2156b689bcd5e",
+      "8758fdb2fc43f203be22ce77d9d510fc",
+      "b562c86d967004856e5b72320e136a60"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-storm": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "18995318cc90953d04340435bdafef28",
+      "f99940a6c4f6feb334d6da36f25bccda",
+      "deaf0aa305b961f529e527ecf239b6e0"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-yuva-3-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "610ab44ede3a739afd962d7d1bb6b0d8",
+      "8c13bc9c23f946cc00701eaac2c17073",
+      "1f714715ef8d8e6be4b5199cf12c5a1c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-2-5g": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "130dd724af2c37e9df42ace896fbc0cc",
+      "029b75ed6d1502744dbca25f5ab38159",
+      "876ac213bfd8d812e5ddb4a79f04e3ce"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-pro-5g": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c94cecb1624d21d1d6c62adaf892c7cb",
+      "072650f3b1cb32ebe8b8af6cdc608f77",
+      "65d506abc9adc5de6d9477e692350348"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-2-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ba4e5dbe8fa855d6dbd703b04391d900",
+      "1272d63ad3206fb06be1277d3c57a7f7",
+      "115acb00d7621df1beb1464a997d99f2",
+      "9c8d346e513bce602840b6e8bf6d1c41"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-o1": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c92c7bae54490a21b42b8612a951e201",
+      "a1aec0826507ca87de4fdb18b9ff59bb",
+      "0c8287371581ad546a1c892c1becb927"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-yuva-2": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bc36b6f63b7d3779c75e27e72fc64117",
+      "31dda43267c9741256283d76858f77fc"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-agni-2": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "bc356026652c3ad651b273b888c72e11",
+      "009143a09ce63eede006c80f23e36c0c",
+      "29df4ca9328f15b49603851663c9705e"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-1x": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9ab943b1410d2326ec0a7f71f5a15eb1",
+      "61aa42201ab84da5f9e2fb189a98241f",
+      "bc0d22d97b14d2fd1bfba94c07fe212f",
+      "ab156bc42cf53acdded28efccdfd3a09"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-2": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5bb76df255ef467b9f0870024b730ee5",
+      "b494e16db5d7ef232ac5e31406c5c5f8",
+      "9d408bf1aefbb6b1c8c5da2b2a57c00d",
+      "63428f4988f94164f53876bc44e4c8eb",
+      "1dd336a65bc152134e1471be9a6f50bc"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-yuva-2-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8e5c1b0f2faf6cf78bb1c6d71bcac044",
+      "5bc3853c8ebebc393c5e7409f3c5898a",
+      "3ac923eba44f55990101c945b7d4d02b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-x3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0bb10d57d366411e632e91fa666b89ca",
+      "9bd5ae860f099d246d95343fe2b6441e",
+      "2ff18ebf51516ead49c451d8d73df360"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-nxt": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6ba7cb82eff7d1ea408736c8ad35f7eb",
+      "709c52745f98bac3b47c38bd6a8e9a1d",
+      "d4006357fa99225612d7d520307c66f4",
+      "06ab6c1d31da0cabd7c6b9ee911941a5"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-yuva-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c26183532d62c3c05279c90ea0a82fc0",
+      "21cfb22730675b21b09e472f91a2b2f4"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-yuva": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fba94d6a83c21a508d3aabf1e12189cd",
+      "04aef8d6760d8ae370c971f28c6ef9f9",
+      "421629b7d632b246a280259f3b19d755"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-5g": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "cc659cf45a313404d621be5c6fa19536",
+      "fbb4217026bd09747fba0a8b83db0034"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "aaeb72abc6f4511d450d24d02c565da5",
+      "6487baa95352916a96d1c3519e16d5a6",
+      "2ec6d6166d01a92d13feacbf3d8cef02"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-blaze": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0a2e0e9d3cb5553d65410e42a4071b7c",
+      "6ebb463d1f9d35a5c0fcc18f7d1a45c7"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-z3-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "22a9ff50e858d6c209798c786cd5ffc7",
+      "e9f2849deb6378f767129cb990f1a117",
+      "72904a68424e8f6167e9cda0ae59cd04"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lava-z3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2d427baee40f7d07414bfc323750bca0",
+      "e94ddc9cf77fb89c3a03546e9d246231",
+      "c5089c570a3658dfe2adaf6557264115"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "leeco-le-pro-3-ai-edition": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6b6b1d5ec8b0405a0e3c3d86f339dae3",
+      "442eb663e43e5c454b55ee6b7257014d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "leeco-le-pro3-elite": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "be1913b046eeaf1b60b59231333685e0",
+      "88d9354335a09523071ded31fc6c5e81"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "leeco-le-s3": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a9a646d6628cf19d2a52e8432bda66aa",
+      "9a4b8fef6467326efcf29f5682e5cba9",
+      "c6053d13efdcb34c0a911c9c16d7159c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "leeco-le-pro3": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3aa8eb82b17347537e88fb16b8964c7f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "leeco-le-max-2": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "29df3041cd0c47d8ceeb31aa6452dfef"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "leeco-le-max": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "383ec7e625b714aa5ece99cdd02bcbfb"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "leeco-le-1s": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "411beb988f1df96310b91aa4ade5a3c3"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-legion-y700-(gen-5)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a01c095b9e12cb13415f019398d93864",
+      "f9f6082d1e6c715c987520a94e01f938",
+      "956350eb7a31b28dc8d36cb4c66d9ba5",
+      "9cde00e1971040e8085b191ae466e8fa"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-idea-tab-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3f712268f3380d55d0053c3d67720461",
+      "e0860123fff0cd1f49cb1fdec0e57a70"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-idea-tab": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "920a7e4b72bf371f34be3d46c74b2a39",
+      "b87fe954ec7f1bbc81d5a316ee10a40f",
+      "a73bf6a7ad482128185cd8f0b19c79be",
+      "be5521d5a79bad0a00289f8ebb983574",
+      "e0860123fff0cd1f49cb1fdec0e57a70"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-yoga-tab": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c85c54e2f986806aef29bffadaa3cd71",
+      "b46d77c23e67810d13893d2878aa0fc3",
+      "6fff873dfd02f70f8b34499a50d514c3",
+      "f64064d8a16d754a31d93270329feb8c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a582b4311625d2f356a746403a3b9538",
+      "fd60bd8b41fa11c73950e9ac16270258",
+      "664e64762080f9a203d667ffd177f7b2",
+      "0e7274e63967da7f5e125b394a40253e",
+      "7f2e4b9f825e369a84eeb14f075138e9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-one": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a582b4311625d2f356a746403a3b9538"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-legion-y700-(gen-4)": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4c17f9d8256d1491ed5b53345c952a7b",
+      "956350eb7a31b28dc8d36cb4c66d9ba5",
+      "4ea6aea0e2d8aaf07f92f363f917ceef",
+      "561fe3e5d59ac9957643e7a4a614a467",
+      "9cde00e1971040e8085b191ae466e8fa"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-yoga-tab-plus": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0c30de2cc4b00572384c141e266f67ae",
+      "7972bb868ae2f19f746b96464f84e545",
+      "f64064d8a16d754a31d93270329feb8c",
+      "44196ebefcfbb17add07c8f5adc87852"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-legion-y700-(2025)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "672802523aff1e92f315757b8db8865e",
+      "1b3113ff09b1c57d4d876f9b51693a3c",
+      "29bb03bf1a7a3bfd5c4886560c441de1",
+      "9cde00e1971040e8085b191ae466e8fa"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-legion-tab": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "672802523aff1e92f315757b8db8865e",
+      "1b3113ff09b1c57d4d876f9b51693a3c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-k11-plus": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b262910296f06da2065fc2b0af429d45",
+      "d700c9fffa2df25884ed1077eaf50ded",
+      "71ef57a3b7416dea0bf036e4438dcdbb",
+      "3b9c0fdf108d5c64eedda6148d09ef2d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-plus": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0701214886952b81e0c179139115a3f9",
+      "1bb10fadf4c8cc10100b4dfbd0c212b0",
+      "381c20c96e47ce9dc04685811d8dd5d6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-m11": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0b693113627234a188de248029789ab7",
+      "9620bbbe073379b6e5473126af313711",
+      "fd60bd8b41fa11c73950e9ac16270258",
+      "d0db5208c30711772e0fb56f76631e8d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-legion-y700-(2023)": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8c243d08f0ab802386137e1dba51bfbb",
+      "e893fcec7f3d23ebb410db3c1c7bd9e8",
+      "672802523aff1e92f315757b8db8865e",
+      "f65af0bc66ebfc739fc30bf0d5c06ae7",
+      "b4c69f5d2b30e8e4ffa0aa8a08afa7da",
+      "9cde00e1971040e8085b191ae466e8fa"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-p12": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ea538baffbcff2e8ad9566a3066e535a",
+      "b1e172347570f1fa3cdee7a421ea4f8d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-m10": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c71f42ebcda8474ba6860be9f237dbf3",
+      "032054c2228bc852b70433252dce031a",
+      "fbb2fae2c71921a27a52bd9b3ce0c733",
+      "e2eae65d6a2f46d67f3a2db7d8fda9ef",
+      "00ba9237d908f3cea28b82ef7a19f05b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-extreme": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a15601d9c90e0df42cdc2319e92c0828",
+      "f1be47b63a64c382dc5e6480454f7768",
+      "5660feca8e1f14c5e2bbe7ea93725e88",
+      "0bde16dd44e13ed8a89d63e793198fbb"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-m9": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4457612122526397ad008380cc4bdaa7",
+      "4377f2ae2d14902d8913873b08057fea",
+      "e41767c02830310fcdb29dfa28027cbc",
+      "240457694f185e6c4f512db1231fc90c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-m8-(4th-gen)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2bb437b52c9e9f355baf4a4fc425bf95",
+      "e50bece245474cfc8d0246d84324299a",
+      "6a621e207b10af6c3ad119e87c39e19e",
+      "21b67d48036d43e7e7237ab03790acf2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-p11-gen-2": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6a895bd6c96bd16907f1d880358bb390",
+      "289033289f06a4e1bcd60d16b57c3a40"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-p11-pro-gen-2": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6a895bd6c96bd16907f1d880358bb390",
+      "de98e554d6ae081deb67d3e85665300f",
+      "0606598d9301e01cb39ae7ebe6299468",
+      "2b01e9067f42d8cdbc6656f975ff8965"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-m10-gen-3": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c71f42ebcda8474ba6860be9f237dbf3",
+      "ec3fe2a1a3dc107da79e19a1ae528fc3"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-pad-pro-2022": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b749944b7ac124733a98a6a159dbfefe",
+      "cb401aeb2df1760bf97d1bc6160dfea1",
+      "9adb2d04e85d0ea24a53c57e4fc684a1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-legion-y70": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "672802523aff1e92f315757b8db8865e",
+      "e9cd5de9eaa118ac767b26dc14f4ecb4",
+      "95a457c362e14072f63e948f22a3dfa0",
+      "75d7a6b344a23d9c0768438cd191cc57"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-m10-plus-(3rd-gen)": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0c2f7a67690f84da7de792d8163972f9",
+      "00ba9237d908f3cea28b82ef7a19f05b",
+      "af3992098a6b4a81787483cf2a2b2a88",
+      "f91310e51665d226570e4d84c15982b9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-legion-y700": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c57ab3289d09659126e025a61300301c",
+      "48fc352c7ca7cd587585e094ae2695b2",
+      "8c243d08f0ab802386137e1dba51bfbb",
+      "672802523aff1e92f315757b8db8865e",
+      "780686caf85092c7d590af898e5b4a2b",
+      "9cde00e1971040e8085b191ae466e8fa"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-legion-y90": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f59282c777453f9e3b358a04ff357d1c",
+      "1ab28d9dd363167f175f40999a6c1e10"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-k14-plus": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a76b2ddd165b5cb20431e118b335a1da",
+      "33ef5921e49cee229b2d88cd4ed42c3d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-k10": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b6e689d7a2dc6146558b0758f321ad1d",
+      "23d9c494c8425e51f3afcc052ef51688",
+      "7af759321d3e6db318775b4986d4d602"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-p12-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "9c637236b97d6cd774d349c35570b5c8",
+      "0b06ea604328137cbcc016c8a3b67a8b",
+      "ea538baffbcff2e8ad9566a3066e535a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-p11-5g": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "87e4c02898b913f582025da98aedd355",
+      "7c60c4e4d111050ac3b4005a0407fa88",
+      "3240a1de1f8715620c7c4759aea46167"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-k13-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "558241a548ed08b12ae0486806881803",
+      "7dbed5d758117f221a28ce0bf278b7b7"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-k13": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ff73ed60bbbb2b04533d2a41753c45f1",
+      "48d5a48333e084e31fd8433ce93acfa9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-legion-duel-2": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6d0636320fdf62c551bda9fcfb18dd72"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-k12-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b954840edfaa9e51e6923fb23ebcd75e",
+      "38a7c61d1559ddc68a3ffa605ec8dc62",
+      "4c4b05458eab1b7f65963aac57857404"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-k12-(china)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e970145bb9953776601bdfbc00d95a9c",
+      "373d3e9b18936e06dbedc18be0b914c5",
+      "8803ce8d82a52b24c132ab45ac459941"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-a8-2020": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1e039b05ad75b1550d9ab312fddfbf51",
+      "0db7178cc6ae702a096028b6e4565519",
+      "0ed97e471a5f904fdaa7265b78a02851"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-p11-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "23b62bf54b2cdfdbccfa3f3bbaa731a5",
+      "769fab5885aaae7d16134a7b1c7591bd",
+      "6a895bd6c96bd16907f1d880358bb390",
+      "672a3e225730d60a532f20cde2d3d6fa"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lenovo-tab-p11": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6a895bd6c96bd16907f1d880358bb390",
+      "1783ae913004994f04b002a0634346ed",
+      "0b36b463f6ea0854fd5905870a8f0c87",
+      "84f04ac8de5cc31f86e7667cb324419e"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-ultra-tab": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "059342890a87aa06337163f2b7c6c408"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-w41-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a6e45c78070e31f8a85bda086af7202f",
+      "9caecd7415109c17472d6f02926aa395",
+      "829e5c52d2a89f9d99ce11510b1a881f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-w41+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3610495950b0b299fb01e72e597e0c00"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-w41": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c4204974dc3f6b4d6c5bce15876e8725",
+      "aa1b70ec73c291a3182661ad8690afa8"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-w31+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d039df2e9767f56c06e51185d4c181e0"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-w31": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d039df2e9767f56c06e51185d4c181e0",
+      "d49046c60a48f2cd8ebbc4b4111491f1",
+      "8d3aae906ece43ed0526b6579763d3f8"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-w11": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "032054903825c687ebd63e8801da6ee9",
+      "e8d4d10b949646a873746518701d0333"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k92-5g": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "70bf52449100ca985bc5410ed5d560b9",
+      "8acc8aaea590fdaf0906bc9a04ce2f17"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k62": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a27c3481653a041e9ebf651e50ceaf17",
+      "54f38ec5710b15f81b3bc7537121beb6",
+      "a4e5a431b32e3a5cc88506f336e8e328"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-q52": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "07b4289367958bcfd2d65d2b1c15ba6f",
+      "8a55dc39c7184c54cdf45c12dcdce2bb"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k52": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3a303116f274335ce483d554bcb4b68c",
+      "fd7d98d12c8f3cb8d99fce2beebfddeb",
+      "3debba9e42b335cf85b4620da3c9b4e9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k42": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fb83cc4e78edf55ba01bcc3f34e4dbb2",
+      "326e426b8dd60d6382a509a97c0b2c62",
+      "ef33b457da58c06933d4e3eb2c426a28",
+      "eff82427ef6f9af567eee0fc4e6306e5"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k71": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "392951beb856f7febc9c147d2192fc1c",
+      "e50d968b17459edae208288e3a54017e",
+      "35625bd96769b8696473c91afb3178bf"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-wing-5g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "818ba00ff316e73f9083965fcb9ff708"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k22": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e8ec6306cc3ac2531561fba9c31c6009",
+      "160c13c9061a03e821a05adfa1c21f6d",
+      "344cc5ab49166d36a636d91d7a862548"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-q92-5g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1707a3ca645299ff7cc486348ba2f42a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-q31": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "039ba6fde6fd5920f9ad99e5cf73ce65",
+      "fb1a8baf6389af6df7580be0985f6bb8"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k31": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "711fcbcbacb8fd88193238f4d9d41492",
+      "a4b3612c056454541f589c8ac1622998"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-stylo-6": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "38ae80d0ae872ee24193174ad75dcbfb",
+      "db089e8535c0ab75de846755e56d74e3",
+      "35625bd96769b8696473c91afb3178bf"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-velvet-5g": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "6e7d09d0ffaebde5cf0178312b56aa54",
+      "31a0137bbb2be17540689c6ec8fd1b17",
+      "818ba00ff316e73f9083965fcb9ff708",
+      "7039f315f58b375e35c165c9910c4182",
+      "9caecd7415109c17472d6f02926aa395"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-folder-2": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2132eb6665dd26cbf087fcc1dd5d81c2",
+      "6ac93c59f64f15a0c42acb0e9a1f8f5a",
+      "8b44d94011e84fb9105d0917c532cee3",
+      "50ba37abf4e7a24150050a6d34d2f39b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-v60-thinq-5g-uw": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4b1d952307c334dc86e9c9ac20b1d6e5",
+      "7039f315f58b375e35c165c9910c4182"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-v60-thinq-5g": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "529a918faf83f451d5ea0989dd0fa95c",
+      "8a0a0b7db8fa7d74f92c669521529ca4",
+      "38f8b43a8b5256409e4718fe43053f2f",
+      "7039f315f58b375e35c165c9910c4182"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-q51": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6874e527b1408c32ca857d1df06aba89",
+      "f105846a301441b85ef9349403dc930b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-w10-alpha": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "9caecd7415109c17472d6f02926aa395",
+      "6e7d09d0ffaebde5cf0178312b56aa54",
+      "818ba00ff316e73f9083965fcb9ff708",
+      "7039f315f58b375e35c165c9910c4182"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k61": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3434babf50b50763f24ec8ee929689fa",
+      "0655fca33d92bd17bfba512c3c8bc195",
+      "3812227485f458f3dac04b6c198608db",
+      "827c21b44bb397f54fe4f7d249a44221"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k51s": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c2f5fe24e9f2a8556ac1d9d5e3cd2727",
+      "d9d34e75d216d36091b3645ad4a0010d",
+      "8dc6fd8a5749a86369f90739cfa53168"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k41s": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "65521205de6c3297c8d8b677c55eb9df",
+      "bcf83417aff7b4f4b0cafa99a9a62bd0",
+      "eebbe869fc642607b01c6047b4fce324",
+      "e7d968824aa21d797307e5d0e6f5b037"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-v50s-thinq-5g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "682bb917e0872e43c81349230fbe4db1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-g8x-thinq": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "27a8c63a0704ac152040fd1c06b8850b",
+      "b96c03fa9c89e2112ee6e0417dc9ca68",
+      "682bb917e0872e43c81349230fbe4db1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-q70": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "dc3be112b3684401f7e2a90fcc66d081"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k30-(2019)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4f567739e7125e6330c22fdf6994cc5f",
+      "8457b8c18af7023a2d8e426e7f2a23d8",
+      "4dfc7d0b9849bc8512c0b5944f24c326"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k20-(2019)": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "faf4f4af4dca52f9cd4cbc70dbd25cc4",
+      "2a5058c8aaec1bdc61e623d07f03ddcd",
+      "9cc0b0d863f8f6b4601e101d389c1be3"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k40s": {
+    "downloaded": 1,
+    "files": [
+      "angle_1.jpg"
+    ],
+    "hashes": [
+      "7d10ae5c2866d9335fc08725ca109320"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k50s": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "420f47fda88fbd4e7a5eec983feeb6d2",
+      "b8bb12dde4502876b7473841e2d3d77f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-w30-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f46d5a5ad54b74ae23f31df8a51e245c",
+      "1420ca4af9c5434a68d968c458d27e8e",
+      "70dc0bc749ea6b33a2108f8f60b313e0"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-w30": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "10aa7ef5acdd68e727bc22d26cd52397",
+      "7d07fcaedcbe00ab58c84d0a0157b63d",
+      "f768ac0e1566ad3d2f32fb828fa02c59",
+      "fd0dd52c08515463df73819f55c1cae2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-w10": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "78402521c307c52ec1daf26b777b654f",
+      "fd424b8918110484752c7bb24cfafedb",
+      "3247f2cd0e6a63ee4b0264a958864fb1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-stylo-5": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "093f0899262008ba6b0648c84472a9f5",
+      "eab23b3d13075e30d2b3f2db81bd56aa",
+      "2a7172c18f5093ba54c0e1485c0c7b92"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-v50-thinq-5g": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "6e7d09d0ffaebde5cf0178312b56aa54",
+      "0e91bec0d3c859c235e3dd701ea4b882",
+      "7039f315f58b375e35c165c9910c4182",
+      "dd6aff0c017da874af2e3db648839a7a",
+      "682bb917e0872e43c81349230fbe4db1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-g8s-thinq": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "efef14e48758e53bb6df9167b08bd282",
+      "31b4ade0236529811bb6ae577f1cd89b",
+      "a4599ae3c8cb0cb1379be53d60fe8575",
+      "85d1eeee4ea72823db714d82eef02832",
+      "f0d8094dc538a936a70dd4e54fb61500",
+      "7649d5677314ce5d0f4e6964be8b8563"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-g8-thinq": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2e8700327c784f597b1ce4eb622ef5c1",
+      "86261fc4a66a455808410372185dfd80",
+      "6e7d09d0ffaebde5cf0178312b56aa54"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-q60": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "695ace68824614d9cf0ec96327093ef0",
+      "4a32ba16a029bb4c799a40e097fb580b",
+      "eb9945018b3fbfe995aa6885d721c39c",
+      "edc2d3f46bcf58cb3dfad83c4a376f6a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k50": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "897b63738422a7efac5cf539793828bb",
+      "11260b49404fe870a9b1e8cfefd459dc",
+      "b8bb12dde4502876b7473841e2d3d77f",
+      "4d10d4111b38c44fa4bf1b9fc157b488",
+      "f0f162433635af83e58d262b60f4c68f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-k40": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "21cbcae5ae8f4d63610517f762ef2556",
+      "b5a3d7aaa34086973ca2d9456bfab942"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "lg-q9": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "146af36bd8fbfa93532cb4b464434e26",
+      "6fa1554db404eeb215e67378e481cfc1",
+      "ce8823221c84b6dce9775d8d09b71b08"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-c90": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-c80": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-c180": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-c60": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-c20": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-c110": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-e10": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-v10": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-v30": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-e80": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-7750": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-c11": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-c160": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-7940": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-7920": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-7830": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-7600": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-6899": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-6877": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-6879": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-6869": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-6815": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-6814": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-6811": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-6810": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-6805": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-6804": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-3205f": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxon-mx-3204": {
+    "downloaded": 0,
+    "files": [],
+    "hashes": [],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-nitro-55m": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1e14b0ee95c80a20f5e3e53da1eafc27",
+      "8995c338ddf8547b488c8318c3a5d6a9",
+      "aee48d6c4d464d543b44716ad14bae22"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-nitro-55-lte": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e265c60874bc57d73dcae6f9ec1be058"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-nitro-5m": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b726f6ddcb1056086b906f47894e17b1",
+      "30362ec685e0f340bbbc04382bf2ef38",
+      "8d97f0226d9bf40c8d729b43aad8351c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-astro-5s": {
+    "downloaded": 3,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "fdf274dae60a8912f9e5a0d3f0459ef7",
+      "b36a5f2e324898146bd98a9ca01c22b2",
+      "cf56a94407339465f672c1a9686fdd47"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-gravity-5-lte": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "d561f62f5ad2f5fd00582c441506f4dc",
+      "98185af53820b12badaca68150cd2b67"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-astro-x4": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5b4a20e7d87e2aabf59b0981b1e9854b",
+      "68b9ace7134327add2b8b19f21442499"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-astro-x55": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "65a3ddf55bb224b2df2b0d45ec97bcff",
+      "2b4cd23c82664bbb52025dbaf0414830",
+      "dfb13279d8ff49baebab1ed71d460f75"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-vice": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "86c1612ca97df4c1b562ec1cbb76b1c3",
+      "d9116e0925578229e164bd4a5ba25f0d",
+      "b52dbd45d8b64c067b5bc931efc3d8e8"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-gravity-5.5-lte": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f9d002031fe9eba2f90c59117dbca1a9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-gravity-5": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "33d790ff395c62f07921d8e1e5c8c0c7",
+      "83c38642cb0ed9f766b79955ee7f6c04",
+      "49762da800b1e3b8efa98356fc131610"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-astro-6": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6ba36e7426f964addd0aa8bc1aefbed6",
+      "97e49397a5d70b4208c95f6db09e3627",
+      "14ceb947f1c52bce76341340c708db02"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-astro-x5": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7b1c86bdb35c7433ffb5cdbda6039709",
+      "3b62d281d405ce9b764647bdae326952",
+      "ae701d25a18a203c1101af2bf90fd19e"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-astro-3.5": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c143c9b6a705b036c83f22d98546387a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-blade": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1dc7fe344d39484c274ad878206d741d",
+      "a2256e9df9edd77840c316410d5f8ca1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-nitro-5": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b8b54fabc14e5177cd4b9142cfa7b8ac",
+      "e98875c8a389ff2e92ce633028cc3bf4"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-astro-4.5": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d12e57ece323cbe28892f93bd719bdc2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-nitro-phablet-71": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d510fdf684a89f1d46d70db92df6dcc7"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-nitro-5.5": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "555ef8888c199f298dbb01db67de8797"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-astro-5": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ab988408bbe8b0efd88acf3d8003b384",
+      "c3045cc5728532f0bba201d7a7064b08",
+      "62482cd3c6e101496c955fd5e458cc3e"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-mx-110": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "820c753d0a2f87743c0e00b70944687c",
+      "9330393b2bac9b25ce659d5741a14092",
+      "25966630e050fefaaab534dc1df27eb3"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-astro-4": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e8799ebdce0785c2ae102b8302be02d8",
+      "a512b1e35f6eb32ae9a75087ac83d270",
+      "572419a7af876bf128a433bda67e1a84"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-astro-jr": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "996e658c9dae2f880595bc0844cd488b",
+      "8871bdf7d9cef272b20bdc3d529ff307"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-virtue-z5": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "550e0796c76837588e7269c243799451",
+      "bd920b134db390ff949e8796404680f8",
+      "ecdc3ad5a61468d30eff386ddabad8b2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-gravity-5.5": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d2fa50552833151b4030163d7ced1921"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-gravity-6": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "628d5a4b2745ab61e2df00e47e506a11",
+      "d4fb0f6a558d2711e17ba2a17d8c3203",
+      "6cac6bf076008e099935c8ddf2cd28a9",
+      "ca798ca5eb9d7064779f56e2042fba41"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-orbit-330g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ec5d494743d1d6fd05bc3a46fba65ca5"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-orbit-6200t": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1241230d359513bfad714fce8d5f7bd4",
+      "00ba22cfdad1b14f8c4c01fdd7d6c389",
+      "460187d47df423a064a5b74d155d8692"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-android-330": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8f392e229d64a853edea04ea7d8cf6bf",
+      "a4c672a8798eb3fc6fbbecdd4b8b1208",
+      "7c395e0296979e17e6f436f82fd2c042"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-tab-phone-72dc": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "60a95d03b0af3d45093527d9e99b4e2d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-mx-210tv": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b1d5522bbc47d3343cbf5847c291bd42",
+      "0386ec7057d654ebcb6188b63a198764",
+      "2903088c0e2700c144bc6be11bbfaa60"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-android-320": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d1789d67e72eba68ed552f176b7e0b7a",
+      "11d9ff4b4c43accafda14bbc4ddcf2a0"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-orbit-5400t": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "3dd49e0093da373df7aa4e3bf75c6751"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-orbit-4400": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0435082b123af780fd9ef95398d3e047"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-orbit-3000": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b20b2526df2ccc6a52d6435e1aab09d2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-orbit-x50": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fd918bc692ccd3ca5cd5a532c3942cbd"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-orbit-z50": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "9d891672a50f24e9ec37860b8a663a8c",
+      "6a4fd88c0d5eea1ddeb297866f19abd8"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-orbit-5400": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "eb94beea726339e719c3902c15eac3c4",
+      "738a63a9f131886d52af93471cf2ceb9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-orbit-4600": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "de1932b3b70f3c6195cddfd4554b3fed",
+      "721bdd5fbc46b15d7ec79cce47424726"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-mx-200tv": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "19133bacd7718ccdc4d51f09bb5f0f87",
+      "5e058fa163b4d20f02c6887f902f5459",
+      "10a8a4d6810bc10f91d939f77601aba4",
+      "99a489c0a2d86354a8525543517d698a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "maxwest-mx-100": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "c714c9f9875038ac710a0436051053a4",
+      "f330204944eee47bdde717792ac2bf56"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-22": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "94b79cff7c7e874d18422c8d049882b6",
+      "5fa348d7081bd4e2e002c80e693b760c",
+      "af2c2290d31c739475f8feba9a8b5c39"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-note-22-pro": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "01a2a1aaf0c5343f8991ead7f9b99b6d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-note-22": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f5c98de2c5311795c42fa993d405e4d4"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-mblu-22-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fcbd7b222f4583813cae03410164a564",
+      "94b6a33d5442d6fe30692ee2085431fb",
+      "ef6e77f1be23dd152f69fec291526ead"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-mblu-22": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7d111f9e47d2722e8d2d4832375e0bdf",
+      "141a2a5db7910f55a494400a0e2d965b",
+      "3e834f10f512d1df5e98d942c927b981"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-note-22-4g": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e39327611269ffc4765a6810054af840"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-note-16": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fc69f0cedab60dc85a0c20394684ab88",
+      "023d42474e7509c2726e737f1da5d30a",
+      "f5c98de2c5311795c42fa993d405e4d4"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-note-16-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5d0f4ddf26536915ef99d43abc0c89c6",
+      "244ba10d3f60f37e7a038e8382010082",
+      "01a2a1aaf0c5343f8991ead7f9b99b6d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-mblu-21": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "5e9ba946fd8135ac587180ff03e01ac9",
+      "e4716600a261b3064945d09e63541ce7",
+      "32fc9f1d4fe306e4daff4e90a2edd435"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-lucky-08": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "af691a7e6b8bb3bc213cd25d19ca8e8e",
+      "9258c235d7671210e3c8d9ed0364df19",
+      "382ba84fcf2ac3c9d27bbdd6f93efcc6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-note-21-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8161a5a08f7e87325c6df675bcf92650",
+      "0053db52d72940f760b62614004a2bb6",
+      "2adc8a9220b7c9f8be30985af30a7970"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-note-21": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "97f346d1933376bb4f656983e9d57113",
+      "7f53ee57828e3bb7b6f28730c473d584",
+      "94b3d8be6500c824b2fc3633ef68d4b7"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-blue-20": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "181785c4316009a9da9ee0837ec93e8b",
+      "49f0be4460f22643d8fa525518128c36",
+      "4664c2fcb392cfe1d4e0e321e4f608b5",
+      "b9fcfc650d518e60a7b37e5a3121c1af"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-21-note": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "87c11af3f0cbccb2454091ce96625e71",
+      "08cbebbbe93454cbb74393949ee7ae1c",
+      "0cde3ea2e715e9eea30b93f83cf632eb"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-21-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "88a0d0871df866c02d0505e4b570598b",
+      "105e519b0a1203f41bd919554e5e563d",
+      "c682f2d5b006feb328fb89434ab9d01b",
+      "613852c84f3e49f98ddb9e1c84910f03"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-21": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "648eb2e11195ccfb98675ae5bcb8c346",
+      "c682f2d5b006feb328fb89434ab9d01b",
+      "458a9adad169cfdd8518cf233fad1495",
+      "30975bb5de201eab50d56f40e0cb36bf",
+      "6c2bfaf5cba8f3529ec67fdbb88f38aa"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-20-classic": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d414decb29459f7718de80f5257da5ad",
+      "742b7e0877dfa5d44fb8bd512a5479d2",
+      "35afc61f2802ede858eb7386b0d715de",
+      "5558432b0dc49637fc647591319e15b0"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-20-infinity": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d588c62aa3596390ddc6762332bae6d4",
+      "78a4b0b42e73ffcb1d84335b9c312050"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-20-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ef90bc3d001c93162fc7682f590d4ea3",
+      "aba2ebbc88c193e9febfb636259ed2b2",
+      "c310b982bab4b094fe1e7d2e0e66e5c1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-20": {
+    "downloaded": 6,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "35afc61f2802ede858eb7386b0d715de",
+      "78a4b0b42e73ffcb1d84335b9c312050",
+      "a4b018a3c7189170de3a997dd111041e",
+      "c310b982bab4b094fe1e7d2e0e66e5c1",
+      "fa8a38ecc97cf3e1a184af679b8e8780",
+      "89bcaa3289456913daf8ccf699cf8726"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-18s-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e2f7876d27699a01ac8325aea2569adc",
+      "7926987ac16f731ee94b4365ccd754d4",
+      "8f2b3e392eb43871536c889929340ac9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-18s": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "6b1e204aa5a9f1de66acc2cba116a548",
+      "68e230e4c014bb9e7b38520b384aa8d0",
+      "e368744ddd867a249393b7510ce58c44",
+      "e2f7876d27699a01ac8325aea2569adc",
+      "bd75360e8c8a3ff7452d3ba1dcecccad"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-18x": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4fd3e6154aafc2811af1a3a9230c448b",
+      "16021f6b69589b6c693ff9a3dcb18992",
+      "1bd8eea24b397b336675641f433f2183"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-watch": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "fd4ec7081c3c10141b853a386e39b0dd",
+      "15024c152802655e76b866f1b6337a90",
+      "5c747b6fa99a586a87ebb26f175cde04",
+      "951b2a3c59e388438f3f6e0bac7deb69",
+      "7c5ba27fe4c5d5cd32a1f26f232c25bb"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-18-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "589a6c17c564a9dfbb62d3e6ffb79998",
+      "695c1a9f204637f489bacdd8cf8a397c",
+      "89b39ab14b9d5850e648598a22b6d901",
+      "75cfa989b06d91cd1eabdba0969e42f3"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-18": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "241066bae8f6f9a8eb0d7aae4c6794a8",
+      "e2a7dd9ed14be3e00cd785a4a942f30a",
+      "faef7c4afabae4cc504ccb1156df853f",
+      "71705d8f3c7abeb6d220ab678883f3d5"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-17-pro": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "cd0a3f4b6a45c5121419caeb052498d5"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-17": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "e5713671ff6c0f722c8bf61736b3dc84"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-m10": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "404b39dc08ca5c179d33769bd41a6b33",
+      "20654c6e7ab4f6933919b44829793b1a",
+      "205f6a2ee72dd970d35f32aa3b7b96b2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-16s-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "613d2fb032a5e72ea9bf877875f08bb7",
+      "f979f0d1304b5bbe856eac98ea330ce9",
+      "657b9f9dc7de74f1a770455ccd48c7bf"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-16xs": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f361e583184eb46dd5ac6230160bcccc",
+      "56f0eb3ea0adee0ccaeea8c1d06a1536",
+      "b9c158ad30a0ca413043bcb0c261c3a5",
+      "f7a199eb25705b9a6f4452c6dcc44bde"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-16s": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7a0e4b0e147cb2051fadf40297c65930",
+      "dc81208121137be27935d70e24a49795",
+      "7ef3dc126e176c38219e0931b26c75cf",
+      "c9d5d4303a8ca72f5ff335cfd871816b"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-note-9": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ab5adaab4fdf7d3a8bd64cf954ea29dc",
+      "a1b593f2e19fc1e39f66cf967d819d95",
+      "3fda85f6cb9407068584ddf12ea701e8"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-zero": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "6e088db56db6711d0fec9190a69ae9ba",
+      "5f7c31ace3b6a4b7e18acf485cbdb0b1",
+      "054788ff478c0e4321feb5b0bcf2a6e3",
+      "875838a5c7219b6f95fb9fff71778c3d",
+      "95f046674426324271b37df2030ed0bd"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-c9-pro": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7a677d55c67257d5589e20b4a8527807",
+      "e2e08f5d2874c140f6464a5f51a00e51",
+      "1218ee4e3ee77ebde689057c4e898ed2",
+      "1c92b7b1fcd649f623e5a040eb0a6779"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-c9": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4e9fcb9d456b1465d1da674d3179e655",
+      "3c0583ae693d0fdf55080de4bdc03459",
+      "1218ee4e3ee77ebde689057c4e898ed2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-note-8": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "4692ca669b7b0c8888b573095ab1c5ad",
+      "3c2709d5881b7691ed8686d4a90b4f0c",
+      "def3fcdf538acf87c23581bd3eaf0c9b",
+      "0c0b17804aaff7dd0293e94436700c92",
+      "7a63655c2beafe74d1e5077da877e8e9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-x8": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "dfab2c26b808ddd649cc4defb6d82952",
+      "5ae80679891947883dfc6921b89b38b7",
+      "902992b71cc103bcd3c276216a52e510",
+      "c5d0f8cee8a78cb95c1c846edb97598c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-v8-pro": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "22f5174e4edd49f72df28d0bf7bfd239",
+      "270bbcbf868672aa4706333fa604a2ee",
+      "0b1e289e798eedfd53314a9d5435a54e"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-v8": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "baf97a2daec3e09e0b3965fce3df0613",
+      "d1d8664aed07aaf1a6ef857b202f7522",
+      "91152c4c31da29d04ba9cf3477efb101"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-16x": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "c682f2d5b006feb328fb89434ab9d01b",
+      "af2c2290d31c739475f8feba9a8b5c39",
+      "458a9adad169cfdd8518cf233fad1495",
+      "9258c235d7671210e3c8d9ed0364df19",
+      "01a2a1aaf0c5343f8991ead7f9b99b6d"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-16": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4fa8aa758d6192595127ac79cb15b819",
+      "69e596be5c9894facee9b45c3fb55240",
+      "62913f683e70c4f9974abea82906770d",
+      "7e505cbef254b28a4b22293acb263575"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-16-plus": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ca1f923cf56a32619967fb130670c8eb",
+      "85bd42852e175fd65403883c1405fb7b",
+      "e5b85c6b6593bb8b79cb6230081cb201"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-m6t": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ade779cf73ed5dfd2b4b7033654080f7",
+      "e1a186a34d8cea2f60fc6100abb898ee",
+      "684efbba45e0c79cba23c9c8523f0f5e",
+      "b26c0e4df89e9eba571a7db2ffa79f20"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-m8c": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8616b3b2ea11c7290eb738aa25ed896f",
+      "f289a7c11d369954556df0e32b917735",
+      "d4c7815e152832301148b1f0fae2b179"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-15-plus": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "fccf93ea3dcf3d3dabff0c60d668cebf",
+      "62835cd4ce87fe7daaa3afef5c3f2cfb",
+      "3c0dba0844d1ca8f16bcbee06de6c93b",
+      "5ae4fca514312e6fe7605d0a4dab9a9e",
+      "9c9cb0c384830aac94fbd7b001b8c6fb"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-15-lite": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "09a825ed7c3f9b79bb9b18c7a34ed045"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "meizu-e3": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4fdd7c7d4f239b1041b9c0066cc3db27",
+      "0e7f75eac444a0c01b3fa68881608d37",
+      "b7c81fb51ed55f00821140bf27394ebb",
+      "3a6473138e61c85e714ca9f11c809067"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-in-2b": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "56aaf949afe8964aee8f037e15c1ef37",
+      "217b235ab4ade241820d425b825b68c2",
+      "defedb0758d625eeb919f28de9cc4575"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-in-1": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "831cac8766e4128f09d305ba51858103",
+      "319d553efea7df5304c88c4a3e6fed19",
+      "a31609f4d1dddd343905b6fe9ea5c8f6",
+      "9330f5811341384952d541f27694f259"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-in-note-1": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b4ddbfcc80229f58887ba3725c914e4c",
+      "6ffdb59d746702baf7b537aa4dc83110",
+      "15d26b142eb97d4598247612ad4e75e2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-in-1b": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ef8b8407a81107b17cb4d7c6d5d5a4dd",
+      "f9cc0e877c4ba8a079dbaba654904b97",
+      "6510e0bfb9ea3b5f236d0abaf24b53b4",
+      "0153d12a2fa4d2ee966a150e457a7a9a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-infinity-n12": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "aba1cb00a35faa4535f47a74a1c78a6e",
+      "baa1f14893197dc9abdc9715d779a313"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-infinity-n11": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "84a600943192611b05e3ebeaada7e3d3",
+      "533759b1f9555222e910d2170870b041"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-bharat-5-infinity": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "a119fd64ee46238c13ac2ca67093924b",
+      "ad3de595c61e54e21464e45f7368a1b6"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-canvas-infinity-life": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "246d6534d1e2ee4d61c28cadd6690449",
+      "9129f461b147de437e65d243d1705173"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-bharat-5-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "7cd9be3df5454ec6c90984066068d6a3",
+      "6c18689a385dfacc83cbd91d25243198"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-bharat-5-plus": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "347d6ec9e5b62f73d5e31fc6875891e9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-bharat-5": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "347d6ec9e5b62f73d5e31fc6875891e9",
+      "ece5455ea860f1be06577379893b2aff"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-canvas-infinity-pro": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "b96a77e07d54028c3e4c857ecc292e2e",
+      "d392bd178d96d9a3efd32760dd7a5ce2"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-bharat-2-ultra": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2a526b55c73d045bd45a8f42bf5ce87f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-dual-4-e4816": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1f89de430bcb855d07a138e55027bd47",
+      "b05e1f1c1acd022bda123b479a07f3da",
+      "f813ae076125dbb68ce91e4c6cab0409"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-canvas-selfie-3-q460": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "4b4c88089c34419a72b21711f5e10a00"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-bharat-4-q440": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "60864522abc8feb0b71d549bc3770286"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-bharat-3-q437": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "1c596ab3b0ad4626d72909ec72b25702"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-bharat-2+": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2a526b55c73d045bd45a8f42bf5ce87f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-selfie-2-note-q4601": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "b4ddbfcc80229f58887ba3725c914e4c",
+      "319d553efea7df5304c88c4a3e6fed19",
+      "217b235ab4ade241820d425b825b68c2",
+      "aca591f3de8070d6f2e842b8f88db5bc",
+      "4b38aea8c476905950993d115672f0c9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-canvas-infinity": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "db09ceaa48610634f2b85cc9fff56a58",
+      "9ebc1c83e91fa4b6b265ccd72c4ebda6",
+      "cadfb530e542435741d90fe8efbc61dc",
+      "17163512d8907975dbf42159e3076431"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-evok-dual-note-e4815": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "d0739d28bedc8785b62a0e900544cb9c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-selfie-2-q4311": {
+    "downloaded": 5,
+    "files": [
+      "angle_3.jpg",
+      "angle_5.jpg",
+      "angle_1.jpg",
+      "angle_4.jpg",
+      "angle_2.jpg"
+    ],
+    "hashes": [
+      "b4ddbfcc80229f58887ba3725c914e4c",
+      "319d553efea7df5304c88c4a3e6fed19",
+      "217b235ab4ade241820d425b825b68c2",
+      "aca591f3de8070d6f2e842b8f88db5bc",
+      "4b38aea8c476905950993d115672f0c9"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-canvas-2-q4310": {
+    "downloaded": 3,
+    "files": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ded6086deeddfc64b0f9434b98c12675",
+      "a3b40740b5af4b5d2be6efeabcb50fde",
+      "de8d2cf121843438a7d09eb119b5201f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-canvas-evok-power-q4260": {
+    "downloaded": 4,
+    "files": [
+      "angle_3.jpg",
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "688cd88dca29def6620aef4d4484f01f",
+      "4f7e0624a951a3076ece984abb998d68",
+      "daa41d9f064aaaae40d98a971d724238",
+      "60bcef2278909a07791e4e5d14821b68"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-canvas-evok-note-e453": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "df5b7b6bec8c5b74b305eaaab7fd8267",
+      "7aec531934a5f8a676b5c863177e351c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-bharat-2-q402": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "2a526b55c73d045bd45a8f42bf5ce87f"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-dual-5": {
+    "downloaded": 1,
+    "files": [
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "0d76c41e7f07268128d63c7d1b4db4e1"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-spark-vdeo-q415": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "f5fda21a406d5c188822c0acd2218ee8",
+      "383d050090dad7779904f3b658990d89"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-vdeo-5": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "8198ec5d287fd319e6f06f95c1bc09b9",
+      "c0f0e9693dfc6a775dda36706e349e57"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-vdeo-4": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "be1b4f746e7b5e66af5a66daa0e9f38a",
+      "49b678041da06bef988684bb2ed64f5c"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-vdeo-3": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "73553f3958c3484abaa08ab4b0b15ff9",
+      "cb27a0a81224710eadaf0a32ad174e5a"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
+  },
+  "micromax-vdeo-2": {
+    "downloaded": 2,
+    "files": [
+      "angle_1.jpg",
+      "front_1.jpg"
+    ],
+    "hashes": [
+      "ba8af0e2698486eeb91f1118b5646820",
+      "ff505e9bb55a0c3b983aef3f246579e5"
+    ],
+    "last_updated": "2026-03-21",
+    "needs_hashing": false
   }
 }

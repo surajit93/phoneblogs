@@ -1,0 +1,16 @@
+{
+  "slug": "kyocera-milano-c5120",
+  "hero": "front_1.jpg",
+  "images": {
+    "front": [
+      "front_1.jpg"
+    ],
+    "back": [],
+    "side": [],
+    "angle": [],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}

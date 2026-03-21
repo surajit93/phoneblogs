@@ -1,0 +1,16 @@
+{
+  "slug": "meizu-15-lite",
+  "hero": "front_1.jpg",
+  "images": {
+    "front": [
+      "front_1.jpg"
+    ],
+    "back": [],
+    "side": [],
+    "angle": [],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}

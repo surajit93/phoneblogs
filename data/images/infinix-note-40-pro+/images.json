@@ -1,0 +1,20 @@
+{
+  "slug": "infinix-note-40-pro+",
+  "hero": "angle_1.jpg",
+  "images": {
+    "front": [],
+    "back": [],
+    "side": [],
+    "angle": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "angle_3.jpg",
+      "angle_4.jpg",
+      "angle_5.jpg"
+    ],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}

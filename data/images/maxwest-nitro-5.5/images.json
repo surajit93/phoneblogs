@@ -1,0 +1,16 @@
+{
+  "slug": "maxwest-nitro-5.5",
+  "hero": "front_1.jpg",
+  "images": {
+    "front": [
+      "front_1.jpg"
+    ],
+    "back": [],
+    "side": [],
+    "angle": [],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}
