@@ -1,0 +1,18 @@
+{
+  "slug": "micromax-canvas-mega-2-q426",
+  "hero": "front_1.jpg",
+  "images": {
+    "front": [
+      "front_1.jpg"
+    ],
+    "back": [],
+    "side": [],
+    "angle": [
+      "angle_1.jpg"
+    ],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}

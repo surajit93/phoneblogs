@@ -1,0 +1,18 @@
+{
+  "slug": "o2-xda-flame",
+  "hero": "angle_1.jpg",
+  "images": {
+    "front": [],
+    "back": [],
+    "side": [],
+    "angle": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "angle_3.jpg"
+    ],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}

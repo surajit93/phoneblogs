@@ -1,0 +1,19 @@
+{
+  "slug": "niu-andy-c5.5e2i",
+  "hero": "front_1.jpg",
+  "images": {
+    "front": [
+      "front_1.jpg"
+    ],
+    "back": [],
+    "side": [],
+    "angle": [
+      "angle_1.jpg",
+      "angle_2.jpg"
+    ],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}
