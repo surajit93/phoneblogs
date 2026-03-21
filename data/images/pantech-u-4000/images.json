@@ -1,0 +1,16 @@
+{
+  "slug": "pantech-u-4000",
+  "hero": "angle_1.jpg",
+  "images": {
+    "front": [],
+    "back": [],
+    "side": [],
+    "angle": [
+      "angle_1.jpg"
+    ],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}
