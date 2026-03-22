@@ -1,0 +1,16 @@
+{
+  "slug": "siemens-sg75",
+  "hero": "angle_1.jpg",
+  "images": {
+    "front": [],
+    "back": [],
+    "side": [],
+    "angle": [
+      "angle_1.jpg"
+    ],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}

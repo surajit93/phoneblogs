@@ -1,0 +1,16 @@
+{
+  "slug": "o2-x1b",
+  "hero": "angle_1.jpg",
+  "images": {
+    "front": [],
+    "back": [],
+    "side": [],
+    "angle": [
+      "angle_1.jpg"
+    ],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}

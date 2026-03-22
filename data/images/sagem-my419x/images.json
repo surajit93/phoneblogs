@@ -1,0 +1,16 @@
+{
+  "slug": "sagem-my419x",
+  "hero": "front_1.jpg",
+  "images": {
+    "front": [
+      "front_1.jpg"
+    ],
+    "back": [],
+    "side": [],
+    "angle": [],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "lenovo-tab-m7-(3rd-gen)",
+  "hero": "front_1.jpg",
+  "images": {
+    "front": [
+      "front_1.jpg"
+    ],
+    "back": [],
+    "side": [],
+    "angle": [
+      "angle_1.jpg",
+      "angle_2.jpg",
+      "angle_3.jpg"
+    ],
+    "camera": [],
+    "display": [],
+    "variant": [],
+    "misc": []
+  }
+}
