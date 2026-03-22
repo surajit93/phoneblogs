@@ -1,2 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /data/
+Disallow: /logs/
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /*.json$
+
+Sitemap: https://yoursite.com/sitemap.xml

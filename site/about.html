@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About PhoneRank — How We Review and Rank Phones</title>
+<meta name="description" content="PhoneRank provides data-driven phone reviews and comparisons for US buyers in 2026.">
+<link rel="canonical" href="https://yoursite.com/about.html">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.7;background:#f4f6f8;color:#222}
+main{max-width:820px;margin:24px auto;padding:24px;background:#fff;border-radius:8px;border:1px solid #e0e0e0}
+h1{font-size:1.9em;margin-bottom:12px;color:#111}
+h2{font-size:1.35em;margin:28px 0 10px;color:#222;border-bottom:2px solid #f0f0f0;padding-bottom:6px}
+h3{font-size:1.1em;margin:18px 0 8px;color:#333}
+p{margin-bottom:14px}
+ul,ol{margin:0 0 16px 20px}
+li{margin-bottom:6px}
+a{color:#1a73e8;text-decoration:none}
+a:hover{text-decoration:underline}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f0f4f8;text-align:left;padding:10px 12px;border:1px solid #ddd}
+td{padding:10px 12px;border:1px solid #ddd}
+tr:nth-child(even){background:#fafafa}
+.winner{background:#e8f5e9;font-weight:bold}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.pros{background:#e8f5e9;border-radius:6px;padding:14px}
+.cons{background:#fff3e0;border-radius:6px;padding:14px}
+.pros h3{color:#2e7d32}.cons h3{color:#e65100}
+.author{font-size:13px;color:#666;margin:20px 0 10px;padding:10px;background:#f9f9f9;border-left:3px solid #1a73e8}
+.breadcrumb{font-size:13px;color:#666;margin-bottom:16px}
+.breadcrumb a{color:#666}
+.scenario-box{background:#e3f2fd;border-radius:6px;padding:14px;margin:16px 0}
+.cluster-tag{display:inline-block;background:#1a73e8;color:#fff;font-size:12px;padding:3px 10px;border-radius:20px;margin-bottom:12px}
+img{max-width:100%;height:auto;border-radius:6px;margin:12px 0}
+footer{text-align:center;padding:20px;font-size:13px;color:#999}
+@media(max-width:600px){main{margin:8px;padding:14px}.pros-cons{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+<main>
+<h1>About PhoneRank</h1>
+<p>PhoneRank is an independent phone review and comparison resource for US buyers.
+We use structured spec data, price-tier benchmarking, and real-world usage analysis
+to help readers find the right phone at the right price.</p>
+
+<h2>How We Rank Phones</h2>
+<p>Every phone is evaluated on three core dimensions: battery endurance relative to peers
+in the same price tier, RAM and performance for its intended use case, and camera capability
+for the target buyer. We do not accept payments for rankings or reviews.</p>
+
+<h2>Editorial Team</h2>
+<p>Content is produced by the <strong>PhoneRank Editorial Team</strong>. Our analysis is updated regularly
+to reflect current prices and availability in the US market.</p>
+
+<h2>Data Sources</h2>
+<p>Spec data is sourced from manufacturer specifications and cross-referenced with
+publicly available benchmark databases. Prices reflect typical US retail at time of publication.</p>
+
+<h2>Contact</h2>
+<p>For corrections or editorial inquiries, reach us via the contact form on this site.</p>
+</main>
+
+<footer>
+  <p>&copy; 2026 PhoneRank &mdash;
+  <a href="https://yoursite.com/about.html">About</a> &bull;
+  <a href="https://yoursite.com/sitemap.xml">Sitemap</a>
+  </p>
+</footer>
+
+
+<script>
+let start = Date.now();
+
+window.addEventListener("scroll", () => {
+    let scroll = (window.scrollY / document.body.scrollHeight) * 100;
+
+    if (scroll > 30) document.body.classList.add("scroll-mid");
+    if (scroll > 70) document.body.classList.add("scroll-deep");
+});
+
+setTimeout(() => {
+    document.body.classList.add("engaged-10s");
+}, 10000);
+
+setTimeout(() => {
+    document.body.classList.add("engaged-30s");
+}, 30000);
+</script>
+
+</body>
+</html>

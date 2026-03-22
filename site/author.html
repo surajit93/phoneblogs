@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><body>
+<h1>PhoneRank Editorial Team</h1>
+<p>We evaluate smartphones using structured benchmarking and real-world usage scenarios.</p>
+
+<script>
+let start = Date.now();
+
+window.addEventListener("scroll", () => {
+    let scroll = (window.scrollY / document.body.scrollHeight) * 100;
+
+    if (scroll > 30) document.body.classList.add("scroll-mid");
+    if (scroll > 70) document.body.classList.add("scroll-deep");
+});
+
+setTimeout(() => {
+    document.body.classList.add("engaged-10s");
+}, 10000);
+
+setTimeout(() => {
+    document.body.classList.add("engaged-30s");
+}, 30000);
+</script>
+
+</body></html>

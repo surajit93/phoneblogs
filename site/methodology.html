@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><body>
+<h1>Methodology</h1>
+<p>Devices are evaluated on battery, performance, camera, and price-to-value ratio.</p>
+
+<script>
+let start = Date.now();
+
+window.addEventListener("scroll", () => {
+    let scroll = (window.scrollY / document.body.scrollHeight) * 100;
+
+    if (scroll > 30) document.body.classList.add("scroll-mid");
+    if (scroll > 70) document.body.classList.add("scroll-deep");
+});
+
+setTimeout(() => {
+    document.body.classList.add("engaged-10s");
+}, 10000);
+
+setTimeout(() => {
+    document.body.classList.add("engaged-30s");
+}, 30000);
+</script>
+
+</body></html>
