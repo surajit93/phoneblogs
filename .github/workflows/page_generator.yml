@@ -65,7 +65,7 @@ jobs:
             export LAUNCH_PHASE=1
           fi
 
-          python script/page_generator.py
+          python scripts/page_generator.py
 
       # 💾 COMMIT CHANGES
       - name: Commit changes
