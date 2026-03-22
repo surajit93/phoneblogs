@@ -2,15 +2,9 @@ name: phone page builder pipeline
 
 on:
   schedule:
-    # 🟢 Incremental build - every 6 hours
-    - cron: "0 */6 * * *"
-
-    # 🟡 Keyword expansion - once daily (low traffic hour UTC)
-    - cron: "30 2 * * *"
-
-    # 🔴 Full rebuild - once weekly (Sunday)
-    - cron: "0 3 * * 0"
-
+    - cron: "0 */6 * * *"   # incremental
+    - cron: "30 2 * * *"    # keyword
+    - cron: "0 3 * * 0"     # full rebuild
   workflow_dispatch:
 
 jobs:
@@ -30,43 +24,50 @@ jobs:
         run: |
           pip install requests
 
-      # 🧠 Decide mode based on cron trigger
+      # 🔥 MODE DETECTION (FIXED - NO github.event.schedule bug)
       - name: Set Build Mode
         id: mode
         run: |
-          echo "event_time=$(date -u +%H:%M)" >> $GITHUB_OUTPUT
+          HOUR=$(date -u +%H)
+          MIN=$(date -u +%M)
+          DAY=$(date -u +%u)
 
-      # 🟢 FAST BUILD (phones + clusters only)
-      - name: Incremental Build
-        if: github.event.schedule == '0 */6 * * *'
+          echo "Time: $HOUR:$MIN Day: $DAY"
+
+          if [ "$DAY" -eq 7 ] && [ "$HOUR" -eq 03 ]; then
+            echo "mode=full" >> $GITHUB_OUTPUT
+
+          elif [ "$HOUR" -eq 02 ] && [ "$MIN" -eq 30 ]; then
+            echo "mode=keyword" >> $GITHUB_OUTPUT
+
+          else
+            echo "mode=incremental" >> $GITHUB_OUTPUT
+          fi
+
+      # 🚀 RUN BUILD
+      - name: Run Build
         run: |
-          echo "Running incremental build"
-          export LAUNCH_PHASE=1
+          echo "Running mode: ${{ steps.mode.outputs.mode }}"
+
+          if [ "${{ steps.mode.outputs.mode }}" = "full" ]; then
+            echo "FULL REBUILD"
+            rm -f data/page_index.json
+            export LAUNCH_PHASE=3
+            export MAX_KEYWORDS=700
+
+          elif [ "${{ steps.mode.outputs.mode }}" = "keyword" ]; then
+            echo "KEYWORD BUILD"
+            export LAUNCH_PHASE=3
+            export MAX_KEYWORDS=300
+
+          else
+            echo "INCREMENTAL BUILD"
+            export LAUNCH_PHASE=1
+          fi
+
           python script/page_generator.py
 
-      # 🟡 KEYWORD BUILD (heavy network)
-      - name: Keyword Expansion Build
-        if: github.event.schedule == '30 2 * * *'
-        run: |
-          echo "Running keyword build"
-          export LAUNCH_PHASE=3
-          export MAX_KEYWORDS=300
-          python script/page_generator.py
-
-      # 🔴 FULL BUILD (weekly reset)
-      - name: Full Rebuild
-        if: github.event.schedule == '0 3 * * 0'
-        run: |
-          echo "Running full rebuild"
-
-          # optional: reset index to force rebuild
-          rm -f data/page_index.json
-
-          export LAUNCH_PHASE=3
-          export MAX_KEYWORDS=700
-          python script/page_generator.py
-
-      # 💾 Commit generated files
+      # 💾 COMMIT CHANGES
       - name: Commit changes
         run: |
           git config --global user.name "bot"
