@@ -1,0 +1,78 @@
+name: phone page builder pipeline
+
+on:
+  schedule:
+    # 🟢 Incremental build - every 6 hours
+    - cron: "0 */6 * * *"
+
+    # 🟡 Keyword expansion - once daily (low traffic hour UTC)
+    - cron: "30 2 * * *"
+
+    # 🔴 Full rebuild - once weekly (Sunday)
+    - cron: "0 3 * * 0"
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      # 🧠 Decide mode based on cron trigger
+      - name: Set Build Mode
+        id: mode
+        run: |
+          echo "event_time=$(date -u +%H:%M)" >> $GITHUB_OUTPUT
+
+      # 🟢 FAST BUILD (phones + clusters only)
+      - name: Incremental Build
+        if: github.event.schedule == '0 */6 * * *'
+        run: |
+          echo "Running incremental build"
+          export LAUNCH_PHASE=1
+          python script/page_generator.py
+
+      # 🟡 KEYWORD BUILD (heavy network)
+      - name: Keyword Expansion Build
+        if: github.event.schedule == '30 2 * * *'
+        run: |
+          echo "Running keyword build"
+          export LAUNCH_PHASE=3
+          export MAX_KEYWORDS=300
+          python script/page_generator.py
+
+      # 🔴 FULL BUILD (weekly reset)
+      - name: Full Rebuild
+        if: github.event.schedule == '0 3 * * 0'
+        run: |
+          echo "Running full rebuild"
+
+          # optional: reset index to force rebuild
+          rm -f data/page_index.json
+
+          export LAUNCH_PHASE=3
+          export MAX_KEYWORDS=700
+          python script/page_generator.py
+
+      # 💾 Commit generated files
+      - name: Commit changes
+        run: |
+          git config --global user.name "bot"
+          git config --global user.email "bot@users.noreply.github.com"
+
+          git add .
+
+          git diff --cached --quiet || git commit -m "Auto build $(date -u)"
+          git push
