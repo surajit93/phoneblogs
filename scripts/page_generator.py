@@ -10,13 +10,20 @@ import json
 import datetime
 import requests
 from collections import defaultdict, Counter
-
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import threading
 # ═══════════════════════════════════════════════════════════
 # CONFIGURATION
 # ═══════════════════════════════════════════════════════════
 BASE_DIR        = os.path.abspath("site")
 DATA_FILE       = "data/phones/phones_enriched.json"
 KEYWORD_FILE    = "data/keywords_real.json"
+
+INDEX_FILE      = "data/page_index.json"
+INDEX_LOCK      = threading.Lock()
+
+BATCH_SIZE      = int(os.environ.get("BATCH_SIZE", "20"))
+MAX_WORKERS     = int(os.environ.get("MAX_WORKERS", "5"))
 
 ADSENSE_CLIENT  = "ca-pub-XXXXXXXXXXXXXXXX"
 AD_SLOTS        = ["1111111111", "2222222222", "3333333333", "4444444444"]  # 4 slots
@@ -27,6 +34,9 @@ NOW_YEAR        = "2026"
 TODAY           = datetime.date.today().isoformat()
 RANKED_PHONES = None
 
+BACKLINK_DB = "data/backlinks/live_links.json"
+
+
 # Launch phase gate: 1=phones only, 2=phones+compare, 3=all pages
 # Start at 1. Move to 2 after GSC confirms indexing. Move to 3 after clicks appear.
 LAUNCH_PHASE    = int(os.environ.get("LAUNCH_PHASE", "3"))
@@ -34,10 +44,78 @@ LAUNCH_PHASE    = int(os.environ.get("LAUNCH_PHASE", "3"))
 MAX_KEYWORDS    = 700
 MAX_COMPARE_PHONES = 20  # top N phones in comparison matrix
 
+SUGGESTION_QUERIES_URL = "https://suggestqueries.google.com/complete/search?client=firefox&q={q}"
+
 os.makedirs(BASE_DIR, exist_ok=True)
 
 with open(DATA_FILE, "r", encoding="utf-8") as f:
     PHONES = json.load(f)
+
+# -------------------------
+# DATA VALIDATION LAYER
+# -------------------------
+def validate_phones(data):
+    valid = []
+
+    for p in data:
+        if not isinstance(p, dict):
+            continue
+        if "name" not in p:
+            continue
+
+        # enforce minimum structure
+        p.setdefault("specs", {})
+        p.setdefault("price", 0)
+        p.setdefault("images", [])
+
+        valid.append(p)
+
+    print(f"[INFO] Loaded {len(valid)} valid phones (from {len(data)})")
+    return valid
+
+PHONES = validate_phones(PHONES)
+# ═══════════════════════════════════════════════════════════
+# PAGE INDEX ENGINE (RESUME + INCREMENTAL BUILD)
+# ═══════════════════════════════════════════════════════════
+
+def load_index():
+    if not os.path.exists(INDEX_FILE):
+        return {
+            "phones": {},
+            "compare": {},
+            "keywords": {},
+            "cluster": {},
+            "topics": {}
+        }
+    try:
+        with open(INDEX_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except:
+        return {
+            "phones": {},
+            "compare": {},
+            "keywords": {},
+            "cluster": {},
+            "topics": {}
+        }
+
+def save_index(idx):
+    tmp = INDEX_FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(idx, f, indent=2)
+    os.replace(tmp, INDEX_FILE)
+
+PAGE_INDEX = load_index()
+
+def mark_done(section, key):
+    with INDEX_LOCK:
+        PAGE_INDEX.setdefault(section, {})
+        PAGE_INDEX[section][key] = TODAY
+        save_index(PAGE_INDEX)
+        
+
+def is_done(section, key):
+    return key in PAGE_INDEX.get(section, {})    
 
 # ═══════════════════════════════════════════════════════════
 # UTILS
@@ -55,10 +133,14 @@ def slugify(s):
     return s.strip().lower().replace(" ", "-").replace("/", "-").replace("\\", "-")
 
 def safe_write(path, content):
-    """Write file with error handling — no silent corruption."""
+    """Atomic write with fsync (production-safe)"""
     try:
-        with open(path, "w", encoding="utf-8") as f:
+        tmp = path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
             f.write(content)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
     except OSError as e:
         print(f"[WARN] Could not write {path}: {e}")
 
@@ -101,39 +183,125 @@ GEO_EXCLUDE = [
 JUNK_WORDS = ["wallpaper", "case", "cover", "theme", "ringtone", "skin", "sticker"]
 
 def get_suggestions(q):
-    try:
-        url = f"https://suggestqueries.google.com/complete/search?client=firefox&q={q}"
-        r = requests.get(url, timeout=5)
-        if r.status_code != 200:
-            return []
-        return r.json()[1]
-    except Exception:
-        return []
+    url = "https://suggestqueries.google.com/complete/search"
+
+    params = {
+        "client": "firefox",
+        "q": q
+    }
+
+    headers = {
+        "User-Agent": "Mozilla/5.0"
+    }
+
+    # -------------------------
+    # SIMPLE IN-MEMORY CACHE
+    # -------------------------
+    if not hasattr(get_suggestions, "CACHE"):
+        get_suggestions.CACHE = {}
+
+    if q in get_suggestions.CACHE:
+        return get_suggestions.CACHE[q]
+
+    # -------------------------
+    # RETRY + BACKOFF
+    # -------------------------
+    import time
+
+    for attempt in range(3):
+        try:
+            r = requests.get(url, params=params, headers=headers, timeout=5)
+
+            if r.status_code == 200:
+                data = r.json()
+                if isinstance(data, list) and len(data) > 1:
+                    result = data[1]
+                    get_suggestions.CACHE[q] = result
+                    return result
+
+            # handle rate limiting / soft blocks
+            if r.status_code in (429, 403):
+                time.sleep(1 + attempt)
+
+        except Exception:
+            time.sleep(0.5 + attempt)
+
+    return []
 
 def build_keywords():
     seeds = set()
+
+    # fallback base keywords (always available)
+    fallback = [
+        "best gaming phone under 500",
+        "best camera phone under 500",
+        "best battery phone under 500",
+        "top smartphones 2026",
+        "best budget smartphone"
+    ]
+
+    # -------------------------
+    # SEED GENERATION
+    # -------------------------
     for p in PHONES:
         name = p["name"].lower()
         brand = name.split()[0]
+
         seeds.update([
             f"{name} review",
             f"{name} vs",
-            f"best {brand} phone",
             f"{name} specs",
-            f"best phone under 500 dollars",
+            f"best {brand} phone",
+            f"best {brand} phone under 500",
+            f"best {brand} phone under 300",
+            f"best phone under 500",
             f"best phone under 400",
             f"best phone under 300",
             f"best phone under 200",
-            f"best {brand} phone under 500",
-            f"best {brand} phone under 300",
-            f"best gaming phone under 500",
-            f"best camera phone under 500",
-            f"best battery phone under 500",
         ])
-    kws = []
+
+    # HARD LIMIT seeds (prevents explosion)
+    seeds = list(seeds)[:100]
+
+    # -------------------------
+    # FETCH SUGGESTIONS (CONTROLLED)
+    # -------------------------
+    kws = set(fallback)
+
     for s in seeds:
-        kws += get_suggestions(s)
-    return [k.lower() for k in kws]
+        suggestions = get_suggestions(s)
+
+        # limit per seed
+        for kw in suggestions[:5]:
+            if isinstance(kw, str):
+                kws.add(kw.lower())
+
+        # global cap safety
+        if len(kws) >= MAX_KEYWORDS * 2:
+            break
+
+    # -------------------------
+    # FINAL CLEAN + TRIM
+    # -------------------------
+    final = []
+
+    for kw in kws:
+        if len(kw.split()) < 3:
+            continue
+        if any(x in kw for x in JUNK_WORDS):
+            continue
+        if any(x in kw for x in GEO_EXCLUDE):
+            continue
+        if not any(x in kw for x in BUYER_WORDS):
+            continue
+
+        final.append(kw)
+
+    # dedupe + trim hard
+    final = list(set(final))[:MAX_KEYWORDS]
+
+    # fallback safety
+    return final if final else fallback
 
 def process_keywords(keywords, limit=MAX_KEYWORDS):
     freq = Counter(keywords)
@@ -1278,11 +1446,14 @@ def mine_competitor_backlinks():
 def generate_outreach_email(site, topic):
     return f"""Hi,
 
-I came across your site ({site}) while researching {topic}, and really liked your coverage.
+I was reading your content on {site} and noticed you covered {topic}.
 
-I recently put together something on this and thought it might be useful.
+We recently published a data-backed comparison here:
+{SITE_DOMAIN}/keyword/{slugify(topic)}.html
 
-Would love your thoughts.
+It might be a useful addition for your readers.
+
+Let me know what you think.
 
 Best,
 {AUTHOR_NAME}
@@ -1316,8 +1487,17 @@ def generate_guest_posts(keywords):
     ensure_dir("site/outreach_posts")
 
     for kw in keywords[:25]:
-        content = generate_guest_post(kw, "example.com")
-        path = f"site/outreach_posts/{slugify(kw)}.txt"
+        slug = slugify(kw)
+        url = f"{SITE_DOMAIN}/keyword/{slug}.html"
+
+        content = f"{kw} - Complete Guide\n\n"
+
+        for i in range(8):
+            content += f"## Section {i+1}\nDetailed explanation about {kw}.\n\n"
+
+        content += f"\nRead full breakdown: {url}\n"
+
+        path = f"site/outreach_posts/{slug}.txt"
         safe_write(path, content)
 
 
@@ -1325,12 +1505,16 @@ def generate_discussions(keywords):
     posts = []
 
     for kw in keywords[:25]:
+        slug = slugify(kw)
+        url = f"{SITE_DOMAIN}/keyword/{slug}.html"
+
         posts.append({
             "keyword": kw,
+            "target_url": url,
             "posts": [
-                f"I've been comparing options for {kw} - what are people using?",
-                f"What actually works best for {kw} in real life?",
-                f"Is there a clear winner for {kw} right now?"
+                f"I've been researching {kw} and found this breakdown useful: {url}",
+                f"What do you think about these options for {kw}? {url}",
+                f"Is this still accurate for {kw}? {url}"
             ]
         })
 
@@ -1415,9 +1599,6 @@ def run_authority_engine(keywords):
 # ═══════════════════════════════════════════════════════════
 # 🔥 ADVANCED AUTHORITY + CONTROL LAYER
 # ═══════════════════════════════════════════════════════════
-
-BACKLINK_DB = "data/backlinks/live_links.json"
-
 
 # -------------------------
 # BACKLINK INGESTION
@@ -1684,10 +1865,13 @@ def export_outreach_targets():
     targets = []
 
     for p in PHONES[:50]:
+        url = f"{SITE_DOMAIN}/phones/{p['slug']}.html"
+
         targets.append({
-            "url": f"{SITE_DOMAIN}/phones/{p['slug']}.html",
+            "url": url,
             "anchor": p['name'] + " review",
-            "priority": authority_score_v2(f"/phones/{p['slug']}.html")
+            "priority": authority_score_v2(f"/phones/{p['slug']}.html"),
+            "pitch": generate_outreach_email("example.com", p['name'])
         })
 
     safe_write("data/backlinks/outreach_targets.json", json.dumps(targets, indent=2))
@@ -1707,22 +1891,47 @@ def run():
     keyword_urls = []
     cluster_urls = []
     topic_urls = []
+
     tp = os.path.join(BASE_DIR, "topics")
     ensure_dir(tp)
 
-    keywords = []  # SAFE INIT (IMPORTANT)
+    keywords = []
 
-    # ---------------- ORIGINAL LOGIC ----------------
-
+    # ---------------- PHONE PAGES (THREADED + INDEXED) ----------------
     pp = os.path.join(BASE_DIR, "phones")
     ensure_dir(pp)
 
-    for p in PHONES:
+    def process_phone(p):
         slug = p.get("slug", slugify(p["name"]))
+
+        if is_done("phones", slug):
+            return None
+
         path = os.path.join(pp, slug + ".html")
         safe_write(path, render_phone_page(p))
-        phone_urls.append(f"/phones/{slug}.html")
 
+        # mark done (in-memory)
+        mark_done("phones", slug)
+
+        # 🔥 checkpoint every 50 pages
+        if len(PAGE_INDEX.get("phones", {})) % 50 == 0:
+            with INDEX_LOCK:
+                save_index(PAGE_INDEX)
+
+        return f"/phones/{slug}.html"
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
+        futures = [exe.submit(process_phone, p) for p in PHONES]
+
+        for f in as_completed(futures):
+            try:
+                res = f.result()
+                if res:
+                    phone_urls.append(res)
+            except Exception as e:
+                print(f"[ERROR] Phone generation failed: {e}")
+
+    # ---------------- CLUSTER ----------------
     cl = os.path.join(BASE_DIR, "cluster")
     ensure_dir(cl)
 
@@ -1731,62 +1940,105 @@ def run():
         cluster_map[get_cluster(p)].append(p)
 
     for cluster_name, cluster_phones in cluster_map.items():
+        if is_done("cluster", cluster_name):
+            continue
+
         sorted_phones = rank_phones(cluster_phones)
         path = os.path.join(cl, cluster_name + ".html")
         safe_write(path, render_cluster_page(cluster_name, sorted_phones))
+        mark_done("cluster", cluster_name)
         cluster_urls.append(f"/cluster/{cluster_name}.html")
 
-    safe_write(os.path.join(BASE_DIR, "about.html"), render_about_page())
-    
+    # ---------------- TOPICS ----------------
     topics = ["gaming", "camera", "battery"]
 
     for t in topics:
+        if is_done("topics", t):
+            continue
+
         topic_phones = rank_phones([p for p in PHONES if get_cluster(p) == t])
         path = os.path.join(tp, t + ".html")
         safe_write(path, render_topic_page(t, topic_phones))
+        mark_done("topics", t)
         topic_urls.append(f"/topics/{t}.html")
 
+    safe_write(os.path.join(BASE_DIR, "about.html"), render_about_page())
+
+    # ---------------- COMPARE ----------------
     if LAUNCH_PHASE >= 2:
         cp = os.path.join(BASE_DIR, "compare")
         ensure_dir(cp)
 
         top = rank_phones(PHONES)[:MAX_COMPARE_PHONES]
-        for i in range(len(top)):
-            for j in range(i + 1, len(top)):
-                p1, p2 = top[i], top[j]
-                slug = f"{p1['slug']}-vs-{p2['slug']}"
-                path = os.path.join(cp, slug + ".html")
-                safe_write(path, render_compare(p1, p2))
-                compare_urls.append(f"/compare/{slug}.html")
 
+        def process_compare(p1, p2):
+            slug = f"{p1['slug']}-vs-{p2['slug']}"
+            if is_done("compare", slug):
+                return None
+
+            path = os.path.join(cp, slug + ".html")
+            safe_write(path, render_compare(p1, p2))
+            mark_done("compare", slug)
+            return f"/compare/{slug}.html"
+
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
+            futures = []
+            for i in range(len(top)):
+                for j in range(i + 1, len(top)):
+                    futures.append(exe.submit(process_compare, top[i], top[j]))
+
+            for f in as_completed(futures):
+                try:
+                    res = f.result()
+                    if res:
+                        compare_urls.append(res)
+                except Exception as e:
+                    print(f"[ERROR] Compare page failed: {e}")
+
+    # ---------------- KEYWORDS ----------------
     if LAUNCH_PHASE >= 3:
         raw = build_keywords()
         keywords = process_keywords(raw)
 
         ensure_dir("data")
         safe_write(KEYWORD_FILE, json.dumps(keywords, indent=2))
+        # FINAL INDEX SAVE (safety)
+        with INDEX_LOCK:
+            save_index(PAGE_INDEX)
 
         kp = os.path.join(BASE_DIR, "keyword")
         ensure_dir(kp)
 
-        for kw in keywords:
+        def process_keyword(kw):
             slug = slugify(kw)
+            if is_done("keywords", slug):
+                return None
+
             path = os.path.join(kp, slug + ".html")
             safe_write(path, render_keyword_page(kw, phones_sorted))
-            keyword_urls.append(f"/keyword/{slug}.html")
+            mark_done("keywords", slug)
+            return f"/keyword/{slug}.html"
 
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
+            futures = [exe.submit(process_keyword, kw) for kw in keywords]
+
+            for f in as_completed(futures):
+                try:
+                    res = f.result()
+                    if res:
+                        keyword_urls.append(res)
+                except Exception as e:
+                    print(f"[ERROR] Keyword page failed: {e}")
+
+    # ---------------- FINAL ----------------
     generate_sitemap(phone_urls, compare_urls, keyword_urls, cluster_urls)
     generate_robots()
 
     all_urls = phone_urls + cluster_urls + compare_urls + keyword_urls + topic_urls
     ping_indexnow(all_urls)
+
     global RANKED_PHONES
     RANKED_PHONES = rank_phones(PHONES)
-    phones_sorted = RANKED_PHONES
-
-    # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    # 🔥 AUTHORITY ENGINE EXECUTION (SAFE)
-    # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     run_authority_engine(keywords if keywords else [])
 
