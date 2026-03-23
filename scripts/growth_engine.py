@@ -56,10 +56,15 @@ def load_json(path, default):
 # -------------------------
 def prioritize_distribution(posts):
     tracker = load_json(TRACKER_FILE, {})
-    linked = {x.get("target") for x in tracker.get("links_acquired", [])}
+    links_acquired = tracker.get("links_acquired", []) or []
+    linked = {
+        (entry.get("target") or entry.get("url") or "")
+        for entry in links_acquired
+        if isinstance(entry, dict) and (entry.get("target") or entry.get("url"))
+    }
 
     posts.sort(
-        key=lambda x: x.get("target_url") in linked,
+        key=lambda x: x.get("target_url", "") in linked,
         reverse=True
     )
 
@@ -95,7 +100,7 @@ def run_distribution():
         if entry.get("keyword")
     }
 
-    fresh_posts = [p for p in posts if p["keyword"] not in used_keywords]
+    fresh_posts = [p for p in posts if p.get("keyword") and p.get("keyword") not in used_keywords]
 
     if not fresh_posts:
         print("[DIST] No fresh posts available")
@@ -106,15 +111,21 @@ def run_distribution():
     print("\n=== COPY & POST ===\n")
 
     for p in selected:
-        print(f"\n🔹 {p['keyword']}")
-        msg = random.choice(p["posts"])
+        keyword = p.get("keyword", "")
+        post_options = p.get("posts") or []
+        if not post_options:
+            continue
+
+        print(f"\n🔹 {keyword}")
+        msg = random.choice(post_options)
         url = p.get("target_url", "")
         print(f"{msg}\n\n👉 {url}")
         print("-" * 60)
 
         tracker.setdefault("posts", []).append({
-            "keyword": p["keyword"],
-            "url": p.get("target_url", ""),
+            "keyword": keyword,
+            "url": url,
+            "target": url,
             "date": TODAY
         })
 
@@ -129,14 +140,14 @@ def run_outreach():
 
     sent_today = [
         x for x in tracker.get("outreach_sent", [])
-        if x["date"] == TODAY
+        if isinstance(x, dict) and x.get("date") == TODAY
     ]
 
     if len(sent_today) >= 5:
         print("[OUTREACH] Daily limit reached")
         return
 
-    sent_files = set(x["file"] for x in tracker.get("outreach_sent", []))
+    sent_files = {x.get("file") for x in tracker.get("outreach_sent", []) if isinstance(x, dict) and x.get("file")}
 
     remaining = [f for f in files if f not in sent_files]
 
@@ -181,10 +192,20 @@ def summary():
 def weekly_summary():
     tracker = load_json(TRACKER_FILE, {})
 
-    last_7 = [
-        x for x in tracker.get("outreach_sent", [])
-        if (datetime.date.today() - datetime.date.fromisoformat(x["date"])).days <= 7
-    ]
+    last_7 = []
+    for x in tracker.get("outreach_sent", []):
+        if not isinstance(x, dict):
+            continue
+
+        sent_date = x.get("date")
+        if not sent_date:
+            continue
+
+        try:
+            if (datetime.date.today() - datetime.date.fromisoformat(sent_date)).days <= 7:
+                last_7.append(x)
+        except ValueError:
+            continue
 
     print("\n=== WEEKLY PROGRESS ===")
     print(f"Outreach (7d): {len(last_7)}")
