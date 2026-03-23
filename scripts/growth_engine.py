@@ -13,6 +13,35 @@ TODAY = datetime.date.today().isoformat()
 # -------------------------
 # SAFE LOAD / SAVE
 # -------------------------
+
+# -------------------------
+# LOAD BACKLINK TARGETS
+# -------------------------
+def load_backlink_targets():
+    return load_json("data/backlinks/targets.json", [])
+
+# -------------------------
+# PRINT DAILY TARGETS
+# -------------------------
+def print_daily_targets():
+    targets = load_backlink_targets()
+
+    if not targets:
+        print("[TARGETS] No backlink targets")
+        return
+
+    selected = random.sample(targets, min(5, len(targets)))
+
+    print("\n=== BACKLINK TARGETS (EXECUTE THESE) ===\n")
+
+    for t in selected:
+        print(f"\n🔹 Keyword: {t['keyword']}")
+        print(f"Page: {t['target_page']}")
+        print(f"Anchor: {t['anchor']}")
+        print(f"Search: {t['opportunities'][0]}")
+        print("-" * 60)
+
+
 def load_json(path, default):
     if not os.path.exists(path):
         return default
@@ -21,6 +50,20 @@ def load_json(path, default):
             return json.load(f)
     except:
         return default
+
+# -------------------------
+# PRIORITIZE DISTRIBUTION
+# -------------------------
+def prioritize_distribution(posts):
+    tracker = load_json(TRACKER_FILE, {})
+    linked = {x.get("target") for x in tracker.get("links_acquired", [])}
+
+    posts.sort(
+        key=lambda x: x.get("target_url") in linked,
+        reverse=True
+    )
+
+    return posts
 
 def save_json(path, data):
     with open(path, "w", encoding="utf-8") as f:
@@ -42,7 +85,7 @@ def open_platforms():
 # DISTRIBUTION (NO REPEAT)
 # -------------------------
 def run_distribution():
-    posts = load_json(DIST_FILE, [])
+    posts = prioritize_distribution(posts)
     tracker = load_json(TRACKER_FILE, {})
 
     used_keywords = set(tracker.get("posted_keywords", []))
@@ -59,10 +102,19 @@ def run_distribution():
 
     for p in selected:
         print(f"\n🔹 {p['keyword']}")
-        print(f"{random.choice(p['posts'])}")
+        msg = random.choice(p["posts"])
+        url = p.get("target_url", "")
+        
+        final = f"{msg}\n\n👉 {url}"
+        
+        print(final)
         print("-" * 60)
 
-        tracker.setdefault("posted_keywords", []).append(p["keyword"])
+        tracker.setdefault("posts", []).append({
+            "keyword": p["keyword"],
+            "url": p.get("target_url", ""),
+            "date": TODAY
+        })
 
     save_json(TRACKER_FILE, tracker)
 
@@ -122,6 +174,21 @@ def summary():
     print(f"Links Acquired: {len(tracker.get('links_acquired', []))}")
 
 # -------------------------
+# WEEKLY SUMMARY
+# -------------------------
+def weekly_summary():
+    tracker = load_json(TRACKER_FILE, {})
+
+    last_7 = [
+        x for x in tracker.get("outreach_sent", [])
+        if (datetime.date.today() - datetime.date.fromisoformat(x["date"])).days <= 7
+    ]
+
+    print("\n=== WEEKLY PROGRESS ===")
+    print(f"Outreach (7d): {len(last_7)}")
+    print(f"Total Links: {len(tracker.get('links_acquired', []))}")
+
+# -------------------------
 # MAIN
 # -------------------------
 def run():
@@ -129,8 +196,10 @@ def run():
 
     open_platforms()
     run_distribution()
+    print_daily_targets()
     run_outreach()
     summary()
+    weekly_summary()
 
     print("\n✅ DONE\n")
 
