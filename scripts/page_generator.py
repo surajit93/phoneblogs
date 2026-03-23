@@ -46,6 +46,7 @@ MAX_KEYWORDS    = 700
 MAX_COMPARE_PHONES = 20  # top N phones in comparison matrix
 
 SUGGESTION_QUERIES_URL = "https://suggestqueries.google.com/complete/search?client=firefox&q={q}"
+SUGGESTION_CACHE_FILE = "data/suggestions_cache.json"
 
 os.makedirs(BASE_DIR, exist_ok=True)
 
@@ -196,10 +197,19 @@ def get_suggestions(q):
     }
 
     # -------------------------
-    # SIMPLE IN-MEMORY CACHE
+    # SIMPLE IN-MEMORY + DISK CACHE
     # -------------------------
     if not hasattr(get_suggestions, "CACHE"):
-        get_suggestions.CACHE = {}
+        cache = {}
+        if os.path.exists(SUGGESTION_CACHE_FILE):
+            try:
+                with open(SUGGESTION_CACHE_FILE, "r", encoding="utf-8") as f:
+                    loaded = json.load(f)
+                    if isinstance(loaded, dict):
+                        cache = {k: v for k, v in loaded.items() if isinstance(v, list)}
+            except Exception:
+                cache = {}
+        get_suggestions.CACHE = cache
 
     if q in get_suggestions.CACHE:
         return get_suggestions.CACHE[q]
@@ -215,9 +225,11 @@ def get_suggestions(q):
 
             if r.status_code == 200:
                 data = r.json()
-                if isinstance(data, list) and len(data) > 1:
+                if isinstance(data, list) and len(data) > 1 and isinstance(data[1], list):
                     result = data[1]
                     get_suggestions.CACHE[q] = result
+                    ensure_dir(os.path.dirname(SUGGESTION_CACHE_FILE) or ".")
+                    safe_write(SUGGESTION_CACHE_FILE, json.dumps(get_suggestions.CACHE, indent=2))
                     return result
 
             # handle rate limiting / soft blocks
@@ -1649,52 +1661,9 @@ def global_links_weighted(context=None):
 
 
 # -------------------------
-# OUTREACH TRACKING LOOP
+# TRACKER PATH (READ-ONLY INIT SUPPORT)
 # -------------------------
 TRACKER_FILE = "data/backlinks/tracker.json"
-
-
-def update_outreach(status, site, email=None):
-    if not os.path.exists(TRACKER_FILE):
-        return
-
-    with open(TRACKER_FILE, "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    entry = {
-        "site": site,
-        "email": email,
-        "date": datetime.date.today().isoformat()
-    }
-
-    if status == "sent":
-        data["outreach_sent"].append(entry)
-    elif status == "reply":
-        data["responses"].append(entry)
-    elif status == "won":
-        data["links_acquired"].append(entry)
-
-    safe_write(TRACKER_FILE, json.dumps(data, indent=2))
-
-
-def outreach_stats():
-    if not os.path.exists(TRACKER_FILE):
-        return {}
-
-    with open(TRACKER_FILE, "r", encoding="utf-8") as f:
-        d = json.load(f)
-
-    sent = len(d["outreach_sent"])
-    replies = len(d["responses"])
-    won = len(d["links_acquired"])
-
-    return {
-        "sent": sent,
-        "replies": replies,
-        "won": won,
-        "reply_rate": round((replies / sent) * 100, 2) if sent else 0,
-        "win_rate": round((won / sent) * 100, 2) if sent else 0
-    }
 
 
 # -------------------------
@@ -1850,6 +1819,7 @@ def run():
     ensure_dir(tp)
 
     keywords = []
+    phones_sorted = rank_phones(PHONES)
 
     # ---------------- PHONE PAGES (THREADED + INDEXED) ----------------
     pp = os.path.join(BASE_DIR, "phones")
@@ -1993,10 +1963,8 @@ def run():
     ping_indexnow(all_urls)
 
     global RANKED_PHONES
-    RANKED_PHONES = rank_phones(PHONES)
+    RANKED_PHONES = phones_sorted
 
-    phones_sorted = rank_phones(PHONES)
-    
     print("[DISTRIBUTION] Reddit/Quora posts ready → data/distribution/")
     print("[DISTRIBUTION] Weekly plan ready → data/distribution/weekly_plan.json")
 
