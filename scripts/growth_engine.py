@@ -3,6 +3,7 @@ import random
 import datetime
 import os
 import webbrowser
+from seo_growth_utils import keyword_intent
 
 TRACKER_FILE = "data/backlinks/tracker.json"
 DIST_FILE = "data/distribution/reddit_quora_posts.json"
@@ -23,6 +24,14 @@ def load_backlink_targets():
 # -------------------------
 # PRINT DAILY TARGETS
 # -------------------------
+def score_target(target):
+    intent = keyword_intent(target.get("keyword", ""))
+    weight = target.get("weight", 1)
+    pillar_bonus = 4 if target.get("is_pillar") else 0
+    intent_bonus = 3 if intent in {"comparison", "commercial", "budget", "review"} else 0
+    return weight + pillar_bonus + intent_bonus + len(target.get("supporting_reviews", []))
+
+
 def print_daily_targets():
     targets = load_backlink_targets()
 
@@ -30,7 +39,7 @@ def print_daily_targets():
         print("[TARGETS] No backlink targets")
         return
 
-    selected = random.sample(targets, min(5, len(targets)))
+    selected = sorted(targets, key=score_target, reverse=True)[:5]
 
     print("\n=== BACKLINK TARGETS ===\n")
 
@@ -38,6 +47,9 @@ def print_daily_targets():
         print(f"\n🔹 {t['keyword']}")
         print(f"Page: {t['target_page']}")
         print(f"Anchor: {t['anchor']}")
+        reviews = t.get("supporting_reviews") or []
+        if reviews:
+            print(f"Support reviews: {', '.join(reviews[:3])}")
         print(f"Search: {t['opportunities'][0]}")
         print("-" * 60)
 
@@ -64,10 +76,12 @@ def prioritize_distribution(posts):
     }
 
     posts.sort(
-        key=lambda x: x.get("target_url", "") in linked,
+        key=lambda x: (
+            x.get("target_url", "") in linked,
+            keyword_intent(x.get("keyword", "")) in {"comparison", "commercial", "budget", "review"}
+        ),
         reverse=True
     )
-
     return posts
 
 def save_json(path, data):
