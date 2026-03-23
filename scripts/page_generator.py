@@ -1512,102 +1512,6 @@ def ping_indexnow(urls, api_key="YOUR_INDEXNOW_KEY"):
 # 🔥 BACKLINK + AUTHORITY ENGINE (INTEGRATED)
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-def mine_competitor_backlinks():
-    competitors = ["gsmarena.com", "techradar.com", "phonearena.com"]
-
-    opportunities = []
-
-    for c in competitors:
-        opportunities.append({
-            "competitor": c,
-            "blogs": [f"{c}/blog-example"],
-            "forums": [f"{c}/forum-example"],
-            "resources": [f"{c}/resources"]
-        })
-
-    ensure_dir("data/backlinks")
-    safe_write("data/backlinks/opportunities.json", json.dumps(opportunities, indent=2))
-
-
-def generate_outreach_email(site, topic):
-    return f"""Hi,
-
-I was reading your content on {site} and noticed you covered {topic}.
-
-We recently published a data-backed comparison here:
-{SITE_DOMAIN}/keyword/{slugify(topic)}.html
-
-It might be a useful addition for your readers.
-
-Let me know what you think.
-
-Best,
-{AUTHOR_NAME}
-"""
-
-
-def generate_guest_post(topic, target_site):
-    content = f"{topic} - Complete Guide\n\n"
-
-    for i in range(12):
-        content += f"## Section {i+1}\n{topic} explained in detail with real-world context.\n\n"
-
-    return content
-
-
-def generate_resource_pitch(site, url):
-    return f"""Hi,
-
-I noticed your resource page on {site}.
-
-We recently created something that could fit well here:
-{url}
-
-Let me know what you think.
-
-Thanks
-"""
-
-
-def generate_guest_posts(keywords):
-    ensure_dir("site/outreach_posts")
-
-    for kw in (keywords or ["best smartphone", "top phones 2026"])[:25]:
-        slug = slugify(kw)
-        url = f"{SITE_DOMAIN}/keyword/{slug}.html"
-
-        content = f"{kw} - Complete Guide\n\n"
-
-        for i in range(8):
-            content += f"## Section {i+1}\nDetailed explanation about {kw}.\n\n"
-
-        content += f"\nRead full breakdown: {url}\n"
-
-        path = f"site/outreach_posts/{slug}.txt"
-        safe_write(path, content)
-
-
-def generate_discussions(keywords):
-    posts = []
-
-    for kw in (keywords or ["best smartphone", "top phones 2026"])[:25]:
-        slug = slugify(kw)
-        url = f"{SITE_DOMAIN}/keyword/{slug}.html"
-
-        posts.append({
-            "keyword": kw,
-            "target_url": url,
-            "posts": [
-                f"I've been researching {kw} and found this breakdown useful: {url}",
-                f"What do you think about these options for {kw}? {url}",
-                f"Is this still accurate for {kw}? {url}"
-            ]
-        })
-
-    ensure_dir("data/distribution")
-    safe_write("data/distribution/reddit_quora_posts.json", json.dumps(posts, indent=2))
-
-
 def authority_score(page_type, links=0, backlinks=0, content_depth=300):
     return (links * 2) + (backlinks * 5) + min(content_depth // 100, 10)
 
@@ -1626,19 +1530,6 @@ def init_backlink_tracker():
     }
 
     safe_write(path, json.dumps(tracker, indent=2))
-
-
-def generate_weekly_plan(keywords):
-    plan = []
-
-    for kw in keywords[:10]:
-        plan.append({
-            "publish": kw,
-            "promote": f"Reddit + Quora",
-            "backlinks": f"5 outreach targets"
-        })
-
-    safe_write("data/distribution/weekly_plan.json", json.dumps(plan, indent=2))
 
 
 def render_author_page():
@@ -1672,111 +1563,9 @@ def render_methodology():
 
 
 def run_authority_engine(keywords):
-    print("[AUTHORITY] Initializing authority engine (one-time setup)...")
-
-    # -------------------------
-    # SAFETY: VALIDATE INPUT
-    # -------------------------
-    if not keywords or len(keywords) < 5:
-        print("[WARN] Keywords too weak or empty - skipping authority generation")
-        return
-
-    # -------------------------
-    # BACKLINK DB INIT (SAFE)
-    # -------------------------
-    global LIVE_BACKLINKS
-
-    if os.path.exists(BACKLINK_DB):
-        try:
-            LIVE_BACKLINKS = load_live_backlinks()
-            print(f"[AUTHORITY] Loaded {len(LIVE_BACKLINKS)} live backlinks")
-        except Exception as e:
-            print(f"[WARN] Failed to load backlinks DB: {e}")
-            LIVE_BACKLINKS = {}
-    else:
-        print("[AUTHORITY] No live backlinks DB found - starting fresh")
-        LIVE_BACKLINKS = {}
-
-    # -------------------------
-    # INIT TRACKER (NO OVERWRITE)
-    # -------------------------
-    init_backlink_tracker()
-
-    # -------------------------
-    # GENERATE ASSETS (CONTROLLED)
-    # -------------------------
-    print("[AUTHORITY] Generating outreach assets...")
-
-    generate_guest_posts(keywords)
-    generate_discussions(keywords)
-    generate_weekly_plan(keywords)
-
-    # -------------------------
-    # CORE SITE TRUST PAGES (E-E-A-T)
-    # -------------------------
-    print("[AUTHORITY] Generating trust pages...")
-
-    safe_write(os.path.join(BASE_DIR, "author.html"), render_author_page())
-    safe_write(os.path.join(BASE_DIR, "editorial-policy.html"), render_editorial_policy())
-    safe_write(os.path.join(BASE_DIR, "methodology.html"), render_methodology())
-
-    # -------------------------
-    # OPTIONAL: EXPORT TARGETS
-    # -------------------------
-    try:
-        export_outreach_targets()
-        print("[AUTHORITY] Outreach targets exported")
-    except Exception as e:
-        print(f"[WARN] Outreach target export failed: {e}")
-
-    print("[AUTHORITY] Setup complete")
-    
-
-def simulate_backlink_growth():
+    print("[AUTHORITY] Init only (no generation in page_generator)")
     if not os.path.exists(TRACKER_FILE):
-        return
-
-    try:
-        with open(TRACKER_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-    except:
-        return
-
-    import random
-
-    # -------------------------
-    # PREVENT DUPLICATES
-    # -------------------------
-    existing_sites = set(x.get("site") for x in data.get("links_acquired", []))
-
-    new_links = []
-
-    for _ in range(random.randint(1, 3)):  # simulate 1–3 wins
-        site = f"site{random.randint(100,999)}.com"
-
-        if site in existing_sites:
-            continue
-
-        entry = {
-            "site": site,
-            "url": f"{SITE_DOMAIN}/phones/{random.choice(PHONES)['slug']}.html",
-            "anchor": "phone review",
-            "date": datetime.date.today().isoformat()
-        }
-
-        data["links_acquired"].append(entry)
-        new_links.append(entry)
-
-    safe_write(TRACKER_FILE, json.dumps(data, indent=2))
-
-    # -------------------------
-    # UPDATE LIVE BACKLINKS (IMPORTANT)
-    # -------------------------
-    for link in new_links:
-        path = link["url"].replace(SITE_DOMAIN, "")
-        LIVE_BACKLINKS[path] = LIVE_BACKLINKS.get(path, 0) + 1
-
-    print(f"[BACKLINKS] +{len(new_links)} new backlinks simulated")    
+        init_backlink_tracker()
 
 # ═══════════════════════════════════════════════════════════
 # 🔥 ADVANCED AUTHORITY + CONTROL LAYER
@@ -2043,22 +1832,6 @@ may experience slowdowns during extended usage or heavy app switching.
 """
     return html
 
-def export_outreach_targets():
-    targets = []
-
-    for p in PHONES[:50]:
-        url = f"{SITE_DOMAIN}/phones/{p['slug']}.html"
-
-        targets.append({
-            "url": url,
-            "anchor": p['name'] + " review",
-            "priority": authority_score_v2(f"/phones/{p['slug']}.html"),
-            "pitch": generate_outreach_email("example.com", p['name'])
-        })
-
-    safe_write("data/backlinks/outreach_targets.json", json.dumps(targets, indent=2))
-
-
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # 🔥 PATCH INTO EXISTING RUN()
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -2222,18 +1995,6 @@ def run():
     global RANKED_PHONES
     RANKED_PHONES = rank_phones(PHONES)
 
-    # ✅ FIX: authority engine safe initialization (NOT dependent on LAUNCH_PHASE)
-    if not os.path.exists(TRACKER_FILE):
-        seed_keywords = keywords if keywords and len(keywords) >= 5 else build_keywords()
-
-        if not seed_keywords:
-            print("[WARN] No keywords available - skipping authority init")
-        else:
-            run_authority_engine(seed_keywords)
-
-    # ✅ FIX: simulate backlink growth every run (stateful authority)
-    simulate_backlink_growth()
-    
     phones_sorted = rank_phones(PHONES)
     
     print("[DISTRIBUTION] Reddit/Quora posts ready → data/distribution/")

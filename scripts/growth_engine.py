@@ -32,10 +32,10 @@ def print_daily_targets():
 
     selected = random.sample(targets, min(5, len(targets)))
 
-    print("\n=== BACKLINK TARGETS (EXECUTE THESE) ===\n")
+    print("\n=== BACKLINK TARGETS ===\n")
 
     for t in selected:
-        print(f"\n🔹 Keyword: {t['keyword']}")
+        print(f"\n🔹 {t['keyword']}")
         print(f"Page: {t['target_page']}")
         print(f"Anchor: {t['anchor']}")
         print(f"Search: {t['opportunities'][0]}")
@@ -85,10 +85,15 @@ def open_platforms():
 # DISTRIBUTION (NO REPEAT)
 # -------------------------
 def run_distribution():
+    posts = load_json(DIST_FILE, [])
     posts = prioritize_distribution(posts)
     tracker = load_json(TRACKER_FILE, {})
 
-    used_keywords = set(tracker.get("posted_keywords", []))
+    used_keywords = {
+        entry.get("keyword")
+        for entry in tracker.get("posts", [])
+        if entry.get("keyword")
+    }
 
     fresh_posts = [p for p in posts if p["keyword"] not in used_keywords]
 
@@ -104,10 +109,7 @@ def run_distribution():
         print(f"\n🔹 {p['keyword']}")
         msg = random.choice(p["posts"])
         url = p.get("target_url", "")
-        
-        final = f"{msg}\n\n👉 {url}"
-        
-        print(final)
+        print(f"{msg}\n\n👉 {url}")
         print("-" * 60)
 
         tracker.setdefault("posts", []).append({
