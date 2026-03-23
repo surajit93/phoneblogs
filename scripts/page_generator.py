@@ -13,6 +13,14 @@ from collections import defaultdict, Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
 import random
+from seo_growth_utils import (
+    build_keyword_universe,
+    build_link_graph,
+    choose_keyword_devices,
+    classify_phone,
+    normalize_phones,
+    save_json as save_json_helper,
+)
 # ═══════════════════════════════════════════════════════════
 # CONFIGURATION
 # ═══════════════════════════════════════════════════════════
@@ -75,7 +83,7 @@ def validate_phones(data):
     print(f"[INFO] Loaded {len(valid)} valid phones (from {len(data)})")
     return valid
 
-PHONES = validate_phones(PHONES)
+PHONES = normalize_phones(validate_phones(PHONES))
 # ═══════════════════════════════════════════════════════════
 # PAGE INDEX ENGINE (RESUME + INCREMENTAL BUILD)
 # ═══════════════════════════════════════════════════════════
@@ -242,81 +250,30 @@ def get_suggestions(q):
     return []
 
 def build_keywords():
-    seeds = set()
+    base_keywords = set(build_keyword_universe(PHONES, max_keywords=MAX_KEYWORDS))
+    suggestion_seeds = list(base_keywords)[:120]
 
-    # fallback base keywords (always available)
-    fallback = [
-        "best gaming phone under 500",
-        "best camera phone under 500",
-        "best battery phone under 500",
-        "top smartphones 2026",
-        "best budget smartphone"
-    ]
-
-    # -------------------------
-    # SEED GENERATION
-    # -------------------------
-    for p in PHONES:
-        name = p["name"].lower()
-        brand = name.split()[0]
-
-        seeds.update([
-            f"{name} review",
-            f"{name} vs",
-            f"{name} specs",
-            f"best {brand} phone",
-            f"best {brand} phone under 500",
-            f"best {brand} phone under 300",
-            f"best phone under 500",
-            f"best phone under 400",
-            f"best phone under 300",
-            f"best phone under 200",
-        ])
-
-    # HARD LIMIT seeds (prevents explosion)
-    seeds = list(seeds)[:100]
-
-    # -------------------------
-    # FETCH SUGGESTIONS (CONTROLLED)
-    # -------------------------
-    kws = set(fallback)
-
-    for s in seeds:
-        suggestions = get_suggestions(s)
-
-        # limit per seed
-        for kw in suggestions[:5]:
-            if isinstance(kw, str):
-                kws.add(kw.lower())
-
-        # global cap safety
-        if len(kws) >= MAX_KEYWORDS * 2:
+    for seed in suggestion_seeds:
+        suggestions = get_suggestions(seed)
+        for kw in suggestions[:4]:
+            if not isinstance(kw, str):
+                continue
+            kw = kw.lower()
+            if len(kw.split()) < 3:
+                continue
+            if any(x in kw for x in JUNK_WORDS):
+                continue
+            if any(x in kw for x in GEO_EXCLUDE):
+                continue
+            if not any(x in kw for x in BUYER_WORDS):
+                continue
+            base_keywords.add(kw)
+            if len(base_keywords) >= MAX_KEYWORDS:
+                break
+        if len(base_keywords) >= MAX_KEYWORDS:
             break
 
-    # -------------------------
-    # FINAL CLEAN + TRIM
-    # -------------------------
-    final = []
-
-    for kw in kws:
-        if len(kw.split()) < 3:
-            continue
-        if any(x in kw for x in JUNK_WORDS):
-            continue
-        if any(x in kw for x in GEO_EXCLUDE):
-            continue
-        if not any(x in kw for x in BUYER_WORDS):
-            continue
-
-        final.append(kw)
-
-    # dedupe + trim hard
-    final = list(set(final))[:MAX_KEYWORDS]
-
-    if len(final) < 20:
-        final.extend(fallback * 5)
-
-    return list(set(final))[:MAX_KEYWORDS]
+    return process_keywords(list(base_keywords), limit=MAX_KEYWORDS)
     
 
 def load_or_generate_benchmarks():
@@ -487,37 +444,46 @@ def decision_engine(p):
 # CLUSTER ENGINE
 # ═══════════════════════════════════════════════════════════
 def get_cluster(p):
-    if get_spec(p, "battery") >= 5000: return "battery"
-    if get_spec(p, "camera")  >= 64:   return "camera"
-    if get_spec(p, "ram")     >= 8:    return "gaming"
-    return "budget"
+    return classify_phone(p)
 
 # ═══════════════════════════════════════════════════════════
 # INTENT FILTER
 # ═══════════════════════════════════════════════════════════
 def filter_by_intent(keyword, phones):
-    kw = keyword.lower()
-    if "gaming" in kw:
-        return sorted(phones, key=lambda x: get_spec(x, "ram"), reverse=True)
-    if "camera" in kw:
-        return sorted(phones, key=lambda x: get_spec(x, "camera"), reverse=True)
-    if "battery" in kw:
-        return sorted(phones, key=lambda x: get_spec(x, "battery"), reverse=True)
-    if "under" in kw:
-        digits = [x for x in kw.split() if x.isdigit()]
-        if digits:
-            try:
-                price = int(digits[0])
-                filtered = [p for p in phones if safe_price(p) <= price]
-                return filtered if filtered else phones
-            except Exception:
-                pass
-    # brand filter
-    for p in PHONES:
-        brand = p["name"].lower().split()[0]
-        if brand in kw and len(brand) > 3:
-            return [x for x in phones if x["name"].lower().startswith(brand)]
-    return phones
+    return choose_keyword_devices(keyword, phones, limit=max(8, len(phones)))
+
+
+LINK_GRAPH_FILE = "data/internal_link_graph.json"
+
+def load_link_graph():
+    if not os.path.exists(LINK_GRAPH_FILE):
+        return {}
+    try:
+        with open(LINK_GRAPH_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+LINK_GRAPH = load_link_graph()
+
+def render_link_graph_section(source_url, sections, limit=6):
+    items = []
+    seen = set()
+    for section in sections:
+        for link in LINK_GRAPH.get(section, []):
+            if link.get("from") != source_url:
+                continue
+            target = link.get("to")
+            anchor = link.get("anchor") or "related guide"
+            if not target or target in seen:
+                continue
+            seen.add(target)
+            items.append(f'<li><a href="{SITE_DOMAIN}{target}">{anchor}</a></li>')
+            if len(items) >= limit:
+                break
+        if len(items) >= limit:
+            break
+    return f"<ul>{''.join(items)}</ul>" if items else "<p>More related guides will be added as this cluster expands.</p>"
 
 # ═══════════════════════════════════════════════════════════
 # INTERNAL LINKING
@@ -992,6 +958,9 @@ def render_phone_page(p):
 
 {smart_links(p)}
 
+<h2>Best Buying Guides for This Phone</h2>
+{render_link_graph_section(f"/phones/{slug}.html", ["phone_to_keywords", "phone_to_cluster"], limit=6)}
+
 <!-- 🔥 AUTHORITY FUNNEL -->
 <h2>Top Rated Phones Right Now</h2>
 {global_links_weighted(p['slug'])}
@@ -1219,14 +1188,7 @@ def intent_cta(intent, p):
 # ═══════════════════════════════════════════════════════════
 def render_keyword_page(keyword, phones_sorted):
     filtered = filter_by_intent(keyword, phones_sorted)
-    phones = rank_phones(filtered)[:5]
-
-    # 🔥 intent tightening
-    if "under" in keyword:
-        digits = [int(x) for x in keyword.split() if x.isdigit()]
-        if digits:
-            cap = digits[0]
-            phones = [p for p in phones if safe_price(p) <= cap][:5]
+    phones = filtered[:5]
     intent = detect_intent(keyword)
     slug    = slugify(keyword)
     url     = f"/keyword/{slug}.html"
@@ -1291,6 +1253,8 @@ def render_keyword_page(keyword, phones_sorted):
     html += f"""
 <h2>Top Phones Right Now</h2>
 {global_links_weighted(keyword)}
+<h2>Related Buying Guides</h2>
+{render_link_graph_section(url, ["keyword_to_phones", "keyword_to_cluster"], limit=8)}
 {ad(2)}
 </main>
 {footer_html()}
@@ -1370,6 +1334,8 @@ def render_cluster_page(cluster, phones):
     html += f"""
 <h2>All Top Phones</h2>
 {global_links_weighted(cluster)}
+<h2>Best Related Buying Guides</h2>
+{render_link_graph_section(url, ["cluster_to_keywords"], limit=8)}
 {ad(2)}
 </main>
 {footer_html()}
@@ -1821,6 +1787,11 @@ def run():
     keywords = []
     phones_sorted = rank_phones(PHONES)
 
+    if LAUNCH_PHASE >= 3:
+        keywords = build_keywords()
+        LINK_GRAPH.update(build_link_graph(PHONES, keywords))
+        save_json_helper(LINK_GRAPH_FILE, LINK_GRAPH)
+
     # ---------------- PHONE PAGES (THREADED + INDEXED) ----------------
     pp = os.path.join(BASE_DIR, "phones")
     ensure_dir(pp)
@@ -1919,9 +1890,6 @@ def run():
 
     # ---------------- KEYWORDS ----------------
     if LAUNCH_PHASE >= 3:
-        raw = build_keywords()
-        keywords = process_keywords(raw)
-
         ensure_dir("data")
         safe_write(KEYWORD_FILE, json.dumps(keywords, indent=2))
 

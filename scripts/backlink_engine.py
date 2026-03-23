@@ -3,8 +3,11 @@ import os
 import random
 import datetime
 import hashlib
+from seo_growth_utils import build_link_graph, choose_keyword_devices, keyword_intent, normalize_phones, save_json as save_json_helper
 
-KEYWORDS_FILE = "data/keywords.json"
+KEYWORDS_FILES = ["data/keywords_real.json", "data/keywords.json"]
+PHONES_FILE = "data/phones/phones_enriched.json"
+LINK_GRAPH_FILE = "data/internal_link_graph.json"
 OUTPUT_TARGETS = "data/backlinks/targets.json"
 TRACKER_FILE = "data/backlinks/tracker.json"
 OUTREACH_DIR = "site/outreach_posts"
@@ -77,6 +80,25 @@ def get_links_for_page(slug, internal_links):
 # -------------------------
 # LOAD / SAVE
 # -------------------------
+def load_keywords():
+    combined = []
+    for path in KEYWORDS_FILES:
+        data = load_json(path, [])
+        if isinstance(data, list):
+            combined.extend(data)
+    deduped = []
+    seen = set()
+    for kw in combined:
+        if not isinstance(kw, str):
+            continue
+        key = kw.strip().lower()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        deduped.append(key)
+    return deduped
+
+
 def load_json(path, default):
     if not os.path.exists(path):
         return default
@@ -95,16 +117,12 @@ def save_json(path, data):
 # -------------------------
 def filter_keywords(keywords):
     good = []
-
     for kw in keywords:
         kw_lower = kw.lower()
-
-        if not any(b in kw_lower for b in TOP_BRANDS):
+        if any(x in kw_lower for x in ["wallpaper", "case", "cover", "theme"]):
             continue
-
-        if any(x in kw_lower for x in ["best", "review", "vs", "under $"]):
+        if any(x in kw_lower for x in ["best", "review", "vs", "under $", "compare"]):
             good.append(kw)
-
     return good
 
 # -------------------------
@@ -114,13 +132,14 @@ def prioritize_keywords(keywords):
     return sorted(
         keywords,
         key=lambda x: (
-            "best" in x,
-            "under $" in x,
+            keyword_intent(x) in {"comparison", "commercial", "budget", "review"},
             "vs" in x,
+            "under $" in x,
+            "best" in x,
             "review" in x
         ),
         reverse=True
-    )[:80]
+    )[:160]
 
 # -------------------------
 # DEEP CLUSTERING (FIXED)
@@ -174,7 +193,11 @@ def assign_weights(kws):
 # -------------------------
 # TARGET ENGINE (UPGRADED)
 # -------------------------
-def generate_targets(clusters):
+def load_phones():
+    return normalize_phones(load_json(PHONES_FILE, []))
+
+
+def generate_targets(clusters, phones):
     targets = []
 
     for cluster, kws in clusters.items():
@@ -189,6 +212,7 @@ def generate_targets(clusters):
                 "cluster_size": len(kws),
                 "weight": weight,
                 "target_page": f"/keyword/{kw.replace(' ', '-')}.html",
+                "supporting_reviews": [f"/phones/{p['slug']}.html" for p in choose_keyword_devices(kw, phones, limit=3)],
                 "anchor": generate_anchor(kw),
                 "opportunities": [
                     f"https://www.google.com/search?q={kw.replace(' ', '+')}+\"write+for+us\"",
@@ -233,8 +257,9 @@ Best,
 # -------------------------
 # INTERNAL LINKING ENGINE (NEW)
 # -------------------------
-def generate_internal_links(clusters):
+def generate_internal_links(clusters, phones):
     links = []
+    graph = build_link_graph(phones, [kw for kws in clusters.values() for kw in kws])
 
     for cluster, kws in clusters.items():
         if len(kws) < 2:
@@ -246,10 +271,12 @@ def generate_internal_links(clusters):
             links.append({
                 "from": f"/keyword/{kw.replace(' ', '-')}.html",
                 "to": f"/keyword/{pillar.replace(' ', '-')}.html",
-                "anchor": pillar
+                "anchor": pillar,
+                "type": "support_to_pillar"
             })
 
     save_json(INTERNAL_LINK_FILE, links)
+    save_json_helper(LINK_GRAPH_FILE, graph)
 
 # -------------------------
 # TRACKER INIT
@@ -291,7 +318,7 @@ def simulate_link_velocity():
 def run():
     print("[BACKLINK ENGINE - DOMINANCE MODE] Running...")
 
-    keywords = load_json(KEYWORDS_FILE, [])
+    keywords = load_keywords()
     keywords = filter_keywords(keywords)
     keywords = prioritize_keywords(keywords)
 
@@ -299,15 +326,16 @@ def run():
         print("[ERROR] No valid keywords after filtering")
         return
 
+    phones = load_phones()
     clusters = group_clusters(keywords)
 
-    targets = generate_targets(clusters)
+    targets = generate_targets(clusters, phones)
 
     os.makedirs("data/backlinks", exist_ok=True)
     save_json(OUTPUT_TARGETS, targets)
 
     generate_outreach_posts(clusters)
-    generate_internal_links(clusters)
+    generate_internal_links(clusters, phones)
 
     init_tracker()
     simulate_link_velocity()
