@@ -185,15 +185,16 @@ def generate_targets(clusters):
                 "keyword": kw,
                 "cluster": cluster,
                 "is_pillar": i == 0,
+                "target_type": "pillar" if i == 0 else "support",
+                "cluster_size": len(kws),
                 "weight": weight,
                 "target_page": f"/keyword/{kw.replace(' ', '-')}.html",
                 "anchor": generate_anchor(kw),
-
-                # improved discovery targets
                 "opportunities": [
-                    f"https://www.google.com/search?q={kw.replace(' ', '+')}+blog",
+                    f"https://www.google.com/search?q={kw.replace(' ', '+')}+\"write+for+us\"",
                     f"https://www.google.com/search?q={kw.replace(' ', '+')}+guest+post",
-                    f"https://www.google.com/search?q={kw.replace(' ', '+')}+write+for+us"
+                    f"https://www.google.com/search?q={kw.replace(' ', '+')}+\"submit+article\"",
+                    f"https://www.google.com/search?q={kw.replace(' ', '+')}+\"become+contributor\""
                 ]
             })
 
