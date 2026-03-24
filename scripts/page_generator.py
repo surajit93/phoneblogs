@@ -1771,176 +1771,258 @@ may experience slowdowns during extended usage or heavy app switching.
 # 🔥 PATCH INTO EXISTING RUN()
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+# >>> UPDATED START
+from seo_growth_utils import (
+    generate_keyword_clusters,
+    build_keyword_page_map,
+    anti_thin_content_guard,
+    semantic_sections_template,
+    select_title_variant,
+)
+
+KEYWORD_CLUSTER_FILE = "data/keyword_clusters.json"
+KEYWORD_MAP_FILE = "data/keyword_page_map.json"
+SITEMAP_DIR = os.path.join(BASE_DIR, "sitemaps")
+MAX_PHONE_PAGES = int(os.environ.get("MAX_PHONE_PAGES", "1000"))
+MAX_KEYWORD_PAGES = int(os.environ.get("MAX_KEYWORD_PAGES", "2600"))
+MAX_TOPIC_PAGES = int(os.environ.get("MAX_TOPIC_PAGES", "80"))
+MAX_COMPARE_PAGES = int(os.environ.get("MAX_COMPARE_PAGES", "650"))
+
+
+def ctr_title_variants(base_title, keyword, page_kind, year=NOW_YEAR):
+    return [
+        f"{base_title} ({year})",
+        f"{base_title}: What Most Buyers Miss in {year}",
+        f"{base_title} vs Alternatives: What Actually Wins ({year})",
+        f"{base_title} — Faster Decision Guide for {year}",
+        f"{base_title}: Avoid Costly Mistakes Before You Buy",
+        f"{base_title} — Best Picks, Trade-Offs, and Buyer Fit",
+        f"{keyword.title()} Guide: Better Choices in Minutes",
+        f"{base_title} (Updated {TODAY})",
+    ]
+
+
+def keyword_sections(keyword):
+    blocks = semantic_sections_template("phone buying", keyword)
+    blocks.update({
+        "intro": f"This page maps {keyword} to the strongest options and decision paths.",
+        "decision_framework": f"For {keyword}, prioritize fit > spec count > headline marketing claims.",
+        "comparison_logic": f"Compare models on battery endurance, thermal stability, camera consistency, and price delta.",
+        "real_examples": f"Typical journeys for {keyword}: commute-heavy users, creators, and budget-sensitive buyers.",
+    })
+    return blocks
+
+
+def render_keyword_page_v2(keyword, phones_sorted, keyword_map):
+    mapping = keyword_map.get("keywords", {}).get(keyword)
+    if not mapping:
+        return ""
+    phones = [p for p in phones_sorted if f"/phones/{p['slug']}.html" in mapping.get("supporting_phone_pages", [])][:6]
+    if not phones:
+        phones = filter_by_intent(keyword, phones_sorted)[:6]
+
+    slug = mapping["keyword_slug"]
+    url = mapping["keyword_url"]
+    base_title = f"{keyword.title()}"
+    title = select_title_variant(slug, ctr_title_variants(base_title, keyword, "keyword"))
+    desc = f"{keyword.title()} mapped to best-fit phones, alternatives, and comparison paths. Updated {TODAY}."
+    blocks = keyword_sections(keyword)
+    if not anti_thin_content_guard(blocks, min_blocks=8):
+        return ""
+
+    inline_links = []
+    for p in phones[:6]:
+        inline_links.append(f'<a href="{SITE_DOMAIN}/phones/{p["slug"]}.html">{p["name"]}</a>')
+    for c in mapping.get("supporting_compare_pages", [])[:4]:
+        inline_links.append(f'<a href="{SITE_DOMAIN}{c}">comparison breakdown</a>')
+    inline_links = inline_links[:10]
+
+    structural_links = [
+        f'<li><a href="{SITE_DOMAIN}{mapping["cluster_url"]}">Cluster hub</a></li>',
+        f'<li><a href="{SITE_DOMAIN}{mapping["topic_url"]}">Topic authority page</a></li>',
+    ]
+    structural_links.extend([f'<li><a href="{SITE_DOMAIN}{c}">Decision comparison</a></li>' for c in mapping.get("supporting_compare_pages", [])[:3]])
+
+    html = f"""<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+{title_tag(title)}
+{meta_desc(desc)}
+{canonical(url)}
+{og_tags(title, desc, url)}
+{PAGE_CSS}
+</head><body><main>
+<h1>{title}</h1>
+<p>{blocks['intro']}</p>
+<p>{blocks['who_should_buy']}</p>
+<p>{blocks['who_should_not_buy']}</p>
+<p>{blocks['hidden_tradeoffs']}</p>
+<p>{blocks['real_world_usage']}</p>
+<p>{blocks['better_alternatives']}</p>
+<h2>Who should buy this</h2><p>{blocks['who_should_buy']}</p>
+<h2>Who should NOT buy this</h2><p>{blocks['who_should_not_buy']}</p>
+<h2>Hidden trade-offs</h2><p>{blocks['hidden_tradeoffs']}</p>
+<h2>Real-world usage breakdown</h2><p>{blocks['real_world_usage']}</p>
+<h2>Better alternatives</h2><p>{blocks['better_alternatives']}</p>
+<h2>Decision Framework</h2><p>{blocks['decision_framework']}</p>
+<h2>Comparison Logic</h2><p>{blocks['comparison_logic']}</p>
+<p>{' | '.join(inline_links[:5])}</p>
+<p>{' | '.join(inline_links[5:10])}</p>
+<h2>Supporting Pages</h2>
+<ul>{''.join(structural_links[:5])}</ul>
+{ad(1)}
+</main>{footer_html()}{behavior_script()}</body></html>"""
+    return html
+
+
+def render_topic_page_v2(cluster, keyword_map):
+    topic_slug = cluster["cluster_slug"]
+    url = f"/topics/{topic_slug}.html"
+    base_title = f"{cluster['brand'].title()} {cluster['feature'].title()} Phones for {cluster['scenario'].title()}"
+    title = select_title_variant(topic_slug, ctr_title_variants(base_title, cluster['pillar_keyword'], "topic"))
+    blocks = semantic_sections_template(cluster['feature'], cluster['pillar_keyword'])
+    blocks.update({"intro": f"Cluster hub for {cluster['pillar_keyword']}", "decision_framework": "Rank by fit, value, and real-use outcomes.", "comparison_logic": "Compare against alternatives and adjacent price tiers.", "real_examples": "Use-case mapping for daily workflows."})
+    if not anti_thin_content_guard(blocks, min_blocks=8):
+        return ""
+
+    kwords = cluster.get("all_keywords", [])[:20]
+    links = []
+    for kw in kwords:
+        km = keyword_map.get("keywords", {}).get(kw)
+        if km:
+            links.append(f'<li><a href="{SITE_DOMAIN}{km["keyword_url"]}">{kw}</a></li>')
+
+    return f"""<!DOCTYPE html>
+<html lang="en"><head>{title_tag(title)}{meta_desc(title)}{canonical(url)}{PAGE_CSS}</head>
+<body><main>
+<h1>{title}</h1>
+<p>{blocks['intro']}</p>
+<h2>Concept explanation</h2><p>{blocks['decision_framework']}</p>
+<h2>Real-world scenarios</h2><p>{blocks['real_examples']}</p>
+<h2>Decision framework</h2><p>{blocks['who_should_buy']} {blocks['who_should_not_buy']}</p>
+<h2>Comparison logic</h2><p>{blocks['comparison_logic']}</p>
+<h2>Who should buy this</h2><p>{blocks['who_should_buy']}</p>
+<h2>Who should NOT buy this</h2><p>{blocks['who_should_not_buy']}</p>
+<h2>Hidden trade-offs</h2><p>{blocks['hidden_tradeoffs']}</p>
+<h2>Real-world usage breakdown</h2><p>{blocks['real_world_usage']}</p>
+<h2>Better alternatives</h2><p>{blocks['better_alternatives']}</p>
+<ul>{''.join(links[:20])}</ul>
+</main>{footer_html()}{behavior_script()}</body></html>"""
+
+
+def generate_sitemap_segments(phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls):
+    ensure_dir(SITEMAP_DIR)
+
+    def write_segment(name, urls, priority):
+        path = os.path.join(SITEMAP_DIR, f"sitemap-{name}.xml")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+            f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+            for u in urls:
+                f.write(f"<url><loc>{SITE_DOMAIN}{u}</loc><lastmod>{TODAY}</lastmod><changefreq>weekly</changefreq><priority>{priority}</priority></url>\n")
+            f.write('</urlset>')
+
+    write_segment("phones", phone_urls, "0.80")
+    write_segment("keywords", keyword_urls, "0.65")
+    write_segment("clusters", cluster_urls, "0.92")
+    write_segment("topics", topic_urls, "0.95")
+    write_segment("compare", compare_urls, "0.55")
+
+    idx_path = os.path.join(BASE_DIR, "sitemap.xml")
+    segments = ["phones", "keywords", "clusters", "topics", "compare"]
+    with open(idx_path, "w", encoding="utf-8") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        f.write('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+        for s in segments:
+            f.write(f"<sitemap><loc>{SITE_DOMAIN}/sitemaps/sitemap-{s}.xml</loc><lastmod>{TODAY}</lastmod></sitemap>\n")
+        f.write('</sitemapindex>')
+
+
 def run():
-    print(f"=== {SITE_NAME} SEO BUILD — LAUNCH PHASE {LAUNCH_PHASE} ===")
+    print(f"=== {SITE_NAME} SEO BUILD — CLUSTER AUTHORITY MODE ===")
+    phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls = [], [], [], [], []
 
+    phones_sorted = rank_phones(PHONES)[:MAX_PHONE_PAGES]
 
-    phone_urls   = []
-    compare_urls = []
-    keyword_urls = []
-    cluster_urls = []
-    topic_urls = []
+    cluster_data = generate_keyword_clusters(phones_sorted, min_keywords=5000, max_keywords=10000, min_clusters=100, max_clusters=300)
+    save_json_helper(KEYWORD_CLUSTER_FILE, cluster_data)
+    keyword_map = build_keyword_page_map(cluster_data, phones_sorted)
+    save_json_helper(KEYWORD_MAP_FILE, keyword_map)
 
-    tp = os.path.join(BASE_DIR, "topics")
-    ensure_dir(tp)
+    all_keywords = list(keyword_map.get("keywords", {}).keys())[:MAX_KEYWORD_PAGES]
+    LINK_GRAPH.update(build_link_graph(phones_sorted, all_keywords, keyword_map=keyword_map))
+    save_json_helper(LINK_GRAPH_FILE, LINK_GRAPH)
 
-    keywords = []
-    phones_sorted = rank_phones(PHONES)
-
-    if LAUNCH_PHASE >= 3:
-        keywords = build_keywords()
-        LINK_GRAPH.update(build_link_graph(PHONES, keywords))
-        save_json_helper(LINK_GRAPH_FILE, LINK_GRAPH)
-
-    # ---------------- PHONE PAGES (THREADED + INDEXED) ----------------
     pp = os.path.join(BASE_DIR, "phones")
-    ensure_dir(pp)
+    cp = os.path.join(BASE_DIR, "compare")
+    kp = os.path.join(BASE_DIR, "keyword")
+    cl = os.path.join(BASE_DIR, "cluster")
+    tp = os.path.join(BASE_DIR, "topics")
+    for d in [pp, cp, kp, cl, tp]:
+        ensure_dir(d)
 
-    def process_phone(p):
+    for p in phones_sorted:
         slug = p.get("slug", slugify(p["name"]))
-
-        if is_done("phones", slug):
-            return None
-
         path = os.path.join(pp, slug + ".html")
         safe_write(path, render_phone_page(p))
+        phone_urls.append(f"/phones/{slug}.html")
 
-        mark_done("phones", slug)
-
-        if len(PAGE_INDEX.get("phones", {})) % 50 == 0:
-            with INDEX_LOCK:
-                save_index(PAGE_INDEX)
-
-        return f"/phones/{slug}.html"
-
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
-        futures = [exe.submit(process_phone, p) for p in PHONES]
-
-        for f in as_completed(futures):
-            try:
-                res = f.result()
-                if res:
-                    phone_urls.append(res)
-            except Exception as e:
-                print(f"[ERROR] Phone generation failed: {e}")
-
-    # ---------------- CLUSTER ----------------
-    cl = os.path.join(BASE_DIR, "cluster")
-    ensure_dir(cl)
-
-    cluster_map = defaultdict(list)
-    for p in PHONES:
-        cluster_map[get_cluster(p)].append(p)
-
-    for cluster_name, cluster_phones in cluster_map.items():
-        if is_done("cluster", cluster_name):
-            continue
-
-        sorted_phones = rank_phones(cluster_phones)
-        path = os.path.join(cl, cluster_name + ".html")
-        safe_write(path, render_cluster_page(cluster_name, sorted_phones))
-        mark_done("cluster", cluster_name)
-        cluster_urls.append(f"/cluster/{cluster_name}.html")
-
-    # ---------------- TOPICS ----------------
-    topics = ["gaming", "camera", "battery"]
-
-    for t in topics:
-        if is_done("topics", t):
-            continue
-
-        topic_phones = rank_phones([p for p in PHONES if get_cluster(p) == t])
-        path = os.path.join(tp, t + ".html")
-        safe_write(path, render_topic_page(t, topic_phones))
-        mark_done("topics", t)
-        topic_urls.append(f"/topics/{t}.html")
-
-    safe_write(os.path.join(BASE_DIR, "about.html"), render_about_page())
-
-    # ---------------- COMPARE ----------------
-    if LAUNCH_PHASE >= 2:
-        cp = os.path.join(BASE_DIR, "compare")
-        ensure_dir(cp)
-
-        top = rank_phones(PHONES)[:MAX_COMPARE_PHONES]
-
-        def process_compare(p1, p2):
+    compare_count = 0
+    compare_pool = phones_sorted[:45]
+    for i in range(len(compare_pool)):
+        for j in range(i + 1, len(compare_pool)):
+            if compare_count >= MAX_COMPARE_PAGES:
+                break
+            p1, p2 = compare_pool[i], compare_pool[j]
             slug = f"{p1['slug']}-vs-{p2['slug']}"
-            if is_done("compare", slug):
-                return None
+            safe_write(os.path.join(cp, slug + ".html"), render_compare(p1, p2))
+            compare_urls.append(f"/compare/{slug}.html")
+            compare_count += 1
+        if compare_count >= MAX_COMPARE_PAGES:
+            break
 
-            path = os.path.join(cp, slug + ".html")
-            safe_write(path, render_compare(p1, p2))
-            mark_done("compare", slug)
-            return f"/compare/{slug}.html"
+    for kw in all_keywords:
+        mapping = keyword_map["keywords"][kw]
+        page = render_keyword_page_v2(kw, phones_sorted, keyword_map)
+        if not page:
+            continue
+        safe_write(os.path.join(kp, mapping["keyword_slug"] + ".html"), page)
+        keyword_urls.append(mapping["keyword_url"])
 
-        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
-            futures = []
-            for i in range(len(top)):
-                for j in range(i + 1, len(top)):
-                    futures.append(exe.submit(process_compare, top[i], top[j]))
+    for cluster in cluster_data.get("clusters", []):
+        cslug = cluster["cluster_slug"]
+        pages = [keyword_map["keywords"][k] for k in cluster.get("all_keywords", []) if k in keyword_map.get("keywords", {})][:20]
+        links = ''.join(f'<li><a href="{SITE_DOMAIN}{m["keyword_url"]}">{k}</a></li>' for k, m in [(k, keyword_map["keywords"][k]) for k in cluster.get("all_keywords", [])[:20] if k in keyword_map.get("keywords", {})])
+        html = f"""<!DOCTYPE html><html><head>{title_tag(cluster['pillar_keyword'].title())}{PAGE_CSS}</head><body><main>
+<h1>{cluster['pillar_keyword'].title()}</h1>
+<h2>Concept explanation</h2><p>Cluster authority hub for {cluster['feature']} decisions.</p>
+<h2>Real-world scenarios</h2><p>Use case: {cluster['scenario']} with budget and performance balancing.</p>
+<h2>Decision framework</h2><p>Map to phones, then compare options, then final shortlist.</p>
+<h2>Comparison logic</h2><p>Battery, camera consistency, RAM stability, and price delta.</p>
+<h2>Who should buy this</h2><p>Users aligned with {cluster['scenario']} needs.</p>
+<h2>Who should NOT buy this</h2><p>Buyers needing ultra-premium edge-case capabilities.</p>
+<h2>Hidden trade-offs</h2><p>Lower cost can reduce sustained performance and camera reliability.</p>
+<h2>Real-world usage breakdown</h2><p>Different usage profiles will produce different winners.</p>
+<h2>Better alternatives</h2><p>Use linked pages to evaluate stronger alternatives.</p>
+<ul>{links}</ul></main>{footer_html()}</body></html>"""
+        safe_write(os.path.join(cl, cslug + ".html"), html)
+        cluster_urls.append(f"/cluster/{cslug}.html")
 
-            for f in as_completed(futures):
-                try:
-                    res = f.result()
-                    if res:
-                        compare_urls.append(res)
-                except Exception as e:
-                    print(f"[ERROR] Compare page failed: {e}")
+    for cluster in cluster_data.get("clusters", [])[:MAX_TOPIC_PAGES]:
+        topic_html = render_topic_page_v2(cluster, keyword_map)
+        if not topic_html:
+            continue
+        safe_write(os.path.join(tp, cluster["cluster_slug"] + ".html"), topic_html)
+        topic_urls.append(f"/topics/{cluster['cluster_slug']}.html")
 
-    # ---------------- KEYWORDS ----------------
-    if LAUNCH_PHASE >= 3:
-        ensure_dir("data")
-        safe_write(KEYWORD_FILE, json.dumps(keywords, indent=2))
-
-        with INDEX_LOCK:
-            save_index(PAGE_INDEX)
-
-        kp = os.path.join(BASE_DIR, "keyword")
-        ensure_dir(kp)
-
-        def process_keyword(kw):
-            slug = slugify(kw)
-            if is_done("keywords", slug):
-                return None
-
-            path = os.path.join(kp, slug + ".html")
-            safe_write(path, render_keyword_page(kw, phones_sorted))
-            mark_done("keywords", slug)
-            return f"/keyword/{slug}.html"
-
-        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
-            futures = [exe.submit(process_keyword, kw) for kw in keywords]
-
-            for f in as_completed(futures):
-                try:
-                    res = f.result()
-                    if res:
-                        keyword_urls.append(res)
-                except Exception as e:
-                    print(f"[ERROR] Keyword page failed: {e}")
-
-    # ---------------- FINAL ----------------
-
-    # ✅ FIX: include topic_urls in sitemap
-    generate_sitemap(phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls)
-
+    safe_write(KEYWORD_FILE, json.dumps(all_keywords, indent=2))
+    generate_sitemap_segments(phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls)
     generate_robots()
+    ping_indexnow((phone_urls + compare_urls + keyword_urls + cluster_urls + topic_urls)[:100])
 
-    all_urls = phone_urls + cluster_urls + compare_urls + keyword_urls + topic_urls
-    ping_indexnow(all_urls)
+    print(f"BUILD COMPLETE | phones={len(phone_urls)} keywords={len(keyword_urls)} compare={len(compare_urls)} topics={len(topic_urls)} clusters={len(cluster_urls)}")
 
-    global RANKED_PHONES
-    RANKED_PHONES = phones_sorted
-
-    print("[DISTRIBUTION] Reddit/Quora posts ready → data/distribution/")
-    print("[DISTRIBUTION] Weekly plan ready → data/distribution/weekly_plan.json")
-
-    print("BUILD COMPLETE")
 
 if __name__ == "__main__":
     run()
-
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# FULL FILE END
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# >>> UPDATED END
