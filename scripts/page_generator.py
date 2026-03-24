@@ -16,10 +16,14 @@ import random
 from seo_growth_utils import (
     build_keyword_universe,
     build_link_graph,
+    build_title_variants,
     choose_keyword_devices,
     classify_phone,
+    enrich_phone_entities,
+    keyword_intent,
     normalize_phones,
     save_json as save_json_helper,
+    score_keyword_opportunity,
 )
 # ═══════════════════════════════════════════════════════════
 # CONFIGURATION
@@ -50,7 +54,7 @@ AMAZON_TAG = "yourtag-21"
 # Start at 1. Move to 2 after GSC confirms indexing. Move to 3 after clicks appear.
 LAUNCH_PHASE    = int(os.environ.get("LAUNCH_PHASE", "3"))
 
-MAX_KEYWORDS    = 700
+MAX_KEYWORDS    = 5500
 MAX_COMPARE_PHONES = 20  # top N phones in comparison matrix
 
 SUGGESTION_QUERIES_URL = "https://suggestqueries.google.com/complete/search?client=firefox&q={q}"
@@ -882,15 +886,24 @@ def render_phone_page(p):
     # -------------------------
     pattern = content_pattern(p)
 
-    if pattern == "A":
-        intro_block    = long_intro_v2(p) + long_intro(p)
-        analysis_block = deeper_analysis_block(p)
-    elif pattern == "B":
-        intro_block    = long_intro(p)
-        analysis_block = deeper_analysis_block(p) + long_intro_v2(p)
+    if pattern == "analyst":
+        intro_block = long_intro_v2(p) + entity_richness_block(p)
+        analysis_block = deeper_analysis_block(p) + buyer_verdict_block(p)
+    elif pattern == "story":
+        intro_block = long_intro(p) + buyer_verdict_block(p)
+        analysis_block = entity_richness_block(p) + deeper_analysis_block(p)
+    elif pattern == "buyer_journey":
+        intro_block = buyer_verdict_block(p) + long_intro_v2(p)
+        analysis_block = deeper_analysis_block(p) + entity_richness_block(p)
+    elif pattern == "comparison_led":
+        intro_block = long_intro_v2(p) + long_intro(p)
+        analysis_block = entity_richness_block(p) + buyer_verdict_block(p) + deeper_analysis_block(p)
+    elif pattern == "value_focused":
+        intro_block = buyer_verdict_block(p) + long_intro(p)
+        analysis_block = deeper_analysis_block(p) + entity_richness_block(p)
     else:
-        intro_block    = long_intro_v2(p)
-        analysis_block = long_intro(p) + deeper_analysis_block(p)
+        intro_block = entity_richness_block(p) + long_intro_v2(p)
+        analysis_block = buyer_verdict_block(p) + deeper_analysis_block(p)
 
     html_intro = intro_block + analysis_block
     bench = load_or_generate_benchmarks()
@@ -959,7 +972,7 @@ def render_phone_page(p):
 {smart_links(p)}
 
 <h2>Best Buying Guides for This Phone</h2>
-{render_link_graph_section(f"/phones/{slug}.html", ["phone_to_keywords", "phone_to_cluster"], limit=6)}
+{render_link_graph_section(f"/phones/{slug}.html", ["phone_to_keywords", "phone_to_cluster", "phone_to_compare"], limit=8)}
 
 <!-- 🔥 AUTHORITY FUNNEL -->
 <h2>Top Rated Phones Right Now</h2>
@@ -1188,30 +1201,14 @@ def intent_cta(intent, p):
 # ═══════════════════════════════════════════════════════════
 def render_keyword_page(keyword, phones_sorted):
     filtered = filter_by_intent(keyword, phones_sorted)
-    phones = filtered[:5]
+    phones = filtered[:6]
     intent = detect_intent(keyword)
-    slug    = slugify(keyword)
-    url     = f"/keyword/{slug}.html"
-
-    # intent-aware title and description
-    if "gaming" in keyword:
-        title = f"Best Gaming Phones — {keyword.title()} ({NOW_YEAR})"
-        intro = f"Looking for the best gaming phone? We ranked the top picks for <strong>{keyword}</strong> based on RAM, processor, and real-world gaming performance in {NOW_YEAR}."
-    elif "camera" in keyword:
-        title = f"Best Camera Phones — {keyword.title()} ({NOW_YEAR})"
-        intro = f"Camera quality varies wildly at every price point. Here are the top picks for <strong>{keyword}</strong>, ranked by megapixels, aperture, and real-world shot quality."
-    elif "battery" in keyword:
-        title = f"Best Battery Phones — {keyword.title()} ({NOW_YEAR})"
-        intro = f"If you need a phone that lasts all day (or longer), here are the top picks for <strong>{keyword}</strong>, ranked by battery capacity and efficiency."
-    elif "under" in keyword:
-        title = f"{keyword.title()} — Best Value Picks ({NOW_YEAR})"
-        intro = f"Finding a great phone on a budget is all about knowing the right trade-offs. Here are the top picks for <strong>{keyword}</strong>, ranked by performance per dollar."
-    else:
-        title = f"{keyword.title()} — Top Picks ({NOW_YEAR})"
-        intro = f"This guide covers the best options for <strong>{keyword}</strong>, compared by specs, value, and real-world usability in {NOW_YEAR}."
-
-    desc = f"{keyword.title()} — top {len(phones)} picks ranked by specs, price and real-world value in {NOW_YEAR}. Updated {TODAY}."
-
+    slug = slugify(keyword)
+    url = f"/keyword/{slug}.html"
+    title_variants = build_title_variants(keyword, phones)
+    title = title_variants[0]
+    intro = intent_intro(keyword, intent)
+    desc = f"{keyword.title()} — top {len(phones)} picks with real-world trade-offs, entity-rich analysis, and buyer guidance for {NOW_YEAR}. Updated {TODAY}."
     bc_items = [("Home", "/"), ("Keywords", "/keyword/"), (keyword.title(), url)]
 
     html = f"""<!DOCTYPE html>
@@ -1232,18 +1229,25 @@ def render_keyword_page(keyword, phones_sorted):
 {breadcrumb_html(bc_items)}
 <h1>{title}</h1>
 {ad(0)}
-<p>{intent_intro(keyword, intent)}</p>
+<p>{intro}</p>
+{keyword_decision_block(keyword, phones)}
+<h2>Title Angles With Highest CTR Potential</h2>
+<ul>{''.join(f'<li>{variant_title}</li>' for variant_title in title_variants)}</ul>
 """
 
     for i, p in enumerate(phones, 1):
         d = decision_engine(p)
+        entities = enrich_phone_entities(p)
+        comparison_hint = phones[i]['name'] if i < len(phones) else None
+        compare_line = f"Better fit than {comparison_hint} if you want {entities['brand_positioning']} value." if comparison_hint else f"Better fit than many alternatives if you want {entities['os_signal'].lower()}."
         html += f"""
 <h2>{i}. {p['name']} — ${safe_price(p)}</h2>
 <p>{relative_analysis(p)}</p>
+<p><strong>Hardware context:</strong> {entities['chipset_tier'].replace('_', ' ').title()} chipset tier, {entities['display_summary']}, {entities['os_signal']}, {entities['brand_positioning']}.</p>
 <p><strong>Best for:</strong> {d['buy']}.</p>
-<p><em>{intent_cta(intent, p)}</em></p>
+<p><strong>Real-world take:</strong> {p['name']} works best for {phone_usage_scenarios(p)[0]}. {compare_line}</p>
 <p><strong>Avoid if:</strong> {d['avoid']}.</p>
-<p><strong>Top Picks:</strong></p>
+<p><em>{intent_cta(intent, p)}</em></p>
 <p><a href="{SITE_DOMAIN}/phones/{p['slug']}.html">Full {p['name']} review &rarr;</a></p>
 {amazon_cta(p)}
 """
@@ -1251,10 +1255,12 @@ def render_keyword_page(keyword, phones_sorted):
             html += ad(1)
 
     html += f"""
+<h2>Why These Phones Rank for {keyword.title()}</h2>
+<p>We prioritized pages with stronger ranking probability using a blend of price-to-value fit, entity coverage, comparison usefulness, and internal-link support. Opportunity score: {score_keyword_opportunity(keyword, PHONES)}.</p>
 <h2>Top Phones Right Now</h2>
 {global_links_weighted(keyword)}
 <h2>Related Buying Guides</h2>
-{render_link_graph_section(url, ["keyword_to_phones", "keyword_to_cluster"], limit=8)}
+{render_link_graph_section(url, ["keyword_to_phones", "keyword_to_cluster", "keyword_to_pillar", "pillar_to_support"], limit=10)}
 {ad(2)}
 </main>
 {footer_html()}
@@ -1585,14 +1591,21 @@ def authority_score_v2(page_url, base_links=0, content_depth=300):
 
     return score
 
-def generate_title(p):
+def phone_title_variants(p):
     price = safe_price(p)
-    return variant([
-        f"{p['name']} Review ({NOW_YEAR}) - Worth ${price}?",
-        f"{p['name']} Review ({NOW_YEAR}) - Pros & Cons After Testing",
-        f"{p['name']} Review ({NOW_YEAR}) - Should You Buy It?",
-        f"{p['name']} Review ({NOW_YEAR}) - Real Performance Test",
-    ], p['slug'], "title")
+    entities = enrich_phone_entities(p)
+    return [
+        f"{p['name']} Review ({NOW_YEAR}) — Worth ${price} for US Buyers?",
+        f"{p['name']} Review ({NOW_YEAR}) — {entities['chipset_tier'].replace('_', ' ').title()} Performance, Real Trade-Offs",
+        f"{p['name']} Review ({NOW_YEAR}) — {entities['display_summary']} + Buyer Verdict",
+        f"{p['name']} Review ({NOW_YEAR}) — Better Alternatives Before You Buy",
+        f"{p['name']} Review ({NOW_YEAR}) — {entities['brand_positioning'].title()} or Skip?",
+    ]
+
+
+def generate_title(p):
+    variants = phone_title_variants(p)
+    return variant(variants, p['slug'], 'title')
 
 
 # -------------------------
@@ -1606,14 +1619,14 @@ def global_links_weighted(context=None):
         score = authority_score_v2(
             url,
             base_links=len(get_peer_group(p)),
-            content_depth=600
+            content_depth=900
         )
+        score += float(p.get('overall_score') or 0) * 4
         scored.append((score, p))
 
     top = sorted(scored, key=lambda x: x[0], reverse=True)
 
-    # 🔥 diversify per page context
-    if context:
+    if context and top:
         seed = abs(hash(context)) % len(top)
         top = top[seed:] + top[:seed]
 
@@ -1643,54 +1656,95 @@ def variant(texts, seed=None, salt=""):
     rnd = random.Random(base)
     return rnd.choice(texts)
 
+
 def content_pattern(p):
-    patterns = ["A", "B", "C"]
+    patterns = ["analyst", "story", "buyer_journey", "comparison_led", "value_focused", "ecosystem"]
     return variant(patterns, p['slug'])
 
+
+def phone_usage_scenarios(p):
+    entities = enrich_phone_entities(p)
+    battery = get_spec(p, 'battery')
+    ram = get_spec(p, 'ram')
+    camera = get_spec(p, 'camera')
+    refresh = get_spec(p, 'refresh')
+    scenarios = []
+    if battery >= 5000:
+        scenarios.append('commuters, travelers, and heavy screen users who hate carrying a charger')
+    if ram >= 8 or entities['chipset_tier'] in {'flagship', 'upper_mid'}:
+        scenarios.append('gaming, multitasking, and long app sessions without obvious slowdown')
+    if camera >= 50:
+        scenarios.append('social posting, family photos, and casual creator workflows where image quality matters')
+    if refresh and float(refresh) >= 120:
+        scenarios.append('people who notice smoother scrolling and more responsive gameplay')
+    if not scenarios:
+        scenarios.append('everyday texting, browsing, maps, and streaming at a sensible price')
+    return scenarios
+
+
 def long_intro_v2(p):
+    entities = enrich_phone_entities(p)
+    scenarios = phone_usage_scenarios(p)
     variants = [
-        f"{p['name']} targets users looking for balanced performance and value in {NOW_YEAR}.",
-        f"In {NOW_YEAR}, {p['name']} positions itself as a strong contender in its price tier.",
-        f"If you're evaluating options in this segment, {p['name']} is one of the key devices to consider.",
+        f"{p['name']} sits in the market as a {entities['brand_positioning']} with {entities['display_summary']} and a {entities['chipset_tier'].replace('_', ' ')} chipset profile.",
+        f"For shoppers comparing real value instead of spec-sheet hype, {p['name']} stands out most for {scenarios[0]}.",
+        f"{p['name']} is the kind of device buyers shortlist when they want {entities['os_signal'].lower()} benefits without ignoring battery, camera, and long-term value.",
+        f"In real buying decisions, {p['name']} is less about raw numbers and more about how its {entities['display_summary'].lower()} and platform fit daily use.",
     ]
     return f"<p>{variant(variants, p['slug'], 'intro')}</p>"
 
 
-def pros_cons_v2(p):
-    bat = get_spec(p, "battery")
-    ram = get_spec(p, "ram")
-    cam = get_spec(p, "camera")
-
-    pros = []
-    cons = []
-
-    if bat >= 5000:
-        pros.append("Strong battery life for extended daily use")
-    elif bat >= 4500:
-        pros.append("Decent battery backup for most users")
-    else:
-        cons.append("Battery may struggle under heavy usage")
-
-    if ram >= 8:
-        pros.append("Handles multitasking and gaming smoothly")
-    elif ram >= 6:
-        pros.append("Good for regular apps and moderate usage")
-    else:
-        cons.append("Limited RAM for demanding apps")
-
-    if cam >= 64:
-        pros.append("High resolution camera for detailed photos")
-    elif cam >= 48:
-        pros.append("Good camera for everyday photography")
-    else:
-        cons.append("Camera not ideal for detailed shots")
-
+def entity_richness_block(p):
+    entities = enrich_phone_entities(p)
     return f"""
-<div class="pros-cons">
-<div class="pros"><ul>{"".join(f"<li>{x}</li>" for x in pros)}</ul></div>
-<div class="cons"><ul>{"".join(f"<li>{x}</li>" for x in cons or ['No major drawbacks in this segment'])}</ul></div>
-</div>
+<h2>Key Hardware Context</h2>
+<ul>
+  <li><strong>Chipset tier:</strong> {entities['chipset_tier'].replace('_', ' ').title()} — matters for gaming headroom, multitasking, and how well the phone ages over 2–3 years.</li>
+  <li><strong>Display:</strong> {entities['display_summary']} — relevant for scrolling smoothness, outdoor readability, and video quality.</li>
+  <li><strong>Software and ecosystem:</strong> {entities['os_signal']} — useful if you care about updates, app continuity, and accessories.</li>
+  <li><strong>Brand positioning:</strong> {entities['brand_positioning'].title()} — this helps explain where it wins on value versus where rivals may still beat it.</li>
+</ul>
 """
+
+
+def buyer_verdict_block(p):
+    scenarios = phone_usage_scenarios(p)
+    tradeoffs = []
+    if get_spec(p, 'battery') >= 5000 and get_spec(p, 'weight_g'):
+        tradeoffs.append('the larger battery usually helps endurance but can make the phone heavier in daily carry')
+    if get_spec(p, 'camera') >= 64 and safe_price(p) < 400:
+        tradeoffs.append('the camera spec looks strong for the money, but image processing and lens quality still matter more than megapixels alone')
+    if get_spec(p, 'refresh') and float(get_spec(p, 'refresh')) >= 120 and get_spec(p, 'battery') < 5000:
+        tradeoffs.append('the fast display improves feel, but it can also increase drain during long gaming or scrolling sessions')
+    if not tradeoffs:
+        tradeoffs.append('its biggest trade-off is usually that it focuses on balance rather than dominating every category')
+    return f"""
+<h2>What This Means in Real Usage</h2>
+<p>{p['name']} makes the most sense for {scenarios[0]}. It is also a credible fit for {', '.join(scenarios[1:]) if len(scenarios) > 1 else 'buyers who want a balanced everyday phone'}.</p>
+<p><strong>Main trade-off:</strong> {tradeoffs[0]}.</p>
+<p><strong>Bottom line:</strong> If you want a phone that matches {classify_phone(p)} priorities without overspending, {p['name']} deserves a spot on your shortlist.</p>
+"""
+
+
+def keyword_decision_block(keyword, phones):
+    intent = keyword_intent(keyword)
+    top_phone = phones[0] if phones else None
+    variants = build_title_variants(keyword, phones)
+    selected_title = variants[0] if variants else keyword.title()
+    lines = [f"<p><strong>SERP angle:</strong> {selected_title}.</p>"]
+    if top_phone:
+        entities = enrich_phone_entities(top_phone)
+        lines.append(
+            f"<p><strong>Why the leader ranks first:</strong> {top_phone['name']} pairs {entities['display_summary'].lower()} with {entities['chipset_tier'].replace('_', ' ')}-tier performance and {entities['brand_positioning']} positioning.</p>"
+        )
+    if intent == 'comparison':
+        lines.append("<p><strong>Decision framing:</strong> comparison shoppers usually care most about what they gain, what they give up, and whether the price gap is justified.</p>")
+    elif intent == 'budget':
+        lines.append("<p><strong>Decision framing:</strong> budget shoppers should optimize for the least painful compromise rather than chasing one flashy spec.</p>")
+    else:
+        lines.append("<p><strong>Decision framing:</strong> the best page for this query should make the trade-offs obvious and connect directly to deeper review pages.</p>")
+    return "\n".join(lines)
+
 
 def rank_phones(phones):
     scored = []
