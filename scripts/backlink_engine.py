@@ -1,102 +1,22 @@
 import json
 import os
-import random
 import datetime
-import hashlib
-from seo_growth_utils import build_link_graph, choose_keyword_devices, keyword_intent, normalize_phones, save_json as save_json_helper
+from seo_growth_utils import (
+    normalize_phones,
+    build_keyword_page_map,
+    generate_keyword_clusters,
+    save_json as save_json_helper,
+)
 
-KEYWORDS_FILES = ["data/keywords_real.json", "data/keywords.json"]
+# >>> UPDATED START
+KEYWORDS_CLUSTER_FILE = "data/keyword_clusters.json"
+KEYWORD_MAP_FILE = "data/keyword_page_map.json"
 PHONES_FILE = "data/phones/phones_enriched.json"
-LINK_GRAPH_FILE = "data/internal_link_graph.json"
+LIVE_BACKLINKS_FILE = "data/backlinks/live_links.json"
+PRIORITY_PAGES_FILE = "data/backlinks/priority_pages.json"
 OUTPUT_TARGETS = "data/backlinks/targets.json"
-TRACKER_FILE = "data/backlinks/tracker.json"
-OUTREACH_DIR = "site/outreach_posts"
-INTERNAL_LINK_FILE = "data/internal_links.json"
 
 TODAY = datetime.date.today().isoformat()
-
-TOP_BRANDS = [
-    "iphone", "apple", "samsung", "pixel", "oneplus",
-    "xiaomi", "realme", "motorola", "oppo", "vivo"
-]
-
-INTENT_BUCKETS = [
-    "camera", "battery", "gaming", "under $", "vs", "review"
-]
-
-
-# -------------------------
-# LOAD INTERNAL LINKS
-# -------------------------
-def load_internal_links():
-    path = "data/internal_links.json"
-
-    if not os.path.exists(path):
-        return []
-
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except:
-        return []
-
-
-# -------------------------
-# RENDER INTERNAL LINKS HTML
-# -------------------------
-def render_internal_links(slug, internal_links):
-    links = get_links_for_page(slug, internal_links)
-
-    if not links:
-        return ""
-
-    html = "<h2>Related Guides</h2><ul>"
-
-    for l in links:
-        target_slug = l["to"].split("/")[-1].replace(".html", "")
-        anchor = l.get("anchor", "related guide")
-
-        html += f'<li><a href="/keyword/{target_slug}.html">{anchor}</a></li>'
-
-    html += "</ul>"
-    return html
-
-
-# -------------------------
-# GET LINKS FOR PAGE
-# -------------------------
-def get_links_for_page(slug, internal_links):
-    links = []
-
-    for link in internal_links:
-        if link["from"].endswith(f"{slug}.html"):
-            links.append(link)
-
-    return links[:5]  # limit (SEO safe)
-
-
-
-
-# -------------------------
-# LOAD / SAVE
-# -------------------------
-def load_keywords():
-    combined = []
-    for path in KEYWORDS_FILES:
-        data = load_json(path, [])
-        if isinstance(data, list):
-            combined.extend(data)
-    deduped = []
-    seen = set()
-    for kw in combined:
-        if not isinstance(kw, str):
-            continue
-        key = kw.strip().lower()
-        if not key or key in seen:
-            continue
-        seen.add(key)
-        deduped.append(key)
-    return deduped
 
 
 def load_json(path, default):
@@ -105,242 +25,124 @@ def load_json(path, default):
     try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
-    except:
+    except Exception:
         return default
 
-def save_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
 
-# -------------------------
-# FILTER KEYWORDS
-# -------------------------
-def filter_keywords(keywords):
-    good = []
-    for kw in keywords:
-        kw_lower = kw.lower()
-        if any(x in kw_lower for x in ["wallpaper", "case", "cover", "theme"]):
-            continue
-        if any(x in kw_lower for x in ["best", "review", "vs", "under $", "compare"]):
-            good.append(kw)
-    return good
-
-# -------------------------
-# PRIORITY ENGINE
-# -------------------------
-def prioritize_keywords(keywords):
-    return sorted(
-        keywords,
-        key=lambda x: (
-            keyword_intent(x) in {"comparison", "commercial", "budget", "review"},
-            "vs" in x,
-            "under $" in x,
-            "best" in x,
-            "review" in x
-        ),
-        reverse=True
-    )[:160]
-
-# -------------------------
-# DEEP CLUSTERING (FIXED)
-# -------------------------
-def group_clusters(keywords):
-    clusters = {}
-
-    for kw in keywords:
-        kw_lower = kw.lower()
-
-        brand = next((b for b in TOP_BRANDS if b in kw_lower), "general")
-        intent = next((i for i in INTENT_BUCKETS if i in kw_lower), "general")
-
-        key = f"{brand}_{intent}"
-
-        clusters.setdefault(key, []).append(kw)
-
-    return clusters
-
-# -------------------------
-# ANCHOR STRATEGY
-# -------------------------
-def generate_anchor(kw):
-    t = random.choice(["exact", "partial", "branded"])
-
-    if t == "exact":
-        return kw
-    elif t == "partial":
-        return f"best {kw}"
-    else:
-        return "see full comparison"
-
-# -------------------------
-# PAGE WEIGHTING
-# -------------------------
-def assign_weights(kws):
-    weighted = []
-
-    for i, kw in enumerate(kws):
-        if i == 0:
-            weight = 5   # pillar
-        elif i < 3:
-            weight = 3
-        else:
-            weight = 1
-
-        weighted.append((kw, weight))
-
-    return weighted
-
-# -------------------------
-# TARGET ENGINE (UPGRADED)
-# -------------------------
 def load_phones():
     return normalize_phones(load_json(PHONES_FILE, []))
 
 
-def generate_targets(clusters, phones):
-    targets = []
+def ensure_keyword_system(phones):
+    clusters = load_json(KEYWORDS_CLUSTER_FILE, {})
+    if not clusters or not clusters.get("clusters"):
+        clusters = generate_keyword_clusters(phones, min_keywords=5000, max_keywords=10000, min_clusters=100, max_clusters=300)
+        save_json_helper(KEYWORDS_CLUSTER_FILE, clusters)
 
-    for cluster, kws in clusters.items():
-        weighted_kws = assign_weights(kws)
+    keyword_map = load_json(KEYWORD_MAP_FILE, {})
+    if not keyword_map or not keyword_map.get("keywords"):
+        keyword_map = build_keyword_page_map(clusters, phones)
+        save_json_helper(KEYWORD_MAP_FILE, keyword_map)
+    return clusters, keyword_map
 
-        for i, (kw, weight) in enumerate(weighted_kws):
-            targets.append({
+
+def load_live_backlinks_map():
+    rows = load_json(LIVE_BACKLINKS_FILE, [])
+    page_counts = {}
+    if isinstance(rows, list):
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            url = row.get("url")
+            if not url:
+                continue
+            page_counts[url] = int(row.get("count", 1))
+    return page_counts
+
+
+def page_importance(url):
+    if "/topics/" in url or "/cluster/" in url:
+        return 5.0
+    if "/keyword/" in url:
+        return 3.5
+    if "/phones/" in url:
+        return 3.0
+    if "/compare/" in url:
+        return 2.0
+    return 1.0
+
+
+def compute_priority_pages(keyword_map, backlinks_map):
+    priorities = []
+    for kw, mapping in keyword_map.get("keywords", {}).items():
+        target_pages = [
+            mapping.get("topic_url"),
+            mapping.get("cluster_url"),
+            mapping.get("keyword_url"),
+            *mapping.get("supporting_phone_pages", [])[:3],
+            *mapping.get("supporting_compare_pages", [])[:2],
+        ]
+        for url in target_pages:
+            if not url:
+                continue
+            existing = backlinks_map.get(url, 0)
+            score = round(page_importance(url) * 100 - (existing * 7), 2)
+            if score <= 0:
+                continue
+            priorities.append({
+                "url": url,
                 "keyword": kw,
-                "cluster": cluster,
-                "is_pillar": i == 0,
-                "target_type": "pillar" if i == 0 else "support",
-                "cluster_size": len(kws),
-                "weight": weight,
-                "target_page": f"/keyword/{kw.replace(' ', '-')}.html",
-                "supporting_reviews": [f"/phones/{p['slug']}.html" for p in choose_keyword_devices(kw, phones, limit=3)],
-                "anchor": generate_anchor(kw),
-                "opportunities": [
-                    f"https://www.google.com/search?q={kw.replace(' ', '+')}+\"write+for+us\"",
-                    f"https://www.google.com/search?q={kw.replace(' ', '+')}+guest+post",
-                    f"https://www.google.com/search?q={kw.replace(' ', '+')}+\"submit+article\"",
-                    f"https://www.google.com/search?q={kw.replace(' ', '+')}+\"become+contributor\""
-                ]
+                "priority_score": score,
+                "existing_backlinks": existing,
+                "needs_backlinks": max(0, int(score // 12)),
             })
 
+    deduped = {}
+    for item in priorities:
+        url = item["url"]
+        if url not in deduped or item["priority_score"] > deduped[url]["priority_score"]:
+            deduped[url] = item
+
+    ordered = sorted(deduped.values(), key=lambda x: x["priority_score"], reverse=True)
+    return ordered[:2000]
+
+
+def build_backlink_targets(keyword_map):
+    targets = []
+    for kw, mapping in keyword_map.get("keywords", {}).items():
+        targets.append({
+            "keyword": kw,
+            "target_page": mapping["keyword_url"],
+            "cluster_page": mapping["cluster_url"],
+            "topic_page": mapping["topic_url"],
+            "supporting_reviews": mapping["supporting_phone_pages"][:3],
+            "supporting_comparisons": mapping["supporting_compare_pages"][:3],
+            "target_type": "pillar" if kw == mapping.get("pillar_keyword") else "support",
+        })
     return targets
 
-# -------------------------
-# OUTREACH (UPGRADED)
-# -------------------------
-def generate_outreach_posts(clusters):
-    os.makedirs(OUTREACH_DIR, exist_ok=True)
 
-    for cluster, kws in list(clusters.items())[:10]:
-        kw = kws[0]
-        url = f"https://yoursite.com/keyword/{kw.replace(' ', '-')}.html"
-
-        content = f"""
-Hi,
-
-I came across your content around "{kw}" and really liked your coverage.
-
-We recently published a detailed guide:
-{url}
-
-It includes real comparisons, pros/cons, and buyer-focused insights.
-
-Would love to contribute something tailored for your audience if you're open.
-
-Best,
-"""
-
-        filename = hashlib.md5(kw.encode()).hexdigest()[:10] + ".txt"
-
-        with open(os.path.join(OUTREACH_DIR, filename), "w") as f:
-            f.write(content.strip())
-
-# -------------------------
-# INTERNAL LINKING ENGINE (NEW)
-# -------------------------
-def generate_internal_links(clusters, phones):
-    links = []
-    graph = build_link_graph(phones, [kw for kws in clusters.values() for kw in kws])
-
-    for cluster, kws in clusters.items():
-        if len(kws) < 2:
-            continue
-
-        pillar = kws[0]
-
-        for kw in kws[1:]:
-            links.append({
-                "from": f"/keyword/{kw.replace(' ', '-')}.html",
-                "to": f"/keyword/{pillar.replace(' ', '-')}.html",
-                "anchor": pillar,
-                "type": "support_to_pillar"
-            })
-
-    save_json(INTERNAL_LINK_FILE, links)
-    save_json_helper(LINK_GRAPH_FILE, graph)
-
-# -------------------------
-# TRACKER INIT
-# -------------------------
-def init_tracker():
-    if not os.path.exists(TRACKER_FILE):
-        save_json(TRACKER_FILE, {
-            "outreach_sent": [],
-            "links_acquired": [],
-            "daily_velocity": []
-        })
-
-# -------------------------
-# LINK VELOCITY
-# -------------------------
-def simulate_link_velocity():
-    tracker = load_json(TRACKER_FILE, {})
-
-    today_links = random.randint(1, 3)
-
-    tracker.setdefault("daily_velocity", []).append({
-        "date": TODAY,
-        "links": today_links
-    })
-
-    for i in range(today_links):
-        tracker.setdefault("links_acquired", []).append({
-            "site": f"site{i}.com",
-            "anchor_type": random.choice(["exact", "partial", "branded"]),
-            "target": "keyword_page",
-            "date": TODAY
-        })
-
-    save_json(TRACKER_FILE, tracker)
-
-# -------------------------
-# MAIN
-# -------------------------
 def run():
-    print("[BACKLINK ENGINE - DOMINANCE MODE] Running...")
-
-    keywords = load_keywords()
-    keywords = filter_keywords(keywords)
-    keywords = prioritize_keywords(keywords)
-
-    if not keywords:
-        print("[ERROR] No valid keywords after filtering")
-        return
-
+    print("[BACKLINK ENGINE - REAL AUTHORITY MODE] Running...")
     phones = load_phones()
-    clusters = group_clusters(keywords)
+    _, keyword_map = ensure_keyword_system(phones)
 
-    targets = generate_targets(clusters, phones)
+    backlinks_map = load_live_backlinks_map()
+    priority_pages = {
+        "generated_at": TODAY,
+        "total_pages": len(keyword_map.get("keywords", {})),
+        "pages_needing_backlinks": compute_priority_pages(keyword_map, backlinks_map),
+    }
+
+    targets = build_backlink_targets(keyword_map)
 
     os.makedirs("data/backlinks", exist_ok=True)
-    save_json(OUTPUT_TARGETS, targets)
+    save_json_helper(PRIORITY_PAGES_FILE, priority_pages)
+    save_json_helper(OUTPUT_TARGETS, targets)
 
-    generate_outreach_posts(clusters)
-    generate_internal_links(clusters, phones)
+    print(f"[BACKLINK ENGINE] priority_pages={len(priority_pages['pages_needing_backlinks'])} targets={len(targets)}")
 
-    init_tracker()
-    simulate_link_velocity()
-
-    print(f"[BACKLINK ENGINE] Targets: {len(targets)} | Clusters: {len(clusters)}")
 
 if __name__ == "__main__":
     run()
+# >>> UPDATED END
