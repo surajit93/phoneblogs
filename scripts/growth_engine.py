@@ -1,244 +1,222 @@
 import json
-import random
-import datetime
 import os
-import webbrowser
-from seo_growth_utils import keyword_intent
+import re
+from collections import defaultdict
 
-TRACKER_FILE = "data/backlinks/tracker.json"
-DIST_FILE = "data/distribution/reddit_quora_posts.json"
-OUTREACH_DIR = "site/outreach_posts"
+SITE_DOMAIN = os.environ.get("SITE_DOMAIN", "https://yoursite.com")
 
-TODAY = datetime.date.today().isoformat()
-
-# -------------------------
-# SAFE LOAD / SAVE
-# -------------------------
-
-# -------------------------
-# LOAD BACKLINK TARGETS
-# -------------------------
-def load_backlink_targets():
-    return load_json("data/backlinks/targets.json", [])
-
-# -------------------------
-# PRINT DAILY TARGETS
-# -------------------------
-def score_target(target):
-    intent = keyword_intent(target.get("keyword", ""))
-    weight = target.get("weight", 1)
-    pillar_bonus = 4 if target.get("is_pillar") else 0
-    intent_bonus = 3 if intent in {"comparison", "commercial", "budget", "review"} else 0
-    return weight + pillar_bonus + intent_bonus + len(target.get("supporting_reviews", []))
+MONEY_INTENTS = ("best", "vs", "under", "review", "compare", "top")
 
 
-def print_daily_targets():
-    targets = load_backlink_targets()
-
-    if not targets:
-        print("[TARGETS] No backlink targets")
-        return
-
-    selected = sorted(targets, key=score_target, reverse=True)[:5]
-
-    print("\n=== BACKLINK TARGETS ===\n")
-
-    for t in selected:
-        print(f"\n🔹 {t['keyword']}")
-        print(f"Page: {t['target_page']}")
-        print(f"Anchor: {t['anchor']}")
-        reviews = t.get("supporting_reviews") or []
-        if reviews:
-            print(f"Support reviews: {', '.join(reviews[:3])}")
-        print(f"Search: {t['opportunities'][0]}")
-        print("-" * 60)
+def slugify(value: str) -> str:
+    value = (value or "").strip().lower()
+    value = re.sub(r"[^a-z0-9]+", "-", value)
+    return value.strip("-")
 
 
-def load_json(path, default):
-    if not os.path.exists(path):
-        return default
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except:
-        return default
+def get_price(phone):
+    return phone.get("price") or phone.get("price_usd") or 0
 
-# -------------------------
-# PRIORITIZE DISTRIBUTION
-# -------------------------
-def prioritize_distribution(posts):
-    tracker = load_json(TRACKER_FILE, {})
-    links_acquired = tracker.get("links_acquired", []) or []
-    linked = {
-        (entry.get("target") or entry.get("url") or "")
-        for entry in links_acquired
-        if isinstance(entry, dict) and (entry.get("target") or entry.get("url"))
+
+def get_spec(phone, key):
+    specs = phone.get("specs") or {}
+    aliases = {
+        "ram": ["ram", "ram_gb"],
+        "battery": ["battery", "battery_mah"],
+        "camera": ["camera", "camera_mp"],
+        "storage": ["storage", "storage_gb"],
+        "cpu": ["cpu", "cpu_score"],
+        "gpu": ["gpu", "gpu_score"],
+        "display": ["display", "display_inches"],
+        "refresh": ["refresh", "refresh_hz"],
     }
+    for candidate in aliases.get(key, [key]):
+        if candidate in specs and specs[candidate] not in (None, ""):
+            return specs[candidate]
+        if candidate in phone and phone[candidate] not in (None, ""):
+            return phone[candidate]
+    return 0
 
-    posts.sort(
-        key=lambda x: (
-            x.get("target_url", "") in linked,
-            keyword_intent(x.get("keyword", "")) in {"comparison", "commercial", "budget", "review"}
-        ),
-        reverse=True
-    )
-    return posts
+
+def get_images(phone):
+    images = phone.get("images")
+    if isinstance(images, list) and images:
+        return images
+    hero = phone.get("hero_image")
+    return [hero] if hero else []
+
+
+def normalize_phone(phone):
+    normalized = dict(phone)
+    normalized.setdefault("slug", slugify(phone.get("name", "phone")))
+    normalized.setdefault("brand", (phone.get("brand") or phone.get("name", "").split(" ")[0]).strip())
+    normalized["price"] = get_price(phone)
+    normalized.setdefault("specs", {})
+    normalized["specs"].setdefault("ram", get_spec(phone, "ram"))
+    normalized["specs"].setdefault("battery", get_spec(phone, "battery"))
+    normalized["specs"].setdefault("camera", get_spec(phone, "camera"))
+    normalized["specs"].setdefault("storage", get_spec(phone, "storage"))
+    normalized["images"] = get_images(phone)
+    normalized.setdefault("score", phone.get("overall_score") or phone.get("value_score") or 0)
+    normalized.setdefault("alt_text", f"{normalized['name']} review image")
+    return normalized
+
+
+def normalize_phones(phones):
+    return [normalize_phone(phone) for phone in phones if isinstance(phone, dict) and phone.get("name")]
+
+
+def keyword_intent(keyword):
+    kw = (keyword or "").lower()
+    if "vs" in kw or "compare" in kw:
+        return "comparison"
+    if "under" in kw or "budget" in kw or "cheap" in kw:
+        return "budget"
+    if "review" in kw:
+        return "review"
+    if any(token in kw for token in ("best", "top")):
+        return "commercial"
+    return "informational"
+
+
+def classify_phone(phone):
+    if get_spec(phone, "battery") >= 5000:
+        return "battery"
+    if get_spec(phone, "camera") >= 64:
+        return "camera"
+    if get_spec(phone, "ram") >= 8:
+        return "gaming"
+    return "budget"
+
+
+def choose_keyword_devices(keyword, phones, limit=8):
+    kw = (keyword or "").lower()
+    ranked = list(phones)
+    brand_tokens = {phone["brand"].lower() for phone in phones if phone.get("brand")}
+    matched_brand = next((brand for brand in brand_tokens if brand in kw), None)
+    if matched_brand:
+        ranked = [phone for phone in ranked if phone["brand"].lower() == matched_brand] or ranked
+
+    if "under" in kw:
+        prices = [int(token) for token in re.findall(r"\d+", kw)]
+        if prices:
+            cap = prices[0]
+            ranked = [phone for phone in ranked if get_price(phone) and get_price(phone) <= cap] or ranked
+
+    intent = keyword_intent(keyword)
+    if "gaming" in kw:
+        ranked.sort(key=lambda phone: (get_spec(phone, "ram"), phone.get("score", 0), get_price(phone)), reverse=True)
+    elif "camera" in kw:
+        ranked.sort(key=lambda phone: (get_spec(phone, "camera"), phone.get("score", 0), get_price(phone)), reverse=True)
+    elif "battery" in kw:
+        ranked.sort(key=lambda phone: (get_spec(phone, "battery"), phone.get("score", 0), get_price(phone)), reverse=True)
+    elif intent == "budget":
+        ranked.sort(key=lambda phone: ((phone.get("score") or 0) / max(get_price(phone), 1), phone.get("score", 0)), reverse=True)
+    else:
+        ranked.sort(key=lambda phone: (phone.get("score", 0), get_spec(phone, "ram"), get_spec(phone, "battery")), reverse=True)
+    return ranked[:limit]
+
+
+def build_keyword_universe(phones, max_keywords=700):
+    keywords = set()
+    price_points = [200, 300, 400, 500, 700, 1000]
+    feature_map = {
+        "battery": "battery",
+        "camera": "camera",
+        "gaming": "gaming",
+        "budget": "budget",
+    }
+    brands = sorted({phone["brand"] for phone in phones if phone.get("brand")})
+
+    for brand in brands[:80]:
+        lower = brand.lower()
+        keywords.update({
+            f"{lower} phone review",
+            f"best {lower} phone",
+            f"best {lower} phone under $500",
+            f"{lower} phone comparison",
+        })
+
+    for price in price_points:
+        keywords.update({
+            f"best phones under ${price}",
+            f"best gaming phone under ${price}",
+            f"best camera phone under ${price}",
+            f"best battery phone under ${price}",
+        })
+
+    cluster_examples = defaultdict(list)
+    for phone in phones:
+        cluster_examples[classify_phone(phone)].append(phone)
+
+    for cluster, items in cluster_examples.items():
+        items = sorted(items, key=lambda phone: (phone.get("score", 0), get_price(phone)), reverse=True)[:24]
+        keywords.add(f"best {feature_map[cluster]} phones")
+        for phone in items:
+            name = phone["name"].lower()
+            brand = phone["brand"].lower()
+            keywords.update({
+                f"{name} review",
+                f"{name} vs {brand} alternatives",
+                f"best {brand} {cluster} phone",
+            })
+
+    cleaned = []
+    seen = set()
+    for kw in keywords:
+        normalized = slugify(kw)
+        if not normalized or normalized in seen:
+            continue
+        if len(kw.split()) < 3:
+            continue
+        if not any(token in kw for token in MONEY_INTENTS):
+            continue
+        seen.add(normalized)
+        cleaned.append(kw)
+    cleaned.sort()
+    return cleaned[:max_keywords]
+
+
+def build_link_graph(phones, keywords):
+    graph = {
+        "phone_to_cluster": [],
+        "phone_to_keywords": [],
+        "keyword_to_phones": [],
+        "keyword_to_cluster": [],
+        "cluster_to_keywords": [],
+        "comparison_to_reviews": [],
+        "money_pages": [],
+    }
+    cluster_pages = defaultdict(list)
+    for phone in phones:
+        cluster = classify_phone(phone)
+        phone_url = f"/phones/{phone['slug']}.html"
+        cluster_url = f"/cluster/{cluster}.html"
+        graph["phone_to_cluster"].append({"from": phone_url, "to": cluster_url, "anchor": f"best {cluster} phones"})
+        cluster_pages[cluster].append(phone)
+        graph["money_pages"].append(phone_url)
+
+    for keyword in keywords:
+        keyword_slug = slugify(keyword)
+        keyword_url = f"/keyword/{keyword_slug}.html"
+        intent = keyword_intent(keyword)
+        chosen = choose_keyword_devices(keyword, phones, limit=5)
+        if chosen:
+            primary_cluster = classify_phone(chosen[0])
+            graph["keyword_to_cluster"].append({"from": keyword_url, "to": f"/cluster/{primary_cluster}.html", "anchor": f"best {primary_cluster} phones"})
+            graph["cluster_to_keywords"].append({"from": f"/cluster/{primary_cluster}.html", "to": keyword_url, "anchor": keyword})
+        for phone in chosen:
+            phone_url = f"/phones/{phone['slug']}.html"
+            graph["keyword_to_phones"].append({"from": keyword_url, "to": phone_url, "anchor": f"{phone['name']} review"})
+            graph["phone_to_keywords"].append({"from": phone_url, "to": keyword_url, "anchor": keyword})
+        if intent in {"comparison", "commercial", "budget", "review"}:
+            graph["money_pages"].append(keyword_url)
+
+    graph["money_pages"] = sorted(set(graph["money_pages"]))
+    return graph
+
 
 def save_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
-
-# -------------------------
-# OPEN PLATFORMS
-# -------------------------
-def open_platforms():
-    urls = [
-        "https://www.reddit.com/r/smartphones/",
-        "https://www.reddit.com/r/Android/",
-        "https://www.quora.com/"
-    ]
-    for u in urls:
-        webbrowser.open(u)
-
-# -------------------------
-# DISTRIBUTION (NO REPEAT)
-# -------------------------
-def run_distribution():
-    posts = load_json(DIST_FILE, [])
-    posts = prioritize_distribution(posts)
-    tracker = load_json(TRACKER_FILE, {})
-
-    used_keywords = {
-        entry.get("keyword")
-        for entry in tracker.get("posts", [])
-        if entry.get("keyword")
-    }
-
-    fresh_posts = [p for p in posts if p.get("keyword") and p.get("keyword") not in used_keywords]
-
-    if not fresh_posts:
-        print("[DIST] No fresh posts available")
-        return
-
-    selected = random.sample(fresh_posts, min(3, len(fresh_posts)))
-
-    print("\n=== COPY & POST ===\n")
-
-    for p in selected:
-        keyword = p.get("keyword", "")
-        post_options = p.get("posts") or []
-        if not post_options:
-            continue
-
-        print(f"\n🔹 {keyword}")
-        msg = random.choice(post_options)
-        url = p.get("target_url", "")
-        print(f"{msg}\n\n👉 {url}")
-        print("-" * 60)
-
-        tracker.setdefault("posts", []).append({
-            "keyword": keyword,
-            "url": url,
-            "target": url,
-            "date": TODAY
-        })
-
-    save_json(TRACKER_FILE, tracker)
-
-# -------------------------
-# OUTREACH (DAILY LIMIT + NO DUPLICATE)
-# -------------------------
-def run_outreach():
-    files = os.listdir(OUTREACH_DIR)
-    tracker = load_json(TRACKER_FILE, {})
-
-    sent_today = [
-        x for x in tracker.get("outreach_sent", [])
-        if isinstance(x, dict) and x.get("date") == TODAY
-    ]
-
-    if len(sent_today) >= 5:
-        print("[OUTREACH] Daily limit reached")
-        return
-
-    sent_files = {x.get("file") for x in tracker.get("outreach_sent", []) if isinstance(x, dict) and x.get("file")}
-
-    remaining = [f for f in files if f not in sent_files]
-
-    if not remaining:
-        print("[OUTREACH] No new outreach files")
-        return
-
-    to_send = random.sample(remaining, min(5 - len(sent_today), len(remaining)))
-
-    print("\n=== OUTREACH ===\n")
-
-    for f in to_send:
-        path = os.path.join(OUTREACH_DIR, f)
-
-        with open(path, "r", encoding="utf-8") as file:
-            content = file.read()
-
-        print(f"\n📧 {f}\n")
-        print(content[:400])
-        print("-" * 60)
-
-        tracker.setdefault("outreach_sent", []).append({
-            "file": f,
-            "date": TODAY
-        })
-
-    save_json(TRACKER_FILE, tracker)
-
-# -------------------------
-# SUMMARY
-# -------------------------
-def summary():
-    tracker = load_json(TRACKER_FILE, {})
-
-    print("\n=== STATS ===")
-    print(f"Total Outreach: {len(tracker.get('outreach_sent', []))}")
-    print(f"Links Acquired: {len(tracker.get('links_acquired', []))}")
-
-# -------------------------
-# WEEKLY SUMMARY
-# -------------------------
-def weekly_summary():
-    tracker = load_json(TRACKER_FILE, {})
-
-    last_7 = []
-    for x in tracker.get("outreach_sent", []):
-        if not isinstance(x, dict):
-            continue
-
-        sent_date = x.get("date")
-        if not sent_date:
-            continue
-
-        try:
-            if (datetime.date.today() - datetime.date.fromisoformat(sent_date)).days <= 7:
-                last_7.append(x)
-        except ValueError:
-            continue
-
-    print("\n=== WEEKLY PROGRESS ===")
-    print(f"Outreach (7d): {len(last_7)}")
-    print(f"Total Links: {len(tracker.get('links_acquired', []))}")
-
-# -------------------------
-# MAIN
-# -------------------------
-def run():
-    print("\n🔥 GROWTH ENGINE STARTED 🔥\n")
-
-    open_platforms()
-    run_distribution()
-    print_daily_targets()
-    run_outreach()
-    summary()
-    weekly_summary()
-
-    print("\n✅ DONE\n")
-
-if __name__ == "__main__":
-    run()
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as handle:
+        json.dump(data, handle, indent=2)
