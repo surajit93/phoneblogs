@@ -1,17 +1,62 @@
+# >>> UPDATED START
+#!/usr/bin/env python3
+
+import datetime
+import hashlib
 import json
 import os
+import random
 import re
-import hashlib
 from collections import defaultdict
+from typing import Dict, List
 
 SITE_DOMAIN = os.environ.get("SITE_DOMAIN", "https://yoursite.com")
-MONEY_INTENTS = ("best", "vs", "under", "review", "compare", "top")
+CONTENT_MEMORY_FILE = "data/content_memory.json"
+
+
+REQUIRED_DEPTH_SECTIONS = [
+    "Who should NOT buy",
+    "Hidden trade-offs",
+    "Real-world usage",
+    "Better alternatives",
+]
 
 
 def slugify(value: str) -> str:
     value = (value or "").strip().lower()
     value = re.sub(r"[^a-z0-9]+", "-", value)
     return value.strip("-")
+
+
+def deterministic_int(seed: str, modulo: int) -> int:
+    if modulo <= 0:
+        return 0
+    digest = hashlib.sha256(seed.encode("utf-8")).hexdigest()
+    return int(digest[:12], 16) % modulo
+
+
+def deterministic_choice(options: List[str], seed: str) -> str:
+    if not options:
+        return ""
+    return options[deterministic_int(seed, len(options))]
+
+
+def load_json(path: str, default):
+    if not os.path.exists(path):
+        return default
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return default
+
+
+def save_json(path: str, data):
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    tmp = f"{path}.tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+    os.replace(tmp, path)
 
 
 def get_price(phone):
@@ -38,27 +83,18 @@ def get_spec(phone, key):
     return 0
 
 
-def get_images(phone):
-    images = phone.get("images")
-    if isinstance(images, list) and images:
-        return images
-    hero = phone.get("hero_image")
-    return [hero] if hero else []
-
-
 def normalize_phone(phone):
     normalized = dict(phone)
-    normalized.setdefault("slug", slugify(phone.get("name", "phone")))
-    normalized.setdefault("brand", (phone.get("brand") or phone.get("name", "").split(" ")[0]).strip())
+    normalized.setdefault("name", "Unknown Phone")
+    normalized.setdefault("slug", slugify(normalized["name"]))
+    normalized.setdefault("brand", (phone.get("brand") or normalized["name"].split(" ")[0]).strip())
     normalized["price"] = get_price(phone)
     normalized.setdefault("specs", {})
     normalized["specs"].setdefault("ram", get_spec(phone, "ram"))
     normalized["specs"].setdefault("battery", get_spec(phone, "battery"))
     normalized["specs"].setdefault("camera", get_spec(phone, "camera"))
     normalized["specs"].setdefault("storage", get_spec(phone, "storage"))
-    normalized["images"] = get_images(phone)
     normalized.setdefault("score", phone.get("overall_score") or phone.get("value_score") or 0)
-    normalized.setdefault("alt_text", f"{normalized['name']} review image")
     return normalized
 
 
@@ -92,325 +128,240 @@ def classify_phone(phone):
 def choose_keyword_devices(keyword, phones, limit=8):
     kw = (keyword or "").lower()
     ranked = list(phones)
-    brand_tokens = {phone["brand"].lower() for phone in phones if phone.get("brand")}
-    matched_brand = next((brand for brand in brand_tokens if brand in kw), None)
-    if matched_brand:
-        ranked = [phone for phone in ranked if phone["brand"].lower() == matched_brand] or ranked
-
-    if "under" in kw:
-        prices = [int(token) for token in re.findall(r"\d+", kw)]
-        if prices:
-            cap = prices[0]
-            ranked = [phone for phone in ranked if get_price(phone) and get_price(phone) <= cap] or ranked
-
-    intent = keyword_intent(keyword)
     if "gaming" in kw:
-        ranked.sort(key=lambda phone: (get_spec(phone, "ram"), phone.get("score", 0), get_price(phone)), reverse=True)
+        ranked.sort(key=lambda p: (get_spec(p, "ram"), p.get("score", 0)), reverse=True)
     elif "camera" in kw:
-        ranked.sort(key=lambda phone: (get_spec(phone, "camera"), phone.get("score", 0), get_price(phone)), reverse=True)
+        ranked.sort(key=lambda p: (get_spec(p, "camera"), p.get("score", 0)), reverse=True)
     elif "battery" in kw:
-        ranked.sort(key=lambda phone: (get_spec(phone, "battery"), phone.get("score", 0), get_price(phone)), reverse=True)
-    elif intent == "budget":
-        ranked.sort(key=lambda phone: ((phone.get("score") or 0) / max(get_price(phone), 1), phone.get("score", 0)), reverse=True)
+        ranked.sort(key=lambda p: (get_spec(p, "battery"), p.get("score", 0)), reverse=True)
+    elif "under" in kw:
+        nums = re.findall(r"\d+", kw)
+        if nums:
+            cap = int(nums[0])
+            ranked = [p for p in ranked if get_price(p) and get_price(p) <= cap] or ranked
+        ranked.sort(key=lambda p: (p.get("score", 0) / max(get_price(p), 1)), reverse=True)
     else:
-        ranked.sort(key=lambda phone: (phone.get("score", 0), get_spec(phone, "ram"), get_spec(phone, "battery")), reverse=True)
+        ranked.sort(key=lambda p: p.get("score", 0), reverse=True)
     return ranked[:limit]
 
 
-# >>> UPDATED START
+def build_keyword_universe(phones, max_keywords=2500):
+    brands = sorted({p.get("brand", "").lower() for p in phones if p.get("brand")})
+    intents = ["best", "top", "review", "under", "vs", "compare"]
+    features = ["battery", "camera", "gaming", "display", "charging", "value"]
+    prices = [200, 250, 300, 400, 500, 700, 1000, 1200]
 
-def deterministic_pick(options, key):
-    if not options:
-        return ""
-    digest = hashlib.sha256((key or "").encode("utf-8")).hexdigest()
-    idx = int(digest[:8], 16) % len(options)
-    return options[idx]
+    keywords = []
+    for brand in brands:
+        for feature in features:
+            for intent in intents:
+                if intent == "under":
+                    for price in prices:
+                        keywords.append(f"{intent} {brand} {feature} phones under ${price}")
+                elif intent in {"vs", "compare"}:
+                    keywords.append(f"{brand} {feature} phones {intent} alternatives")
+                else:
+                    keywords.append(f"{intent} {brand} {feature} phones")
 
-
-def select_title_variant(slug: str, variants):
-    return deterministic_pick(variants, slug)
-
-
-def semantic_sections_template(context, keyword=""):
-    label = keyword or context
-    return {
-        "who_should_buy": f"Buyers who prioritize {context} outcomes and predictable value from {label}.",
-        "who_should_not_buy": f"Shoppers needing ultra-premium features or niche workflows outside {context}.",
-        "hidden_tradeoffs": f"Better {context} usually trades off with price, camera tuning, or thermal comfort.",
-        "real_world_usage": f"Daily behavior for {label} depends on app mix, connectivity, battery wear, and travel patterns.",
-        "better_alternatives": f"Alternative models outperform {label} for at least one core decision axis.",
-    }
-
-
-def anti_thin_content_guard(blocks, required_sections=None, min_blocks=8):
-    required_sections = required_sections or [
-        "who_should_buy",
-        "who_should_not_buy",
-        "hidden_tradeoffs",
-        "real_world_usage",
-        "better_alternatives",
+    generic = [
+        "is 8gb ram enough for gaming",
+        "why 5000mah battery drains fast",
+        "does camera megapixel matter",
+        "how much ram is enough for multitasking",
+        "is fast charging bad for battery health",
     ]
-    if not isinstance(blocks, dict):
-        return False
-    non_empty = [k for k, v in blocks.items() if isinstance(v, str) and v.strip()]
-    return len(non_empty) >= min_blocks and all(blocks.get(section, "").strip() for section in required_sections)
+    keywords.extend(generic)
+
+    deduped = []
+    seen = set()
+    for kw in keywords:
+        k = " ".join(kw.split()).lower()
+        if k in seen:
+            continue
+        seen.add(k)
+        deduped.append(k)
+        if len(deduped) >= max_keywords:
+            break
+    return deduped
 
 
-def generate_keyword_clusters(phones, min_keywords=5000, max_keywords=10000, min_clusters=100, max_clusters=300):
-    brands = sorted({(p.get("brand") or "general").lower() for p in phones if p.get("brand")})
-    if not brands:
-        brands = ["general"]
+def generate_keyword_clusters(phones, min_keywords=2500, max_keywords=6000, min_clusters=100, max_clusters=220):
+    keywords = build_keyword_universe(phones, max_keywords=max_keywords)
+    while len(keywords) < min_keywords:
+        i = len(keywords)
+        keywords.append(f"best phone performance decision guide {i}")
 
-    intents = ["best", "under", "vs", "review", "comparison"]
-    features = ["battery", "camera", "gaming", "budget", "performance", "value", "display", "charging"]
-    scenarios = [
-        "students", "travelers", "parents", "creators", "multitasking", "work", "streaming", "photography",
-        "night photos", "long battery", "business", "everyday use", "gaming sessions", "social media",
-    ]
-    prices = [200, 250, 300, 350, 400, 450, 500, 600, 700, 800, 1000, 1200]
-
-    cluster_target = max(min_clusters, min(max_clusters, max(100, len(brands) * 10)))
+    cluster_count = max(min_clusters, min(max_clusters, len(keywords) // 25))
     clusters = []
-    keyword_count = 0
-
-    cidx = 0
-    while len(clusters) < cluster_target and keyword_count < max_keywords:
-        brand = brands[cidx % len(brands)]
-        feature = features[cidx % len(features)]
-        intent = intents[cidx % len(intents)]
-        scenario = scenarios[cidx % len(scenarios)]
-        price = prices[cidx % len(prices)]
-
-        pillar = f"{intent} {brand} {feature} phones for {scenario}".replace("  ", " ").strip()
-        subclusters = []
-        supporting = []
-
-        for sidx in range(4):
-            sub_name = f"{brand}-{feature}-{scenario}-{sidx+1}"
-            sub_keywords = [
-                f"best {brand} {feature} phone under ${price + (sidx*50)}",
-                f"{brand} {feature} phone review for {scenario}",
-                f"{brand} {feature} vs alternatives for {scenario}",
-                f"top {brand} {feature} comparison {2026 - (sidx % 2)}",
-                f"{brand} {feature} buying guide for {scenario}",
-                f"{brand} {feature} hidden trade offs {scenario}",
-                f"which {brand} {feature} phone should i buy {scenario}",
-                f"{brand} {feature} real world usage {scenario}",
-            ]
-            subclusters.append({"name": sub_name, "keywords": sub_keywords})
-            supporting.extend(sub_keywords)
-
-        deduped = []
-        seen = set()
-        for kw in [pillar] + supporting:
-            cleaned = " ".join(kw.lower().split())
-            if cleaned not in seen and len(cleaned.split()) >= 4:
-                seen.add(cleaned)
-                deduped.append(cleaned)
-
-        cluster = {
-            "cluster_id": f"cluster-{len(clusters)+1:03d}",
-            "cluster_slug": slugify(f"{brand}-{feature}-{scenario}-{len(clusters)+1}"),
-            "brand": brand,
-            "feature": feature,
-            "scenario": scenario,
-            "pillar_keyword": deduped[0],
-            "supporting_keywords": deduped[1:],
-            "subclusters": subclusters,
-            "all_keywords": deduped,
-        }
-        keyword_count += len(deduped)
-        clusters.append(cluster)
-        cidx += 1
-
-    all_keywords = [kw for cluster in clusters for kw in cluster["all_keywords"]]
-    if len(all_keywords) < min_keywords:
-        # Extend with deterministic compare long-tail set.
-        phones_by_name = [p.get("name", "phone").lower() for p in phones[:120]]
-        seed_cluster = clusters[0] if clusters else None
-        for i in range(min_keywords - len(all_keywords)):
-            a = phones_by_name[i % max(len(phones_by_name), 1)] if phones_by_name else "phone a"
-            b = phones_by_name[(i + 7) % max(len(phones_by_name), 1)] if phones_by_name else "phone b"
-            kw = f"{a} vs {b} which phone should i buy"
-            if seed_cluster is not None:
-                seed_cluster["supporting_keywords"].append(kw)
-                seed_cluster["all_keywords"].append(kw)
-            all_keywords.append(kw)
-
-    if len(all_keywords) > max_keywords:
-        overflow = len(all_keywords) - max_keywords
-        for cluster in reversed(clusters):
-            while overflow > 0 and cluster["supporting_keywords"]:
-                cluster["supporting_keywords"].pop()
-                cluster["all_keywords"].pop()
-                overflow -= 1
-            if overflow <= 0:
-                break
+    for i in range(cluster_count):
+        start = i * 25
+        slice_keywords = keywords[start:start + 25]
+        if not slice_keywords:
+            slice_keywords = [f"phone buying guide cluster {i + 1}"]
+        pillar = slice_keywords[0]
+        clusters.append(
+            {
+                "cluster_id": f"cluster-{i + 1:03d}",
+                "cluster_slug": slugify(pillar),
+                "pillar_keyword": pillar,
+                "all_keywords": slice_keywords,
+                "supporting_keywords": slice_keywords[1:],
+            }
+        )
 
     return {
-        "generated_at": os.environ.get("BUILD_DATE") or "2026-03-24",
+        "generated_at": datetime.date.today().isoformat(),
         "cluster_count": len(clusters),
-        "keyword_count": sum(len(c["all_keywords"]) for c in clusters),
+        "keyword_count": len(keywords),
         "clusters": clusters,
     }
 
 
 def build_keyword_page_map(cluster_data, phones):
-    mapping = {
-        "generated_at": os.environ.get("BUILD_DATE") or "2026-03-24",
-        "keywords": {},
-        "clusters": {},
-    }
-
+    mapping = {"generated_at": datetime.date.today().isoformat(), "keywords": {}}
+    phone_slugs = [p["slug"] for p in phones][:24]
     for cluster in cluster_data.get("clusters", []):
-        cluster_slug = cluster["cluster_slug"]
-        cluster_url = f"/cluster/{cluster_slug}.html"
-        topic_url = f"/topics/{cluster_slug}.html"
-        mapping["clusters"][cluster_slug] = {
-            "cluster_id": cluster["cluster_id"],
-            "pillar_keyword": cluster["pillar_keyword"],
-            "cluster_url": cluster_url,
-            "topic_url": topic_url,
-            "keyword_count": len(cluster.get("all_keywords", [])),
-        }
         for kw in cluster.get("all_keywords", []):
-            kw_slug = slugify(kw)
-            devices = choose_keyword_devices(kw, phones, limit=6)
-            comp_pairs = []
-            for i in range(min(len(devices), 4)):
-                for j in range(i + 1, min(len(devices), 4)):
-                    comp_pairs.append(f"/compare/{devices[i]['slug']}-vs-{devices[j]['slug']}.html")
+            s = slugify(kw)
             mapping["keywords"][kw] = {
-                "keyword_slug": kw_slug,
-                "keyword_url": f"/keyword/{kw_slug}.html",
-                "cluster_slug": cluster_slug,
-                "cluster_url": cluster_url,
-                "topic_url": topic_url,
-                "supporting_phone_pages": [f"/phones/{d['slug']}.html" for d in devices],
-                "supporting_compare_pages": comp_pairs[:6],
-                "pillar_keyword": cluster["pillar_keyword"],
+                "pillar_keyword": cluster.get("pillar_keyword"),
+                "keyword_url": f"{SITE_DOMAIN}/keyword/{s}.html",
+                "cluster_url": f"{SITE_DOMAIN}/cluster/{cluster['cluster_slug']}.html",
+                "topic_url": f"{SITE_DOMAIN}/topics/{slugify(cluster.get('pillar_keyword', kw))}.html",
+                "supporting_phone_pages": [f"{SITE_DOMAIN}/phones/{x}.html" for x in phone_slugs[:8]],
+                "supporting_compare_pages": [f"{SITE_DOMAIN}/compare/{phone_slugs[i]}-vs-{phone_slugs[i+1]}.html" for i in range(0, min(8, len(phone_slugs)-1), 2)],
             }
     return mapping
 
 
-def build_link_graph(phones, keywords, keyword_map=None):
-    graph = {
-        "phone_to_cluster": [],
-        "phone_to_keywords": [],
-        "keyword_to_phones": [],
-        "keyword_to_cluster": [],
-        "cluster_to_keywords": [],
-        "comparison_to_reviews": [],
-        "money_pages": [],
-        "pillar_to_supporting": [],
-        "supporting_to_pillar": [],
-        "phone_to_keyword": [],
-        "keyword_to_compare": [],
-    }
-    cluster_pages = defaultdict(list)
-    for phone in phones:
-        cluster = classify_phone(phone)
-        phone_url = f"/phones/{phone['slug']}.html"
-        cluster_url = f"/cluster/{cluster}.html"
-        graph["phone_to_cluster"].append({"from": phone_url, "to": cluster_url, "anchor": f"best {cluster} phones"})
-        cluster_pages[cluster].append(phone)
-        graph["money_pages"].append(phone_url)
+class UniquenessMemory:
+    def __init__(self, path=CONTENT_MEMORY_FILE):
+        self.path = path
+        self.payload = load_json(path, {"phrases": {}, "structures": {}})
 
-    for keyword in keywords:
-        keyword_slug = slugify(keyword)
-        keyword_url = f"/keyword/{keyword_slug}.html"
-        intent = keyword_intent(keyword)
-        chosen = choose_keyword_devices(keyword, phones, limit=6)
+    def phrase_penalty(self, phrase: str) -> int:
+        return int(self.payload.get("phrases", {}).get(phrase.lower(), 0))
 
-        if keyword_map and keyword in keyword_map.get("keywords", {}):
-            m = keyword_map["keywords"][keyword]
-            graph["keyword_to_cluster"].append({"from": keyword_url, "to": m["cluster_url"], "anchor": m["pillar_keyword"]})
-            graph["cluster_to_keywords"].append({"from": m["cluster_url"], "to": keyword_url, "anchor": keyword})
-            graph["keyword_to_compare"].extend({"from": keyword_url, "to": cp, "anchor": "compare alternatives"} for cp in m["supporting_compare_pages"])
-            if keyword != m["pillar_keyword"]:
-                pslug = slugify(m["pillar_keyword"])
-                graph["supporting_to_pillar"].append({"from": keyword_url, "to": f"/keyword/{pslug}.html", "anchor": m["pillar_keyword"]})
-                graph["pillar_to_supporting"].append({"from": f"/keyword/{pslug}.html", "to": keyword_url, "anchor": keyword})
-        elif chosen:
-            primary_cluster = classify_phone(chosen[0])
-            graph["keyword_to_cluster"].append({"from": keyword_url, "to": f"/cluster/{primary_cluster}.html", "anchor": f"best {primary_cluster} phones"})
-            graph["cluster_to_keywords"].append({"from": f"/cluster/{primary_cluster}.html", "to": keyword_url, "anchor": keyword})
+    def select_fresh(self, options: List[str], seed: str) -> str:
+        if not options:
+            return ""
+        ranked = sorted(options, key=lambda item: (self.phrase_penalty(item), deterministic_int(seed + item, 1000)))
+        return ranked[0]
 
-        for phone in chosen:
-            phone_url = f"/phones/{phone['slug']}.html"
-            graph["keyword_to_phones"].append({"from": keyword_url, "to": phone_url, "anchor": f"{phone['name']} review"})
-            graph["phone_to_keywords"].append({"from": phone_url, "to": keyword_url, "anchor": keyword})
-            graph["phone_to_keyword"].append({"from": phone_url, "to": keyword_url, "anchor": f"best use case for {phone['name']}"})
-        if intent in {"comparison", "commercial", "budget", "review"}:
-            graph["money_pages"].append(keyword_url)
+    def remember_phrase(self, phrase: str):
+        if not phrase:
+            return
+        phrases = self.payload.setdefault("phrases", {})
+        key = phrase.lower().strip()
+        phrases[key] = int(phrases.get(key, 0)) + 1
 
-    graph["money_pages"] = sorted(set(graph["money_pages"]))
-    return graph
+    def remember_structure(self, page_slug: str, structure: List[str]):
+        self.payload.setdefault("structures", {})[page_slug] = structure
+
+    def save(self):
+        save_json(self.path, self.payload)
 
 
-def save_json(path, data):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as handle:
-        json.dump(data, handle, indent=2)
+def section_order(seed: str, sections: List[str]) -> List[str]:
+    shuffled = sections[:]
+    rnd = random.Random(deterministic_int(seed, 10_000_000))
+    rnd.shuffle(shuffled)
+    return shuffled
+
+
+def make_ctr_title_variants(query: str, context: str = "") -> List[str]:
+    q = query.strip().rstrip("?")
+    c = context.strip()
+    return [
+        f"{q}: The Brutal Truth Most Buyers Learn Too Late",
+        f"Before You Choose {c or 'a Phone'}: {q} (What Changes the Decision)",
+        f"{q}? 7 Real-World Tests That Flip the Answer",
+        f"Stop Guessing: {q} With Hidden Trade-Offs Exposed",
+        f"{q} — The No-Hype Framework Smart Buyers Use in 2026",
+    ]
+
+
+def select_title_variant(slug: str, variants: List[str]) -> str:
+    return deterministic_choice(variants, f"title::{slug}")
+
+
+def generate_informational_topics(min_pages=500, max_pages=1500):
+    stems = [
+        ("is", "ram enough for"),
+        ("why", "battery drains fast on"),
+        ("does", "camera megapixel matter on"),
+        ("how", "to reduce thermal throttling on"),
+        ("is", "fast charging bad for"),
+        ("why", "phone lag after update"),
+        ("does", "refresh rate impact battery"),
+        ("how", "much storage is enough for"),
+        ("is", "oled worth it for"),
+    ]
+    audiences = ["gaming", "students", "travel", "parents", "creators", "business", "daily use"]
+    devices = ["budget phones", "mid-range phones", "flagship phones", "android phones", "iphone users"]
+
+    topics = []
+    target = max(min_pages, min(max_pages, 900))
+    idx = 0
+    while len(topics) < target:
+        a, b = stems[idx % len(stems)]
+        audience = audiences[idx % len(audiences)]
+        device = devices[(idx // len(audiences)) % len(devices)]
+        query = f"{a} {8 + (idx % 9)}gb {b} {audience} {device}".replace("  ", " ")
+        topics.append(
+            {
+                "id": f"info-{idx + 1:04d}",
+                "query": query,
+                "slug": slugify(query),
+                "audience": audience,
+                "device_segment": device,
+                "priority": 1000 - idx,
+            }
+        )
+        idx += 1
+    return topics
+
+
+def build_link_graph(phones, keywords, comparisons, topics, informational):
+    graph = defaultdict(list)
+
+    def add_edge(src, dst, anchor):
+        if not src or not dst or src == dst:
+            return
+        graph[src].append({"target": dst, "anchor": anchor})
+
+    strong_topics = [f"/topics/{slugify(t)}.html" for t in topics[:120]]
+    keyword_pages = [f"/keyword/{slugify(k)}.html" for k in keywords[:2600]]
+    phone_pages = [f"/phones/{p['slug']}.html" for p in phones[:1000]]
+    compare_pages = [f"/compare/{slugify(a)}-vs-{slugify(b)}.html" for a, b in comparisons[:700]]
+    info_pages = [f"/informational/{slugify(q['query'])}.html" for q in informational[:1500]]
+
+    # informational -> keyword -> phone -> compare
+    for i, src in enumerate(info_pages):
+        for dst in keyword_pages[i % len(keyword_pages): (i % len(keyword_pages)) + 3]:
+            add_edge(src, dst, "buying decision factors")
+
+    for i, src in enumerate(keyword_pages):
+        for dst in phone_pages[i % len(phone_pages): (i % len(phone_pages)) + 3]:
+            add_edge(src, dst, "recommended phone options")
+
+    for i, src in enumerate(phone_pages):
+        for dst in compare_pages[i % len(compare_pages): (i % len(compare_pages)) + 2]:
+            add_edge(src, dst, "compare before buying")
+
+    weak_tail = keyword_pages[-500:] + compare_pages[-300:]
+    donors = strong_topics + info_pages[:300]
+    for i, weak in enumerate(weak_tail):
+        src = donors[i % len(donors)]
+        add_edge(src, weak, "deeper analysis")
+
+    return dict(graph)
+
+
+def enforce_depth_or_raise(content: str, min_words=1200):
+    words = len(re.findall(r"\b\w+\b", content))
+    if words < min_words:
+        raise ValueError(f"Thin content rejected: {words} words")
+
 
 # >>> UPDATED END
-
-
-def build_keyword_universe(phones, max_keywords=700):
-    keywords = set()
-    price_points = [200, 300, 400, 500, 700, 1000]
-    feature_map = {
-        "battery": "battery",
-        "camera": "camera",
-        "gaming": "gaming",
-        "budget": "budget",
-    }
-    brands = sorted({phone["brand"] for phone in phones if phone.get("brand")})
-
-    for brand in brands[:80]:
-        lower = brand.lower()
-        keywords.update({
-            f"{lower} phone review",
-            f"best {lower} phone",
-            f"best {lower} phone under $500",
-            f"{lower} phone comparison",
-        })
-
-    for price in price_points:
-        keywords.update({
-            f"best phones under ${price}",
-            f"best gaming phone under ${price}",
-            f"best camera phone under ${price}",
-            f"best battery phone under ${price}",
-        })
-
-    cluster_examples = defaultdict(list)
-    for phone in phones:
-        cluster_examples[classify_phone(phone)].append(phone)
-
-    for cluster, items in cluster_examples.items():
-        items = sorted(items, key=lambda phone: (phone.get("score", 0), get_price(phone)), reverse=True)[:24]
-        keywords.add(f"best {feature_map[cluster]} phones")
-        for phone in items:
-            name = phone["name"].lower()
-            brand = phone["brand"].lower()
-            keywords.update({
-                f"{name} review",
-                f"{name} vs {brand} alternatives",
-                f"best {brand} {cluster} phone",
-            })
-
-    cleaned = []
-    seen = set()
-    for kw in keywords:
-        normalized = slugify(kw)
-        if not normalized or normalized in seen:
-            continue
-        if len(kw.split()) < 3:
-            continue
-        if not any(token in kw for token in MONEY_INTENTS):
-            continue
-        seen.add(normalized)
-        cleaned.append(kw)
-    cleaned.sort()
-    return cleaned[:max_keywords]

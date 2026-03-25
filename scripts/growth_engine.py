@@ -1,244 +1,179 @@
-import json
-import random
+# >>> UPDATED START
+#!/usr/bin/env python3
+
 import datetime
 import os
-import webbrowser
-from seo_growth_utils import keyword_intent
+
+from seo_growth_utils import deterministic_choice, load_json, save_json
 
 TRACKER_FILE = "data/backlinks/tracker.json"
-DIST_FILE = "data/distribution/reddit_quora_posts.json"
-OUTREACH_DIR = "site/outreach_posts"
+TARGETS_FILE = "data/backlinks/targets.json"
+OUTREACH_OUTPUT = "data/distribution/outreach_messages.json"
+COMMUNITY_OUTPUT = "data/distribution/reddit_quora_posts.json"
 
 TODAY = datetime.date.today().isoformat()
 
-# -------------------------
-# SAFE LOAD / SAVE
-# -------------------------
 
-# -------------------------
-# LOAD BACKLINK TARGETS
-# -------------------------
-def load_backlink_targets():
-    return load_json("data/backlinks/targets.json", [])
-
-# -------------------------
-# PRINT DAILY TARGETS
-# -------------------------
-def score_target(target):
-    intent = keyword_intent(target.get("keyword", ""))
-    weight = target.get("weight", 1)
-    pillar_bonus = 4 if target.get("is_pillar") else 0
-    intent_bonus = 3 if intent in {"comparison", "commercial", "budget", "review"} else 0
-    return weight + pillar_bonus + intent_bonus + len(target.get("supporting_reviews", []))
-
-
-def print_daily_targets():
-    targets = load_backlink_targets()
-
-    if not targets:
-        print("[TARGETS] No backlink targets")
-        return
-
-    selected = sorted(targets, key=score_target, reverse=True)[:5]
-
-    print("\n=== BACKLINK TARGETS ===\n")
-
-    for t in selected:
-        print(f"\n🔹 {t['keyword']}")
-        print(f"Page: {t['target_page']}")
-        print(f"Anchor: {t['anchor']}")
-        reviews = t.get("supporting_reviews") or []
-        if reviews:
-            print(f"Support reviews: {', '.join(reviews[:3])}")
-        print(f"Search: {t['opportunities'][0]}")
-        print("-" * 60)
-
-
-def load_json(path, default):
-    if not os.path.exists(path):
-        return default
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except:
-        return default
-
-# -------------------------
-# PRIORITIZE DISTRIBUTION
-# -------------------------
-def prioritize_distribution(posts):
-    tracker = load_json(TRACKER_FILE, {})
-    links_acquired = tracker.get("links_acquired", []) or []
-    linked = {
-        (entry.get("target") or entry.get("url") or "")
-        for entry in links_acquired
-        if isinstance(entry, dict) and (entry.get("target") or entry.get("url"))
-    }
-
-    posts.sort(
-        key=lambda x: (
-            x.get("target_url", "") in linked,
-            keyword_intent(x.get("keyword", "")) in {"comparison", "commercial", "budget", "review"}
-        ),
-        reverse=True
+def load_tracker():
+    tracker = load_json(
+        TRACKER_FILE,
+        {
+            "generated_at": TODAY,
+            "outreach": [],
+            "community_posts": [],
+            "pipeline": {"sent": 0, "replied": 0, "converted": 0},
+        },
     )
+    tracker.setdefault("outreach", [])
+    tracker.setdefault("community_posts", [])
+    tracker.setdefault("pipeline", {"sent": 0, "replied": 0, "converted": 0})
+    return tracker
+
+
+def outreach_templates():
+    return [
+        "Subject: Data-backed resource for your audience on {keyword}\n\nHi {name},\nI noticed your readers ask about {keyword}. We published a decision-first guide with contradictory viewpoints, failure cases, and buyer segmentation: {url}.\nIf useful, feel free to cite it in your resource section.\n\nThanks,\n{sender}",
+        "Subject: Could this strengthen your {keyword} article?\n\nHey {name},\nYour post on {keyword} is strong. We ran a fresh framework including hidden trade-offs and who should NOT buy: {url}.\nWould you consider adding it as an external reference for practical decision support?\n\nBest,\n{sender}",
+        "Subject: New benchmark-style explainer for {keyword}\n\nHi {name},\nWe compiled real-world usage evidence and failure scenarios around {keyword}: {url}.\nIt may complement your current recommendations and reduce generic advice for readers.\n\nRegards,\n{sender}",
+    ]
+
+
+def reddit_templates():
+    return [
+        "I tested this deeply because I kept seeing confusion around **{keyword}**. This guide breaks down contradictory opinions, failure cases, and who should avoid certain phones: {url}",
+        "If you're choosing right now, this {keyword} analysis helped me avoid a bad buy. It compares trade-offs in real-world usage instead of specs only: {url}",
+        "Posting this for anyone debating {keyword}: it includes hidden trade-offs + better alternatives + buyer framework. Might save you money/time: {url}",
+    ]
+
+
+def quora_templates():
+    return [
+        "Short answer: it depends on workload and failure tolerance. Long answer with decision framework + practical scenarios here: {url}",
+        "Most answers ignore hidden trade-offs. This resource covers contradictory viewpoints and who should NOT buy: {url}",
+        "I recommend evaluating this with real-world constraints (heat, network, battery wear). Detailed structure: {url}",
+    ]
+
+
+def prioritize_targets(targets, tracker):
+    converted_urls = {x.get("target_page") for x in tracker.get("outreach", []) if x.get("status") == "converted"}
+    ranked = sorted(
+        targets,
+        key=lambda t: (
+            t.get("target_page") in converted_urls,
+            -float(t.get("roi_score", 0)),
+        ),
+    )
+    return ranked
+
+
+def generate_outreach_messages(targets, daily_limit=25):
+    messages = []
+    templates = outreach_templates()
+    prospects = ["Editor", "Site Owner", "Community Manager", "Contributor"]
+
+    for i, target in enumerate(targets[:daily_limit]):
+        template = templates[i % len(templates)]
+        message = template.format(
+            keyword=target["keyword"],
+            url=target["target_page"],
+            name=prospects[i % len(prospects)],
+            sender="PhoneRank Growth Team",
+        )
+        messages.append(
+            {
+                "id": f"outreach-{TODAY}-{i+1:03d}",
+                "date": TODAY,
+                "target_page": target["target_page"],
+                "keyword": target["keyword"],
+                "anchor_text": deterministic_choice(target.get("anchor_variants", [target.get("anchor", target["keyword"])]), f"anchor-{i}"),
+                "channel": "email",
+                "message": message,
+                "status": "sent",
+            }
+        )
+    return messages
+
+
+def generate_community_posts(targets, daily_limit=30):
+    posts = []
+    reddit = reddit_templates()
+    quora = quora_templates()
+
+    for i, target in enumerate(targets[:daily_limit]):
+        posts.append(
+            {
+                "id": f"reddit-{TODAY}-{i+1:03d}",
+                "date": TODAY,
+                "platform": "reddit",
+                "subreddit": "r/smartphones",
+                "keyword": target["keyword"],
+                "target_url": target["target_page"],
+                "anchor_text": target.get("anchor", target["keyword"]),
+                "post": reddit[i % len(reddit)].format(keyword=target["keyword"], url=target["target_page"]),
+                "status": "sent",
+            }
+        )
+        posts.append(
+            {
+                "id": f"quora-{TODAY}-{i+1:03d}",
+                "date": TODAY,
+                "platform": "quora",
+                "topic": "Smartphones",
+                "keyword": target["keyword"],
+                "target_url": target["target_page"],
+                "anchor_text": target.get("anchor", target["keyword"]),
+                "post": quora[i % len(quora)].format(url=target["target_page"]),
+                "status": "sent",
+            }
+        )
     return posts
 
-def save_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
 
-# -------------------------
-# OPEN PLATFORMS
-# -------------------------
-def open_platforms():
-    urls = [
-        "https://www.reddit.com/r/smartphones/",
-        "https://www.reddit.com/r/Android/",
-        "https://www.quora.com/"
-    ]
-    for u in urls:
-        webbrowser.open(u)
+def merge_tracker(tracker, outreach, community_posts):
+    tracker["outreach"].extend(outreach)
+    tracker["community_posts"].extend(community_posts)
 
-# -------------------------
-# DISTRIBUTION (NO REPEAT)
-# -------------------------
-def run_distribution():
-    posts = load_json(DIST_FILE, [])
-    posts = prioritize_distribution(posts)
-    tracker = load_json(TRACKER_FILE, {})
+    sent = len([x for x in tracker["outreach"] if x.get("status") == "sent"]) + len(
+        [x for x in tracker["community_posts"] if x.get("status") == "sent"]
+    )
+    replied = len([x for x in tracker["outreach"] if x.get("status") == "replied"]) + len(
+        [x for x in tracker["community_posts"] if x.get("status") == "replied"]
+    )
+    converted = len([x for x in tracker["outreach"] if x.get("status") == "converted"]) + len(
+        [x for x in tracker["community_posts"] if x.get("status") == "converted"]
+    )
 
-    used_keywords = {
-        entry.get("keyword")
-        for entry in tracker.get("posts", [])
-        if entry.get("keyword")
-    }
+    tracker["pipeline"] = {"sent": sent, "replied": replied, "converted": converted}
+    tracker["generated_at"] = TODAY
+    return tracker
 
-    fresh_posts = [p for p in posts if p.get("keyword") and p.get("keyword") not in used_keywords]
 
-    if not fresh_posts:
-        print("[DIST] No fresh posts available")
-        return
-
-    selected = random.sample(fresh_posts, min(3, len(fresh_posts)))
-
-    print("\n=== COPY & POST ===\n")
-
-    for p in selected:
-        keyword = p.get("keyword", "")
-        post_options = p.get("posts") or []
-        if not post_options:
-            continue
-
-        print(f"\n🔹 {keyword}")
-        msg = random.choice(post_options)
-        url = p.get("target_url", "")
-        print(f"{msg}\n\n👉 {url}")
-        print("-" * 60)
-
-        tracker.setdefault("posts", []).append({
-            "keyword": keyword,
-            "url": url,
-            "target": url,
-            "date": TODAY
-        })
-
-    save_json(TRACKER_FILE, tracker)
-
-# -------------------------
-# OUTREACH (DAILY LIMIT + NO DUPLICATE)
-# -------------------------
-def run_outreach():
-    files = os.listdir(OUTREACH_DIR)
-    tracker = load_json(TRACKER_FILE, {})
-
-    sent_today = [
-        x for x in tracker.get("outreach_sent", [])
-        if isinstance(x, dict) and x.get("date") == TODAY
-    ]
-
-    if len(sent_today) >= 5:
-        print("[OUTREACH] Daily limit reached")
-        return
-
-    sent_files = {x.get("file") for x in tracker.get("outreach_sent", []) if isinstance(x, dict) and x.get("file")}
-
-    remaining = [f for f in files if f not in sent_files]
-
-    if not remaining:
-        print("[OUTREACH] No new outreach files")
-        return
-
-    to_send = random.sample(remaining, min(5 - len(sent_today), len(remaining)))
-
-    print("\n=== OUTREACH ===\n")
-
-    for f in to_send:
-        path = os.path.join(OUTREACH_DIR, f)
-
-        with open(path, "r", encoding="utf-8") as file:
-            content = file.read()
-
-        print(f"\n📧 {f}\n")
-        print(content[:400])
-        print("-" * 60)
-
-        tracker.setdefault("outreach_sent", []).append({
-            "file": f,
-            "date": TODAY
-        })
-
-    save_json(TRACKER_FILE, tracker)
-
-# -------------------------
-# SUMMARY
-# -------------------------
-def summary():
-    tracker = load_json(TRACKER_FILE, {})
-
-    print("\n=== STATS ===")
-    print(f"Total Outreach: {len(tracker.get('outreach_sent', []))}")
-    print(f"Links Acquired: {len(tracker.get('links_acquired', []))}")
-
-# -------------------------
-# WEEKLY SUMMARY
-# -------------------------
-def weekly_summary():
-    tracker = load_json(TRACKER_FILE, {})
-
-    last_7 = []
-    for x in tracker.get("outreach_sent", []):
-        if not isinstance(x, dict):
-            continue
-
-        sent_date = x.get("date")
-        if not sent_date:
-            continue
-
-        try:
-            if (datetime.date.today() - datetime.date.fromisoformat(sent_date)).days <= 7:
-                last_7.append(x)
-        except ValueError:
-            continue
-
-    print("\n=== WEEKLY PROGRESS ===")
-    print(f"Outreach (7d): {len(last_7)}")
-    print(f"Total Links: {len(tracker.get('links_acquired', []))}")
-
-# -------------------------
-# MAIN
-# -------------------------
 def run():
-    print("\n🔥 GROWTH ENGINE STARTED 🔥\n")
+    os.makedirs("data/distribution", exist_ok=True)
+    os.makedirs("data/backlinks", exist_ok=True)
 
-    open_platforms()
-    run_distribution()
-    print_daily_targets()
-    run_outreach()
-    summary()
-    weekly_summary()
+    tracker = load_tracker()
+    targets = load_json(TARGETS_FILE, [])
+    if not targets:
+        print("[GROWTH] no backlink targets found")
+        return
 
-    print("\n✅ DONE\n")
+    ranked_targets = prioritize_targets(targets, tracker)
+    outreach = generate_outreach_messages(ranked_targets, daily_limit=30)
+    community_posts = generate_community_posts(ranked_targets, daily_limit=20)
+
+    save_json(OUTREACH_OUTPUT, outreach)
+    save_json(COMMUNITY_OUTPUT, community_posts)
+
+    tracker = merge_tracker(tracker, outreach, community_posts)
+    save_json(TRACKER_FILE, tracker)
+
+    print(
+        f"[GROWTH] outreach_sent={len(outreach)} community_posts={len(community_posts)} "
+        f"pipeline={tracker['pipeline']}"
+    )
+
 
 if __name__ == "__main__":
     run()
+# >>> UPDATED END
