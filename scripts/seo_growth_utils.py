@@ -161,8 +161,9 @@ def generate_keyword_clusters(phones, min_keywords=5000, max_keywords=10000, min
     if not brands:
         brands = ["general"]
 
-    intents = ["best", "under", "vs", "review", "comparison"]
-    features = ["battery", "camera", "gaming", "budget", "performance", "value", "display", "charging"]
+    intents = ["best", "vs", "how", "why", "should i buy", "worth it"]
+    features = ["battery", "camera", "gaming", "performance", "display"]
+    audiences = ["students", "gamers", "creators"]
     scenarios = [
         "students", "travelers", "parents", "creators", "multitasking", "work", "streaming", "photography",
         "night photos", "long battery", "business", "everyday use", "gaming sessions", "social media",
@@ -179,23 +180,24 @@ def generate_keyword_clusters(phones, min_keywords=5000, max_keywords=10000, min
         feature = features[cidx % len(features)]
         intent = intents[cidx % len(intents)]
         scenario = scenarios[cidx % len(scenarios)]
+        audience = audiences[cidx % len(audiences)]
         price = prices[cidx % len(prices)]
 
-        pillar = f"{intent} {brand} {feature} phones for {scenario}".replace("  ", " ").strip()
+        pillar = f"{intent} {brand} {feature} phones for {audience} {scenario}".replace("  ", " ").strip()
         subclusters = []
         supporting = []
 
         for sidx in range(4):
             sub_name = f"{brand}-{feature}-{scenario}-{sidx+1}"
             sub_keywords = [
-                f"best {brand} {feature} phone under ${price + (sidx*50)}",
-                f"{brand} {feature} phone review for {scenario}",
-                f"{brand} {feature} vs alternatives for {scenario}",
-                f"top {brand} {feature} comparison {2026 - (sidx % 2)}",
-                f"{brand} {feature} buying guide for {scenario}",
-                f"{brand} {feature} hidden trade offs {scenario}",
-                f"which {brand} {feature} phone should i buy {scenario}",
-                f"{brand} {feature} real world usage {scenario}",
+                f"best {brand} {feature} phone for {audience} under {price + (sidx*50)}",
+                f"how to choose {brand} {feature} phone for {audience} under {price + (sidx*50)}",
+                f"why {brand} {feature} phone may be worth it for {audience}",
+                f"should i buy {brand} {feature} phone for {audience}",
+                f"{brand} {feature} vs alternatives for {audience}",
+                f"{brand} {feature} hidden trade offs for {audience}",
+                f"{brand} {feature} real world usage for {audience}",
+                f"{brand} {feature} comparison chain for {audience} under {price}",
             ]
             subclusters.append({"name": sub_name, "keywords": sub_keywords})
             supporting.extend(sub_keywords)
@@ -214,6 +216,7 @@ def generate_keyword_clusters(phones, min_keywords=5000, max_keywords=10000, min
             "brand": brand,
             "feature": feature,
             "scenario": scenario,
+            "audience": audience,
             "pillar_keyword": deduped[0],
             "supporting_keywords": deduped[1:],
             "subclusters": subclusters,
