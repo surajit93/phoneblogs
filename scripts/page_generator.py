@@ -305,7 +305,35 @@ def load_or_generate_benchmarks():
         data["battery"].setdefault(slug, get_spec(p, "battery"))
 
     return data
-    
+
+
+BENCHMARKS = load_or_generate_benchmarks()
+
+
+def benchmark_snapshot_for_phones(phones):
+    if not phones:
+        return {"cpu_avg": 0, "gpu_avg": 0, "battery_avg": 0}
+
+    cpu_vals, gpu_vals, battery_vals = [], [], []
+    for p in phones:
+        slug = p.get("slug")
+        if not slug:
+            continue
+        cpu_vals.append(BENCHMARKS["cpu"].get(slug, 0))
+        gpu_vals.append(BENCHMARKS["gpu"].get(slug, 0))
+        battery_vals.append(BENCHMARKS["battery"].get(slug, 0))
+
+    def avg(vals):
+        vals = [v for v in vals if isinstance(v, (int, float)) and v > 0]
+        if not vals:
+            return 0
+        return int(sum(vals) / len(vals))
+
+    return {
+        "cpu_avg": avg(cpu_vals),
+        "gpu_avg": avg(gpu_vals),
+        "battery_avg": avg(battery_vals),
+    }
 
 
 def amazon_link(p):
@@ -893,10 +921,9 @@ def render_phone_page(p):
         analysis_block = long_intro(p) + deeper_analysis_block(p)
 
     html_intro = intro_block + analysis_block
-    bench = load_or_generate_benchmarks()
-    cpu_score = bench["cpu"].get(slug, 0)
-    gpu_score = bench["gpu"].get(slug, 0)
-    battery_score = bench["battery"].get(slug, 0)
+    cpu_score = BENCHMARKS["cpu"].get(slug, 0)
+    gpu_score = BENCHMARKS["gpu"].get(slug, 0)
+    battery_score = BENCHMARKS["battery"].get(slug, 0)
 
     benchmark_block = f"""
     <h2>Performance Benchmarks</h2>
@@ -1842,6 +1869,8 @@ def render_keyword_page_v2(keyword, phones_sorted, keyword_map):
         f'<li><a href="{SITE_DOMAIN}{mapping["topic_url"]}">Topic authority page</a></li>',
     ]
     structural_links.extend([f'<li><a href="{SITE_DOMAIN}{c}">Decision comparison</a></li>' for c in mapping.get("supporting_compare_pages", [])[:3]])
+    snapshot = benchmark_snapshot_for_phones(phones)
+    alternatives = mapping.get("supporting_compare_pages", [])[:3]
 
     html = f"""<!DOCTYPE html>
 <html lang="en"><head>
@@ -1866,6 +1895,14 @@ def render_keyword_page_v2(keyword, phones_sorted, keyword_map):
 <h2>Better alternatives</h2><p>{blocks['better_alternatives']}</p>
 <h2>Decision Framework</h2><p>{blocks['decision_framework']}</p>
 <h2>Comparison Logic</h2><p>{blocks['comparison_logic']}</p>
+<h2>Data Signals for {keyword.title()}</h2>
+<ul>
+  <li><strong>Avg CPU score:</strong> {snapshot['cpu_avg']}</li>
+  <li><strong>Avg GPU score:</strong> {snapshot['gpu_avg']}</li>
+  <li><strong>Avg battery test score:</strong> {snapshot['battery_avg']}</li>
+</ul>
+<p>Failure scenario: if your workflow is sustained gaming or 4K recording, shortlist only options that remain stable under thermal load.</p>
+<p>Alternatives worth checking: {" | ".join(f'<a href="{SITE_DOMAIN}{u}">{u.split("/")[-1].replace(".html","").replace("-"," ")}</a>' for u in alternatives) if alternatives else "Use cluster and topic hubs to find stronger fit options."}</p>
 <p>{' | '.join(inline_links[:5])}</p>
 <p>{' | '.join(inline_links[5:10])}</p>
 <h2>Supporting Pages</h2>
@@ -1910,8 +1947,9 @@ def render_topic_page_v2(cluster, keyword_map):
 </main>{footer_html()}{behavior_script()}</body></html>"""
 
 
-def generate_sitemap_segments(phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls):
+def generate_sitemap_segments(phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls, eeat_urls=None):
     ensure_dir(SITEMAP_DIR)
+    eeat_urls = eeat_urls or []
 
     def write_segment(name, urls, priority):
         path = os.path.join(SITEMAP_DIR, f"sitemap-{name}.xml")
@@ -1927,9 +1965,10 @@ def generate_sitemap_segments(phone_urls, compare_urls, keyword_urls, cluster_ur
     write_segment("clusters", cluster_urls, "0.92")
     write_segment("topics", topic_urls, "0.95")
     write_segment("compare", compare_urls, "0.55")
+    write_segment("eeat", eeat_urls, "0.75")
 
     idx_path = os.path.join(BASE_DIR, "sitemap.xml")
-    segments = ["phones", "keywords", "clusters", "topics", "compare"]
+    segments = ["phones", "keywords", "clusters", "topics", "compare", "eeat"]
     with open(idx_path, "w", encoding="utf-8") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         f.write('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
@@ -1940,7 +1979,7 @@ def generate_sitemap_segments(phone_urls, compare_urls, keyword_urls, cluster_ur
 
 def run():
     print(f"=== {SITE_NAME} SEO BUILD — CLUSTER AUTHORITY MODE ===")
-    phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls = [], [], [], [], []
+    phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls, eeat_urls = [], [], [], [], [], []
 
     phones_sorted = rank_phones(PHONES)[:MAX_PHONE_PAGES]
 
@@ -2015,8 +2054,17 @@ def run():
         safe_write(os.path.join(tp, cluster["cluster_slug"] + ".html"), topic_html)
         topic_urls.append(f"/topics/{cluster['cluster_slug']}.html")
 
+    safe_write(os.path.join(BASE_DIR, "about.html"), render_about_page())
+    eeat_urls.append("/about.html")
+    safe_write(os.path.join(BASE_DIR, "author.html"), render_author_page())
+    eeat_urls.append("/author.html")
+    safe_write(os.path.join(BASE_DIR, "editorial-policy.html"), render_editorial_policy())
+    eeat_urls.append("/editorial-policy.html")
+    safe_write(os.path.join(BASE_DIR, "methodology.html"), render_methodology())
+    eeat_urls.append("/methodology.html")
+
     safe_write(KEYWORD_FILE, json.dumps(all_keywords, indent=2))
-    generate_sitemap_segments(phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls)
+    generate_sitemap_segments(phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls, eeat_urls=eeat_urls)
     generate_robots()
     ping_indexnow((phone_urls + compare_urls + keyword_urls + cluster_urls + topic_urls)[:100])
 
