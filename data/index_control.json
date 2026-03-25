@@ -1,0 +1,17 @@
+{
+  "phase": "phase_1",
+  "stages": {
+    "phase_1": {"limit": 100, "goal": "index seeding"},
+    "phase_2": {"limit": 500, "goal": "cluster expansion"},
+    "phase_3": {"limit": "full", "goal": "full scale"}
+  },
+  "crawl_priority": {
+    "high_authority_first": [],
+    "secondary": []
+  },
+  "sitemaps": {
+    "high_priority": "sitemap-high-priority.xml",
+    "low_priority": "sitemap-low-priority.xml"
+  },
+  "generated_at": "2026-03-25"
+}
