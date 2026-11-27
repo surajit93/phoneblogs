@@ -252,76 +252,118 @@ def get_suggestions(q):
 
 def build_keywords():
     # >>> UPDATED START
-    intents = ["best", "vs", "how", "why", "should i buy", "worth it"]
-    features = ["battery", "camera", "gaming", "performance", "display"]
-    audiences = ["students", "gamers", "creators"]
-    prices = ["under 200", "under 300", "under 500", "under 1000"]
+    intents = ["best", "vs", "compare", "should i buy", "worth it", "review"]
+    features = ["battery life", "camera", "gaming", "performance", "display", "value"]
+    audiences = ["students", "gamers", "creators", "small business users", "parents"]
+    budgets = [200, 300, 400, 500, 700, 1000]
+    use_cases = ["daily use", "travel", "video calls", "content creation", "long work days", "mobile gaming"]
 
     brands = sorted({(p.get("brand") or p["name"].split()[0]).lower() for p in PHONES if p.get("name")})
-    brands = brands[:80] if brands else ["apple", "samsung", "xiaomi", "oneplus"]
+    brands = brands[:80] if brands else ["apple", "samsung", "google", "oneplus", "motorola"]
+    phone_names = [p["name"].lower() for p in PHONES[:320] if p.get("name")]
 
-    phone_names = [p["name"].lower() for p in PHONES[:300] if p.get("name")]
-    keywords = set(build_keyword_universe(PHONES, max_keywords=1200))
+    universe = set(build_keyword_universe(PHONES, max_keywords=2200))
+    generated = set()
 
     for brand in brands:
         for feature in features:
-            for intent in intents:
-                for audience in audiences:
-                    for price in prices:
-                        keywords.add(f"{intent} {brand} {feature} phone for {audience} {price}")
-                        keywords.add(f"{intent} {brand} phones with strong {feature} for {audience} {price}")
-                        keywords.add(f"{intent} {feature} phone {price} for {audience}")
-                        keywords.add(f"{intent} {brand} {feature} {price} for usa buyers")
-                        keywords.add(f"is {brand} {feature} phone {price} good for {audience}")
-                        keywords.add(f"how to choose {brand} {feature} phone for {audience} {price}")
-                        keywords.add(f"why {brand} {feature} phone can be worth it for {audience} {price}")
+            for audience in audiences:
+                for budget in budgets:
+                    generated.add(f"best {brand} {feature} phone for {audience} under {budget} in usa")
+                    generated.add(f"should i buy {brand} {feature} phone for {audience} under {budget} in usa")
+                    generated.add(f"{brand} {feature} phone comparison for {audience} under {budget} in usa")
+                    generated.add(f"{brand} phone review for {feature} and {audience} under {budget} in usa")
+                for scenario in use_cases:
+                    generated.add(f"best {brand} phone for {feature} and {scenario} in usa")
+                    generated.add(f"{brand} phone trade offs for {feature} and {scenario} in usa")
 
-    # explicit question keywords
-    for feature in features:
-        for price in prices:
-            keywords.update({
-                f"how much {feature} is enough in a phone {price}",
-                f"why does {feature} matter when buying phones {price}",
-                f"should i buy a {feature} phone {price}",
-                f"is {feature} worth it on phones {price}",
-            })
-
-    # comparison chains (A vs B vs C)
-    for i in range(min(len(phone_names), 90)):
+    for i in range(min(len(phone_names), 180)):
         a = phone_names[i]
-        b = phone_names[(i + 7) % len(phone_names)]
-        c = phone_names[(i + 19) % len(phone_names)]
-        keywords.add(f"{a} vs {b} vs {c}")
-        keywords.add(f"{a} vs {b} vs {c} which should i buy")
-        keywords.add(f"{a} vs {b} vs {c} worth it")
+        b = phone_names[(i + 11) % len(phone_names)]
+        c = phone_names[(i + 27) % len(phone_names)]
+        generated.add(f"{a} vs {b} which should i buy in usa")
+        generated.add(f"{a} vs {b} camera and battery comparison in usa")
+        generated.add(f"{a} vs {b} vs {c} for long term value in usa")
+        generated.add(f"{a} review vs {b} review for us buyers")
 
-    # suggestion expansion without restrictive buyer-word filtering
-    suggestion_seeds = list(keywords)[:300]
-    for seed in suggestion_seeds:
-        for kw in get_suggestions(seed)[:6]:
-            if isinstance(kw, str) and len(kw.split()) >= 3 and not any(x in kw.lower() for x in JUNK_WORDS):
-                keywords.add(kw.lower())
+    for feature in features:
+        for budget in budgets:
+            generated.add(f"best {feature} phone under {budget} for us buyers")
+            generated.add(f"how to choose {feature} phone under {budget} in usa")
+            generated.add(f"is {feature} phone under {budget} worth it in usa")
+            generated.add(f"{feature} phone decision guide under {budget} for us buyers")
 
-    expanded = []
+    candidates = universe.union(generated)
+
+    def keyword_score(kw):
+        text = " ".join(str(kw).lower().split())
+        tokens = text.split()
+        if len(tokens) < 4:
+            return None
+        if any(x in text for x in JUNK_WORDS) or any(x in text for x in GEO_EXCLUDE):
+            return None
+        if not any(token in text for token in ("usa", "us buyers", "under", "vs", "best", "compare", "review", "worth it", "should i buy")):
+            return None
+
+        intent_strength = 0
+        if " vs " in text or "compare" in text:
+            intent_strength += 4
+        if "best" in text or "top" in text:
+            intent_strength += 3
+        if "review" in text or "should i buy" in text or "worth it" in text:
+            intent_strength += 4
+        if "under " in text:
+            intent_strength += 3
+
+        specificity = min(6, len(tokens) - 3)
+        decision_stage = 3 if any(x in text for x in ("should i buy", "worth it", "vs", "compare")) else 1
+        us_relevance = 2 if "usa" in text or "us buyers" in text else 0
+        competition_penalty = 0
+        if len(tokens) <= 5:
+            competition_penalty += 2
+        if text.startswith("best phone"):
+            competition_penalty += 3
+        if text.count("best") > 1:
+            competition_penalty += 1
+
+        commercial_fit = 2 if any(x in text for x in ("under", "value", "trade offs", "comparison")) else 0
+        value_score = (intent_strength * 2) + specificity + (decision_stage * 2) + us_relevance + commercial_fit - competition_penalty
+        return {
+            "keyword": text,
+            "value_score": value_score,
+            "intent_strength": intent_strength,
+            "specificity": specificity,
+            "competition_penalty": competition_penalty,
+            "decision_stage": decision_stage,
+        }
+
+    scored = []
     seen = set()
-    for kw in keywords:
-        cleaned = " ".join(str(kw).lower().split())
-        if cleaned in seen or len(cleaned.split()) < 3:
+    for kw in candidates:
+        row = keyword_score(kw)
+        if not row:
             continue
-        if any(x in cleaned for x in JUNK_WORDS):
+        key = row["keyword"]
+        if key in seen:
             continue
-        seen.add(cleaned)
-        expanded.append(cleaned)
+        seen.add(key)
+        scored.append(row)
 
-    expanded.sort(key=lambda k: ((" vs " not in k), ("how" not in k and "why" not in k), len(k)))
-    if len(expanded) < 5000:
-        for i in range(5000 - len(expanded)):
+    if len(scored) < 5000:
+        for i in range(5000 - len(scored)):
             b = brands[i % len(brands)]
             f = features[i % len(features)]
             a = audiences[i % len(audiences)]
-            p = prices[i % len(prices)]
-            expanded.append(f"best {b} {f} phone for {a} {p} in usa")
-    return expanded[:10000]
+            budget = budgets[i % len(budgets)]
+            fallback = f"best {b} {f} phone for {a} under {budget} in usa with comparison"
+            row = keyword_score(fallback)
+            if row and row["keyword"] not in seen:
+                seen.add(row["keyword"])
+                scored.append(row)
+
+    scored.sort(key=lambda x: x["value_score"], reverse=True)
+    elite_cut = max(1500, int(len(scored) * 0.45))
+    return [x["keyword"] for x in scored[:elite_cut]]
     # >>> UPDATED END
     
 
@@ -961,6 +1003,13 @@ def render_phone_page(p):
     # BASE HTML
     # -------------------------
     peers = get_peer_group(p, window=120)[:8]
+    peer_compare_targets = peers[:]
+    if len(peer_compare_targets) < 3:
+        for candidate in rank_phones(PHONES):
+            if candidate["slug"] != slug and all(candidate["slug"] != x["slug"] for x in peer_compare_targets):
+                peer_compare_targets.append(candidate)
+            if len(peer_compare_targets) >= 3:
+                break
     keyword_links = []
     for link in LINK_GRAPH.get("phone_to_keywords", []):
         if link.get("from") == f"/phones/{slug}.html":
@@ -973,7 +1022,7 @@ def render_phone_page(p):
         )
     for k in keyword_links:
         contextual_links.append(f'<a href="{SITE_DOMAIN}{k}">matching buyer intent guide</a>')
-    while len(contextual_links) < 6:
+    while len(contextual_links) < 8:
         fallback = rank_phones(PHONES)[len(contextual_links)]
         contextual_links.append(f'<a href="{SITE_DOMAIN}/phones/{fallback["slug"]}.html">{fallback["name"]}</a>')
 
@@ -998,26 +1047,34 @@ def render_phone_page(p):
     usage = f"""
 <h2>Real-world usage scenarios</h2>
 <p>Morning commute scenario: navigation, streaming audio, and message sync running simultaneously. In this mixed workload, battery efficiency and thermal behavior matter more than isolated benchmark bursts. {p['name']} generally handles this pattern better than older mid-range models, especially when background apps are not aggressively closed by memory pressure.</p>
-<p>Creator-lite scenario: short-form video capture, cloud backup, and social posting. Here the practical question is not peak megapixels but capture reliability, autofocus speed, and how quickly the phone recovers between tasks. If this matters, compare the camera behavior with the devices in <a href="{SITE_DOMAIN}/keyword/best-camera-phones-for-creators-under-1000.html">creator camera buyer guides</a> and adjacent phone reviews linked above.</p>
+<p>Creator-lite scenario: short-form video capture, cloud backup, and social posting. Here the practical question is not peak megapixels but capture reliability, autofocus speed, and how quickly the phone recovers between tasks. If this matters, compare the camera behavior with the devices in <a href="{SITE_DOMAIN}/keyword/best-camera-phones-for-creators-under-1000.html">creator camera buyer guides</a>, the cluster hub <a href="{SITE_DOMAIN}/cluster/camera.html">camera phones by segment</a>, and the topic deep dive <a href="{SITE_DOMAIN}/topics/camera-buying-guide.html">camera buying framework</a>.</p>
 <p>Student scenario: long campus day with hotspot usage, maps, notes, and occasional gaming. This is where hidden drain sources (brightness, weak signal hunting, background sync) expose weak batteries fast. {p['name']} is competitive when tuned with practical settings, but power users should still evaluate charging speed and accessory ecosystem before committing.</p>
 """
 
     tradeoffs = f"""
 <h2>Hidden trade-offs</h2>
 <p>The biggest trade-off in this segment is that stronger performance often increases heat and battery volatility. A phone can look superior on paper while feeling worse after months due to thermal constraints or storage speed bottlenecks. {p['name']} avoids some of those issues but still requires realistic expectations under sustained load.</p>
-<p>Another hidden trade-off is camera consistency versus processing style. Some devices sharpen aggressively, which looks impressive on first glance but reduces natural detail. Others preserve detail but require better lighting. If image output is your top KPI, use this page with at least one direct comparison and a feature-intent keyword page before deciding.</p>
+<p>Another hidden trade-off is camera consistency versus processing style. Some devices sharpen aggressively, which looks impressive on first glance but reduces natural detail. Others preserve detail but require better lighting. If image output is your top KPI, use this page with at least one direct comparison and a feature-intent keyword page before deciding, then validate with <a href="{SITE_DOMAIN}/compare/{slug}-vs-{peer_compare_targets[0]['slug']}.html">{p['name']} vs {peer_compare_targets[0]['name']}</a> and <a href="{SITE_DOMAIN}/compare/{slug}-vs-{peer_compare_targets[1]['slug']}.html">{p['name']} vs {peer_compare_targets[1]['name']}</a>.</p>
 """
 
     alternatives = f"""
 <h2>Better alternatives</h2>
 <p>Better value alternative: a lower-priced model with comparable daily performance if your workload is mostly messaging, browsing, and moderate media. Better gaming alternative: a RAM-forward model with stronger thermal stability for long sessions. Better camera alternative: a sensor/ISP-focused device with more consistent low-light results. Better battery alternative: a 5000mAh+ option tuned for endurance over raw speed.</p>
-<p>You can branch quickly from this page to the right path: try <a href="{SITE_DOMAIN}/keyword/best-gaming-phone-under-500.html">gaming under $500</a>, <a href="{SITE_DOMAIN}/keyword/best-battery-phone-under-300.html">battery under $300</a>, and <a href="{SITE_DOMAIN}/keyword/should-i-buy-a-camera-phone-under-1000.html">camera purchase decision guides</a>. These links are intentionally varied to help search engines and readers understand topical relationships.</p>
+<p>You can branch quickly from this page to the right path: try <a href="{SITE_DOMAIN}/keyword/best-gaming-phone-under-500.html">gaming under $500</a>, <a href="{SITE_DOMAIN}/keyword/best-battery-phone-under-300.html">battery under $300</a>, <a href="{SITE_DOMAIN}/keyword/should-i-buy-a-camera-phone-under-1000.html">camera purchase decision guides</a>, and <a href="{SITE_DOMAIN}/cluster/budget.html">budget cluster decisions</a>. If you are narrowing final options, use {contextual_links[6]} and {contextual_links[7]} as practical alternatives before checkout.</p>
 """
 
     decision_summary = f"""
 <h2>Decision summary</h2>
 <p>If you want a reliable daily driver with balanced strengths, {p['name']} is often a reasonable buy. If you have a single dominant priority (hardcore gaming, advanced creator output, or ultra-budget spend), a specialized alternative may serve you better. Use this checkpoint: if your top two priorities are met and your top risk is acceptable, buy; otherwise compare against at least two alternatives before checkout.</p>
-<p>Final recommendation confidence increases when you validate against one keyword guide, one direct comparison, and one cluster page. That triangulation removes most buyer regret patterns we see in this segment.</p>
+<p>Final recommendation confidence increases when you validate against one keyword guide, one direct comparison, and one cluster page. For US buyers, confirm typical street pricing in USD, carrier support, and return-policy friction. That triangulation removes most buyer regret patterns we see in this segment.</p>
+"""
+
+    comparison_priority = ""
+    if len(peer_compare_targets) >= 3:
+        comparison_priority = f"""
+<h2>High-priority comparisons before you buy</h2>
+<p>Before buying, run three direct head-to-head checks: <a href="{SITE_DOMAIN}/compare/{slug}-vs-{peer_compare_targets[0]['slug']}.html">{p['name']} vs {peer_compare_targets[0]['name']}</a>, <a href="{SITE_DOMAIN}/compare/{slug}-vs-{peer_compare_targets[1]['slug']}.html">{p['name']} vs {peer_compare_targets[1]['name']}</a>, and <a href="{SITE_DOMAIN}/compare/{slug}-vs-{peer_compare_targets[2]['slug']}.html">{p['name']} vs {peer_compare_targets[2]['name']}</a>. These pages expose trade-offs in battery endurance, sustained gaming behavior, and camera consistency that specs alone often hide.</p>
+<p>After comparisons, use the intent pages <a href="{SITE_DOMAIN}/keyword/best-phone-value-under-500-in-usa.html">value under $500</a> and <a href="{SITE_DOMAIN}/keyword/best-phone-camera-and-battery-comparison-in-usa.html">camera+battery decision map</a>, then return to this review for final buy/no-buy confidence.</p>
 """
 
     html = f"""<!DOCTYPE html>
@@ -1053,6 +1110,7 @@ def render_phone_page(p):
 {tradeoffs}
 {alternatives}
 {decision_summary}
+{comparison_priority}
 
 {ad(1)}
 
@@ -1302,6 +1360,10 @@ def render_keyword_page(keyword, phones_sorted):
     # >>> UPDATED START
     filtered = filter_by_intent(keyword, phones_sorted)
     phones = filtered[:8]
+    if not phones:
+        phones = rank_phones(PHONES)[:8]
+    while len(phones) < 3:
+        phones.append(rank_phones(PHONES)[len(phones)])
     intent = detect_intent(keyword)
     slug    = slugify(keyword)
     url     = f"/keyword/{slug}.html"
@@ -1330,7 +1392,7 @@ def render_keyword_page(keyword, phones_sorted):
     contextual_links = []
     for p in phones[:6]:
         contextual_links.append(f'<a href="{SITE_DOMAIN}/phones/{p["slug"]}.html">{p["name"]}</a>')
-    while len(contextual_links) < 6:
+    while len(contextual_links) < 10:
         f = rank_phones(PHONES)[len(contextual_links)]
         contextual_links.append(f'<a href="{SITE_DOMAIN}/phones/{f["slug"]}.html">{f["name"]}</a>')
 
@@ -1342,27 +1404,27 @@ def render_keyword_page(keyword, phones_sorted):
 
     who_buy = f"""
 <h2>Who should buy this</h2>
-<p>Buyers who want clear decision support should use this page as a shortlist engine. It is especially helpful for students, gamers, and creators trying to balance price with outcomes. If your use case is mixed and you need to avoid obvious mistakes, this page plus two review links gives strong coverage.</p>
+<p>Buyers who want clear decision support should use this page as a shortlist engine. It is especially helpful for students, gamers, and creators trying to balance price with outcomes. If your use case is mixed and you need to avoid obvious mistakes, this page plus two review links gives strong coverage. Start with {contextual_links[0]} and {contextual_links[1]}, then validate through <a href="{SITE_DOMAIN}/cluster/{get_cluster(phones[0])}.html">cluster-level alternatives</a>.</p>
 """
     who_not = f"""
 <h2>Who should NOT buy this</h2>
-<p>If you already know the exact phone you will buy and only need checkout links, this page may be too detailed. It is designed for uncertain buyers comparing alternatives, not for one-click transactional intent only.</p>
+<p>If you already know the exact phone you will buy and only need checkout links, this page may be too detailed. It is designed for uncertain buyers comparing alternatives, not for one-click transactional intent only. It is also less useful for edge-case users who need very specific carrier bands or enterprise MDM requirements without compromise.</p>
 """
     usage = f"""
 <h2>Real-world usage scenarios</h2>
-<p>Daily mixed-use scenario: maps, messaging, camera, and short gaming bursts. In this case, battery consistency and thermal behavior beat raw peak specs. Creator scenario: capture, edit, upload loops where storage speed and camera stability matter more than marketing megapixels. Student scenario: all-day battery with reliable app switching and moderate cost. We connect each scenario to phone pages and comparison paths so your research can branch intelligently.</p>
+<p>Daily mixed-use scenario: maps, messaging, camera, and short gaming bursts. In this case, battery consistency and thermal behavior beat raw peak specs. Creator scenario: capture, edit, upload loops where storage speed and camera stability matter more than marketing megapixels. Student scenario: all-day battery with reliable app switching and moderate cost. We connect each scenario to phone pages and comparison paths so your research can branch intelligently, including {contextual_links[2]} and {contextual_links[3]} for practical contrast.</p>
 """
     tradeoffs = f"""
 <h2>Hidden trade-offs</h2>
-<p>Lower price can reduce long-session stability. Higher performance can increase heat and battery drain. Better camera hardware can still underperform with weak processing. This is why every recommendation here includes contextual links to alternatives and comparison chains.</p>
+<p>Lower price can reduce long-session stability. Higher performance can increase heat and battery drain. Better camera hardware can still underperform with weak processing. This is why every recommendation here includes contextual links to alternatives and comparison chains. Before final purchase, compare at least two direct head-to-head pages and one topic deep dive to reduce regret risk.</p>
 """
     alternatives = f"""
 <h2>Better alternatives</h2>
-<p>If the top recommendation misses your priority, switch path quickly: battery-first buyers should open <a href="{SITE_DOMAIN}/keyword/best-battery-phone-under-500.html">battery guides</a>, gamers should use <a href="{SITE_DOMAIN}/keyword/best-gaming-phone-under-500.html">gaming pages</a>, and creators should review <a href="{SITE_DOMAIN}/keyword/best-camera-phones-for-creators-under-1000.html">camera creator pages</a>. For model-level confirmation, compare {contextual_links[3]} against {contextual_links[4]} and {contextual_links[5]}.</p>
+<p>If the top recommendation misses your priority, switch path quickly: battery-first buyers should open <a href="{SITE_DOMAIN}/keyword/best-battery-phone-under-500.html">battery guides</a>, gamers should use <a href="{SITE_DOMAIN}/keyword/best-gaming-phone-under-500.html">gaming pages</a>, and creators should review <a href="{SITE_DOMAIN}/keyword/best-camera-phones-for-creators-under-1000.html">camera creator pages</a>. For model-level confirmation, compare {contextual_links[4]} against {contextual_links[5]} and {contextual_links[6]}, then branch into <a href="{SITE_DOMAIN}/topics/{slug}.html">topic-depth notes</a> and <a href="{SITE_DOMAIN}/cluster/budget.html">budget cluster hub</a>.</p>
 """
     decision_summary = """
 <h2>Decision summary</h2>
-<p>Use this sequence: identify top workload, set budget guardrail, shortlist two to three phones, then validate with one direct comparison. This framework removes most mismatches between expectation and ownership reality. The goal is not the “best phone overall,” but the best phone for your constraints.</p>
+<p>Use this sequence: identify top workload, set budget guardrail, shortlist two to three phones, then validate with one direct comparison. This framework removes most mismatches between expectation and ownership reality. The goal is not the “best phone overall,” but the best phone for your constraints. For US buyers, confirm USD street pricing and return windows before checkout.</p>
 """
 
     html = f"""<!DOCTYPE html>
@@ -1395,12 +1457,14 @@ def render_keyword_page(keyword, phones_sorted):
 
     for i, p in enumerate(phones, 1):
         d = decision_engine(p)
+        compare_peer = phones[(i) % len(phones)] if len(phones) > 1 else p
         html += f"""
 <h2>{i}. {p['name']} — ${safe_price(p)}</h2>
 <p>{relative_analysis(p)}</p>
 <p><strong>Best for:</strong> {d['buy']}.</p>
 <p><em>{intent_cta(intent, p)}</em></p>
 <p><strong>Avoid if:</strong> {d['avoid']}.</p>
+<p>Choose <a href="{SITE_DOMAIN}/phones/{p['slug']}.html">{p['name']}</a> when your top needs match battery, camera, and performance balance. Avoid it when one priority dominates and another model offers a clear edge. Validate this quickly in <a href="{SITE_DOMAIN}/compare/{p['slug']}-vs-{compare_peer['slug']}.html">{p['name']} vs {compare_peer['name']}</a>.</p>
 <p><strong>Top Picks:</strong></p>
 <p><a href="{SITE_DOMAIN}/phones/{p['slug']}.html">Full {p['name']} review &rarr;</a></p>
 {amazon_cta(p)}
@@ -1413,6 +1477,8 @@ def render_keyword_page(keyword, phones_sorted):
 {global_links_weighted(keyword)}
 <h2>Related Buying Guides</h2>
 {render_link_graph_section(url, ["keyword_to_phones", "keyword_to_cluster"], limit=8)}
+<h2>Comparison-first navigation</h2>
+<p>For fastest decision-making, open the highest-leverage comparison paths first: <a href="{SITE_DOMAIN}/compare/{phones[0]['slug']}-vs-{phones[1]['slug']}.html">{phones[0]['name']} vs {phones[1]['name']}</a>, <a href="{SITE_DOMAIN}/compare/{phones[0]['slug']}-vs-{phones[2]['slug']}.html">{phones[0]['name']} vs {phones[2]['name']}</a>, and <a href="{SITE_DOMAIN}/compare/{phones[1]['slug']}-vs-{phones[2]['slug']}.html">{phones[1]['name']} vs {phones[2]['name']}</a>. Then move to <a href="{SITE_DOMAIN}/cluster/{get_cluster(phones[0])}.html">cluster strategy</a> and <a href="{SITE_DOMAIN}/topics/{slug}.html">topic scenario walkthrough</a>.</p>
 {ad(2)}
 </main>
 {footer_html()}
@@ -2166,7 +2232,7 @@ def expand_depth(html, subject, links=None, min_words=1250):
 
 
 def run():
-    print(f"=== {SITE_NAME} SEO BUILD — CLUSTER AUTHORITY MODE ===")
+    print(f"=== {SITE_NAME} SEO BUILD — TRAFFIC OPTIMIZATION ENGINE ===")
     phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls = [], [], [], [], []
 
     phones_sorted = rank_phones(PHONES)[:MAX_PHONE_PAGES]
@@ -2177,8 +2243,37 @@ def run():
     save_json_helper(KEYWORD_MAP_FILE, keyword_map)
 
     generated_keywords = build_keywords()
-    all_keywords = list(dict.fromkeys(generated_keywords + list(keyword_map.get("keywords", {}).keys())))[:MAX_KEYWORD_PAGES]
-    LINK_GRAPH.update(build_link_graph(phones_sorted, all_keywords, keyword_map=keyword_map))
+    keyword_pool = list(dict.fromkeys(generated_keywords + list(keyword_map.get("keywords", {}).keys())))
+
+    def keyword_value_score(kw):
+        text = kw.lower()
+        score = 0
+        if " vs " in text or "compare" in text:
+            score += 12
+        if "should i buy" in text or "worth it" in text:
+            score += 10
+        if "best" in text or "review" in text:
+            score += 8
+        if "under " in text:
+            score += 8
+        if "usa" in text or "us buyers" in text:
+            score += 6
+        if any(x in text for x in ("battery", "camera", "gaming", "performance", "value")):
+            score += 5
+        if len(text.split()) >= 6:
+            score += 4
+        if len(text.split()) <= 4:
+            score -= 4
+        if any(x in text for x in JUNK_WORDS):
+            score -= 50
+        return score
+
+    ranked_keywords = sorted(keyword_pool, key=keyword_value_score, reverse=True)
+    priority_ratio = 0.25
+    keyword_target = min(MAX_KEYWORD_PAGES, max(300, int(len(ranked_keywords) * priority_ratio)))
+    selected_keywords = ranked_keywords[:keyword_target]
+
+    LINK_GRAPH.update(build_link_graph(phones_sorted, selected_keywords, keyword_map=keyword_map))
     save_json_helper(LINK_GRAPH_FILE, LINK_GRAPH)
 
     pp = os.path.join(BASE_DIR, "phones")
@@ -2189,16 +2284,64 @@ def run():
     for d in [pp, cp, kp, cl, tp]:
         ensure_dir(d)
 
+    adaptive = {
+        "target_min_links": 10,
+        "target_min_paragraphs": 20,
+        "accepted": 0,
+        "skipped": 0,
+    }
+
+    def quality_metrics(html):
+        text = re.sub(r"<[^>]+>", " ", html)
+        words = [w for w in text.split() if w.strip()]
+        paragraphs = [p for p in re.findall(r"<p\b[^>]*>.*?</p>", html, flags=re.I | re.S) if len(re.sub(r"<[^>]+>", "", p).strip()) > 30]
+        links = re.findall(r'href="([^"]+)"', html)
+        internal_links = [u for u in links if u.startswith(SITE_DOMAIN) or u.startswith("/")]
+        required = {title: (title.lower() in html.lower()) for title in REQUIRED_SECTION_TITLES}
+        compact = " ".join(words).lower()
+        repetitive = any(compact.count(needle) > 4 for needle in [
+            "this additional reasoning layer is designed to prevent spec-sheet bias",
+            "if your top two priorities are met and your top risk is acceptable",
+        ])
+        decision_logic_ok = all(x in compact for x in ["choose", "avoid", "trade-off"])
+        comparison_logic_ok = " vs " in compact or "comparison" in compact
+        return {
+            "word_count": len(words),
+            "paragraph_count": len(paragraphs),
+            "internal_links_count": len(internal_links),
+            "required_sections": required,
+            "repetitive": repetitive,
+            "decision_logic_ok": decision_logic_ok,
+            "comparison_logic_ok": comparison_logic_ok,
+        }
+
+    def quality_pass(metrics):
+        return (
+            metrics["word_count"] >= 1200
+            and metrics["paragraph_count"] >= adaptive["target_min_paragraphs"]
+            and metrics["internal_links_count"] >= adaptive["target_min_links"]
+            and all(metrics["required_sections"].values())
+            and not metrics["repetitive"]
+            and metrics["decision_logic_ok"]
+            and metrics["comparison_logic_ok"]
+        )
+
+    def write_with_gate(kind, key, render_func):
+        html = render_func()
+        metrics = quality_metrics(html)
+        if not quality_pass(metrics):
+            html = render_func()
+            metrics = quality_metrics(html)
+        if not quality_pass(metrics):
+            print(f"[SKIP] {kind} {key} failed quality gate: {metrics}")
+            return None
+        return html
+
     for p in phones_sorted:
         slug = p.get("slug", slugify(p["name"]))
         path = os.path.join(pp, slug + ".html")
-        html = render_phone_page(p)
-        ok, metrics = passes_quality_gate(html)
-        if not ok:
-            html = render_phone_page(p)
-            ok, metrics = passes_quality_gate(html)
-        if not ok:
-            print(f"[SKIP] phone {slug} failed quality gate: {metrics}")
+        html = write_with_gate("phone", slug, lambda ph=p: render_phone_page(ph))
+        if not html:
             continue
         safe_write(path, html)
         phone_urls.append(f"/phones/{slug}.html")
@@ -2217,22 +2360,28 @@ def run():
         if compare_count >= MAX_COMPARE_PAGES:
             break
 
-    for kw in all_keywords:
+    for idx, kw in enumerate(selected_keywords):
         mapping = keyword_map["keywords"].get(kw)
-        page = render_keyword_page(kw, phones_sorted)
+        page = write_with_gate("keyword", kw[:80], lambda q=kw: render_keyword_page(q, phones_sorted))
         if not page:
+            adaptive["skipped"] += 1
+            # adaptive improvement loop: tighten prioritization if weak outputs are too frequent.
+            if adaptive["skipped"] > 0 and adaptive["skipped"] % 25 == 0:
+                priority_ratio = max(0.20, priority_ratio - 0.02)
+                cutoff = max(150, int(len(ranked_keywords) * priority_ratio))
+                selected_keywords = ranked_keywords[:cutoff]
             continue
-        ok, metrics = passes_quality_gate(page)
-        if not ok:
-            page = render_keyword_page(kw, phones_sorted)
-            ok, metrics = passes_quality_gate(page)
-        if not ok:
-            print(f"[SKIP] keyword {kw[:80]} failed quality gate: {metrics}")
-            continue
+        metrics = quality_metrics(page)
+        if metrics["internal_links_count"] < 12 or metrics["paragraph_count"] < 22:
+            adaptive["target_min_links"] = max(adaptive["target_min_links"], 12)
+            adaptive["target_min_paragraphs"] = max(adaptive["target_min_paragraphs"], 22)
         kw_slug = mapping["keyword_slug"] if mapping else slugify(kw)
         kw_url = mapping["keyword_url"] if mapping else f"/keyword/{kw_slug}.html"
         safe_write(os.path.join(kp, kw_slug + ".html"), page)
         keyword_urls.append(kw_url)
+        adaptive["accepted"] += 1
+        if idx and idx % 100 == 0:
+            print(f"[ADAPT] processed={idx} accepted={adaptive['accepted']} skipped={adaptive['skipped']} ratio={priority_ratio:.2f}")
 
     for cluster in cluster_data.get("clusters", []):
         cslug = cluster["cluster_slug"]
@@ -2268,7 +2417,7 @@ def run():
         safe_write(os.path.join(tp, cluster["cluster_slug"] + ".html"), topic_html)
         topic_urls.append(f"/topics/{cluster['cluster_slug']}.html")
 
-    safe_write(KEYWORD_FILE, json.dumps(all_keywords, indent=2))
+    safe_write(KEYWORD_FILE, json.dumps(selected_keywords, indent=2))
     generate_sitemap_segments(phone_urls, compare_urls, keyword_urls, cluster_urls, topic_urls)
     generate_robots()
     ping_indexnow((phone_urls + compare_urls + keyword_urls + cluster_urls + topic_urls)[:100])
